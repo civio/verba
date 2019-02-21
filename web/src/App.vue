@@ -1,22 +1,20 @@
 <template>
-  <div id="app">
-    <HelloWorld msg="Welcome to Verba Vue.js App"/>
+  <div id="app" class="container text-center">
+    <h1 class="my-4">Verba</h1>
+    <Search/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Search from './components/Search.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Search
   }
 }
 </script>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-}
 </style>
