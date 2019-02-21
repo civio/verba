@@ -2,7 +2,13 @@
   <div class="row">
     <div class="col-md-6 offset-md-3">
       <div class="input-group">
-        <input type="text" class="form-control" id="search" placeholder="Search a term">
+        <input
+          type="text"
+          class="form-control"
+          id="search"
+          placeholder="Search a term"
+          @change="onChange"
+        >
         <div class="input-group-append">
           <button class="btn btn-primary" type="button">
             <svg width="24" height="24" viewBox="0 0 24 24" class="icon-search">
@@ -19,10 +25,21 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   name: 'Search',
   props: {
     msg: String
+  },
+  methods: {
+    ...mapActions({
+      search: 'search' // map `this.search()` to `this.$store.dispatch('search')`
+    }),
+    onChange(e) {
+      this.search(e.target.value)
+      e.target.value = '' // clear input value
+    }
   }
 }
 </script>
