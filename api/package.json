@@ -1,0 +1,24 @@
+{
+  "name": "verba-volant-app",
+  "version": "1.0.0",
+  "description": "Verba Volant app",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node src/index.js",
+    "build": "babel src --out-dir dist",
+    "serve": "node dist/index.js"
+  },
+  "author": "Raúl Díaz Poblete",
+  "license": "ISC",
+  "dependencies": {
+    "elasticsearch": "^15.4.1",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.3",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "nodemon": "^1.18.10"
+  }
+}
