@@ -7,7 +7,7 @@ const captions = new Captions('http://api-verba-volant.civio.es')
 // Create express app & router instance
 const app = express()
 const router = express.Router()
-const PORT = process.env.PORT || 8080
+const PORT = process.env.PORT || 8888
 
 router.get('/', (request, response) => {
   response.json({ name: 'Verba Volant API', version: '1.0' })
