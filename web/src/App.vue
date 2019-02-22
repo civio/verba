@@ -1,6 +1,6 @@
 <template>
-  <div id="app" class="container text-center">
-    <h1 class="my-4">Verba</h1>
+  <div id="app" class="container">
+    <h1 class="text-center my-4">Verba</h1>
     <Search/>
     <Results/>
   </div>

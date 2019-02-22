@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div class="col-md-6 offset-md-3">
+    <div class="col-lg-8 col-xl-6 offset-lg-2 offset-xl-3">
       <div class="input-group">
         <input
           type="text"
