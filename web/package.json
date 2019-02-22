@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "pikaday": "^1.8.0",
     "vue": "^2.6.6",
     "vuex": "^3.0.1"
   },
