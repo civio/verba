@@ -22,17 +22,21 @@ export default class Captions {
         sort: [{ programme_date: 'desc' }, { start: 'asc' }] // order by date desc & start time asc
       }
     })
-    return results.hits.hits.map(d => ({
-      id: d._id,
-      link: d._source.url,
-      content: d._source.text,
-      time_start: Math.floor(d._source.start),
-      time_end: Math.ceil(d._source.end),
-      programme: {
-        id: d._source.programme_id,
-        title: d._source.programme_title,
-        date: d._source.programme_date
-      }
-    }))
+    return {
+      page,
+      length: results.hits.total,
+      results: results.hits.hits.map(d => ({
+        id: d._id,
+        link: d._source.url,
+        content: d._source.text,
+        time_start: Math.floor(d._source.start),
+        time_end: Math.ceil(d._source.end),
+        programme: {
+          id: d._source.programme_id,
+          title: d._source.programme_title,
+          date: d._source.programme_date
+        }
+      }))
+    }
   }
 }
