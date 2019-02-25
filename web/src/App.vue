@@ -3,7 +3,7 @@
     <div class="container">
       <h1 class="text-center my-4">Verba</h1>
       <div class="row">
-        <div class="col-lg-8 col-xl-6 offset-lg-2 offset-xl-3">
+        <div class="col-lg-8 offset-lg-2">
           <Search/>
           <SearchFilters/>
         </div>
@@ -12,7 +12,11 @@
     <hr class="mb-0">
     <div class="bg-light">
       <div class="container">
-        <Results/>
+        <div class="row">
+          <div class="col-lg-8 offset-lg-2">
+            <Results/>
+          </div>
+        </div>
       </div>
     </div>
   </div>
