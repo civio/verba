@@ -4,7 +4,7 @@
       <div v-if="loading">
         <div class="loader-animation mt-5"></div>
       </div>
-      <div v-else>
+      <div v-else-if="results">
         <p class="my-4">
           {{ results.length.toLocaleString() }} results for
           <strong>{{ query }}</strong>
