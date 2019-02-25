@@ -29,7 +29,6 @@ export default {
     ...mapActions(['search']),
     onChange(e) {
       this.search(e.target.value)
-      e.target.value = '' // clear input value
     }
   }
 }

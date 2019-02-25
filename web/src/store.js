@@ -15,17 +15,17 @@ export default new Vuex.Store({
     results: null
   },
   actions: {
-    search(context, payload) {
-      context.commit('search', payload)
+    search({ commit }, payload) {
+      commit('setQuery', payload)
+      commit('search')
     },
-    setQueryDate(context, payload) {
-      context.commit('setQueryDate', payload)
+    setQueryDate({ commit, state }, payload) {
+      commit('setQueryDate', payload)
+      if (state.query !== '') commit('search')
     }
   },
   mutations: {
-    search(state, payload) {
-      state.loading = true
-      state.query = payload // store query
+    search(state) {
       // set search params
       const params = {
         q: state.query
@@ -39,6 +39,10 @@ export default new Vuex.Store({
         state.results = response.data
         state.loading = false
       })
+    },
+    setQuery(state, payload) {
+      state.loading = true
+      state.query = payload // store query
     },
     setQueryDate(state, payload) {
       state.queryDate = payload
