@@ -20,6 +20,7 @@
               </svg>
               {{ item.programme.date | formatDate }}
             </span>
+            <span class="date-hour text-primary">TD {{ item.programme.date.substring(11, 13) }}h</span>
             <span class="badge badge-secondary float-right">
               <svg class="icon-time" width="12" height="12" viewBox="0 0 24 24">
                 <path d="M0 0h24v24H0z" fill="none"></path>
@@ -55,7 +56,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .loader-animation {
   position: relative;
   height: 48px;
@@ -89,11 +90,15 @@ export default {
   font-weight: 400;
   line-height: 1rem;
 }
+.list-group-item .date-hour {
+  margin-left: 0.5rem;
+  font-size: 0.875rem;
+}
 .item-content {
   margin-top: 0.75rem;
   margin-bottom: 0.35rem;
   mark {
-    background-color: yellow;
+    background-color: mix(yellow, white, 50%);
   }
 }
 .icon-date,
