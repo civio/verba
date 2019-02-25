@@ -10,7 +10,7 @@ Vue.filter('formatDate', str => {
     year: '2-digit',
     month: '2-digit',
     day: '2-digit'
-  })} - TD ${date.getUTCHours()}h`
+  })}` // - TD ${date.getUTCHours()}h`
 })
 
 Vue.filter('formatTime', time => {
