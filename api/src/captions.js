@@ -8,17 +8,31 @@ export default class Captions {
     })
   }
 
-  async search(query, size = 50, page = 0) {
+  async search(query, date_from, date_to, size = 50, page = 0) {
+    const queryObj = {
+      bool: {
+        must: { match: { text: query } } // match query on text
+      }
+    }
+    // add date filter if date_from & date_to defined
+    if (date_from && date_to) {
+      queryObj.bool.filter = [
+        {
+          range: {
+            programme_date: {
+              gte: date_from, // date from YYYY-MM-DD
+              lte: date_to // date to YYYY-MM-DD
+            }
+          }
+        }
+      ]
+    }
     const results = await this.client.search({
       index: 'captions',
-      from: page * size,
-      size: size,
       body: {
-        query: {
-          bool: {
-            must: { match: { text: query } } // match query on text
-          }
-        },
+        from: page * size,
+        query: queryObj,
+        size: size,
         sort: [{ programme_date: 'desc' }, { start: 'asc' }] // order by date desc & start time asc
       }
     })

@@ -20,6 +20,8 @@ app.get('/search', cors(), async (request, response) => {
   if (request.query.q) {
     const results = await captions.search(
       request.query.q,
+      request.query.date_from,
+      request.query.date_to,
       request.query.size,
       request.query.page
     )
