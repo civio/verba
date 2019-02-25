@@ -6,6 +6,7 @@
       </div>
       <div v-else-if="results">
         <p class="my-4">
+          <!-- Add Page N for -->
           {{ results.length.toLocaleString() }} results for
           <strong>{{ query }}</strong>
         </p>
@@ -33,7 +34,11 @@
             <p class="item-content" v-html="highlight(item.content, query)"></p>
           </li>
         </ul>
-        <button class="btn btn-block btn btn-outline-primary">More results</button>
+        <Pagination
+          :size="Math.ceil(results.length / 50)"
+          :current="currentPage"
+          @change="onPaginationChange"
+        />
       </div>
     </div>
   </div>
@@ -41,9 +46,16 @@
 
 <script>
 import { mapState } from 'vuex'
+import Pagination from './Pagination.vue'
 
 export default {
   name: 'Results',
+  components: { Pagination },
+  data() {
+    return {
+      currentPage: 0
+    }
+  },
   computed: {
     ...mapState(['query', 'loading', 'results'])
   },
@@ -51,6 +63,9 @@ export default {
     highlight(content, word) {
       const re = new RegExp(word, 'gi')
       return content.replace(re, match => `<mark>${match}</mark>`)
+    },
+    onPaginationChange(page) {
+      this.currentPage = page
     }
   }
 }
