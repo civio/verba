@@ -10,7 +10,8 @@ const API_URL = 'http://localhost:8888/'
 export default new Vuex.Store({
   state: {
     query: '',
-    results: []
+    loading: false,
+    results: {}
   },
   actions: {
     search(context, payload) {
@@ -19,6 +20,7 @@ export default new Vuex.Store({
   },
   mutations: {
     search(state, payload) {
+      state.loading = true
       state.query = payload // store query
       axios
         .get(API_URL + 'search', {
@@ -28,6 +30,7 @@ export default new Vuex.Store({
         })
         .then(response => {
           state.results = response.data
+          state.loading = false
         })
     }
   }
