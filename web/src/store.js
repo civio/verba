@@ -9,29 +9,39 @@ const API_URL = 'http://localhost:8888/'
 
 export default new Vuex.Store({
   state: {
-    query: '',
     loading: false,
-    results: {}
+    query: '',
+    queryDate: null, // date.from - date.to
+    results: null
   },
   actions: {
     search(context, payload) {
       context.commit('search', payload)
+    },
+    setQueryDate(context, payload) {
+      context.commit('setQueryDate', payload)
     }
   },
   mutations: {
     search(state, payload) {
       state.loading = true
       state.query = payload // store query
-      axios
-        .get(API_URL + 'search', {
-          params: {
-            q: state.query
-          }
-        })
-        .then(response => {
-          state.results = response.data
-          state.loading = false
-        })
+      // set search params
+      const params = {
+        q: state.query
+      }
+      if (state.queryDate) {
+        params.date_from = state.queryDate.from
+        params.date_to = state.queryDate.to
+      }
+      // TODO! params size & page
+      axios.get(API_URL + 'search', { params }).then(response => {
+        state.results = response.data
+        state.loading = false
+      })
+    },
+    setQueryDate(state, payload) {
+      state.queryDate = payload
     }
   }
 })
