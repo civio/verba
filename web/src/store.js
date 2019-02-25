@@ -12,23 +12,31 @@ export default new Vuex.Store({
     loading: false,
     query: '',
     queryDate: null, // date.from - date.to
-    results: null
+    results: null,
+    resultsPage: 0
   },
   actions: {
     search({ commit }, payload) {
       commit('setQuery', payload)
+      commit('setResultsPage', 0) // clear results page
       commit('search')
     },
     setQueryDate({ commit, state }, payload) {
       commit('setQueryDate', payload)
-      if (state.query !== '') commit('search')
+      commit('setResultsPage', 0) // clear results page
+      if (state.query !== '') commit('search') // update search if query is defined
+    },
+    setResultsPage({ commit }, payload) {
+      commit('setResultsPage', payload)
+      commit('search') // update search
     }
   },
   mutations: {
     search(state) {
       // set search params
       const params = {
-        q: state.query
+        q: state.query,
+        page: state.resultsPage
       }
       if (state.queryDate) {
         params.date_from = state.queryDate.from
@@ -46,6 +54,9 @@ export default new Vuex.Store({
     },
     setQueryDate(state, payload) {
       state.queryDate = payload
+    },
+    setResultsPage(state, payload) {
+      state.resultsPage = payload
     }
   }
 })

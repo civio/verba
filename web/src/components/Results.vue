@@ -6,7 +6,7 @@
       </div>
       <div v-else-if="results">
         <p class="my-4">
-          <!-- Add Page N for -->
+          <span class="text-secondary" v-if="results.length > 50">Page {{ resultsPage + 1 }} of</span>
           {{ results.length.toLocaleString() }} results for
           <strong>{{ query }}</strong>
         </p>
@@ -36,7 +36,7 @@
         </ul>
         <Pagination
           :size="Math.ceil(results.length / 50)"
-          :current="currentPage"
+          :current="resultsPage"
           @change="onPaginationChange"
         />
       </div>
@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 import Pagination from './Pagination.vue'
 
 export default {
@@ -57,15 +57,17 @@ export default {
     }
   },
   computed: {
-    ...mapState(['query', 'loading', 'results'])
+    ...mapState(['query', 'loading', 'results', 'resultsPage'])
   },
   methods: {
+    ...mapActions(['setResultsPage']),
     highlight(content, word) {
       const re = new RegExp(word, 'gi')
       return content.replace(re, match => `<mark>${match}</mark>`)
     },
     onPaginationChange(page) {
-      this.currentPage = page
+      window.scrollTo(0, 0) // scroll to top
+      this.setResultsPage(page)
     }
   }
 }
