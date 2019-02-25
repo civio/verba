@@ -79,6 +79,8 @@ export default {
   .pika-table {
     th {
       font-weight: 400;
+      line-height: 1rem;
+      padding-bottom: 0.5rem;
     }
     td {
       border: 1px solid #ddd;
