@@ -1,48 +1,60 @@
 <template>
   <div class="search-filters">
-    <button class="btn btn-sm btn-outline-secondary" @click="onDateClick">Date</button>
+    <button :class="dateBtnClass" @click="onDateClick">{{ dateStr }}</button>
     <button class="btn btn-sm btn-outline-secondary">Type</button>
     <button class="btn btn-sm btn-outline-secondary">Group</button>
-    <div class="datepicker-container" v-show="datepickerVisible">
-      <div id="datepicker"></div>
-    </div>
+    <Datepicker :visible="datepickerVisible" @change="onDatepickerChange"/>
   </div>
 </template>
 
 <script>
-import Pikaday from "pikaday";
+import { mapActions, mapState } from 'vuex'
+import Datepicker from './Datepicker.vue'
 
 export default {
-  name: "SearchFilters",
-  data: function() {
+  name: 'SearchFilters',
+  components: { Datepicker },
+  data() {
     return {
       datepickerVisible: false
-    };
+    }
   },
-  mounted: function() {
-    // add pikaday datepicker
-    var field = document.getElementById("datepicker");
-    this.datepicker = new Pikaday({
-      onSelect: date => {
-        console.log(this.datepicker.toString());
-      }
-    });
-    field.parentNode.insertBefore(this.datepicker.el, field.nextSibling);
+  computed: {
+    ...mapState(['queryDate']),
+    dateBtnClass: function() {
+      return `btn btn-sm btn-outline-${
+        this.queryDate ? 'primary' : 'secondary'
+      }`
+    },
+    dateStr: function() {
+      return this.queryDate
+        ? this.queryDate.from.getTime() !== this.queryDate.to.getTime()
+          ? `${this.$options.filters.formatDate(
+              this.queryDate.from
+            )} - ${this.$options.filters.formatDate(this.queryDate.to)}`
+          : this.$options.filters.formatDate(this.queryDate.from)
+        : 'Date'
+    }
   },
   methods: {
+    ...mapActions(['setQueryDate']),
     onDateClick() {
-      this.datepickerVisible = !this.datepickerVisible;
+      this.datepickerVisible = !this.datepickerVisible
+    },
+    onDatepickerChange(obj) {
+      this.datepickerVisible = false
+      this.setQueryDate(obj)
     }
   }
-};
+}
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .search-filters {
   margin-top: 1.25rem;
-}
-.btn {
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
+  .btn {
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
 }
 </style>
