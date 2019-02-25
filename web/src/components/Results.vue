@@ -19,7 +19,7 @@
                 ></path>
                 <path fill="none" d="M0 0h24v24H0z"></path>
               </svg>
-              {{ item.programme.date | formatDate }}
+              {{ formatDate(item.programme.date) }}
             </span>
             <span class="date-hour text-primary">TD {{ item.programme.date.substring(11, 13) }}h</span>
             <span class="badge badge-secondary float-right">
@@ -45,6 +45,7 @@
 </template>
 
 <script>
+import moment from 'moment'
 import { mapActions, mapState } from 'vuex'
 import Pagination from './Pagination.vue'
 
@@ -68,6 +69,9 @@ export default {
     onPaginationChange(page) {
       window.scrollTo(0, 0) // scroll to top
       this.setResultsPage(page)
+    },
+    formatDate(date) {
+      return moment(date).format('DD/MM/YYYY')
     }
   }
 }

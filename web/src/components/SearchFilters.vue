@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import moment from 'moment'
 import { mapActions, mapState } from 'vuex'
 import Datepicker from './Datepicker.vue'
 
@@ -29,10 +30,10 @@ export default {
     dateStr: function() {
       return this.queryDate
         ? this.queryDate.from.getTime() !== this.queryDate.to.getTime()
-          ? `${this.$options.filters.formatDate(
-              this.queryDate.from
-            )} - ${this.$options.filters.formatDate(this.queryDate.to)}`
-          : this.$options.filters.formatDate(this.queryDate.from)
+          ? `${this.formatDate(this.queryDate.from)} - ${this.formatDate(
+              this.queryDate.to
+            )}`
+          : this.formatDate(this.queryDate.from)
         : 'Date'
     }
   },
@@ -44,6 +45,9 @@ export default {
     onDatepickerChange(obj) {
       this.datepickerVisible = false
       this.setQueryDate(obj)
+    },
+    formatDate(date) {
+      return moment(date).format('DD/MM/YYYY')
     }
   }
 }

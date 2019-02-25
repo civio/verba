@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
+import moment from 'moment'
 import axios from 'axios'
 
 Vue.use(Vuex)
@@ -39,8 +40,8 @@ export default new Vuex.Store({
         page: state.resultsPage
       }
       if (state.queryDate) {
-        params.date_from = state.queryDate.from
-        params.date_to = state.queryDate.to
+        params.date_from = moment(state.queryDate.from).format('YYYY-MM-DD')
+        params.date_to = moment(state.queryDate.to).format('YYYY-MM-DD')
       }
       // TODO! params size & page
       axios.get(API_URL + 'search', { params }).then(response => {
