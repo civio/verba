@@ -21,18 +21,18 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions } from 'vuex'
 
 export default {
-  name: "Search",
+  name: 'Search',
   methods: {
-    ...mapActions(["search"]),
+    ...mapActions(['search']),
     onChange(e) {
-      this.search(e.target.value);
-      e.target.value = ""; // clear input value
+      this.search(e.target.value)
+      e.target.value = '' // clear input value
     }
   }
-};
+}
 </script>
 
 <style scoped lang="scss">

@@ -19,20 +19,20 @@
 </template>
 
 <script>
-import Results from "./components/Results.vue";
-import Search from "./components/Search.vue";
-import SearchFilters from "./components/SearchFilters.vue";
+import Results from './components/Results.vue'
+import Search from './components/Search.vue'
+import SearchFilters from './components/SearchFilters.vue'
 
 export default {
-  name: "app",
+  name: 'app',
   components: {
     Results,
     Search,
     SearchFilters
   }
-};
+}
 </script>
 
 <style lang="scss">
-@import "./../node_modules/pikaday/css/pikaday.css";
+@import './../node_modules/pikaday/css/pikaday.css';
 </style>
