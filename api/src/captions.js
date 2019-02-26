@@ -8,15 +8,15 @@ export default class Captions {
     })
   }
 
-  async search(query, date_from, date_to, size = 50, page = 0) {
-    const queryObj = {
+  getSearchQuery(query_str, date_from, date_to, aggregations, size, page) {
+    const query = {
       bool: {
-        must: { match: { text: query } } // match query on text
+        must: { match: { text: query_str } } // match query on text
       }
     }
     // add date filter if date_from & date_to defined
     if (date_from && date_to) {
-      queryObj.bool.filter = [
+      query.bool.filter = [
         {
           range: {
             programme_date: {
@@ -27,16 +27,29 @@ export default class Captions {
         }
       ]
     }
-    const results = await this.client.search({
-      index: 'captions',
-      body: {
-        from: page * size,
-        query: queryObj,
-        size: size,
-        sort: [{ programme_date: 'desc' }, { start: 'asc' }] // order by date desc & start time asc
+    const obj = {
+      from: page * size,
+      query: query,
+      size: size,
+      sort: [{ programme_date: 'desc' }, { start: 'asc' }] // order by date desc & start time asc
+    }
+    // add aggregations to search body if aggregations defined
+    if (aggregations) {
+      obj.aggs = {
+        matches_over_time: {
+          date_histogram: {
+            field: 'programme_date',
+            interval: 'day',
+            format: 'yyyy-MM-dd'
+          }
+        }
       }
-    })
-    return {
+    }
+    return obj
+  }
+
+  parseResults(results, page) {
+    const data = {
       page,
       length: results.hits.total,
       results: results.hits.hits.map(d => ({
@@ -52,5 +65,37 @@ export default class Captions {
         }
       }))
     }
+    if (results.aggregations) {
+      data.aggregations = results.aggregations.matches_over_time.buckets.map(
+        d => {
+          const obj = {}
+          obj[d.key_as_string] = d.doc_count
+          return obj
+        }
+      )
+    }
+    return data
+  }
+
+  async search(
+    query_str,
+    date_from,
+    date_to,
+    aggregations = false,
+    size = 50,
+    page = 0
+  ) {
+    const results = await this.client.search({
+      index: 'captions',
+      body: this.getSearchQuery(
+        query_str,
+        date_from,
+        date_to,
+        aggregations,
+        size,
+        page
+      )
+    })
+    return this.parseResults(results, page)
   }
 }
