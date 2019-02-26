@@ -3,7 +3,7 @@
     <input
       type="text"
       class="form-control"
-      id="search"
+      ref="searchInput"
       placeholder="Search a term"
       @change="onChange"
     >
@@ -25,6 +25,10 @@ import { mapActions } from 'vuex'
 
 export default {
   name: 'Search',
+  mounted() {
+    // set focus on search input
+    this.$refs.searchInput.focus()
+  },
   methods: {
     ...mapActions(['search']),
     onChange(e) {
