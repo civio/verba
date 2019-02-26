@@ -65,6 +65,9 @@ export default {
     window.removeEventListener('resize', this.onResize)
   },
   watch: {
+    data: function() {
+      this.update()
+    },
     width: function() {
       this.initialize()
       this.update()
