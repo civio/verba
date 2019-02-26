@@ -38,7 +38,7 @@ export default new Vuex.Store({
       const params = {
         q: state.query,
         page: state.resultsPage,
-        aggregations: 1 // TODO: Activate aggregations only when needed (when query changes)
+        aggregations: 'week' // TODO: Activate aggregations only when needed (when query changes)
       }
       if (state.queryDate) {
         params.date_from = moment(state.queryDate.from).format('YYYY-MM-DD')

@@ -8,7 +8,7 @@ export default class Captions {
     })
   }
 
-  getSearchQuery(query_str, date_from, date_to, aggregations, size, page) {
+  getSearchQuery(query_str, date_from, date_to, aggs, size, page) {
     const query = {
       bool: {
         must: { match: { text: query_str } } // match query on text
@@ -34,12 +34,15 @@ export default class Captions {
       sort: [{ programme_date: 'desc' }, { start: 'asc' }] // order by date desc & start time asc
     }
     // add aggregations to search body if aggregations defined
-    if (aggregations) {
+    if (
+      aggs &&
+      (aggs === 'day' || aggs === 'week' || aggs === 'month' || aggs === 'year') // validate aggregations value (day, week, month or year)
+    ) {
       obj.aggs = {
         matches_over_time: {
           date_histogram: {
             field: 'programme_date',
-            interval: 'day',
+            interval: aggs,
             format: 'yyyy-MM-dd'
           }
         }
