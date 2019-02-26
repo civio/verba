@@ -37,7 +37,8 @@ export default new Vuex.Store({
       // set search params
       const params = {
         q: state.query,
-        page: state.resultsPage
+        page: state.resultsPage,
+        aggregations: 1 // TODO: Activate aggregations only when needed (when query changes)
       }
       if (state.queryDate) {
         params.date_from = moment(state.queryDate.from).format('YYYY-MM-DD')

@@ -4,7 +4,7 @@
       <div class="loader-animation mt-5"></div>
     </div>
     <div v-else-if="results">
-      <AreaChart/>
+      <AreaChart :data="aggregations"/>
       <p class="my-4">
         <span class="text-secondary" v-if="results.length > 50">Page {{ resultsPage + 1 }} of</span>
         {{ results.length.toLocaleString() }} results for
@@ -58,7 +58,15 @@ export default {
     }
   },
   computed: {
-    ...mapState(['query', 'loading', 'results', 'resultsPage'])
+    ...mapState(['query', 'loading', 'results', 'resultsPage']),
+    aggregations() {
+      return this.results && this.results.aggregations
+        ? this.results.aggregations.map(d => {
+            const key = Object.keys(d)[0]
+            return { x: new Date(key), y: d[key] }
+          })
+        : []
+    }
   },
   methods: {
     ...mapActions(['setResultsPage']),
