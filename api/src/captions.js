@@ -9,9 +9,16 @@ export default class Captions {
   }
 
   getSearchQuery(query_str, date_from, date_to, aggs, size, page) {
+    // query_str mast be an elasticsearch simple query string
+    // https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-simple-query-string-query.html
     const query = {
       bool: {
-        must: { match: { text: query_str } } // match query on text
+        must: {
+          simple_query_string: {
+            query: query_str,
+            fields: ['text']
+          }
+        }
       }
     }
     // add date filter if date_from & date_to defined
@@ -28,9 +35,17 @@ export default class Captions {
       ]
     }
     const obj = {
+      _source: [
+        'url',
+        'text',
+        'start',
+        'end',
+        'programme_id',
+        'programme_date'
+      ],
       from: page * size,
-      query: query,
-      size: size,
+      query,
+      size,
       sort: [{ programme_date: 'desc' }, { start: 'asc' }] // order by date desc & start time asc
     }
     // add aggregations to search body if aggregations defined
