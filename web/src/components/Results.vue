@@ -79,9 +79,16 @@ export default {
   },
   methods: {
     ...mapActions(['setResultsPage']),
-    highlight(content, word) {
-      const re = new RegExp(word, 'gi')
-      return content.replace(re, match => `<mark>${match}</mark>`)
+    highlight(content, query) {
+      query
+        .replace(/\+|\(|\)|\"/g, '') // remove +, (, ) & " chars -> TODO: don't split words between ""
+        .split(' ')
+        .filter(d => d !== '') // filter empty strings
+        .forEach(word => {
+          const re = new RegExp(word.trim(), 'gi')
+          content = content.replace(re, match => `<mark>${match}</mark>`)
+        })
+      return content
     },
     onPaginationChange(page) {
       window.scrollTo(0, 0) // scroll to top
