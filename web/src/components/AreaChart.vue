@@ -97,8 +97,14 @@ export default {
       this.scale.x = d3.scaleTime().range([0, this.padded.width])
       this.scale.y = d3.scaleLinear().range([this.padded.height, 0])
       // setup axis
-      this.axis.x = d3.axisBottom(this.scale.x)
-      this.axis.y = d3.axisLeft(this.scale.y)
+      this.axis.x = d3
+        .axisBottom(this.scale.x)
+        .tickSizeOuter(0)
+        .ticks(d3.timeYear)
+      this.axis.y = d3
+        .axisLeft(this.scale.y)
+        .tickFormat(d3.format(',d'))
+        .ticks(this.height / 50)
     },
     onResize() {
       // update width & height based on parent container
@@ -184,7 +190,7 @@ export default {
   .line {
     fill: none;
     stroke: currentColor;
-    stroke-width: 1;
+    stroke-width: 1.5;
     stroke-linejoin: round;
     stroke-linecap: round;
   }
