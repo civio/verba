@@ -4,7 +4,7 @@
       <div class="loader-animation mt-5"></div>
     </div>
     <div v-else-if="results">
-      <AreaChart :data="aggregations"/>
+      <AreaChart :data="aggregations" v-if="showChart"/>
       <p class="my-4">
         <span class="text-secondary" v-if="results.length > 50">Page {{ resultsPage + 1 }} of</span>
         {{ results.length.toLocaleString() }} results for
@@ -58,14 +58,23 @@ export default {
     }
   },
   computed: {
-    ...mapState(['query', 'loading', 'results', 'resultsPage']),
+    ...mapState(['query', 'queryDate', 'loading', 'results', 'resultsPage']),
     aggregations() {
       return this.results && this.results.aggregations
-        ? this.results.aggregations.map(d => {
-            const key = Object.keys(d)[0]
-            return { x: new Date(key), y: d[key] }
-          })
+        ? this.queryDate
+          ? this.results.aggregations.map(this.getAggregationObject).filter(
+              d => d.x >= this.queryDate.from && d.x <= this.queryDate.to // apply date filter
+            )
+          : this.results.aggregations.map(this.getAggregationObject)
         : []
+    },
+    showChart() {
+      // hide chart if no data or date filter range is a single day (queryDate.from == queryDate.to)
+      return (
+        this.aggregations.length > 1 &&
+        (!this.queryDate ||
+          this.queryDate.from.getTime() !== this.queryDate.to.getTime())
+      )
     }
   },
   methods: {
@@ -77,6 +86,10 @@ export default {
     onPaginationChange(page) {
       window.scrollTo(0, 0) // scroll to top
       this.setResultsPage(page)
+    },
+    getAggregationObject(d) {
+      const key = Object.keys(d)[0]
+      return { x: new Date(key), y: d[key] }
     },
     formatDate(date) {
       return moment(date).format('DD/MM/YYYY')
