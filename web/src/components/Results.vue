@@ -81,7 +81,7 @@ export default {
     ...mapActions(['setResultsPage']),
     highlight(content, query) {
       query
-        .replace(/\+|\(|\)|\"/g, '') // remove +, (, ) & " chars -> TODO: don't split words between ""
+        .replace(/\+|\(|\)|"/g, '') // remove +, (, ) & " chars -> TODO: don't split words between ""
         .split(' ')
         .filter(d => d !== '') // filter empty strings
         .forEach(word => {
