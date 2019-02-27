@@ -6,8 +6,6 @@ import axios from 'axios'
 
 Vue.use(Vuex)
 
-const API_URL = 'http://localhost:8888/'
-
 export default new Vuex.Store({
   state: {
     loading: false,
@@ -52,10 +50,12 @@ export default new Vuex.Store({
         params.date_to = moment(state.queryDate.to).format('YYYY-MM-DD')
       }
       // search request
-      axios.get(API_URL + 'search', { params }).then(response => {
-        state.results = response.data
-        state.loading = false
-      })
+      axios
+        .get(process.env.VUE_APP_API_URL + 'search', { params })
+        .then(response => {
+          state.results = response.data
+          state.loading = false
+        })
     },
     setQuery(state, payload) {
       state.loading = true
