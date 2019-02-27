@@ -31,7 +31,7 @@
             </svg>
             {{ item.time_start | formatTime }} - {{ item.time_end | formatTime }}
           </span>
-          <p class="item-content" v-html="highlight(item.content, query)"></p>
+          <p class="item-content" v-html="highlight(item.content)"></p>
         </li>
       </ul>
       <Pagination
@@ -58,7 +58,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(['query', 'queryDate', 'loading', 'results', 'resultsPage']),
+    ...mapState(['query', 'queryDate', 'queryTerms', 'loading', 'results', 'resultsPage']),
     aggregations() {
       return this.results && this.results.aggregations
         ? this.queryDate
@@ -79,12 +79,8 @@ export default {
   },
   methods: {
     ...mapActions(['setResultsPage']),
-    highlight(content, query) {
-      query
-        .replace(/\+|\(|\)|"/g, '') // remove +, (, ) & " chars -> TODO: don't split words between ""
-        .split(' ')
-        .filter(d => d !== '') // filter empty strings
-        .forEach(word => {
+    highlight(content) {
+      this.queryTerms.forEach(word => {
           const re = new RegExp(word.trim(), 'gi')
           content = content.replace(re, match => `<mark>${match}</mark>`)
         })

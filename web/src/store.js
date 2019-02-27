@@ -13,6 +13,7 @@ export default new Vuex.Store({
     loading: false,
     query: '',
     queryDate: null, // date.from - date.to
+    queryTerms: [],
     results: null,
     resultsPage: 0
   },
@@ -53,6 +54,10 @@ export default new Vuex.Store({
     setQuery(state, payload) {
       state.loading = true
       state.query = payload // store query
+      state.queryTerms = state.query
+        .replace(/\+|\(|\)|"/g, '') // remove chars +()" -> TODO: don't split words between ""
+        .split(' ')
+        .filter(d => d !== '') // filter empty strings
     },
     setQueryDate(state, payload) {
       state.queryDate = payload
