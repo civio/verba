@@ -1,7 +1,7 @@
 <template>
   <div class="pb-2" v-show="query !== ''">
     <div v-if="loading">
-      <div class="loader-animation mt-5"></div>
+      <div class="loader-animation my-5"></div>
     </div>
     <div v-else-if="results">
       <AreaChart :data="aggregations" v-if="showChart"/>
@@ -10,30 +10,32 @@
         {{ results.length.toLocaleString() }} results for
         <strong>{{ query }}</strong>
       </p>
-      <ul class="list-group mb-4">
-        <li class="list-group-item" v-for="item in results.results" :key="item.id">
-          <span class="badge badge-primary">
-            <svg class="icon-date" width="12" height="12" viewBox="0 0 24 24">
+      <div class="results-list mb-4">
+        <div class="card" v-for="(items, key) in resultsByProgramme" :key="key">
+          <div class="card-header bg-primary">
+            <svg class="icon-date" width="14" height="14" viewBox="0 0 24 24">
               <path
                 d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"
               ></path>
               <path fill="none" d="M0 0h24v24H0z"></path>
             </svg>
-            {{ formatDate(item.programme.date) }}
-          </span>
-          <span class="date-hour text-primary">TD {{ item.programme.date.substring(11, 13) }}h</span>
-          <span class="badge badge-secondary float-right">
-            <svg class="icon-time" width="12" height="12" viewBox="0 0 24 24">
-              <path d="M0 0h24v24H0z" fill="none"></path>
-              <path
-                d="M15 1H9v2h6V1zm-4 13h2V8h-2v6zm8.03-6.61l1.42-1.42c-.43-.51-.9-.99-1.41-1.41l-1.42 1.42C16.07 4.74 14.12 4 12 4c-4.97 0-9 4.03-9 9s4.02 9 9 9 9-4.03 9-9c0-2.12-.74-4.07-1.97-5.61zM12 20c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"
-              ></path>
-            </svg>
-            {{ item.time_start | formatTime }} - {{ item.time_end | formatTime }}
-          </span>
-          <p class="item-content" v-html="highlight(item.content)"></p>
-        </li>
-      </ul>
+            <strong>{{ formatDate(items[0].programme.date) }}</strong>
+            | TD {{ items[0].programme.date.substring(11, 13) }}h
+          </div>
+          <div class="card-body" v-for="item in items" :key="item.id">
+            <span class="badge badge-secondary">
+              <svg class="icon-time" width="12" height="12" viewBox="0 0 24 24">
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                  d="M15 1H9v2h6V1zm-4 13h2V8h-2v6zm8.03-6.61l1.42-1.42c-.43-.51-.9-.99-1.41-1.41l-1.42 1.42C16.07 4.74 14.12 4 12 4c-4.97 0-9 4.03-9 9s4.02 9 9 9 9-4.03 9-9c0-2.12-.74-4.07-1.97-5.61zM12 20c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"
+                ></path>
+              </svg>
+              {{ item.time_start | formatTime }} - {{ item.time_end | formatTime }}
+            </span>
+            <p class="item-content" v-html="highlight(item.content)"></p>
+          </div>
+        </div>
+      </div>
       <Pagination
         :size="Math.ceil(results.length / 50)"
         :current="resultsPage"
@@ -74,6 +76,15 @@ export default {
             )
           : this.results.aggregations.map(this.getAggregationObject)
         : []
+    },
+    resultsByProgramme() {
+      // group results array by programme.id
+      return this.results.results.reduce((groups, item) => {
+        const key = item.programme.id
+        groups[key] = groups[key] || []
+        groups[key].push(item)
+        return groups
+      }, {})
     },
     showChart() {
       // hide chart if no data or date filter range is a single day (queryDate.from == queryDate.to)
@@ -137,30 +148,64 @@ export default {
     animation: spin 1.2s ease-in-out infinite;
   }
 }
-.list-group .badge {
-  font-size: 0.813rem;
-  font-weight: 400;
-  line-height: 1rem;
-}
-.list-group-item .date-hour {
-  margin-left: 0.5rem;
-  font-size: 0.875rem;
-}
-.item-content {
-  margin-top: 0.75rem;
-  margin-bottom: 0.35rem;
-  mark {
-    background-color: mix(yellow, white, 50%);
+.results-list {
+  .card {
+    border-radius: 0;
+    border-top: none;
+
+    &:first-child {
+      border-top: 1px solid rgba(0, 0, 0, 0.125);
+    }
   }
-}
-.icon-date,
-.icon-time {
-  fill: white;
-  vertical-align: top;
-  margin-top: 2px;
-  margin-right: 2px;
-}
-.icon-time {
-  margin-top: 3px;
+  .card-header {
+    color: mix(white, #007bff, 80%);
+    font-size: 0.875rem;
+    font-weight: 300;
+    border-radius: 0;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+
+    strong {
+      color: white;
+      font-weight: 300;
+      padding: 0 4px;
+    }
+  }
+
+  .card-body {
+    padding-bottom: 1rem;
+    padding-top: 0;
+  }
+
+  .badge {
+    font-size: 0.75rem;
+    font-weight: 300;
+    line-height: 1rem;
+    opacity: 0.85;
+  }
+  .date-hour {
+    margin-left: 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  .icon-date,
+  .icon-time {
+    fill: currentColor;
+    vertical-align: top;
+    margin-top: 2px;
+    margin-right: 2px;
+  }
+  .icon-date {
+    margin-top: 4px;
+    margin-right: 4px;
+  }
+  .item-content {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    mark {
+      background-color: mix(yellow, white, 50%);
+    }
+  }
 }
 </style>

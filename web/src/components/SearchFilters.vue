@@ -2,7 +2,6 @@
   <div class="search-filters">
     <button :class="dateBtnClass" @click="onDateClick">{{ dateStr }}</button>
     <button class="btn btn-sm btn-outline-secondary">Type</button>
-    <button class="btn btn-sm btn-outline-secondary">Group</button>
     <Datepicker :visible="datepickerVisible" @change="onDatepickerChange"/>
   </div>
 </template>
@@ -59,6 +58,9 @@ export default {
   .btn {
     margin-right: 0.5rem;
     margin-bottom: 0.5rem;
+  }
+  .btn-outline-primary {
+    font-weight: 600;
   }
 }
 </style>
