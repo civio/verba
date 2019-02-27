@@ -58,7 +58,14 @@ export default {
     }
   },
   computed: {
-    ...mapState(['query', 'queryDate', 'queryTerms', 'loading', 'results', 'resultsPage']),
+    ...mapState([
+      'query',
+      'queryDate',
+      'queryTerms',
+      'loading',
+      'results',
+      'resultsPage'
+    ]),
     aggregations() {
       return this.results && this.results.aggregations
         ? this.queryDate
@@ -80,10 +87,10 @@ export default {
   methods: {
     ...mapActions(['setResultsPage']),
     highlight(content) {
-      this.queryTerms.forEach(word => {
-          const re = new RegExp(word.trim(), 'gi')
-          content = content.replace(re, match => `<mark>${match}</mark>`)
-        })
+      this.queryTerms.forEach(term => {
+        const re = new RegExp('\\b' + term + '\\b', 'gi')
+        content = content.replace(re, match => `<mark>${match}</mark>`)
+      })
       return content
     },
     onPaginationChange(page) {

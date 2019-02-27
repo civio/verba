@@ -51,7 +51,7 @@ export default new Vuex.Store({
         params.date_from = moment(state.queryDate.from).format('YYYY-MM-DD')
         params.date_to = moment(state.queryDate.to).format('YYYY-MM-DD')
       }
-      // TODO! params size & page
+      // search request
       axios.get(API_URL + 'search', { params }).then(response => {
         state.results = response.data
         state.loading = false
@@ -59,11 +59,24 @@ export default new Vuex.Store({
     },
     setQuery(state, payload) {
       state.loading = true
-      state.query = payload // store query
-      state.queryTerms = state.query
-        .replace(/\+|\(|\)|"/g, '') // remove chars +()" -> TODO: don't split words between ""
-        .split(' ')
-        .filter(d => d !== '') // filter empty strings
+      state.query = payload.trim() // store query
+      // Set queryTerms (get terms array from query)
+      const re = new RegExp(/"(.*?)"/g) // regexp for words between doubled quotes
+      // extract single words in query (removing words between doubled quotes)
+      const singleWords = state.query
+        .replace(re, '') // remove words between quotes
+        .replace(/\+|\(|\)|"|\|/g, '') // remove chars +()"|
+        .trim()
+      state.queryTerms =
+        singleWords !== ''
+          ? singleWords.split(/\s+/) // split by whitespaces avoiding empty tokens
+          : []
+      // concat to queryTerms words between doubled quotes
+      const quotedWords = state.query.match(re)
+      if (quotedWords)
+        state.queryTerms = state.queryTerms.concat(
+          quotedWords.map(term => term.replace(/"/g, '').trim()) // clear words (remove doubled quotes & extra spaces)
+        )
     },
     setQueryDate(state, payload) {
       state.queryDate = payload
