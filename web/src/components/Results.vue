@@ -201,10 +201,12 @@ export default {
     margin-right: 4px;
   }
   .item-content {
+    font-size: 0.913rem;
     margin-top: 0.5rem;
     margin-bottom: 0;
     mark {
-      background-color: mix(yellow, white, 50%);
+      font-weight: 600;
+      background-color: mix(yellow, white, 25%);
     }
   }
 }

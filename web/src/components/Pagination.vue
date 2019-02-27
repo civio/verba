@@ -74,4 +74,7 @@ export default {
 .page-item.disabled {
   cursor: default;
 }
+.page-link {
+  font-size: 0.875rem;
+}
 </style>
