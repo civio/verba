@@ -1,3 +1,4 @@
+import 'dotenv/config'
 import cors from 'cors'
 import express from 'express'
 import Captions from './captions'
@@ -5,7 +6,7 @@ import Captions from './captions'
 const PORT = process.env.PORT || 8888
 
 // Create captions model
-const captions = new Captions('http://api-verba-volant.civio.es')
+const captions = new Captions(process.env.ELASTIC_API_URL)
 
 // Create express app
 const app = express()
