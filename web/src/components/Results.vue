@@ -32,6 +32,15 @@
               </svg>
               {{ item.time_start | formatTime }} - {{ item.time_end | formatTime }}
             </span>
+            <a class="badge badge-secondary video-link" :href="item.link" target="_blank">
+              Play Video
+              <svg class="icon-play" width="14" height="14" viewBox="0 0 24 24">
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                  d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+                ></path>
+              </svg>
+            </a>
             <p class="item-content" v-html="highlight(item.content)"></p>
           </div>
         </div>
@@ -190,7 +199,8 @@ export default {
   }
 
   .icon-date,
-  .icon-time {
+  .icon-time,
+  .icon-play {
     fill: currentColor;
     vertical-align: top;
     margin-top: 2px;
@@ -200,6 +210,11 @@ export default {
     margin-top: 4px;
     margin-right: 4px;
   }
+  .icon-play {
+    margin-top: 1px;
+    margin-left: 2px;
+    margin-right: 0;
+  }
   .item-content {
     font-size: 0.913rem;
     margin-top: 0.5rem;
@@ -208,6 +223,13 @@ export default {
       font-weight: 600;
       background-color: mix(yellow, white, 25%);
     }
+  }
+  .video-link {
+    display: none;
+    float: right;
+  }
+  .card-body:hover .video-link {
+    display: block;
   }
 }
 </style>
