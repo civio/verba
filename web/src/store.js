@@ -35,6 +35,12 @@ export default new Vuex.Store({
   },
   mutations: {
     search(state) {
+      // skip if query is empty
+      if (state.query.trim() === '') {
+        state.results = null
+        state.loading = false
+        return
+      }
       // set search params
       const params = {
         q: state.query,
