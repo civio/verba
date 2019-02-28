@@ -19,6 +19,7 @@
         </div>
       </div>
     </div>
+    <VideoModal/>
   </div>
 </template>
 
@@ -26,13 +27,15 @@
 import Results from './components/Results.vue'
 import Search from './components/Search.vue'
 import SearchFilters from './components/SearchFilters.vue'
+import VideoModal from './components/VideoModal.vue'
 
 export default {
   name: 'app',
   components: {
     Results,
     Search,
-    SearchFilters
+    SearchFilters,
+    VideoModal
   }
 }
 </script>
