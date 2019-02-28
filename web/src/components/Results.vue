@@ -32,7 +32,7 @@
               </svg>
               {{ item.time_start | formatTime }} - {{ item.time_end | formatTime }}
             </span>
-            <a class="badge badge-secondary video-link" :href="item.link" target="_blank">
+            <span class="badge badge-secondary video-link" @click="onVideoBtnClick(item)">
               Play Video
               <svg class="icon-play" width="14" height="14" viewBox="0 0 24 24">
                 <path d="M0 0h24v24H0z" fill="none"></path>
@@ -40,7 +40,7 @@
                   d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
                 ></path>
               </svg>
-            </a>
+            </span>
             <p class="item-content" v-html="highlight(item.content)"></p>
           </div>
         </div>
@@ -105,7 +105,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['setResultsPage']),
+    ...mapActions(['setResultsPage', 'setCurrentResult']),
     highlight(content) {
       this.queryTerms.forEach(term => {
         const re = new RegExp('\\b' + term + '\\b', 'gi')
@@ -116,6 +116,9 @@ export default {
     onPaginationChange(page) {
       window.scrollTo(0, 0) // scroll to top
       this.setResultsPage(page)
+    },
+    onVideoBtnClick(result) {
+      this.setCurrentResult(result)
     },
     getAggregationObject(d) {
       const key = Object.keys(d)[0]
@@ -227,6 +230,7 @@ export default {
   .video-link {
     display: none;
     float: right;
+    cursor: pointer;
   }
   .card-body:hover .video-link {
     display: block;
