@@ -8,6 +8,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    currentResult: null,
     loading: false,
     query: '',
     queryDate: null, // date.from - date.to
@@ -20,6 +21,9 @@ export default new Vuex.Store({
       commit('setQuery', payload)
       commit('setResultsPage', 0) // clear results page
       commit('search')
+    },
+    setCurrentResult({ commit }, payload) {
+      commit('setCurrentResult', payload)
     },
     setQueryDate({ commit, state }, payload) {
       commit('setQueryDate', payload)
@@ -56,6 +60,9 @@ export default new Vuex.Store({
           state.results = response.data
           state.loading = false
         })
+    },
+    setCurrentResult(state, payload) {
+      state.currentResult = payload
     },
     setQuery(state, payload) {
       state.loading = true
