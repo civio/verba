@@ -55,7 +55,13 @@ export default new Vuex.Store({
       }
       // search request
       axios
-        .get(process.env.VUE_APP_API_URL + 'search', { params })
+        .get(process.env.VUE_APP_API_URL + 'search', {
+          params,
+          auth: {
+            username: process.env.VUE_APP_API_USERNAME,
+            password: process.env.VUE_APP_API_PASSWORD
+          }
+        })
         .then(response => {
           state.results = response.data
           state.loading = false
