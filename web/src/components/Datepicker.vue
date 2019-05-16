@@ -51,9 +51,9 @@ export default {
         'change',
         from
           ? {
-              from: from,
-              to: to ? to : from
-            }
+            from: from,
+            to: to || from
+          }
           : null
       )
     },

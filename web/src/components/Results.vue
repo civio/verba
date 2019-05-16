@@ -81,8 +81,8 @@ export default {
       return this.results && this.results.aggregations
         ? this.queryDate
           ? this.results.aggregations.map(this.getAggregationObject).filter(
-              d => d.x >= this.queryDate.from && d.x <= this.queryDate.to // apply date filter
-            )
+            d => d.x >= this.queryDate.from && d.x <= this.queryDate.to // apply date filter
+          )
           : this.results.aggregations.map(this.getAggregationObject)
         : []
     },

@@ -80,10 +80,11 @@ export default new Vuex.Store({
           : []
       // concat to queryTerms words between doubled quotes
       const quotedWords = state.query.match(re)
-      if (quotedWords)
+      if (quotedWords) {
         state.queryTerms = state.queryTerms.concat(
           quotedWords.map(term => term.replace(/"/g, '').trim()) // clear words (remove doubled quotes & extra spaces)
         )
+      }
     },
     setQueryDate(state, payload) {
       state.queryDate = payload

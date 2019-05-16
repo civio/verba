@@ -30,8 +30,8 @@ export default {
       return this.queryDate
         ? this.queryDate.from.getTime() !== this.queryDate.to.getTime()
           ? `${this.formatDate(this.queryDate.from)} - ${this.formatDate(
-              this.queryDate.to
-            )}`
+            this.queryDate.to
+          )}`
           : this.formatDate(this.queryDate.from)
         : 'Date'
     }

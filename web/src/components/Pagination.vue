@@ -36,10 +36,10 @@ export default {
       return this.size <= 10
         ? this.range(1, this.size)
         : this.current <= 5
-        ? this.range(1, 10)
-        : this.current > this.size - 6
-        ? this.range(this.size - 10, this.size)
-        : this.range(this.current - 4, this.current + 5)
+          ? this.range(1, 10)
+          : this.current > this.size - 6
+            ? this.range(this.size - 10, this.size)
+            : this.range(this.current - 4, this.current + 5)
     }
   },
   methods: {
