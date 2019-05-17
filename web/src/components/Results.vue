@@ -6,7 +6,7 @@
     <div v-else-if="results">
       <AreaChart :data="aggregations" v-if="showChart"/>
       <p class="my-4">
-        <span class="text-secondary" v-if="results.length > 50">Page {{ resultsPage + 1 }} of</span>
+        <span class="text-secondary" v-if="results.length > 50">Page {{ resultsPage + 1 }} of {{ Math.ceil(results.length / 50) }}</span>
         {{ results.length.toLocaleString() }} results for
         <strong>{{ query }}</strong>
       </p>
