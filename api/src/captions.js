@@ -69,7 +69,7 @@ export default class Captions {
   parseResults(results, page) {
     const data = {
       page,
-      length: results.hits.total,
+      length: results.hits.total.value,
       results: results.hits.hits.map(d => ({
         id: d._id,
         link: d._source.url,
