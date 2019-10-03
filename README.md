@@ -13,7 +13,7 @@ Project setup:
 npm postinstall
 ```
 
-Configure connection to Elastic backend making a copy of `/api/.env.example` into `/api.env` and modifying it accordingly.
+Configure connection to Elastic backend making a copy of `/api/.env.example` into `/api.env` and modifying it accordingly. Same with `/web/.env.example`.
 
 Start server (both API and web):
 
