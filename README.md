@@ -27,6 +27,22 @@ Compile and minifies for production:
 npm build
 ```
 
+## ElasticSearch
+
+Estamos usando Elastic 7. Para instalarlo en OS X puedes usar `brew`, como [explican aquí](https://www.elastic.co/guide/en/elastic-stack-get-started/7.3/get-started-elastic-stack.html#install-elasticsearch):
+
+```
+brew tap elastic/tap
+brew install elastic/tap/elasticsearch-full
+elasticsearch
+```
+
+Y lo mismo con Kibana:
+
+```
+brew install elastic/tap/kibana-full
+kibana
+```
 
 ## Deployment
 
