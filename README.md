@@ -30,4 +30,20 @@ npm build
 
 ## Deployment
 
-Desplegado en `midas`, en `/var/www/verba-volant.civio.es/`. Hay dos partes, el frontend que se sirve por el Apache y el API que es un servicio que levanta un Express (Node.js). La configuración (variables de entorno...) del servicio está en `/etc/systemd/system/verba-api.service`.
+La aplicación está desplegada en `midas`, en `/var/www/verba-volant.civio.es/`. Hay dos partes, el frontend (hecho con Vue.js) que se sirve por el Apache y el API que es un servicio que levanta una aplicación Express. La configuración (variables de entorno...) del servicio está en `/etc/systemd/system/verba-api.service`.
+
+Para actualizar la aplicación:
+
+```
+$ cd /var/www/verba-volant.civio.es/public
+$ git pull
+$ npm run build
+$ sudo service verba-api restart
+```
+
+Una vez desplegada, la aplicación ofrece dos URLs:
+
+- `https://verba-volant.civio.es/`, la aplicación web.
+- `https://verba-volant.civio.es/api/`, el API usado por la aplicación.
+
+Temporalmente tenemos también el Elastic abierto, mientras pulimos el proceso de desarrollo, en `https://api-verba-volant.civio.es/`.
