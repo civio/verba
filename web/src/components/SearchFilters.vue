@@ -1,7 +1,6 @@
 <template>
   <div class="search-filters">
     <button :class="dateBtnClass" @click="onDateClick">{{ dateStr }}</button>
-    <button class="btn btn-sm btn-outline-secondary">Type</button>
     <Datepicker :visible="datepickerVisible" @change="onDatepickerChange"/>
   </div>
 </template>
