@@ -33,15 +33,6 @@ export default {
     return {
       width: 0,
       height: 0,
-      scale: {
-        x: null,
-        y: null
-      },
-      axis: {
-        x: null,
-        y: null
-      },
-      barWidth: 0
     }
   },
   computed: {
@@ -89,23 +80,23 @@ export default {
     },
     update() {
       // update scales domain
-      this.barWidth = this.padded.width / this.data.length
-      this.scale.x = d3
+      const barWidth = this.padded.width / this.data.length
+      const scale_x = d3
         .scaleTime()
-        .range([0, this.padded.width - this.barWidth])
+        .range([0, this.padded.width - barWidth])
         .domain([this.data[0].x, this.data[this.data.length - 1].x])
-      this.scale.y = d3
+      const scale_y = d3
         .scaleLinear()
         .range([this.padded.height, 0])
         .domain(d3.extent(this.data, d => d.y)).nice()
 
       // setup axis
-      this.axis.x = d3
-        .axisBottom(this.scale.x)
+      const axis_x = d3
+        .axisBottom(scale_x)
         .tickSizeOuter(0)
         .ticks(d3.timeYear)
-      this.axis.y = d3
-        .axisLeft(this.scale.y)
+      const axis_y = d3
+        .axisLeft(scale_y)
         .tickFormat(d3.format(',d'))
         .ticks(this.height / 50)
 
@@ -114,10 +105,10 @@ export default {
         .selectAll("rect")
         .data(this.data)
         .join("rect")
-          .attr("x", d => this.scale.x(d.x))
-          .attr("y", d => this.scale.y(d.y))
-          .attr("height", d => this.scale.y(0) - this.scale.y(d.y))
-          .attr("width", this.barWidth)
+          .attr("x", d => scale_x(d.x))
+          .attr("y", d => scale_y(d.y))
+          .attr("height", d => scale_y(0) - scale_y(d.y))
+          .attr("width", barWidth)
 
       // render axis
       d3.select(this.$refs.axisX)
@@ -125,11 +116,11 @@ export default {
           'transform',
           `translate(${this.margin.left}, ${this.height - this.margin.bottom})`
         )
-        .call(this.axis.x)
+        .call(axis_x)
         .call(this.formatAxisX)
       d3.select(this.$refs.axisY)
         .attr('transform', `translate(${this.margin.left}, ${this.margin.top})`)
-        .call(this.axis.y)
+        .call(axis_y)
         .call(this.formatAxisY)
     }
   }
