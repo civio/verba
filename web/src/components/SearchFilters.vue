@@ -2,7 +2,6 @@
   <div class="search-filters">
     <button :class="dateBtnClass" @click="onDateClick">{{ dateStr }}</button>
     <Datepicker :visible="datepickerVisible" @change="onDatepickerChange"/>
-    <MyCalendar/>
     <MyCalendar2/>
   </div>
 </template>
