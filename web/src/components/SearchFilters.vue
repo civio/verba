@@ -2,6 +2,8 @@
   <div class="search-filters">
     <button :class="dateBtnClass" @click="onDateClick">{{ dateStr }}</button>
     <Datepicker :visible="datepickerVisible" @change="onDatepickerChange"/>
+    <MyCalendar/>
+    <MyCalendar2/>
   </div>
 </template>
 
@@ -9,10 +11,11 @@
 import moment from 'moment'
 import { mapActions, mapState } from 'vuex'
 import Datepicker from './Datepicker.vue'
+import MyCalendar2 from './MyCalendar2.vue'
 
 export default {
   name: 'SearchFilters',
-  components: { Datepicker },
+  components: { Datepicker, MyCalendar2 },
   data() {
     return {
       datepickerVisible: false
