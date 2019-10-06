@@ -39,8 +39,8 @@ export default {
       )})</small>`
     },
     videoUrl: function() {
+      // XXX: We try embedding from a given time, but it doesn't work, see #27
       const parts = this.currentResult.link.split('/')
-      // get video id + time parameter (XXXXXXX?t=YYhXXmZZs)
       return `https://secure-embed.rtve.es/drmn/embed/video/${
         parts[parts.length - 1]
       }`
