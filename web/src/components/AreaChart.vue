@@ -3,9 +3,7 @@
     <svg :width="width" :height="height">
       <g ref="axisX" class="axis x"></g>
       <g ref="axisY" class="axis y"></g>
-      <g :style="{transform: `translate(${margin.left}px, ${margin.top}px)`}">
-        <path class="area" :d="paths.area"></path>
-        <path class="line" :d="paths.line"></path>
+      <g ref="bars" :style="{transform: `translate(${margin.left}px, ${margin.top}px)`}">
       </g>
     </svg>
   </div>
@@ -35,10 +33,6 @@ export default {
     return {
       width: 0,
       height: 0,
-      paths: {
-        area: '',
-        line: ''
-      },
       scale: {
         x: null,
         y: null
@@ -47,7 +41,7 @@ export default {
         x: null,
         y: null
       },
-      points: []
+      barWidth: 0
     }
   },
   computed: {
@@ -74,15 +68,6 @@ export default {
     }
   },
   methods: {
-    createArea: d3
-      .area()
-      .x(d => d.x)
-      .y0(d => d.max)
-      .y1(d => d.y),
-    createLine: d3
-      .line()
-      .x(d => d.x)
-      .y(d => d.y),
     formatAxisX(g) {
       return g
         .selectAll('.tick line')
@@ -96,9 +81,24 @@ export default {
         .attr('x2', this.padded.width)
     },
     initialize() {
-      // setup scales
-      this.scale.x = d3.scaleTime().range([0, this.padded.width])
-      this.scale.y = d3.scaleLinear().range([this.padded.height, 0])
+    },
+    onResize() {
+      // update width & height based on parent container
+      this.width = this.$el.offsetWidth
+      this.height = this.$el.offsetHeight
+    },
+    update() {
+      // update scales domain
+      this.barWidth = this.padded.width / this.data.length
+      this.scale.x = d3
+        .scaleTime()
+        .range([0, this.padded.width - this.barWidth])
+        .domain([this.data[0].x, this.data[this.data.length - 1].x])
+      this.scale.y = d3
+        .scaleLinear()
+        .range([this.padded.height, 0])
+        .domain(d3.extent(this.data, d => d.y)).nice()
+
       // setup axis
       this.axis.x = d3
         .axisBottom(this.scale.x)
@@ -108,25 +108,17 @@ export default {
         .axisLeft(this.scale.y)
         .tickFormat(d3.format(',d'))
         .ticks(this.height / 50)
-    },
-    onResize() {
-      // update width & height based on parent container
-      this.width = this.$el.offsetWidth
-      this.height = this.$el.offsetHeight
-    },
-    update() {
-      // update scales domain
-      this.scale.x.domain([this.data[0].x, this.data[this.data.length - 1].x])
-      this.scale.y.domain(d3.extent(this.data, d => d.y)).nice()
-      // set points from data
-      this.points = this.data.map(d => ({
-        x: this.scale.x(d.x),
-        y: this.scale.y(d.y),
-        max: this.padded.height
-      }))
-      // update paths
-      this.paths.area = this.createArea(this.points)
-      this.paths.line = this.createLine(this.points)
+
+      // update bars
+      d3.select(this.$refs.bars)
+        .selectAll("rect")
+        .data(this.data)
+        .join("rect")
+          .attr("x", d => this.scale.x(d.x))
+          .attr("y", d => this.scale.y(d.y))
+          .attr("height", d => this.scale.y(0) - this.scale.y(d.y))
+          .attr("width", this.barWidth)
+
       // render axis
       d3.select(this.$refs.axisX)
         .attr(
@@ -190,18 +182,9 @@ export default {
     }
   }
 
-  .line {
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 1.5;
-    stroke-linejoin: round;
-    stroke-linecap: round;
-  }
-
-  .area {
-    stroke: none;
+  rect {
     fill: currentColor;
-    opacity: 0.15;
+    opacity: 0.5;
   }
 }
 </style>
