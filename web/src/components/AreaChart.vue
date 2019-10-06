@@ -1,9 +1,9 @@
 <template>
-  <div class="chart-container">
-    <svg :width="width" :height="height">
-      <g ref="axisX" class="axis x"></g>
-      <g ref="axisY" class="axis y"></g>
-      <g ref="bars" :style="{transform: `translate(${margin.left}px, ${margin.top}px)`}">
+  <div class='chart-container'>
+    <svg :width='width' :height='height'>
+      <g ref='axisX' class='axis x'></g>
+      <g ref='axisY' class='axis y'></g>
+      <g ref='bars' :style='{transform: `translate(${margin.left}px, ${margin.top}px)`}'>
       </g>
     </svg>
   </div>
@@ -91,24 +91,24 @@ export default {
         .domain(d3.extent(this.data, d => d.y)).nice()
 
       // setup axis
-      const axis_x = d3
+      const axisX = d3
         .axisBottom(scaleX)
         .tickSizeOuter(0)
         .ticks(d3.timeYear)
-      const axis_y = d3
+      const axisY = d3
         .axisLeft(scaleY)
         .tickFormat(d3.format(',d'))
         .ticks(this.height / 50)
 
       // update bars
       d3.select(this.$refs.bars)
-        .selectAll("rect")
+        .selectAll('rect')
         .data(this.data)
-        .join("rect")
-          .attr("x", d => scaleX(d.x))
-          .attr("y", d => scaleY(d.y))
-          .attr("height", d => scaleY(0) - scaleY(d.y))
-          .attr("width", barWidth)
+        .join('rect')
+        .attr('x', d => scaleX(d.x))
+        .attr('y', d => scaleY(d.y))
+        .attr('height', d => scaleY(0) - scaleY(d.y))
+        .attr('width', barWidth)
 
       // render axis
       d3.select(this.$refs.axisX)
@@ -116,18 +116,18 @@ export default {
           'transform',
           `translate(${this.margin.left}, ${this.height - this.margin.bottom})`
         )
-        .call(axis_x)
+        .call(axisX)
         .call(this.formatAxisX)
       d3.select(this.$refs.axisY)
         .attr('transform', `translate(${this.margin.left}, ${this.margin.top})`)
-        .call(axis_y)
+        .call(axisY)
         .call(this.formatAxisY)
     }
   }
 }
 </script>
 
-<style lang="scss">
+<style lang='scss'>
 .chart-container {
   width: 100%;
   height: 260px;
