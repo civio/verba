@@ -39,7 +39,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-@import './../node_modules/pikaday/css/pikaday.css';
-</style>

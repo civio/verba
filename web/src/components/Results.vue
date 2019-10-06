@@ -109,7 +109,7 @@ export default {
       return (
         this.aggregations.length > 1 &&
         (!this.queryDate ||
-          this.queryDate.from.getTime() !== this.queryDate.to.getTime())
+          this.queryDate.from !== this.queryDate.to)
       )
     }
   },

@@ -1,20 +1,18 @@
 <template>
   <div class="search-filters">
     <button :class="dateBtnClass" @click="onDateClick">{{ dateStr }}</button>
-    <Datepicker :visible="datepickerVisible" @change="onDatepickerChange"/>
-    <MyCalendar2/>
+    <DateRangeFilter :visible="datepickerVisible" @change="onDatepickerChange"/>
   </div>
 </template>
 
 <script>
 import moment from 'moment'
 import { mapActions, mapState } from 'vuex'
-import Datepicker from './Datepicker.vue'
-import MyCalendar2 from './MyCalendar2.vue'
+import DateRangeFilter from './DateRangeFilter.vue'
 
 export default {
   name: 'SearchFilters',
-  components: { Datepicker, MyCalendar2 },
+  components: { DateRangeFilter },
   data() {
     return {
       datepickerVisible: false
@@ -29,12 +27,10 @@ export default {
     },
     dateStr: function() {
       return this.queryDate
-        ? this.queryDate.from.getTime() !== this.queryDate.to.getTime()
-          ? `${this.formatDate(this.queryDate.from)} - ${this.formatDate(
-            this.queryDate.to
-          )}`
+        ? this.queryDate.from !== this.queryDate.to
+          ? `Showing: ${this.formatDate(this.queryDate.from)} - ${this.formatDate(this.queryDate.to)}`
           : this.formatDate(this.queryDate.from)
-        : 'Date'
+        : 'Filter by date'
     }
   },
   methods: {
