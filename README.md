@@ -53,6 +53,7 @@ Para actualizar la aplicación:
 ```
 $ cd /var/www/verba-volant.civio.es/public
 $ git pull
+$ npm run postinstall
 $ npm run build
 $ sudo service verba-api restart
 ```
