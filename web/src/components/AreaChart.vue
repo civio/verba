@@ -32,7 +32,7 @@ export default {
   data() {
     return {
       width: 0,
-      height: 0,
+      height: 0
     }
   },
   computed: {
@@ -81,22 +81,22 @@ export default {
     update() {
       // update scales domain
       const barWidth = this.padded.width / this.data.length
-      const scale_x = d3
+      const scaleX = d3
         .scaleTime()
         .range([0, this.padded.width - barWidth])
         .domain([this.data[0].x, this.data[this.data.length - 1].x])
-      const scale_y = d3
+      const scaleY = d3
         .scaleLinear()
         .range([this.padded.height, 0])
         .domain(d3.extent(this.data, d => d.y)).nice()
 
       // setup axis
       const axis_x = d3
-        .axisBottom(scale_x)
+        .axisBottom(scaleX)
         .tickSizeOuter(0)
         .ticks(d3.timeYear)
       const axis_y = d3
-        .axisLeft(scale_y)
+        .axisLeft(scaleY)
         .tickFormat(d3.format(',d'))
         .ticks(this.height / 50)
 
@@ -105,9 +105,9 @@ export default {
         .selectAll("rect")
         .data(this.data)
         .join("rect")
-          .attr("x", d => scale_x(d.x))
-          .attr("y", d => scale_y(d.y))
-          .attr("height", d => scale_y(0) - scale_y(d.y))
+          .attr("x", d => scaleX(d.x))
+          .attr("y", d => scaleY(d.y))
+          .attr("height", d => scaleY(0) - scaleY(d.y))
           .attr("width", barWidth)
 
       // render axis
