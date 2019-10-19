@@ -1,0 +1,68 @@
+version: "3.7"
+
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.4.0
+    environment:
+      - node.name=es01
+      - cluster.initial_master_nodes=es01
+      - cluster.name=verba-volant
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - type: volume
+        source: elasticsearch_data
+        target: /usr/share/elasticsearch/data
+    ports:
+      - "9200:9200"
+
+  web:
+    build:
+      context: $PWD/web
+      dockerfile: $PWD/web/Dockerfile
+      target: base
+    volumes:
+      - type: bind
+        source: $PWD/web
+        target: /web
+        consistency: delegated
+      - type: volume
+        target: /web/node_modules
+    ports:
+      - "8080:8080"
+    environment:
+      - "NODE_ENV=development"
+      - "VUE_APP_API_URL=http://localhost:8888/"
+    depends_on:
+      - api
+    command: ["npm", "run", "start"]
+
+  api:
+    build:
+      context: $PWD/api
+      dockerfile: $PWD/api/Dockerfile
+      target: base
+    volumes:
+      - type: bind
+        source: $PWD/api
+        target: /api
+        consistency: delegated
+      - type: volume
+        target: /api/node_modules
+    init: true
+    ports:
+      - "8888:8888"
+    environment:
+      - "NODE_ENV=development"
+      - "PORT=8888"
+      - "ELASTIC_API_URL=http://elasticsearch:9200"
+    depends_on:
+      - elasticsearch
+    command: ["npm", "run", "start"]
+
+volumes:
+  elasticsearch_data:
