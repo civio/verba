@@ -66,22 +66,26 @@ export default class Captions {
     return obj
   }
 
+  mapResult(d) {
+    return {
+      id: d._id,
+      link: d._source.url,
+      content: d._source.text,
+      time_start: Math.floor(d._source.start),
+      time_end: Math.ceil(d._source.end),
+      programme: {
+        id: d._source.programme_id,
+        title: d._source.programme_title,
+        date: d._source.programme_date
+      }
+    }
+  }
+
   parseResults(results, page) {
     const data = {
       page,
       length: results.hits.total.value,
-      results: results.hits.hits.map(d => ({
-        id: d._id,
-        link: d._source.url,
-        content: d._source.text,
-        time_start: Math.floor(d._source.start),
-        time_end: Math.ceil(d._source.end),
-        programme: {
-          id: d._source.programme_id,
-          title: d._source.programme_title,
-          date: d._source.programme_date
-        }
-      }))
+      results: results.hits.hits.map(this.mapResult)
     }
     if (results.aggregations) {
       data.aggregations = results.aggregations.matches_over_time.buckets.map(
@@ -115,5 +119,28 @@ export default class Captions {
       )
     })
     return this.parseResults(results, page)
+  }
+
+  async fetchContext(
+    programme_id,
+    start_time,
+    range
+  ) {
+    const query = {
+      query: {
+        bool: {
+          filter: [
+            { term: { programme_id: programme_id } },
+            { range: { start: { gte: parseInt(start_time)-range/2, lte: parseInt(start_time)+range/2 }} }
+          ]
+        }
+      },
+      sort: { start: { order: 'asc' }}
+    }
+    const results = await this.client.search({
+      index: 'captions',
+      body: query
+    })
+    return results.hits.hits.map(this.mapResult)
   }
 }

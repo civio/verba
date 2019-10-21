@@ -9,8 +9,10 @@
           </button>
         </div>
         <div class="modal-body">
-          <div class="video-responsive">
-            <iframe frameborder="0" :src="videoUrl" scrolling="no" allowfullscreen></iframe>
+          <div v-if="resultContext">
+            <p v-for="(items, key) in resultContext" :key="key">
+              {{ items.time_start | formatTime }}: {{ items.content }}
+            </p>
           </div>
         </div>
       </div>
@@ -24,9 +26,12 @@ import moment from 'moment'
 import { mapActions, mapState } from 'vuex'
 
 export default {
-  name: 'VideoModal',
+  name: 'ResultContext',
   computed: {
-    ...mapState(['currentResult']),
+    ...mapState([
+      'currentResult',
+      'resultContext'
+    ]),
     title: function() {
       const date = this.currentResult.programme.date
       return `<strong>${moment(date).format(
@@ -37,13 +42,6 @@ export default {
       )}h <small>(${this.$options.filters.formatTime(
         this.currentResult.time_start
       )})</small>`
-    },
-    videoUrl: function() {
-      // XXX: We try embedding from a given time, but it doesn't work, see #27
-      const parts = this.currentResult.link.split('/')
-      return `https://secure-embed.rtve.es/drmn/embed/video/${
-        parts[parts.length - 1]
-      }`
     }
   },
   watch: {
@@ -87,18 +85,5 @@ export default {
   opacity: 0.5;
   z-index: 1;
   cursor: pointer;
-}
-.video-responsive {
-  position: relative;
-  height: 0;
-  padding-bottom: 56.25%;
-
-  iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
 }
 </style>

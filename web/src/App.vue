@@ -19,7 +19,7 @@
         </div>
       </div>
     </div>
-    <VideoModal/>
+    <ResultContext/>
   </div>
 </template>
 
@@ -27,7 +27,7 @@
 import Results from './components/Results.vue'
 import Search from './components/Search.vue'
 import SearchFilters from './components/SearchFilters.vue'
-import VideoModal from './components/VideoModal.vue'
+import ResultContext from './components/ResultContext.vue'
 
 export default {
   name: 'app',
@@ -35,7 +35,7 @@ export default {
     Results,
     Search,
     SearchFilters,
-    VideoModal
+    ResultContext
   }
 }
 </script>
