@@ -24,7 +24,7 @@
 import { mapActions } from 'vuex'
 
 export default {
-  name: 'Search',
+  name: 'SearchBox',
   mounted() {
     // set focus on search input
     this.$refs.searchInput.focus()

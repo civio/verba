@@ -72,7 +72,7 @@ export default {
   },
   watch: {
     range: function(e) {
-      if (this.range[0]==this.options.startDate && this.range[1]==this.options.endDate) {
+      if (this.range[0] === this.options.startDate && this.range[1] === this.options.endDate) {
         this.$emit('change', null)
       } else {
         this.$emit('change', { from: moment(this.range[0], 'DD/MM/YYYY'), to: moment(this.range[1], 'DD/MM/YYYY') })
