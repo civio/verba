@@ -23,6 +23,8 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 import Results from './components/Results.vue'
 import SearchBox from './components/SearchBox.vue'
 import SearchFilters from './components/SearchFilters.vue'
@@ -34,6 +36,12 @@ export default {
     SearchBox,
     SearchFilters,
     ResultContext
+  },
+  methods: {
+    ...mapActions(['initializeSearchFromURL'])
+  },
+  mounted() {
+    this.initializeSearchFromURL()
   }
 }
 </script>

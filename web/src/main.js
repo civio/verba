@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import store from './store'
+import { sync } from 'vuex-router-sync'
 
 import App from './App.vue'
 import Search from './Search.vue'
@@ -19,8 +20,10 @@ Vue.filter('formatTime', time => {
   return `${min}'${sec < 10 ? '0' + sec : sec}''`
 })
 
-// Routing setup
-const router = new VueRouter({
+// Routing setup.
+// Note: We make the router global to use it from the store.
+// Is this good? :shrug: https://stackoverflow.com/a/40768840
+global.router = new VueRouter({
   mode: 'history',
   routes: [
     {
@@ -35,11 +38,12 @@ const router = new VueRouter({
     }
   ]
 })
+sync(store, global.router)
 Vue.use(VueRouter)
 
 // Launch the app
 new Vue({
-  router,
+  router: global.router,
   store,
   render: h => h(App)
 }).$mount('#app')

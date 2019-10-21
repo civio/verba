@@ -6,6 +6,7 @@
       ref="searchInput"
       placeholder="Search a term"
       @change="onChange"
+      :value="query"
     >
     <div class="input-group-append">
       <button class="btn btn-primary" type="button">
@@ -21,13 +22,16 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 
 export default {
   name: 'SearchBox',
   mounted() {
     // set focus on search input
     this.$refs.searchInput.focus()
+  },
+  computed: {
+    ...mapState(['query'])
   },
   methods: {
     ...mapActions(['search']),

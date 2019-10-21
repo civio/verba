@@ -18,10 +18,17 @@ export default new Vuex.Store({
     resultsPage: 0
   },
   actions: {
+    initializeSearchFromURL({ commit }) {
+      commit('setQuery', this.state.route.query.q)
+      commit('setResultsPage', 0) // clear results page
+      commit('search')
+    },
     search({ commit }, payload) {
       commit('setQuery', payload)
       commit('setResultsPage', 0) // clear results page
       commit('search')
+      // Store the query in the URL also
+      global.router.push({ query: { q: this.state.query } })
     },
     setCurrentResult({ commit }, payload) {
       commit('setCurrentResult', payload)
@@ -84,9 +91,12 @@ export default new Vuex.Store({
     },
     setQuery(state, payload) {
       state.loading = true
+      payload = payload || ''
       state.query = payload.trim() // store query
+
       // Set queryTerms (get terms array from query)
       const re = new RegExp(/"(.*?)"/g) // regexp for words between doubled quotes
+
       // extract single words in query (removing words between doubled quotes)
       const singleWords = state.query
         .replace(re, '') // remove words between quotes
@@ -96,6 +106,7 @@ export default new Vuex.Store({
         singleWords !== ''
           ? singleWords.split(/\s+/) // split by whitespaces avoiding empty tokens
           : []
+
       // concat to queryTerms words between doubled quotes
       const quotedWords = state.query.match(re)
       if (quotedWords) {
