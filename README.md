@@ -60,7 +60,10 @@ $ sudo service verba-api restart
 
 Una vez desplegada, la aplicación ofrece dos URLs:
 
-- `https://verba-volant.civio.es/`, la aplicación web.
+- [`verba-volant.civio.es`](https://verba-volant.civio.es/), la aplicación web.
 - `https://verba-volant.civio.es/api/`, el API usado por la aplicación.
 
-Temporalmente tenemos también el Elastic abierto, mientras pulimos el proceso de desarrollo, en `https://api-verba-volant.civio.es/`.
+Temporalmente tenemos también, mientras pulimos el proceso de desarrollo:
+
+- El Elastic abierto en [`api-verba-volant.civio.es`](https://api-verba-volant.civio.es/).
+- El Kibana en producción, en [`kibana-verba-volant.civio.es`](https://kibana-verba-volant.civio.es).
