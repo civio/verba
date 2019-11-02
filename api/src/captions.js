@@ -40,6 +40,7 @@ export default class Captions {
         'text',
         'start',
         'end',
+        'entities',
         'programme_id',
         'programme_date'
       ],
@@ -73,6 +74,13 @@ export default class Captions {
       content: d._source.text,
       time_start: Math.floor(d._source.start),
       time_end: Math.ceil(d._source.end),
+      entities: d._source.entities.map(e => {
+        return {
+          text: e.text,
+          confidence: e.confidence,
+          type: e.type
+        }
+      }),
       programme: {
         id: d._source.programme_id,
         title: d._source.programme_title,
