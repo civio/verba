@@ -45,6 +45,9 @@
               Show context
             </span>
             <p class="item-content" v-html="highlight(item.content)"></p>
+            <span class="badge" v-for="(entity, key) in item.entities" :key="key">
+              {{ entity.type }}/{{ entity.text }}
+            </span>
           </div>
         </div>
       </div>
