@@ -93,16 +93,22 @@ export default {
         : []
     },
     resultsByProgramme() {
-      // group results array by programme.id
-      return this.results.results.reduce((groups, item) => {
-        const key = item.programme.id
-        groups[key] = groups[key] || []
-        groups[key].push(item)
-        return groups
-      }, {})
+      // Group results array by programme.id **keeping the existing order**.
+      // We rely on the fact that results come pre-ordered, so programme ids are consecutive.
+      // Note that using Array.reduce() or similar doesn't guarantee the resulting order.
+      const groups = []
+      this.results.results.forEach((item, index) => {
+        const last_programme_id = (groups.length > 0) ? groups[groups.length-1][0].programme.id : -1
+        if (item.programme.id === last_programme_id) {
+          groups[groups.length-1].push(item)
+        } else {
+          groups.push([item])
+        }
+      })
+      return groups
     },
     showChart() {
-      // hide chart if no data or date filter range is a single day (queryDate.from == queryDate.to)
+      // Hide chart if no data or date filter range is a single day (queryDate.from == queryDate.to)
       return (
         this.aggregations.length > 1 &&
         (!this.queryDate ||
