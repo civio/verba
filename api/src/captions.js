@@ -16,7 +16,8 @@ export default class Captions {
         must: {
           simple_query_string: {
             query: query_str,
-            fields: ['text']
+            fields: ['text'],
+            default_operator: 'AND'
           }
         }
       }
