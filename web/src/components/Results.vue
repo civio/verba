@@ -98,9 +98,9 @@ export default {
       // Note that using Array.reduce() or similar doesn't guarantee the resulting order.
       const groups = []
       this.results.results.forEach((item, index) => {
-        const last_programme_id = (groups.length > 0) ? groups[groups.length-1][0].programme.id : -1
-        if (item.programme.id === last_programme_id) {
-          groups[groups.length-1].push(item)
+        const lastProgrammeId = (groups.length > 0) ? groups[groups.length - 1][0].programme.id : -1
+        if (item.programme.id === lastProgrammeId) {
+          groups[groups.length - 1].push(item)
         } else {
           groups.push([item])
         }
