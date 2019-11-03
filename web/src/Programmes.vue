@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import Vue from 'vue'
 
 export default {
   data() {
@@ -20,11 +20,9 @@ export default {
     }
   },
   mounted() {
-    axios
-      .get(process.env.VUE_APP_API_URL + 'fetchProgrammeList')
-      .then(response => {
-        this.programmeList = response.data
-      })
+    Vue.verbaAPI('fetchProgrammeList', null, response => {
+      this.programmeList = response.data
+    })
   }
 }
 </script>

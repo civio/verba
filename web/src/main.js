@@ -7,6 +7,7 @@ import App from './App.vue'
 import Search from './Search.vue'
 import Programmes from './Programmes.vue'
 import About from './About.vue'
+import VerbaAPI from './verba-api.js'
 
 import DateRangePicker from '@gravitano/vue-date-range-picker'
 
@@ -20,6 +21,9 @@ Vue.filter('formatTime', time => {
   const sec = time % 60
   return `${min}'${sec < 10 ? '0' + sec : sec}''`
 })
+
+// Use a plugin to wrap all access to the API
+Vue.use(VerbaAPI)
 
 // Routing setup.
 // Note: We make the router global to use it from the store.

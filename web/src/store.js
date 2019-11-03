@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-
 import moment from 'moment'
-import axios from 'axios'
 
 Vue.use(Vuex)
 
@@ -61,12 +59,10 @@ export default new Vuex.Store({
         params.date_to = moment(state.queryDate.to).format('YYYY-MM-DD')
       }
       // search request
-      axios
-        .get(process.env.VUE_APP_API_URL + 'search', { params })
-        .then(response => {
-          state.results = response.data
-          state.loading = false
-        })
+      Vue.verbaAPI('search', params, response => {
+        state.results = response.data
+        state.loading = false
+      })
     },
     setCurrentResult(state, payload) {
       state.currentResult = payload

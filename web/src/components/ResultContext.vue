@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import Vue from 'vue'
 import moment from 'moment'
 import { mapActions, mapState } from 'vuex'
 
@@ -68,11 +68,9 @@ export default {
         start_time: this.currentResult.time_start,
         range: 60 // 1 minute context
       }
-      axios
-        .get(process.env.VUE_APP_API_URL + 'fetchContext', { params })
-        .then(response => {
-          this.resultContext = response.data
-        })
+      Vue.verbaAPI('fetchContext', params, response => {
+        this.resultContext = response.data
+      })
     }
   }
 }
