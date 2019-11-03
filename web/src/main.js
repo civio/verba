@@ -16,11 +16,18 @@ Vue.use(DateRangePicker)
 
 Vue.config.productionTip = false
 
-// Utility function used by different components
+// Utility functions used by different components
 Vue.filter('formatTime', time => {
   const min = Math.floor(time / 60)
   const sec = time % 60
   return `${min}'${sec < 10 ? '0' + sec : sec}''`
+})
+
+Vue.filter('imageURL', programme => {
+  // We don't have the URL in the database right now, so we generate it from its id,
+  // which is not totally robust, but works ok right now.
+  const filename = programme.title.toLowerCase().replace(/[ \/]/g, '-').replace(/-+/g, '-')
+  return `http://img2.rtve.es/v/${filename}_${programme.id}.png`
 })
 
 // Use a plugin to wrap all access to the API
