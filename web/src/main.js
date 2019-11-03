@@ -26,7 +26,7 @@ Vue.filter('formatTime', time => {
 Vue.filter('imageURL', programme => {
   // We don't have the URL in the database right now, so we generate it from its id,
   // which is not totally robust, but works ok right now.
-  const filename = programme.title.toLowerCase().replace(/[ \/]/g, '-').replace(/-+/g, '-')
+  const filename = programme.title.toLowerCase().replace(/[ /]/g, '-').replace(/-+/g, '-')
   return `https://img2.rtve.es/v/${filename}_${programme.id}.png`
 })
 
