@@ -160,9 +160,9 @@ export default class Captions {
         programmes: {
           composite: {
             sources: [
+              { date: { date_histogram: { field: 'programme_date', calendar_interval: '1d', format: 'yyyy-MM-dd', order: 'desc' } } },
               { id: { terms: {field: 'programme_id.keyword' } } },
-              { title: { terms: {field: 'programme_title.keyword' } } },
-              { date: { date_histogram: { field: 'programme_date', calendar_interval: '1d', format: 'yyyy-MM-dd' } } }
+              { title: { terms: {field: 'programme_title.keyword' } } }
             ],
             size : 10000
           }
