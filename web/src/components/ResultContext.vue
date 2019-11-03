@@ -22,16 +22,19 @@
 </template>
 
 <script>
+import axios from 'axios'
 import moment from 'moment'
 import { mapActions, mapState } from 'vuex'
 
 export default {
   name: 'ResultContext',
+  data() {
+    return {
+      resultContext: null
+    }
+  },
   computed: {
-    ...mapState([
-      'currentResult',
-      'resultContext'
-    ]),
+    ...mapState(['currentResult']),
     title: function() {
       const date = this.currentResult.programme.date
       return `<strong>${moment(date).format(
@@ -48,6 +51,7 @@ export default {
     currentResult: function() {
       if (this.currentResult) {
         document.body.classList.add('modal-open')
+        this.fetchResultContext()
       } else {
         document.body.classList.remove('modal-open')
       }
@@ -57,6 +61,18 @@ export default {
     ...mapActions(['setCurrentResult']),
     onClose: function() {
       this.setCurrentResult(null)
+    },
+    fetchResultContext() {
+      const params = {
+        programme_id: this.currentResult.programme.id,
+        start_time: this.currentResult.time_start,
+        range: 60 // 1 minute context
+      }
+      axios
+        .get(process.env.VUE_APP_API_URL + 'fetchContext', { params })
+        .then(response => {
+          this.resultContext = response.data
+        })
     }
   }
 }

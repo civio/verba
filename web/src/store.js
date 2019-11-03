@@ -9,7 +9,6 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     currentResult: null,
-    resultContext: null,
     loading: false,
     query: '',
     queryDate: null, // date.from - date.to
@@ -32,7 +31,6 @@ export default new Vuex.Store({
     },
     setCurrentResult({ commit }, payload) {
       commit('setCurrentResult', payload)
-      commit('fetchResultContext', payload)
     },
     setQueryDate({ commit, state }, payload) {
       commit('setQueryDate', payload)
@@ -72,22 +70,6 @@ export default new Vuex.Store({
     },
     setCurrentResult(state, payload) {
       state.currentResult = payload
-    },
-    fetchResultContext(state, payload) {
-      if (state.currentResult === null) {
-        state.resultContext = null
-      } else {
-        const params = {
-          programme_id: state.currentResult.programme.id,
-          start_time: state.currentResult.time_start,
-          range: 60 // 1 minute context
-        }
-        axios
-          .get(process.env.VUE_APP_API_URL + 'fetchContext', { params })
-          .then(response => {
-            state.resultContext = response.data
-          })
-      }
     },
     setQuery(state, payload) {
       state.loading = true
