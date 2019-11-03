@@ -48,5 +48,12 @@ app.get('/fetchProgrammeList', cors(), async (request, response) => {
   response.json(results)
 })
 
+app.get('/fetchProgrammeTranscription', cors(), async (request, response) => {
+  const results = await captions.fetchProgrammeTranscription(
+    request.query.programme_id
+  )
+  response.json(results)
+})
+
 // Register express routes & serve
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`))

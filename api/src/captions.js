@@ -175,4 +175,25 @@ export default class Captions {
     })
     return results.aggregations.programmes.buckets.map(d => { return d.key })
   }
+
+  async fetchProgrammeTranscription(
+    programme_id
+  ) {
+    const query = {
+      query: {
+        bool: {
+          filter: [
+            { term: { programme_id: programme_id } }
+          ]
+        }
+      },
+      size: 10000,
+      sort: { start: { order: 'asc' }}
+    }
+    const results = await this.client.search({
+      index: 'captions',
+      body: query
+    })
+    return results.hits.hits.map(this.mapResult)
+  }
 }

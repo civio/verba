@@ -5,7 +5,8 @@ import { sync } from 'vuex-router-sync'
 
 import App from './App.vue'
 import Search from './Search.vue'
-import Programmes from './Programmes.vue'
+import ProgrammeList from './ProgrammeList.vue'
+import Programme from './Programme.vue'
 import About from './About.vue'
 import VerbaAPI from './verba-api.js'
 
@@ -33,18 +34,23 @@ global.router = new VueRouter({
   routes: [
     {
       path: '/',
-      component: Search,
-      name: 'search'
+      name: 'search',
+      component: Search
     },
     {
       path: '/programmes',
-      component: Programmes,
-      name: 'programmes'
+      name: 'programmes',
+      component: ProgrammeList
+    },
+    {
+      path: '/programmes/:id',
+      name: 'programme-details',
+      component: Programme
     },
     {
       path: '/about',
-      component: About,
-      name: 'about'
+      name: 'about',
+      component: About
     }
   ]
 })

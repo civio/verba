@@ -3,7 +3,9 @@
     <div class="container">
       <ul class="list-unstyled">
         <li v-for="(programme, key) in programmeList" :key="key">
-          {{ programme }}
+          <router-link
+            :to="{ name: 'programme-details', params: { id: programme.id } }"
+            class="nav-link">{{ programme.title }}</router-link>
         </li>
       </ul>
     </div>
