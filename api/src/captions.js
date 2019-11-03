@@ -152,4 +152,27 @@ export default class Captions {
     })
     return results.hits.hits.map(this.mapResult)
   }
+
+  async fetchProgrammeList() {
+    const query = {
+      size: 0,
+      aggs: {
+        programmes: {
+          composite: {
+            sources: [
+              { id: { terms: {field: 'programme_id.keyword' } } },
+              { title: { terms: {field: 'programme_title.keyword' } } },
+              { date: { date_histogram: { field: 'programme_date', calendar_interval: '1d', format: 'yyyy-MM-dd' } } }
+            ],
+            size : 10000
+          }
+        }
+      }
+    }
+    const results = await this.client.search({
+      index: 'captions',
+      body: query
+    })
+    return results.aggregations.programmes.buckets.map(d => { return d.key })
+  }
 }

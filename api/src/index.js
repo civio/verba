@@ -43,5 +43,10 @@ app.get('/fetchContext', cors(), async (request, response) => {
   response.json(results)
 })
 
+app.get('/fetchProgrammeList', cors(), async (request, response) => {
+  const results = await captions.fetchProgrammeList()
+  response.json(results)
+})
+
 // Register express routes & serve
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`))

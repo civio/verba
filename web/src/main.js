@@ -5,6 +5,7 @@ import { sync } from 'vuex-router-sync'
 
 import App from './App.vue'
 import Search from './Search.vue'
+import Programmes from './Programmes.vue'
 import About from './About.vue'
 
 import DateRangePicker from '@gravitano/vue-date-range-picker'
@@ -30,6 +31,11 @@ global.router = new VueRouter({
       path: '/',
       component: Search,
       name: 'search'
+    },
+    {
+      path: '/programmes',
+      component: Programmes,
+      name: 'programmes'
     },
     {
       path: '/about',
