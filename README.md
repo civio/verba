@@ -10,7 +10,7 @@ Corpus disponibles:
 Project setup:
 
 ```
-npm postinstall
+npm run postinstall
 ```
 
 Configure connection to Elastic backend making a copy of `/api/.env.example` into `/api.env` and modifying it accordingly. Same with `/web/.env.example`.
@@ -18,13 +18,13 @@ Configure connection to Elastic backend making a copy of `/api/.env.example` int
 Start server (both API and web):
 
 ```
-npm start
+npm run start
 ```
 
 Compile and minifies for production:
 
 ```
-npm build
+npm run build
 ```
 
 ## ElasticSearch
