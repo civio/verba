@@ -1,1 +1,1 @@
-Github Pages test
+Github Pages test with a remote theme
