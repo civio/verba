@@ -10,6 +10,7 @@ Corpus disponibles:
 Project setup:
 
 ```
+npm install
 npm run postinstall
 ```
 
