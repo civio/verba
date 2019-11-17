@@ -1,9 +1,9 @@
 # verba
 
 Corpus disponibles:
- - [Telediarios con escaleta](https://s3.eu-west-3.amazonaws.com/verba-test.civio.es/Corpus-Telediarios-con-escaleta.zip) (10/3/2015 - 20/9/2017).
- - [Telediarios 2018](https://s3.eu-west-3.amazonaws.com/verba-test.civio.es/Corpus-Telediarios-2018.zip)
 
+- [Telediarios con escaleta](https://s3.eu-west-3.amazonaws.com/verba-test.civio.es/Corpus-Telediarios-con-escaleta.zip) (10/3/2015 - 20/9/2017).
+- [Telediarios 2018](https://s3.eu-west-3.amazonaws.com/verba-test.civio.es/Corpus-Telediarios-2018.zip)
 
 ## Running locally
 
@@ -11,7 +11,6 @@ Project setup:
 
 ```
 npm install
-npm run postinstall
 ```
 
 Configure connection to Elastic backend making a copy of `/api/.env.example` into `/api.env` and modifying it accordingly. Same with `/web/.env.example`.
@@ -30,7 +29,7 @@ npm run build
 
 ## ElasticSearch
 
-Estamos usando Elastic 7. Para instalarlo en OS X puedes usar `brew`, como [explican aquí](https://www.elastic.co/guide/en/elastic-stack-get-started/7.3/get-started-elastic-stack.html#install-elasticsearch):
+Estamos usando Elastic 7. Para instalarlo en OS X puedes usar `brew`, como [explican aquí](https://www.elastic.co/guide/en/elastic-stack-get-started/7.4/get-started-elastic-stack.html#install-elasticsearch):
 
 ```
 brew tap elastic/tap
@@ -54,7 +53,7 @@ Para actualizar la aplicación:
 ```
 $ cd /var/www/verba-volant.civio.es/public
 $ git pull
-$ npm run postinstall
+$ npm install
 $ npm run build
 $ sudo service verba-api restart
 ```
@@ -62,7 +61,7 @@ $ sudo service verba-api restart
 Una vez desplegada, la aplicación ofrece dos URLs:
 
 - [`verba-volant.civio.es`](https://verba-volant.civio.es/), la aplicación web.
-- `https://verba-volant.civio.es/api/`, el API usado por la aplicación.
+- [`verba-volant.civio.es/api`](https://verba-volant.civio.es/api/), el API usado por la aplicación.
 
 Temporalmente tenemos también, mientras pulimos el proceso de desarrollo:
 
