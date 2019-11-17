@@ -1,53 +1,66 @@
 <template>
-  <div class="pb-2" v-show="query !== ''">
+  <div v-show="query !== ''" class="pb-2">
     <div v-if="loading">
       <div class="loader-animation my-5"></div>
     </div>
     <div v-else-if="results">
-      <AreaChart :data="aggregations" v-if="showChart"/>
+      <AreaChart v-if="showChart" :data="aggregations" />
       <p class="my-4">
-        <span class="text-secondary" v-if="results.length > 50">Page {{ resultsPage + 1 }} of {{ Math.ceil(results.length / 50) }}</span>
+        <span v-if="results.length > 50" class="text-secondary">
+          Page {{ resultsPage + 1 }} of
+          {{ Math.ceil(results.length / 50) }}
+        </span>
         {{ results.length.toLocaleString() }} results for
         <strong>{{ query }}</strong>
       </p>
       <div class="results-list mb-4">
-        <div class="card" v-for="(items, key) in resultsByProgramme" :key="key">
+        <div v-for="(items, id) in resultsByProgramme" :key="id" class="card">
           <div class="card-header bg-primary">
             <svg class="icon-date" width="14" height="14" viewBox="0 0 24 24">
               <path
                 d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"
-              ></path>
-              <path fill="none" d="M0 0h24v24H0z"></path>
+              />
+              <path fill="none" d="M0 0h24v24H0z" />
             </svg>
             <strong>{{ formatDate(items[0].programme.date) }}</strong>
             | TD {{ items[0].programme.date.substring(11, 13) }}h
           </div>
-          <div class="card-body" v-for="item in items" :key="item.id">
+          <div v-for="item in items" :key="item.id" class="card-body">
             <span class="badge badge-secondary">
               <svg class="icon-time" width="12" height="12" viewBox="0 0 24 24">
-                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M0 0h24v24H0z" fill="none" />
                 <path
                   d="M15 1H9v2h6V1zm-4 13h2V8h-2v6zm8.03-6.61l1.42-1.42c-.43-.51-.9-.99-1.41-1.41l-1.42 1.42C16.07 4.74 14.12 4 12 4c-4.97 0-9 4.03-9 9s4.02 9 9 9 9-4.03 9-9c0-2.12-.74-4.07-1.97-5.61zM12 20c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"
-                ></path>
+                />
               </svg>
-              {{ item.time_start | formatTime }} - {{ item.time_end | formatTime }}
+              {{ item.time_start | formatTime }} -
+              {{ item.time_end | formatTime }}
             </span>
-            <span class="badge badge-secondary video-link" @click="onGoToVideoBtnClick(item)">
+            <span
+              class="badge badge-secondary video-link"
+              @click="onGoToVideoBtnClick(item)"
+            >
               Go to video
               <svg class="icon-play" width="14" height="14" viewBox="0 0 24 24">
-                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M0 0h24v24H0z" fill="none" />
                 <path
                   d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-                ></path>
+                />
               </svg>
             </span>
-            <span class="badge badge-secondary video-link" @click="onShowContextBtnClick(item)">
-              Show context
-            </span>
+            <span
+              class="badge badge-secondary video-link"
+              @click="onShowContextBtnClick(item)"
+              >Show context</span
+            >
+            <!-- eslint-disable-next-line vue/no-v-html -->
             <p class="item-content" v-html="highlight(item.content)"></p>
-            <span class="badge" v-for="(entity, key) in item.entities" :key="key">
-              {{ entity.type }}/{{ entity.text }}
-            </span>
+            <span
+              v-for="(entity, key) in item.entities"
+              :key="key"
+              class="badge"
+              >{{ entity.type }}/{{ entity.text }}</span
+            >
           </div>
         </div>
       </div>
@@ -87,8 +100,8 @@ export default {
       return this.results && this.results.aggregations
         ? this.queryDate
           ? this.results.aggregations.map(this.getAggregationObject).filter(
-            d => d.x >= this.queryDate.from && d.x <= this.queryDate.to // apply date filter
-          )
+              d => d.x >= this.queryDate.from && d.x <= this.queryDate.to // apply date filter
+            )
           : this.results.aggregations.map(this.getAggregationObject)
         : []
     },
@@ -97,8 +110,9 @@ export default {
       // We rely on the fact that results come pre-ordered, so programme ids are consecutive.
       // Note that using Array.reduce() or similar doesn't guarantee the resulting order.
       const groups = []
-      this.results.results.forEach((item, index) => {
-        const lastProgrammeId = (groups.length > 0) ? groups[groups.length - 1][0].programme.id : -1
+      this.results.results.forEach(item => {
+        const lastProgrammeId =
+          groups.length > 0 ? groups[groups.length - 1][0].programme.id : -1
         if (item.programme.id === lastProgrammeId) {
           groups[groups.length - 1].push(item)
         } else {
@@ -111,8 +125,7 @@ export default {
       // Hide chart if no data or date filter range is a single day (queryDate.from == queryDate.to)
       return (
         this.aggregations.length > 1 &&
-        (!this.queryDate ||
-          this.queryDate.from !== this.queryDate.to)
+        (!this.queryDate || this.queryDate.from !== this.queryDate.to)
       )
     }
   },

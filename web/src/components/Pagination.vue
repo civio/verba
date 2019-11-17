@@ -1,15 +1,27 @@
 <template>
   <nav v-show="size > 1">
     <ul class="pagination justify-content-center">
-      <li :class="{disabled: current === 0, 'page-item': true}" @click="onClickPrev">
+      <li
+        :class="{ disabled: current === 0, 'page-item': true }"
+        @click="onClickPrev"
+      >
         <a class="page-link" href="#" aria-label="Previous">
           <span aria-hidden="true">&laquo;</span>
         </a>
       </li>
-      <li :class="{active: i === current+1, 'page-item': true}" v-for="i in pages" :key="i">
-        <a class="page-link" :data-index="i - 1" @click="onClickPage">{{ i }}</a>
+      <li
+        v-for="i in pages"
+        :key="i"
+        :class="{ active: i === current + 1, 'page-item': true }"
+      >
+        <a class="page-link" :data-index="i - 1" @click="onClickPage">{{
+          i
+        }}</a>
       </li>
-      <li :class="{disabled: current === size - 1, 'page-item': true}" @click="onClickNext">
+      <li
+        :class="{ disabled: current === size - 1, 'page-item': true }"
+        @click="onClickNext"
+      >
         <a class="page-link" href="#" aria-label="Next">
           <span aria-hidden="true">&raquo;</span>
         </a>
@@ -36,10 +48,10 @@ export default {
       return this.size <= 10
         ? this.range(1, this.size)
         : this.current <= 5
-          ? this.range(1, 10)
-          : this.current > this.size - 6
-            ? this.range(this.size - 10, this.size)
-            : this.range(this.current - 4, this.current + 5)
+        ? this.range(1, 10)
+        : this.current > this.size - 6
+        ? this.range(this.size - 10, this.size)
+        : this.range(this.current - 4, this.current + 5)
     }
   },
   methods: {

@@ -1,13 +1,13 @@
 <template>
   <div class="input-group">
     <input
+      ref="searchInput"
       type="text"
       class="form-control"
-      ref="searchInput"
       placeholder="Search a term"
-      @change="onChange"
       :value="query"
-    >
+      @change="onChange"
+    />
     <div class="input-group-append">
       <button class="btn btn-primary" type="button">
         <svg width="24" height="24" viewBox="0 0 24 24" class="icon-search">
@@ -26,12 +26,12 @@ import { mapActions, mapState } from 'vuex'
 
 export default {
   name: 'SearchBox',
+  computed: {
+    ...mapState(['query'])
+  },
   mounted() {
     // set focus on search input
     this.$refs.searchInput.focus()
-  },
-  computed: {
-    ...mapState(['query'])
   },
   methods: {
     ...mapActions(['search']),

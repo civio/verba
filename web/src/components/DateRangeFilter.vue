@@ -1,6 +1,6 @@
 <template>
-  <div v-show='visible'>
-    <date-range-picker v-model='range' :options='options'/>
+  <div v-show="visible">
+    <date-range-picker v-model="range" :options="options" />
   </div>
 </template>
 
@@ -28,25 +28,17 @@ export default {
         minDate: '23/12/2013',
         endDate: moment().format('DD/MM/YYYY'),
         maxDate: moment().format('DD/MM/YYYY'),
-        'locale': {
-          'format': 'DD/MM/YYYY',
-          'separator': ' - ',
-          'applyLabel': 'Filtrar',
-          'cancelLabel': 'Cancelar',
-          'fromLabel': 'Desde',
-          'toLabel': 'a',
-          'customRangeLabel': 'Rango',
-          'weekLabel': 'W',
-          'daysOfWeek': [
-            'Su',
-            'Mo',
-            'Tu',
-            'We',
-            'Th',
-            'Fr',
-            'Sa'
-          ],
-          'monthNames': [
+        locale: {
+          format: 'DD/MM/YYYY',
+          separator: ' - ',
+          applyLabel: 'Filtrar',
+          cancelLabel: 'Cancelar',
+          fromLabel: 'Desde',
+          toLabel: 'a',
+          customRangeLabel: 'Rango',
+          weekLabel: 'W',
+          daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+          monthNames: [
             'enero',
             'febrero',
             'marzo',
@@ -60,22 +52,28 @@ export default {
             'noviembre',
             'diciembre'
           ],
-          'firstDay': 1
+          firstDay: 1
         },
         ranges: {
           'Último mes': [moment().subtract(29, 'days'), moment()],
           'Último año': [moment().subtract(364, 'days'), moment()],
-          'Todo': ['23/12/2013', moment()]
+          Todo: ['23/12/2013', moment()]
         }
       }
     }
   },
   watch: {
-    range: function(e) {
-      if (this.range[0] === this.options.startDate && this.range[1] === this.options.endDate) {
+    range: function() {
+      if (
+        this.range[0] === this.options.startDate &&
+        this.range[1] === this.options.endDate
+      ) {
         this.$emit('change', null)
       } else {
-        this.$emit('change', { from: moment(this.range[0], 'DD/MM/YYYY'), to: moment(this.range[1], 'DD/MM/YYYY') })
+        this.$emit('change', {
+          from: moment(this.range[0], 'DD/MM/YYYY'),
+          to: moment(this.range[1], 'DD/MM/YYYY')
+        })
       }
     }
   }

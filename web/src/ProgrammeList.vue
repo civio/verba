@@ -5,9 +5,10 @@
         <li v-for="(programme, key) in programmeList" :key="key">
           <router-link
             :to="{ name: 'programme-details', params: { id: programme.id } }"
-            class="nav-link">
-              <img :src="programme | imageURL"/>
-              {{ programme.title }}
+            class="nav-link"
+          >
+            <img :src="programme | imageURL" />
+            {{ programme.title }}
           </router-link>
         </li>
       </ul>

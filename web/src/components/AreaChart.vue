@@ -1,10 +1,12 @@
 <template>
-  <div class='chart-container'>
-    <svg :width='width' :height='height'>
-      <g ref='axisX' class='axis x'></g>
-      <g ref='axisY' class='axis y'></g>
-      <g ref='bars' :style='{transform: `translate(${margin.left}px, ${margin.top}px)`}'>
-      </g>
+  <div class="chart-container">
+    <svg :width="width" :height="height">
+      <g ref="axisX" class="axis x"></g>
+      <g ref="axisY" class="axis y"></g>
+      <g
+        ref="bars"
+        :style="{ transform: `translate(${margin.left}px, ${margin.top}px)` }"
+      ></g>
     </svg>
   </div>
 </template>
@@ -42,13 +44,6 @@ export default {
       return { width, height }
     }
   },
-  mounted() {
-    window.addEventListener('resize', this.onResize)
-    this.onResize()
-  },
-  beforeDestroy() {
-    window.removeEventListener('resize', this.onResize)
-  },
   watch: {
     data: function() {
       this.update()
@@ -57,6 +52,13 @@ export default {
       this.initialize()
       this.update()
     }
+  },
+  mounted() {
+    window.addEventListener('resize', this.onResize)
+    this.onResize()
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.onResize)
   },
   methods: {
     formatAxisX(g) {
@@ -71,8 +73,7 @@ export default {
         .attr('x1', 0)
         .attr('x2', this.padded.width)
     },
-    initialize() {
-    },
+    initialize() {},
     onResize() {
       // update width & height based on parent container
       this.width = this.$el.offsetWidth
@@ -88,7 +89,8 @@ export default {
       const scaleY = d3
         .scaleLinear()
         .range([this.padded.height, 0])
-        .domain(d3.extent(this.data, d => d.y)).nice()
+        .domain(d3.extent(this.data, d => d.y))
+        .nice()
 
       // setup axis
       const axisX = d3
@@ -127,7 +129,7 @@ export default {
 }
 </script>
 
-<style lang='scss'>
+<style lang="scss">
 .chart-container {
   width: 100%;
   height: 260px;

@@ -1,7 +1,10 @@
 <template>
   <div class="search-filters">
     <button :class="dateBtnClass" @click="onDateClick">{{ dateStr }}</button>
-    <DateRangeFilter :visible="datepickerVisible" @change="onDatepickerChange"/>
+    <DateRangeFilter
+      :visible="datepickerVisible"
+      @change="onDatepickerChange"
+    />
   </div>
 </template>
 
@@ -28,7 +31,9 @@ export default {
     dateStr: function() {
       return this.queryDate
         ? this.queryDate.from !== this.queryDate.to
-          ? `Showing: ${this.formatDate(this.queryDate.from)} - ${this.formatDate(this.queryDate.to)}`
+          ? `Showing: ${this.formatDate(
+              this.queryDate.from
+            )} - ${this.formatDate(this.queryDate.to)}`
           : this.formatDate(this.queryDate.from)
         : 'Filter by date'
     }

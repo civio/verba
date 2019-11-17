@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const VerbaAPI = {
-  install(Vue, options) {
+  install(Vue) {
     Vue.verbaAPI = function(methodName, params, callback) {
       axios
         .get(process.env.VUE_APP_API_URL + methodName, { params })
