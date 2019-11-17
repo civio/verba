@@ -1,8 +1,7 @@
 {
-  "name": "verba",
+  "name": "verba-volant",
   "version": "1.0.0",
   "private": true,
-  "license": "ISC",
   "scripts": {
     "postinstall": "run-p install:api install:web",
     "install:api": "cd api && npm install",
