@@ -3,8 +3,8 @@
     <div class="container">
       <div v-if="content">
         <h4>{{ content[0].programme.title }}</h4>
-        <img :src="content[0].programme | imageURL"/>
-        <p v-for="(item, key) in content" :key="key" :id="item.time_start">
+        <img :src="content[0].programme | imageURL" />
+        <p v-for="(item, key) in content" :id="item.time_start" :key="key">
           {{ item.time_start | formatTime }}: {{ item.content }}
         </p>
       </div>

@@ -3,22 +3,22 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 offset-lg-2">
-          <SearchBox/>
-          <SearchFilters/>
+          <SearchBox />
+          <SearchFilters />
         </div>
       </div>
     </div>
-    <hr class="mb-0">
+    <hr class="mb-0" />
     <div class="bg-light">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 offset-lg-2">
-            <Results/>
+            <Results />
           </div>
         </div>
       </div>
     </div>
-    <ResultContext/>
+    <ResultContext />
   </div>
 </template>
 
@@ -37,11 +37,11 @@ export default {
     SearchFilters,
     ResultContext
   },
-  methods: {
-    ...mapActions(['initializeSearchFromURL'])
-  },
   mounted() {
     this.initializeSearchFromURL()
+  },
+  methods: {
+    ...mapActions(['initializeSearchFromURL'])
   }
 }
 </script>
