@@ -12,6 +12,7 @@
         </span>
         {{ results.length.toLocaleString() }} results for
         <strong>{{ query }}</strong>
+        &mdash; (<a href="#" @click="onDownloadClick()">CSV</a>)
       </p>
       <div class="results-list mb-4">
         <div v-for="(items, id) in resultsByProgramme" :key="id" class="card">
@@ -75,6 +76,7 @@
 
 <script>
 import moment from 'moment'
+import Vue from 'vue'
 import { mapActions, mapState } from 'vuex'
 import AreaChart from './AreaChart.vue'
 import Pagination from './Pagination.vue'
@@ -147,6 +149,10 @@ export default {
     },
     onShowContextBtnClick(result) {
       this.setCurrentResult(result)
+    },
+    onDownloadClick() {
+      const url = Vue.verbaDownloadURL({ q: this.query, size: 10000 })
+      window.open(url, '_blank')
     },
     getAggregationObject(d) {
       const key = Object.keys(d)[0]
