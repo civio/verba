@@ -45,7 +45,6 @@ export default new Vuex.Store({
       // skip if query is empty
       if (state.query.trim() === '') {
         state.results = null
-        state.loading = false
         return
       }
       // set search params
@@ -59,6 +58,7 @@ export default new Vuex.Store({
         params.date_to = moment(state.queryDate.to).format('YYYY-MM-DD')
       }
       // search request
+      state.loading = true
       Vue.verbaAPI('search', params, response => {
         state.results = response.data
         state.loading = false
@@ -68,7 +68,6 @@ export default new Vuex.Store({
       state.currentResult = payload
     },
     setQuery(state, payload) {
-      state.loading = true
       payload = payload || ''
       state.query = payload.trim() // store query
 
