@@ -151,8 +151,12 @@ export default {
       this.setCurrentResult(result)
     },
     onDownloadClick() {
-      const url = Vue.verbaDownloadURL({ q: this.query, size: 10000 })
-      window.open(url, '_blank')
+      const params = { q: this.query, size: 10000 }
+      if (this.queryDate) {
+        params.date_from = moment(this.queryDate.from).format('YYYY-MM-DD')
+        params.date_to = moment(this.queryDate.to).format('YYYY-MM-DD')
+      }
+      window.open(Vue.verbaDownloadURL(params), '_blank')
     },
     getAggregationObject(d) {
       const key = Object.keys(d)[0]
