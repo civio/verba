@@ -7,7 +7,15 @@
       <header>
         <nav class="verba-navbar">
           <!-- <a class="verba-brand" href="/">Verba Volant</a> -->
-          <h1 class="verba-brand">Verba Volant</h1>
+          <h1 class="verba-brand">
+            Verba Vo
+            <span id="l">l</span>
+            <span class=" verba-it">
+              <span id="a">a</span>
+              <span id="n">n</span>
+              <span id="t">t</span>
+            </span>
+          </h1>
 
           <!-- <div id="navbarSupportedContent" class="collapse navbar-collapse"> -->
           <div id="navbarSupportedContent" class="verba-nav-pages">
@@ -33,12 +41,10 @@
         </nav>
       </header>
 
-      <main>
-        <router-view />
-      </main>
+      <router-view />
 
       <footer>
-        <small>civio</small>
+        <small>CC Civio 2019</small>
       </footer>
     </div>
   </div>
@@ -118,13 +124,33 @@ u {
   margin-bottom: 5rem;
 
   .verba-brand {
-    font-size: 4rem;
+    font-size: 3rem;
 
     display: inline-block;
     position: relative;
 
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+
+    .verba-it {
+      font-style: italic;
+    }
+    #l {
+      position: relative;
+      top: 2px;
+    }
+    #a {
+      position: relative;
+      bottom: 2px;
+    }
+    #n {
+      position: relative;
+      bottom: 6px;
+    }
+    #t {
+      position: relative;
+      bottom: 12px;
+    }
   }
 
   // Lines around Verba Volant
@@ -156,11 +182,26 @@ u {
   }
 
   .verba-nav-item {
-    font-size: 2rem;
+    font-size: 1.8rem;
 
     &:hover {
       color: crimson;
     }
   }
+}
+
+// font face TEST
+@font-face {
+  font-family: 'lithoslight';
+  src: url('./fonts/fontFace/lithos_light_regular-webfont.woff2')
+      format('woff2'),
+    url('./fonts/fontFace/lithos_light_regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+}
+
+.app-container {
+  font-family: 'lithoslight';
 }
 </style>

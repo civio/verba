@@ -1,14 +1,19 @@
 <template>
-  <div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 offset-lg-2">
-          <SearchBox />
-          <SearchFilters />
+  <main>
+    <section class="verba-search-form">
+      <SearchBox />
+      <SearchFilters />
+
+      <div class="verba-magneto">
+        <div class="verba-magento-copy">
+          <h2 class="verba-subtitle">News Coverage of RTVE</h2>
+          <p class="verba-copy">Analyse the coverage of the Spanish Public National broadcaster.</p>
         </div>
       </div>
-    </div>
-    <hr class="mb-0" />
+    </section>
+
+    <!-- <hr class="mb-0" /> -->
+
     <div class="bg-light">
       <div class="container">
         <div class="row">
@@ -18,8 +23,9 @@
         </div>
       </div>
     </div>
+
     <ResultContext />
-  </div>
+  </main>
 </template>
 
 <script>
@@ -45,3 +51,21 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="scss">
+@import '../src/scss/_variables.scss';
+
+.verba-magneto {
+  display: flex;
+  justify-content: flex-end;
+  text-align: left;
+
+  .verba-subtitle {
+    font-size: 1rem;
+  }
+
+  .verba-copy {
+    font-size: 0.8rem;
+  }
+}
+</style>
