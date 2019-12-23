@@ -1,12 +1,9 @@
 <template>
   <div class="chart-container">
     <svg :width="width" :height="height">
-      <g ref="axisX" class="axis x"></g>
-      <g ref="axisY" class="axis y"></g>
-      <g
-        ref="bars"
-        :style="{ transform: `translate(${margin.left}px, ${margin.top}px)` }"
-      ></g>
+      <g ref="axisX" class="axis x" />
+      <g ref="axisY" class="axis y" />
+      <g ref="bars" :style="{ transform: `translate(${margin.left}px, ${margin.top}px)` }" />
     </svg>
   </div>
 </template>
@@ -130,13 +127,15 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../scss/_variables.scss';
+
 .chart-container {
   width: 100%;
   height: 260px;
   margin-top: 1.5rem;
   margin-bottom: 2.5rem;
-  color: #007bff;
-  background: white;
+  color: $color-neutral-1000;
+  // background: white;
 
   svg {
     overflow: visible;
@@ -177,7 +176,7 @@ export default {
 
   rect {
     fill: currentColor;
-    opacity: 0.5;
+    // opacity: 0.5;
   }
 }
 </style>

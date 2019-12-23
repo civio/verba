@@ -12,11 +12,12 @@
         </span>
         {{ results.length.toLocaleString() }} results for
         <strong>{{ query }}</strong>
-        &mdash; (<a href="#" @click="onDownloadClick()">CSV</a>)
+        &mdash; (
+        <a href="#" @click="onDownloadClick()">CSV</a>)
       </p>
       <div class="results-list mb-4">
         <div v-for="(items, id) in resultsByProgramme" :key="id" class="card">
-          <div class="card-header bg-primary">
+          <div class="card-header">
             <svg class="icon-date" width="14" height="14" viewBox="0 0 24 24">
               <path
                 d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"
@@ -37,10 +38,7 @@
               {{ item.time_start | formatTime }} -
               {{ item.time_end | formatTime }}
             </span>
-            <span
-              class="badge badge-secondary video-link"
-              @click="onGoToVideoBtnClick(item)"
-            >
+            <span class="badge badge-secondary video-link" @click="onGoToVideoBtnClick(item)">
               Go to video
               <svg class="icon-play" width="14" height="14" viewBox="0 0 24 24">
                 <path d="M0 0h24v24H0z" fill="none" />
@@ -52,16 +50,14 @@
             <span
               class="badge badge-secondary video-link"
               @click="onShowContextBtnClick(item)"
-              >Show context</span
-            >
+            >Show context</span>
             <!-- eslint-disable-next-line vue/no-v-html -->
             <p class="item-content" v-html="highlight(item.content)"></p>
             <span
               v-for="(entity, key) in item.entities"
               :key="key"
               class="badge"
-              >{{ entity.type }}/{{ entity.text }}</span
-            >
+            >{{ entity.type }}/{{ entity.text }}</span>
           </div>
         </div>
       </div>
@@ -170,6 +166,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../scss/_variables.scss';
+
 .loader-animation {
   position: relative;
   height: 48px;
@@ -261,9 +259,11 @@ export default {
     font-size: 0.913rem;
     margin-top: 0.5rem;
     margin-bottom: 0;
+
     mark {
       font-weight: 600;
-      background-color: mix(yellow, white, 25%);
+      // background-color: $color-highlight-1;
+      background-color: mix($color-highlight-1, white, 85%);
     }
   }
   .video-link {

@@ -1,15 +1,14 @@
 <template>
   <main>
     <div class="verba-programmes">
-
-       <img
+      <img
         class="verba-microfilms-image"
         src="../src/images/02Microfilms.png"
         alt="Human radar old illustration"
       />
 
       <!-- <ul class="list-unstyled"> -->
-        <ul>
+      <ul>
         <li v-for="(programme, key) in programmeList" :key="key">
           <router-link
             :to="{ name: 'programme-details', params: { id: programme.id } }"
@@ -42,15 +41,18 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import './scss/_variables.scss';
-
-
+@import '../src/scss/_variables.scss';
+ol,
+ul {
+  list-style: none;
+}
 
 .verba-programmes {
   display: flex;
   flex-direction: column;
   align-items: center;
 
+  color: $color-neutral-800;
 
   // Tablets
   @media all and (min-width: 768px) {
@@ -59,19 +61,18 @@ export default {
 
   // PC
   @media all and (min-width: 1024px) {
-    }
+  }
 }
 
 // Image settings
-.verba-microfilms-image{
-  width:100%;
+.verba-microfilms-image {
+  width: 100%;
   max-width: 300px;
-  height: auto; 
+  height: auto;
 }
 
 // Items settings
 .verba-film-item {
   width: 100px;
 }
-
 </style>

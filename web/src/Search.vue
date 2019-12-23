@@ -18,13 +18,10 @@
       </div>
     </section>
 
-
-    <div class="bg-light">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 offset-lg-2">
-            <Results />
-          </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <Results />
         </div>
       </div>
     </div>
@@ -64,9 +61,11 @@ export default {
   display: flex;
   justify-content: flex-end;
   text-align: left;
+  color: $color-neutral-1000;
 
   .verba-subtitle {
     font-size: 1rem;
+    font-weight: 600;
   }
 
   .verba-copy {

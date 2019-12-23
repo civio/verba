@@ -6,15 +6,19 @@
 
       <header>
         <nav class="verba-navbar">
-          <!-- <a class="verba-brand" href="/">Verba Volant</a> -->
-          <h1 class="verba-brand">
-            Verba Vo<span id="l">l</span>
-            <span class="verba-it">
-              <span id="a">a</span>
-              <span id="n">n</span>
-              <span id="t">t</span>
-            </span>
-          </h1>
+          <a href="/">
+            <h1 class="verba-brand">
+              Verba Vo
+              <!--
+              -->
+              <span id="l">l</span>
+              <span class="verba-it">
+                <span id="a">a</span>
+                <span id="n">n</span>
+                <span id="t">t</span>
+              </span>
+            </h1>
+          </a>
 
           <!-- <div id="navbarSupportedContent" class="collapse navbar-collapse"> -->
           <div id="navbarSupportedContent" class="verba-nav-pages">
@@ -129,6 +133,7 @@ u {
 
   .verba-brand {
     font-size: 3rem;
+    font-weight: 600;
 
     display: inline-block;
     position: relative;
@@ -191,9 +196,11 @@ u {
     &:hover {
       color: $color-highlight-1;
     }
+    .router-link-active {
+      font-weight: 1000;
+    }
   }
 }
-
 
 // font face TEST
 @font-face {
