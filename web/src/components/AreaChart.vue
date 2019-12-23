@@ -3,7 +3,10 @@
     <svg :width="width" :height="height">
       <g ref="axisX" class="axis x" />
       <g ref="axisY" class="axis y" />
-      <g ref="bars" :style="{ transform: `translate(${margin.left}px, ${margin.top}px)` }" />
+      <g
+        ref="bars"
+        :style="{ transform: `translate(${margin.left}px, ${margin.top}px)` }"
+      />
     </svg>
   </div>
 </template>
@@ -105,15 +108,19 @@ export default {
         .data(this.data)
         .join('rect')
         .attr('x', d => scaleX(d.x))
-        .attr('y', d => scaleY(d.y))
+        .attr('y', d => scaleY(d.y / 2))
+        .attr('transform', `translate(0, ${-this.height / 2})`)
         .attr('height', d => scaleY(0) - scaleY(d.y))
         .attr('width', barWidth)
+        .append('svg:title')
+        .text(d => scaleY(d.y))
 
       // render axis
       d3.select(this.$refs.axisX)
         .attr(
           'transform',
-          `translate(${this.margin.left}, ${this.height - this.margin.bottom})`
+          `translate(${this.margin.left}, ${this.height / 2 -
+            this.margin.bottom})`
         )
         .call(axisX)
         .call(this.formatAxisX)
@@ -149,7 +156,11 @@ export default {
     }
 
     &.x {
+      // .domain {
+      //   display: none;
+      // }
       text {
+        margin-top: 200px;
         opacity: 0.9;
         &.active {
           opacity: 1;

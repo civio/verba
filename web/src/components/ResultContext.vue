@@ -69,6 +69,13 @@ export default {
   },
   methods: {
     ...mapActions(['setCurrentResult']),
+    highlight(content) {
+      this.queryTerms.forEach(term => {
+        const re = new RegExp('\\b' + term + '\\b', 'gi')
+        content = content.replace(re, match => `<mark>${match}</mark>`)
+      })
+      return content
+    },
     onClose: function() {
       this.setCurrentResult(null)
     },
@@ -94,7 +101,10 @@ export default {
   z-index: 2;
 }
 .modal-body {
-  padding: 0;
+  padding: 2rem;
+  text-align: left;
+
+  font-size: 0.8rem;
 }
 .modal-content {
   border-radius: 0;

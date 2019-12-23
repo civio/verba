@@ -56,7 +56,7 @@ export default {
 
 <style lang="scss">
 .search-filters {
-  margin-top: 1.25rem;
+  margin-top: 0.25rem;
   .btn {
     margin-right: 0.5rem;
     margin-bottom: 0.5rem;

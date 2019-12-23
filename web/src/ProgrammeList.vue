@@ -14,7 +14,9 @@
             :to="{ name: 'programme-details', params: { id: programme.id } }"
             class="nav-link verba-film-item"
           >
-            <img :src="programme | imageURL" />
+            <figure>
+              <img :src="programme | imageURL" />
+            </figure>
             {{ programme.title }}
           </router-link>
         </li>
@@ -73,6 +75,20 @@ ul {
 
 // Items settings
 .verba-film-item {
-  width: 100px;
+  // width: 100px;
+
+  figure img {
+    width: 150px;
+
+    // Gray scale, sepia and blur effects
+    -webkit-filter: grayscale(100%) sepia(0) blur(1px);
+    filter: grayscale(100%) sepia(0) blur(1px);
+    -webkit-transition: 1s ease-in-out;
+    transition: 1s ease-in-out;
+  }
+  figure:hover img {
+    -webkit-filter: sepia(100%) blur(0);
+    filter: sepia(100%) blur(0);
+  }
 }
 </style>

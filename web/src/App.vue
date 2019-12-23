@@ -8,10 +8,8 @@
         <nav class="verba-navbar">
           <a href="/">
             <h1 class="verba-brand">
-              Verba Vo
-              <!--
-              -->
-              <span id="l">l</span>
+              <!--  eslint-disable-next-line vue/no-v-html -->
+              Verba Vo<span id="l">l</span>
               <span class="verba-it">
                 <span id="a">a</span>
                 <span id="n">n</span>
@@ -25,13 +23,19 @@
             <!-- <ul class="navbar-nav mr-auto"> -->
             <ul class="verba-navbar-list">
               <li class="verba-nav-item">
-                <router-link :to="{ name: 'search' }" class="verba-nav-link">Search</router-link>
+                <router-link :to="{ name: 'search' }" class="verba-nav-link"
+                  >Search</router-link
+                >
               </li>
               <li class="verba-nav-item">
-                <router-link :to="{ name: 'programmes' }" class="verba-nav-link">Programmes</router-link>
+                <router-link :to="{ name: 'programmes' }" class="verba-nav-link"
+                  >Programmes</router-link
+                >
               </li>
               <li class="verba-nav-item">
-                <router-link :to="{ name: 'about' }" class="verba-nav-link">About</router-link>
+                <router-link :to="{ name: 'about' }" class="verba-nav-link"
+                  >About</router-link
+                >
               </li>
             </ul>
           </div>

@@ -1,71 +1,93 @@
 <template>
-  <div v-show="query !== ''" class="pb-2">
+  <div v-show="query !== ''" class="pb-2 verba-results-links">
     <div v-if="loading">
       <div class="loader-animation my-5"></div>
     </div>
     <div v-else-if="results">
-      <AreaChart v-if="showChart" :data="aggregations" />
-      <p class="my-4">
-        <span v-if="results.length > 50" class="text-secondary">
-          Page {{ resultsPage + 1 }} of
-          {{ Math.ceil(results.length / 50) }}
-        </span>
-        {{ results.length.toLocaleString() }} results for
-        <strong>{{ query }}</strong>
-        &mdash; (
-        <a href="#" @click="onDownloadClick()">CSV</a>)
-      </p>
-      <div class="results-list mb-4">
-        <div v-for="(items, id) in resultsByProgramme" :key="id" class="card">
-          <div class="card-header">
-            <svg class="icon-date" width="14" height="14" viewBox="0 0 24 24">
-              <path
-                d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"
-              />
-              <path fill="none" d="M0 0h24v24H0z" />
-            </svg>
-            <strong>{{ formatDate(items[0].programme.date) }}</strong>
-            | TD {{ items[0].programme.date.substring(11, 13) }}h
-          </div>
-          <div v-for="item in items" :key="item.id" class="card-body">
-            <span class="badge badge-secondary">
-              <svg class="icon-time" width="12" height="12" viewBox="0 0 24 24">
-                <path d="M0 0h24v24H0z" fill="none" />
+      <section class="results-dataviz">
+        <h2>Results (visuals)</h2>
+        <AreaChart v-if="showChart" :data="aggregations" />
+      </section>
+
+      <section class="results-links">
+        <h2>Results (cards)</h2>
+        <p class="my-4">
+          <span v-if="results.length > 50" class="text-secondary">
+            Page {{ resultsPage + 1 }} of
+            {{ Math.ceil(results.length / 50) }}
+          </span>
+          {{ results.length.toLocaleString() }} results for
+          <strong>{{ query }}</strong>
+          &mdash; (
+          <a href="#" @click="onDownloadClick()">CSV</a>)
+        </p>
+        <div class="results-list mb-4">
+          <div v-for="(items, id) in resultsByProgramme" :key="id" class="card">
+            <div class="card-header">
+              <svg class="icon-date" width="14" height="14" viewBox="0 0 24 24">
                 <path
-                  d="M15 1H9v2h6V1zm-4 13h2V8h-2v6zm8.03-6.61l1.42-1.42c-.43-.51-.9-.99-1.41-1.41l-1.42 1.42C16.07 4.74 14.12 4 12 4c-4.97 0-9 4.03-9 9s4.02 9 9 9 9-4.03 9-9c0-2.12-.74-4.07-1.97-5.61zM12 20c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"
+                  d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"
                 />
+                <path fill="none" d="M0 0h24v24H0z" />
               </svg>
-              {{ item.time_start | formatTime }} -
-              {{ item.time_end | formatTime }}
-            </span>
-            <span class="badge badge-secondary video-link" @click="onGoToVideoBtnClick(item)">
-              Go to video
-              <svg class="icon-play" width="14" height="14" viewBox="0 0 24 24">
-                <path d="M0 0h24v24H0z" fill="none" />
-                <path
-                  d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-                />
-              </svg>
-            </span>
-            <span
-              class="badge badge-secondary video-link"
-              @click="onShowContextBtnClick(item)"
-            >Show context</span>
-            <!-- eslint-disable-next-line vue/no-v-html -->
-            <p class="item-content" v-html="highlight(item.content)"></p>
-            <span
-              v-for="(entity, key) in item.entities"
-              :key="key"
-              class="badge"
-            >{{ entity.type }}/{{ entity.text }}</span>
+              <strong>{{ formatDate(items[0].programme.date) }}</strong>
+              | TD {{ items[0].programme.date.substring(11, 13) }}h
+            </div>
+            <div v-for="item in items" :key="item.id" class="card-body">
+              <span class="badge badge-secondary">
+                <svg
+                  class="icon-time"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M0 0h24v24H0z" fill="none" />
+                  <path
+                    d="M15 1H9v2h6V1zm-4 13h2V8h-2v6zm8.03-6.61l1.42-1.42c-.43-.51-.9-.99-1.41-1.41l-1.42 1.42C16.07 4.74 14.12 4 12 4c-4.97 0-9 4.03-9 9s4.02 9 9 9 9-4.03 9-9c0-2.12-.74-4.07-1.97-5.61zM12 20c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"
+                  />
+                </svg>
+                {{ item.time_start | formatTime }} -
+                {{ item.time_end | formatTime }}
+              </span>
+              <span
+                class="badge badge-secondary video-link"
+                @click="onGoToVideoBtnClick(item)"
+              >
+                Go to video
+                <svg
+                  class="icon-play"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M0 0h24v24H0z" fill="none" />
+                  <path
+                    d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+                  />
+                </svg>
+              </span>
+              <span
+                class="badge badge-secondary video-link"
+                @click="onShowContextBtnClick(item)"
+                >Show context</span
+              >
+              <!-- eslint-disable-next-line vue/no-v-html -->
+              <p class="item-content" v-html="highlight(item.content)"></p>
+              <span
+                v-for="(entity, key) in item.entities"
+                :key="key"
+                class="badge"
+                >{{ entity.type }}/{{ entity.text }}</span
+              >
+            </div>
           </div>
         </div>
-      </div>
-      <Pagination
-        :size="Math.ceil(results.length / 50)"
-        :current="resultsPage"
-        @change="onPaginationChange"
-      />
+        <Pagination
+          :size="Math.ceil(results.length / 50)"
+          :current="resultsPage"
+          @change="onPaginationChange"
+        />
+      </section>
     </div>
   </div>
 </template>
@@ -168,6 +190,10 @@ export default {
 <style lang="scss">
 @import '../scss/_variables.scss';
 
+.verba-results-links {
+  text-align: left;
+}
+
 .loader-animation {
   position: relative;
   height: 48px;
@@ -188,8 +214,8 @@ export default {
     top: 0;
     left: 50%;
     margin-left: -24px;
-    border: 5px solid mix(#007bff, white, 20%);
-    border-top: 5px solid #007bff; // primary color
+    border: 5px solid mix($color-neutral-1000, white, 20%);
+    border-top: 5px solid $color-neutral-1000;
     border-radius: 50%;
     width: 48px;
     height: 48px;
@@ -200,13 +226,14 @@ export default {
   .card {
     border-radius: 0;
     border-top: none;
+    margin-bottom: 2rem;
+    background-color: transparent;
 
-    &:first-child {
-      border-top: 1px solid rgba(0, 0, 0, 0.125);
-    }
+    border-top: 1px solid rgba(0, 0, 0, 0.1s);
   }
   .card-header {
-    color: mix(white, #007bff, 80%);
+    // color: mix(white, #007bff, 80%);
+    color: $color-neutral-1000;
     font-size: 0.875rem;
     font-weight: 300;
     border-radius: 0;
@@ -215,8 +242,8 @@ export default {
     margin-bottom: 1rem;
 
     strong {
-      color: white;
-      font-weight: 300;
+      color: $color-neutral-1000;
+      font-weight: 600;
       padding: 0 4px;
     }
   }
@@ -256,7 +283,7 @@ export default {
     margin-right: 0;
   }
   .item-content {
-    font-size: 0.913rem;
+    font-size: 0.8rem;
     margin-top: 0.5rem;
     margin-bottom: 0;
 

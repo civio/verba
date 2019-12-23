@@ -13,18 +13,20 @@
 
         <div class="verba-magneto-copy">
           <h2 class="verba-subtitle">News Coverage of RTVE</h2>
-          <p class="verba-copy">Analyse the coverage of the Spanish Public National broadcaster.</p>
+          <p class="verba-copy">
+            Analyse the coverage of the Spanish Public National broadcaster.
+          </p>
         </div>
       </div>
     </section>
 
-    <div class="container">
+    <section class="verba-results">
       <div class="row">
         <div class="col-lg-8 offset-lg-2">
           <Results />
         </div>
       </div>
-    </div>
+    </section>
 
     <ResultContext />
   </main>
@@ -57,19 +59,36 @@ export default {
 <style scoped lang="scss">
 @import '../src/scss/_variables.scss';
 
+.verba-search-form {
+  margin: 0 6rem;
+
+  .input-group {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+}
+
 .verba-magneto {
   display: flex;
   justify-content: flex-end;
   text-align: left;
   color: $color-neutral-1000;
 
-  .verba-subtitle {
-    font-size: 1rem;
-    font-weight: 600;
+  .verba-magneto-copy {
+    margin-top: 3rem;
+
+    .verba-subtitle {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .verba-copy {
+      font-size: 0.8rem;
+    }
   }
 
-  .verba-copy {
-    font-size: 0.8rem;
+  .verba-magneto-image {
+    margin-left: 3rem;
   }
 }
 </style>
