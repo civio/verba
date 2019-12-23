@@ -1,39 +1,98 @@
 <template>
-  <div>
-    <h4>About</h4>
+  <main>
+    <div class="verba-about">
+      <img
+        class="verba-human-radar-image"
+        src="../src/images/03RadarHumano+.png"
+        alt="Human radar old illustration"
+      />
 
-    <p>
-      Full documentation available at
-      <a
-        href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-simple-query-string-query.html#simple-query-string-syntax"
-        target="_blank"
-        >Elastic site</a
-      >. Most important operators:
-    </p>
+      <div class="verba-about-copy">
+        <div class="about-project">
+        <h2>Verba Volant</h2>
+        <p>
+          from the Latin proverb <span> “Verba volant, scripta manent”,</span> “spoken words fly away, written words remain” prototypes the application of <span>Natural Language Processing (NLP) </span> tools and techniques to <span>subtitled or closed captioned videos </span>for journalistic purposes.
+        </p>
+        <p><span>VERBA</span> is an<span> open source </span>web application designed to aid journalists and researchers capture and analyse captions from public TV broadcasters.</p>
+        </div>
 
-    <dl class="row">
-      <dt class="col-sm-1">+</dt>
-      <dd class="col-sm-11">signifies AND operation</dd>
+        <div class="about-us">
+        <h2>CIVIO</h2>
+        <p>
+          is an <span>independent, non-profit organization</span> based in Spain which monitors <span>public authorities, reports to all citizens </span>and lobbies to achieve <span>true and effective transparency </span>within our institutions.
+        </p>
+          </div>
+      </div>
 
-      <dt class="col-sm-1">|</dt>
-      <dd class="col-sm-11">signifies OR operation</dd>
-
-      <dt class="col-sm-1">-</dt>
-      <dd class="col-sm-11">negates a single token</dd>
-
-      <dt class="col-sm-1">"</dt>
-      <dd class="col-sm-11">
-        wraps a number of tokens to signify a phrase for searching
-      </dd>
-
-      <dt class="col-sm-1">*</dt>
-      <dd class="col-sm-11">at the end of a term signifies a prefix query</dd>
-    </dl>
-
-    <p>
-      By default, AND is applied to search terms, so "Obama Trump" will return
-      results with BOTH "Obama" and "Trump" in them. If you want to find results
-      with EITHER keyword, use "Obama | Trump"
-    </p>
-  </div>
+    </div>
+  </main>
 </template>
+
+<style lang="scss">
+@import './scss/_variables.scss';
+
+// Default text selection
+::selection {
+  background: $color-highlight-1;
+}
+::-moz-selection {
+  background: $color-highlight-1;
+}
+
+.verba-about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+  // Tablets
+  @media all and (min-width: 768px) {
+    flex-direction: row;
+  }
+
+  // PC
+  @media all and (min-width: 1024px) {
+  }
+}
+
+.verba-about-copy {
+  margin-right: 0.8rem;
+  margin-left: 2rem;
+
+  margin-top: 4rem;
+  text-align: center;
+  
+  h2, p > span {
+  color: $color-neutral-1000;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+  }
+
+  p {
+    font-size: 0.8rem;
+  }
+
+    // Tablets
+  @media all and (min-width: 768px) {
+    text-align: right;
+  }
+}
+
+.verba-human-radar-image{
+  width:100%;
+  max-width: 300px;
+  height: auto;
+
+  // Tablets
+  @media all and (min-width: 768px) {
+      order: 1;
+  }
+
+  // PC
+ @media all and (min-width: 1024px) {
+ }
+}
+</style>

@@ -5,14 +5,19 @@
       <SearchFilters />
 
       <div class="verba-magneto">
-        <div class="verba-magento-copy">
+        <img
+          class="verba-magneto-image"
+          src="../src/images/01TapeRecorder.png"
+          alt="Magneto patent illustration"
+        />
+
+        <div class="verba-magneto-copy">
           <h2 class="verba-subtitle">News Coverage of RTVE</h2>
           <p class="verba-copy">Analyse the coverage of the Spanish Public National broadcaster.</p>
         </div>
       </div>
     </section>
 
-    <!-- <hr class="mb-0" /> -->
 
     <div class="bg-light">
       <div class="container">

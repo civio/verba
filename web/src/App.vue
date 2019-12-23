@@ -8,9 +8,8 @@
         <nav class="verba-navbar">
           <!-- <a class="verba-brand" href="/">Verba Volant</a> -->
           <h1 class="verba-brand">
-            Verba Vo
-            <span id="l">l</span>
-            <span class=" verba-it">
+            Verba Vo<span id="l">l</span>
+            <span class="verba-it">
               <span id="a">a</span>
               <span id="n">n</span>
               <span id="t">t</span>
@@ -22,19 +21,13 @@
             <!-- <ul class="navbar-nav mr-auto"> -->
             <ul class="verba-navbar-list">
               <li class="verba-nav-item">
-                <router-link :to="{ name: 'search' }" class="verba-nav-link"
-                  >Search</router-link
-                >
+                <router-link :to="{ name: 'search' }" class="verba-nav-link">Search</router-link>
               </li>
               <li class="verba-nav-item">
-                <router-link :to="{ name: 'programmes' }" class="verba-nav-link"
-                  >Programmes</router-link
-                >
+                <router-link :to="{ name: 'programmes' }" class="verba-nav-link">Programmes</router-link>
               </li>
               <li class="verba-nav-item">
-                <router-link :to="{ name: 'about' }" class="verba-nav-link"
-                  >About</router-link
-                >
+                <router-link :to="{ name: 'about' }" class="verba-nav-link">About</router-link>
               </li>
             </ul>
           </div>
@@ -71,6 +64,14 @@ u {
   text-decoration: none;
 }
 
+// Default text selection
+::selection {
+  background: $color-highlight-1;
+}
+::-moz-selection {
+  background: $color-highlight-1;
+}
+
 .app-container {
   // background: url('./assets/01.jpg') lightgrey;
   // background-color: pink;
@@ -80,15 +81,16 @@ u {
   // background-color: #f3f3f3;
   background-position: center;
 
-  color: $color-neutral-1000;
+  color: $color-neutral-800;
 }
 
 .verba-wrapper {
   // Mobile
   margin: 0rem;
+
   //TODO: Remove this, temporary
-  border-right: 1px solid $color-neutral-1000;
-  border-left: 1px solid $color-neutral-1000;
+  // border-right: 1px solid $color-neutral-1000;
+  // border-left: 1px solid $color-neutral-1000;
 
   text-align: center;
 
@@ -122,6 +124,8 @@ u {
 .verba-navbar {
   padding-top: 5rem;
   margin-bottom: 5rem;
+
+  color: $color-neutral-1000;
 
   .verba-brand {
     font-size: 3rem;
@@ -177,7 +181,7 @@ u {
     display: flex;
     justify-content: space-around;
 
-    padding-bottom: 0.7rem;
+    padding-bottom: 0.5rem;
     border-bottom: 1px solid $color-neutral-1000;
   }
 
@@ -185,10 +189,11 @@ u {
     font-size: 1.8rem;
 
     &:hover {
-      color: crimson;
+      color: $color-highlight-1;
     }
   }
 }
+
 
 // font face TEST
 @font-face {
