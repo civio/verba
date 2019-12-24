@@ -123,7 +123,7 @@ u {
   color: $color-neutral-1000;
 
   .verba-brand {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 600;
 
     display: inline-block;
@@ -151,34 +151,48 @@ u {
       position: relative;
       bottom: 12px;
     }
+
+    // Tablets
+    @media all and (min-width: 768px) {
+      font-size: 3rem;
+    }
   }
 
-  // Lines around Verba Volant
-  .verba-brand:before,
-  .verba-brand:after {
-    content: '';
-    position: absolute;
-    top: 80%;
-    overflow: hidden;
-    width: 8.7rem;
-    height: 1px;
-    border-bottom: 1px solid $color-neutral-1000;
-  }
-  .verba-brand:after {
-    left: 100%;
-  }
-  .verba-brand:before {
-    right: 100%;
+  // Tablets
+  @media all and (min-width: 768px) {
+    // Lines around Verba Volant
+    .verba-brand:before,
+    .verba-brand:after {
+      content: '';
+      position: absolute;
+      top: 80%;
+      overflow: hidden;
+      width: 8.7rem;
+      height: 1px;
+      border-bottom: 1px solid $color-neutral-1000;
+    }
+    .verba-brand:after {
+      left: 100%;
+    }
+    .verba-brand:before {
+      right: 100%;
+    }
   }
 
   .verba-navbar-list {
     max-width: 700px;
     margin: 0 auto;
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
 
     padding-bottom: 0.5rem;
     border-bottom: 1px solid $color-neutral-1000;
+
+    // Tablets
+    @media all and (min-width: 768px) {
+      flex-direction: row;
+    }
   }
 
   .verba-nav-item {
