@@ -59,11 +59,9 @@ export default {
 
 .verba-search-form {
   margin: 0 6rem;
+  margin-bottom: 2rem;
 
   .input-group {
-    // padding-left: 8rem;
-    // padding-right: 8rem;
-
     // Tablets
     @media all and (min-width: 768px) {
       padding-left: 8rem;
@@ -73,8 +71,6 @@ export default {
 }
 
 .verba-magneto {
-  // display: flex;
-  // justify-content: flex-end;
   text-align: center;
   color: $color-neutral-1000;
 
@@ -82,16 +78,6 @@ export default {
     display: flex;
     flex-direction: column;
     margin-top: 1rem;
-    // position: absolute;
-    // left: calc(50% + 5rem);
-    // top: 22rem;
-    // width: 20rem;
-    // margin-top: 3rem;
-
-    .verba-subtitle {
-      font-size: 1rem;
-      font-weight: 600;
-    }
 
     .verba-copy {
       font-size: 0.8rem;
@@ -117,5 +103,10 @@ export default {
       margin-top: 3rem;
     }
   }
+}
+
+.verba-subtitle {
+  font-size: 1rem;
+  font-weight: 600;
 }
 </style>

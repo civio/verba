@@ -1,9 +1,6 @@
 <template>
-  <!-- <div class="container"> -->
   <div class="app-container">
     <div class="verba-wrapper">
-      <!-- <nav class="navbar navbar-expand-lg"> -->
-
       <header>
         <nav class="verba-navbar">
           <a href="/">
@@ -18,9 +15,7 @@
             </h1>
           </a>
 
-          <!-- <div id="navbarSupportedContent" class="collapse navbar-collapse"> -->
           <div id="navbarSupportedContent" class="verba-nav-pages">
-            <!-- <ul class="navbar-nav mr-auto"> -->
             <ul class="verba-navbar-list">
               <li class="verba-nav-item">
                 <router-link :to="{ name: 'search' }" class="verba-nav-link">Search</router-link>
@@ -38,8 +33,8 @@
 
       <router-view />
 
-      <footer>
-        <small>CC Civio 2019</small>
+      <footer class="verba-footer">
+        <small>Civio 2019 | Licencia CC BY-SA 3.0</small>
       </footer>
     </div>
   </div>
@@ -74,14 +69,32 @@ u {
   background: $color-highlight-1;
 }
 
+// font face TEST
+@font-face {
+  font-family: 'lithoslight';
+  src: url('./fonts/fontFace/lithos_light_regular-webfont.woff2')
+      format('woff2'),
+    url('./fonts/fontFace/lithos_light_regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+}
+
 .app-container {
-  // background: url('./assets/01.jpg') lightgrey;
-  // background-color: pink;
+  font-family: 'lithoslight';
+}
+
+///////////
+
+.app-container {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 5rem;
+
   // Background texture with callback color
   min-height: 100vh;
   background: url('./images/background.jpg') #f3f3f3;
-  // background-color: #f3f3f3;
-  background-position: center;
+  // background-position: center;
 
   color: $color-neutral-800;
 }
@@ -180,18 +193,14 @@ u {
   }
 }
 
-// font face TEST
-@font-face {
-  font-family: 'lithoslight';
-  src: url('./fonts/fontFace/lithos_light_regular-webfont.woff2')
-      format('woff2'),
-    url('./fonts/fontFace/lithos_light_regular-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-}
-
-.app-container {
-  font-family: 'lithoslight';
+.verba-footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2.5rem;
+  padding: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 </style>

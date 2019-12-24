@@ -3,10 +3,7 @@
     <svg :width="width" :height="height">
       <g ref="axisX" class="axis x" />
       <g ref="axisY" class="axis y" />
-      <g
-        ref="bars"
-        :style="{ transform: `translate(${margin.left}px, ${margin.top}px)` }"
-      />
+      <g ref="bars" :style="{ transform: `translate(${margin.left}px, ${margin.top}px)` }" />
     </svg>
   </div>
 </template>
@@ -92,14 +89,28 @@ export default {
         .domain(d3.extent(this.data, d => d.y))
         .nice()
 
+      // Custom scale to make the y-axis consistent with new position
+      const scaleYdouble = d3
+        .scaleLinear()
+        .range([this.padded.height / 2, 0])
+        .domain(d3.extent(this.data, d => d.y))
+        .nice()
+
       // setup axis
       const axisX = d3
         .axisBottom(scaleX)
         .tickSizeOuter(0)
         .ticks(d3.timeYear)
       const axisY = d3
-        .axisLeft(scaleY)
+        // .axisLeft(scaleY)
+        .axisLeft(scaleYdouble)
         .tickFormat(d3.format(',d'))
+        .tickFormat
+        // Not working
+        // d3.format(function() {
+        //   return d3.format(',d') + ' times'
+        // })
+        ()
         .ticks(this.height / 50)
 
       // update bars
@@ -120,11 +131,11 @@ export default {
       d3.select(this.$refs.axisX)
         .attr(
           'transform',
-          `translate(${this.margin.left}, ${this.height / 2 -
-            this.margin.bottom})`
+          `translate(${this.margin.left}, ${this.height - this.margin.bottom})`
         )
         .call(axisX)
         .call(this.formatAxisX)
+
       d3.select(this.$refs.axisY)
         .attr('transform', `translate(${this.margin.left}, ${this.margin.top})`)
         .call(axisY)
@@ -143,7 +154,6 @@ export default {
   margin-top: 1.5rem;
   margin-bottom: 2.5rem;
   color: $color-neutral-1000;
-  // background: white;
 
   svg {
     overflow: visible;
@@ -157,9 +167,9 @@ export default {
     }
 
     &.x {
-      // .domain {
-      //   display: none;
-      // }
+      .domain {
+        display: none;
+      }
       text {
         margin-top: 200px;
         opacity: 0.9;

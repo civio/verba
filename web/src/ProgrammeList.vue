@@ -7,7 +7,6 @@
         alt="Human radar old illustration"
       />
 
-      <!-- <ul class="list-unstyled"> -->
       <!-- Film strips -->
       <ul class="verba-films-strip">
         <li v-for="(programme, key) in programmeList" :key="key">
@@ -22,18 +21,6 @@
           </router-link>
         </li>
       </ul>
-
-      <!-- Text aside
-      <ul>
-        <li v-for="(programme, key) in programmeList" :key="key">
-          <router-link
-            :to="{ name: 'programme-details', params: { id: programme.id } }"
-            class="nav-link verba-film-item"
-          >
-            {{ programme.title }}
-          </router-link>
-        </li>
-      </ul>-->
     </div>
   </main>
 </template>
@@ -83,10 +70,6 @@ u {
 
   color: $color-neutral-800;
 
-  // a {
-  //   color: $color-highlight-1;
-  // }
-
   // Tablets
   @media all and (min-width: 768px) {
     flex-direction: row;
@@ -99,10 +82,6 @@ u {
 
 .verba-films-strip {
   margin-left: 20rem;
-  // width: 200px;
-
-  // border-left: 1px solid black;
-  // border-right: 2px solid black;
 }
 
 // Image settings
@@ -145,7 +124,6 @@ u {
   figure img {
     width: 12rem;
     opacity: 0.9;
-    // background-color: lightblue;
 
     // Gray scale, sepia and blur effects
     -webkit-filter: grayscale(100%) sepia(0) blur(1px);
