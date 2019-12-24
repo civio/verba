@@ -105,12 +105,11 @@ export default {
         // .axisLeft(scaleY)
         .axisLeft(scaleYdouble)
         .tickFormat(d3.format(',d'))
-        .tickFormat
         // Not working
+        // .tickFormat
         // d3.format(function() {
         //   return d3.format(',d') + ' times'
         // })
-        ()
         .ticks(this.height / 50)
 
       // update bars
@@ -198,7 +197,6 @@ export default {
 
   rect {
     fill: currentColor;
-    // opacity: 0.5;
   }
 }
 </style>
