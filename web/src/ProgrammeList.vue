@@ -8,7 +8,8 @@
       />
 
       <!-- <ul class="list-unstyled"> -->
-      <ul>
+      <!-- Film strips -->
+      <ul class="verba-films-strip">
         <li v-for="(programme, key) in programmeList" :key="key">
           <router-link
             :to="{ name: 'programme-details', params: { id: programme.id } }"
@@ -17,10 +18,22 @@
             <figure>
               <img :src="programme | imageURL" />
             </figure>
-            {{ programme.title }}
+            <span class="strip-aside"> {{ programme.title }} </span>
           </router-link>
         </li>
       </ul>
+
+      <!-- Text aside
+      <ul>
+        <li v-for="(programme, key) in programmeList" :key="key">
+          <router-link
+            :to="{ name: 'programme-details', params: { id: programme.id } }"
+            class="nav-link verba-film-item"
+          >
+            {{ programme.title }}
+          </router-link>
+        </li>
+      </ul> -->
     </div>
   </main>
 </template>
@@ -44,17 +57,35 @@ export default {
 
 <style scoped lang="scss">
 @import '../src/scss/_variables.scss';
+
+//Common resets
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 ol,
 ul {
   list-style: none;
 }
 
+a,
+u {
+  color: inherit;
+  text-decoration: none;
+}
+
 .verba-programmes {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center;
 
   color: $color-neutral-800;
+
+  // a {
+  //   color: $color-highlight-1;
+  // }
 
   // Tablets
   @media all and (min-width: 768px) {
@@ -66,19 +97,56 @@ ul {
   }
 }
 
+.verba-films-strip {
+  margin-left: 20rem;
+  // width: 200px;
+
+  // border-left: 1px solid black;
+  // border-right: 2px solid black;
+}
+
 // Image settings
 .verba-microfilms-image {
   width: 100%;
   max-width: 300px;
   height: auto;
+
+  position: fixed;
+  top: 300px;
+  left: 100px;
+
+  // position: sticky;
+  // top: 50px;
+}
+
+//TODO: NOT WORKING
+.verba-film-item:hover .strip-aside {
+  color: $color-neutral-1000;
+  font-weight: 800;
+}
+
+.verba-film-item:hover:hover img {
+  -webkit-filter: sepia(100%) blur(0);
+  filter: sepia(100%) blur(0);
 }
 
 // Items settings
 .verba-film-item {
-  // width: 100px;
+  display: flex;
+  align-items: flex-end;
+  color: $color-neutral-800;
 
+  figure {
+    padding: 0.5rem 1.5rem;
+
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    // -webkit-filter: blur(1px);
+    // filter: blur(1px);
+  }
   figure img {
-    width: 150px;
+    width: 12rem;
+    // background-color: lightblue;
 
     // Gray scale, sepia and blur effects
     -webkit-filter: grayscale(100%) sepia(0) blur(1px);
@@ -86,9 +154,17 @@ ul {
     -webkit-transition: 1s ease-in-out;
     transition: 1s ease-in-out;
   }
-  figure:hover img {
-    -webkit-filter: sepia(100%) blur(0);
-    filter: sepia(100%) blur(0);
+
+  span {
+    position: relative;
+    left: 1rem;
+    font-size: 0.8rem;
+    padding-bottom: 0.4rem;
+
+    &:hover {
+      color: $color-neutral-1000;
+      font-weight: 800;
+    }
   }
 }
 </style>

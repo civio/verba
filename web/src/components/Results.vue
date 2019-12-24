@@ -190,7 +190,15 @@ export default {
 <style lang="scss">
 @import '../scss/_variables.scss';
 
-.verba-results-links {
+.verba-results {
+  h2 {
+    color: $color-neutral-1000;
+    font-size: 1.5rem;
+    font-weight: 800;
+
+    margin-top: 5rem;
+  }
+
   text-align: left;
 }
 
