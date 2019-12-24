@@ -13,9 +13,7 @@
 
         <div class="verba-magneto-copy">
           <h2 class="verba-subtitle">News Coverage of RTVE</h2>
-          <p class="verba-copy">
-            Analyse the coverage of the Spanish Public National broadcaster.
-          </p>
+          <p class="verba-copy">Analyse the coverage of the Spanish Public National broadcaster.</p>
         </div>
       </div>
     </section>
@@ -63,19 +61,32 @@ export default {
   margin: 0 6rem;
 
   .input-group {
-    padding-left: 8rem;
-    padding-right: 8rem;
+    // padding-left: 8rem;
+    // padding-right: 8rem;
+
+    // Tablets
+    @media all and (min-width: 768px) {
+      padding-left: 8rem;
+      padding-right: 8rem;
+    }
   }
 }
 
 .verba-magneto {
-  display: flex;
-  justify-content: flex-end;
-  text-align: left;
+  // display: flex;
+  // justify-content: flex-end;
+  text-align: center;
   color: $color-neutral-1000;
 
   .verba-magneto-copy {
-    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    // position: absolute;
+    // left: calc(50% + 5rem);
+    // top: 22rem;
+    // width: 20rem;
+    // margin-top: 3rem;
 
     .verba-subtitle {
       font-size: 1rem;
@@ -89,6 +100,22 @@ export default {
 
   .verba-magneto-image {
     margin-left: 3rem;
+    width: 100%;
+    max-width: calc(935px * #{$scale-factor});
+    // min-width: calc(935px * 0.5);
+    height: auto;
+  }
+
+  @media all and (min-width: 768px) {
+    text-align: left;
+
+    .verba-magneto-copy {
+      position: absolute;
+      left: calc(50% + 5rem);
+      top: 22rem;
+      width: 20rem;
+      margin-top: 3rem;
+    }
   }
 }
 </style>

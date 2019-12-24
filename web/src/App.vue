@@ -8,8 +8,8 @@
         <nav class="verba-navbar">
           <a href="/">
             <h1 class="verba-brand">
-              <!--  eslint-disable-next-line vue/no-v-html -->
-              Verba Vo<span id="l">l</span>
+              <span>Verba Vo</span>
+              <span id="l">l</span>
               <span class="verba-it">
                 <span id="a">a</span>
                 <span id="n">n</span>
@@ -23,19 +23,13 @@
             <!-- <ul class="navbar-nav mr-auto"> -->
             <ul class="verba-navbar-list">
               <li class="verba-nav-item">
-                <router-link :to="{ name: 'search' }" class="verba-nav-link"
-                  >Search</router-link
-                >
+                <router-link :to="{ name: 'search' }" class="verba-nav-link">Search</router-link>
               </li>
               <li class="verba-nav-item">
-                <router-link :to="{ name: 'programmes' }" class="verba-nav-link"
-                  >Programmes</router-link
-                >
+                <router-link :to="{ name: 'programmes' }" class="verba-nav-link">Programmes</router-link>
               </li>
               <li class="verba-nav-item">
-                <router-link :to="{ name: 'about' }" class="verba-nav-link"
-                  >About</router-link
-                >
+                <router-link :to="{ name: 'about' }" class="verba-nav-link">About</router-link>
               </li>
             </ul>
           </div>
@@ -85,7 +79,7 @@ u {
   // background-color: pink;
   // Background texture with callback color
   min-height: 100vh;
-  background: url('./images/01.jpg') #f3f3f3;
+  background: url('./images/background.jpg') #f3f3f3;
   // background-color: #f3f3f3;
   background-position: center;
 
@@ -95,38 +89,18 @@ u {
 .verba-wrapper {
   // Mobile
   margin: 0rem;
-
-  //TODO: Remove this, temporary
-  // border-right: 1px solid $color-neutral-1000;
-  // border-left: 1px solid $color-neutral-1000;
-
   text-align: center;
-
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
-  // justify-content: center;
 
   // Tablets
   @media all and (min-width: 768px) {
     margin: 0 4rem;
-    // background-color: burlywood;
   }
 
   // PC
   @media all and (min-width: 1024px) {
     max-width: 1024px;
     margin: 0 auto;
-    // background-color: white;
   }
-
-  // // If super-large screensize
-  // @media all and (min-width: 1920px) {
-  //   background-size: cover;
-  //   background-repeat: no-repeat;
-  //   background-attachment: fixed;
-  // }
 }
 
 .verba-navbar {
@@ -173,7 +147,7 @@ u {
     position: absolute;
     top: 80%;
     overflow: hidden;
-    width: 5rem;
+    width: 8.7rem;
     height: 1px;
     border-bottom: 1px solid $color-neutral-1000;
   }

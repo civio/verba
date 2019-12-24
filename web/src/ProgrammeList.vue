@@ -18,7 +18,7 @@
             <figure>
               <img :src="programme | imageURL" />
             </figure>
-            <span class="strip-aside"> {{ programme.title }} </span>
+            <span class="strip-aside">{{ programme.title }}</span>
           </router-link>
         </li>
       </ul>
@@ -33,7 +33,7 @@
             {{ programme.title }}
           </router-link>
         </li>
-      </ul> -->
+      </ul>-->
     </div>
   </main>
 </template>
@@ -108,18 +108,16 @@ u {
 // Image settings
 .verba-microfilms-image {
   width: 100%;
-  max-width: 300px;
+  max-width: calc(438px * #{$scale-factor});
   height: auto;
 
   position: fixed;
-  top: 300px;
-  left: 100px;
-
+  top: 35%;
+  right: calc(50% + 7rem);
   // position: sticky;
   // top: 50px;
 }
 
-//TODO: NOT WORKING
 .verba-film-item:hover .strip-aside {
   color: $color-neutral-1000;
   font-weight: 800;
@@ -146,6 +144,7 @@ u {
   }
   figure img {
     width: 12rem;
+    opacity: 0.9;
     // background-color: lightblue;
 
     // Gray scale, sepia and blur effects

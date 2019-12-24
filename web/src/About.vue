@@ -92,7 +92,8 @@
 
 .verba-human-radar-image {
   width: 100%;
-  max-width: 300px;
+  max-width: calc(435px * #{$scale-factor});
+  // max-width: 300px;
   height: auto;
 
   // Tablets
