@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import store from './store'
 import { sync } from 'vuex-router-sync'
 
+import i18n from './i18n'
 import App from './App.vue'
 import Search from './Search.vue'
 import ProgrammeList from './ProgrammeList.vue'
@@ -71,5 +72,6 @@ Vue.use(VueRouter)
 new Vue({
   router: global.router,
   store,
+  i18n,
   render: h => h(App)
 }).$mount('#app')

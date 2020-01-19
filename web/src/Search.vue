@@ -12,8 +12,8 @@
         />
 
         <div class="verba-magneto-copy">
-          <h2 class="verba-subtitle">News Coverage of RTVE</h2>
-          <p class="verba-copy">Analyse the coverage of the Spanish Public National broadcaster.</p>
+          <h2 class="verba-subtitle">{{ $t('search.title') }}</h2>
+          <p class="verba-copy">{{ $t('search.subtitle') }}</p>
         </div>
       </div>
     </section>
