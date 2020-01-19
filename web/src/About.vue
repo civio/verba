@@ -9,27 +9,14 @@
 
       <div class="verba-about-copy">
         <div class="about-project">
-          <h2>Verba Volant</h2>
-          <p>
-            from the Latin proverb
-            <span>“Verba volant, scripta manent”,</span> “spoken words fly away, written words remain” prototypes the application of
-            <span>Natural Language Processing (NLP)</span> tools and techniques to
-            <span>subtitled or closed captioned videos</span>for journalistic purposes.
-          </p>
-          <p>
-            <span>VERBA</span> is an
-            <span>open source</span>web application designed to aid journalists and researchers capture and analyse captions from public TV broadcasters.
-          </p>
+          <h2 v-html="$t('about.project.title')"></h2>
+          <p v-html="$t('about.project.body')"></p>
+          <p v-html="$t('about.project.bodyExtra')"></p>
         </div>
 
         <div class="about-us">
-          <h2>CIVIO</h2>
-          <p>
-            is an
-            <span>independent, non-profit organization</span> based in Spain which monitors
-            <span>public authorities, reports to all citizens</span>and lobbies to achieve
-            <span>true and effective transparency</span>within our institutions.
-          </p>
+          <h2 v-html="$t('about.us.title')"></h2>
+          <p v-html="$t('about.us.body')"></p>
         </div>
       </div>
     </div>

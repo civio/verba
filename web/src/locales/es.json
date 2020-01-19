@@ -1,2 +1,42 @@
 {
+	"header": {
+		"search": "Buscar",
+		"programmes": "Programas",
+		"about": "Sobre Verba"
+	},
+	"about": {
+		"project": {
+			"title": "Civio",
+			"body": "de la expresión latina <span>“Verba volant, scripta manent”</span>, “las palabras se las lleva el viento, lo escrito permanece“, es un experimento para aplicar herramientas y técnicas de <span>Procesamiento de Lenguaje Natural (PLN)</span> a <span>videos subtitulados y transcripciones</span> con objeto periodístico.",
+			"bodyExtra": "<span>VERBA</span> es una aplicación web de <span>código abierto</span> creada para ayudar a periodistas e investigadores a capturar y analizar subtítulos de vídeos."
+		},
+		"us": {
+			"title": "Civio",
+			"body": "es una <span>organización independiente y sin ánimo de lucro </span> que vigila a los <span>organismos públicos, informa a los ciudadanos</span> y hace activismo para conseguir <span>transparencia real y efectiva</span> en nuestras instituciones."
+		}
+	},
+	"search": {
+		"subtitle": "Analiza la cobertura de los Telediarios de RTVE.",
+		"title": "Análisis de los Telediarios de RTVE",
+		"placeholder": "Introduce un término",
+		"filter_by_date": "Filtrar por fecha"
+	},
+	"results": {
+		"chart": {
+			"title": "Histograma"
+		},
+		"list": {
+			"title": "Resultados",
+			"page": "Página {p} de {total}.",
+			"count": "{total} resultados para <strong>{query}</strong>"
+		},
+		"item": {
+			"showContext": "Mostrar en contexto",
+			"goToVideo": "Ir al vídeo"
+		}
+	},
+	"pagination": {
+		"previous": "Anterior",
+		"next": "Siguiente"
+	}
 }

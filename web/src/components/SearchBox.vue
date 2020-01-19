@@ -4,7 +4,7 @@
       ref="searchInput"
       type="text"
       class="form-control"
-      placeholder="Search a term"
+      :placeholder="$t('search.placeholder')"
       :value="query"
       @change="onChange"
     />

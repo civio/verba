@@ -32,7 +32,7 @@ export default {
               this.queryDate.from
             )} - ${this.formatDate(this.queryDate.to)}`
           : this.formatDate(this.queryDate.from)
-        : 'Filter by date'
+        : this.$t('search.filter_by_date')
     }
   },
   methods: {

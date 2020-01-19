@@ -18,13 +18,13 @@
           <div id="navbarSupportedContent" class="verba-nav-pages">
             <ul class="verba-navbar-list">
               <li class="verba-nav-item">
-                <router-link :to="{ name: 'search' }" class="verba-nav-link">Search</router-link>
+                <router-link :to="{ name: 'search' }" class="verba-nav-link">{{ $t('header.search') }}</router-link>
               </li>
               <li class="verba-nav-item">
-                <router-link :to="{ name: 'programmes' }" class="verba-nav-link">Programmes</router-link>
+                <router-link :to="{ name: 'programmes' }" class="verba-nav-link">{{ $t('header.programmes') }}</router-link>
               </li>
               <li class="verba-nav-item">
-                <router-link :to="{ name: 'about' }" class="verba-nav-link">About</router-link>
+                <router-link :to="{ name: 'about' }" class="verba-nav-link">{{ $t('header.about') }}</router-link>
               </li>
             </ul>
           </div>

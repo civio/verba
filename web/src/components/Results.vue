@@ -5,19 +5,17 @@
     </div>
     <div v-else-if="results">
       <section class="results-dataviz">
-        <h2 class="verba-subtitle">Histogram</h2>
+        <h2 class="verba-subtitle">{{ $t('results.chart.title') }}</h2>
         <AreaChart v-if="showChart" :data="aggregations" />
       </section>
 
       <section class="results-links">
-        <h2 class="verba-subtitle">Results</h2>
+        <h2 class="verba-subtitle">{{ $t('results.list.title') }}</h2>
         <p class="my-4">
           <span v-if="results.length > 50" class="text-secondary">
-            Page {{ resultsPage + 1 }} of
-            {{ Math.ceil(results.length / 50) }}
+            {{ $t('results.list.page', { p: resultsPage + 1, total: Math.ceil(results.length / 50) }) }}
           </span>
-          {{ results.length.toLocaleString() }} results for
-          <strong>{{ query }}</strong>
+          <span v-html="$t('results.list.count', { total: results.length.toLocaleString(), query: query })"></span>
           &mdash; (
           <a href="#" @click="onDownloadClick()">CSV</a>)
         </p>
@@ -45,7 +43,7 @@
                 {{ item.time_end | formatTime }}
               </span>
               <span class="badge badge-secondary video-link" @click="onGoToVideoBtnClick(item)">
-                Go to video
+                {{ $t('results.item.goToVideo') }}
                 <svg class="icon-play" width="14" height="14" viewBox="0 0 24 24">
                   <path d="M0 0h24v24H0z" fill="none" />
                   <path
@@ -56,7 +54,7 @@
               <span
                 class="badge badge-secondary video-link"
                 @click="onShowContextBtnClick(item)"
-              >Show context</span>
+              >{{ $t('results.item.showContext') }}</span>
               <!-- eslint-disable-next-line vue/no-v-html -->
               <p class="item-content" v-html="highlight(item.content)"></p>
               <span

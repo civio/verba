@@ -1,6 +1,42 @@
 {
-  "search": {
-  	"title": "News Coverage of RTVE",
-  	"subtitle": "Analyse the coverage of the Spanish Public National broadcaster."
-  }
+	"header": {
+		"search": "Search",
+		"programmes": "Programmes",
+		"about": "About"
+	},
+	"about": {
+		"project": {
+			"title": "Verba Volant",
+			"body": "from the Latin proverb <span>“Verba volant, scripta manent”</span>, “spoken words fly away, written words remain”, prototypes the application of <span>Natural Language Processing (NLP)</span> tools and techniques to <span>subtitled or closed captioned videos</span> for journalistic purposes.",
+			"bodyExtra": "<span>VERBA</span> is an <span>open source</span> web application designed to aid journalists and researchers capture and analyse video captions."
+		},
+		"us": {
+			"title": "Civio",
+			"body": "is an <span>independent, non-profit organization</span> based in Spain which monitors <span>public authorities, reports to all citizens</span> and lobbies to achieve <span>true and effective transparency</span> within our institutions."
+		}
+	},
+	"search": {
+		"subtitle": "Analyse the coverage of the Spanish Public National broadcaster.",
+		"title": "News Coverage of RTVE",
+		"placeholder": "Search a term",
+		"filter_by_date": "Filter by date"
+	},
+	"results": {
+		"chart": {
+			"title": "Histogram"
+		},
+		"list": {
+			"title": "Results",
+			"page": "Page {p} of {total}.",
+			"count": "{total} results for <strong>{query}</strong>"
+		},
+		"item": {
+			"showContext": "Show context",
+			"goToVideo": "Go to video"
+		}
+	},
+	"pagination": {
+		"previous": "Previous",
+		"next": "Next"
+	}
 }

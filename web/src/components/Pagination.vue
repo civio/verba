@@ -5,7 +5,7 @@
         :class="{ disabled: current === 0, 'page-item': true }"
         @click="onClickPrev"
       >
-        <a class="page-link" href="#" aria-label="Previous">
+        <a class="page-link" href="#" :aria-label="$t('pagination.previous')">
           <span aria-hidden="true">&laquo;</span>
         </a>
       </li>
@@ -22,7 +22,7 @@
         :class="{ disabled: current === size - 1, 'page-item': true }"
         @click="onClickNext"
       >
-        <a class="page-link" href="#" aria-label="Next">
+        <a class="page-link" href="#" :aria-label="$t('pagination.previous')">
           <span aria-hidden="true">&raquo;</span>
         </a>
       </li>
