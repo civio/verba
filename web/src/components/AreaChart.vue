@@ -122,9 +122,10 @@ export default {
         .attr('transform', `translate(0, ${-this.height / 2})`)
         .attr('height', d => scaleY(0) - scaleY(d.y))
         .attr('width', barWidth)
-
         .append('svg:title')
-        .text(d => d.y + ' times')
+        .text(d => {
+          return d3.timeFormat("%d-%m-%Y")(d.x) + ' | ' + d.y + ' times';
+        })
 
       // render axis
       d3.select(this.$refs.axisX)
