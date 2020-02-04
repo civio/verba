@@ -12,10 +12,13 @@
       <section class="results-links">
         <h2 class="verba-subtitle">{{ $t('results.list.title') }}</h2>
         <p class="my-4">
-          <span v-if="results.length > 50" class="text-secondary">
-            {{ $t('results.list.page', { p: resultsPage + 1, total: Math.ceil(results.length / 50) }) }}
-          </span>
-          <span v-html="$t('results.list.count', { total: results.length.toLocaleString(), query: query })"></span>
+          <span
+            v-if="results.length > 50"
+            class="text-secondary"
+          >{{ $t('results.list.page', { p: resultsPage + 1, total: Math.ceil(results.length / 50) }) }}</span>
+          <span
+            v-html="$t('results.list.count', { total: results.length.toLocaleString(), query: query })"
+          ></span>
           &mdash; (
           <a href="#" @click="onDownloadClick()">CSV</a>)
         </p>
@@ -44,7 +47,12 @@
               </span>
               <span class="badge badge-secondary video-link" @click="onGoToVideoBtnClick(item)">
                 {{ $t('results.item.goToVideo') }}
-                <svg class="icon-play" width="14" height="14" viewBox="0 0 24 24">
+                <svg
+                  class="icon-play"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                >
                   <path d="M0 0h24v24H0z" fill="none" />
                   <path
                     d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"

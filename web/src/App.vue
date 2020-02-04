@@ -94,18 +94,30 @@ u {
 // } /* Internet Explorer */
 
 // font face TEST
-@font-face {
-  font-family: 'lithoslight';
-  src: url('./fonts/fontFace/lithos_light_regular-webfont.woff2')
-      format('woff2'),
-    url('./fonts/fontFace/lithos_light_regular-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-}
+// @font-face {
+//   font-family: 'lithoslight';
+//   src: url('./fonts/fontFace/lithos_light_regular-webfont.woff2')
+//       format('woff2'),
+//     url('./fonts/fontFace/lithos_light_regular-webfont.woff') format('woff');
+//   font-weight: normal;
+//   font-style: normal;
+//   -webkit-font-smoothing: antialiased;
+// }
 
 .app-container {
-  font-family: 'lithoslight';
+  // font-family: 'lithoslight';
+
+  // 2nd round
+  // font-family: 'PT Sans', sans-serif;
+  // font-family: 'Tajawal', sans-serif;
+  // font-family: 'Raleway', sans-serif;
+  // font-family: 'Be Vietnam', sans-serif;
+  // font-family: 'Palanquin', sans-serif;
+  // font-family: 'Lato', sans-serif;
+
+  // 3rd round
+  // font-family: 'Cormorant', serif;
+  font-family: 'El Messiri', sans-serif;
 }
 
 ///////////
@@ -180,6 +192,7 @@ u {
   .verba-brand {
     font-size: 2rem;
     font-weight: 600;
+    text-transform: uppercase;
 
     display: inline-block;
     position: relative;
@@ -240,6 +253,7 @@ u {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    text-transform: uppercase;
 
     padding-bottom: 0.5rem;
     border-bottom: 1px solid $color-neutral-1000;
