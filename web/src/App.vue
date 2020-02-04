@@ -18,10 +18,16 @@
           <div id="navbarSupportedContent" class="verba-nav-pages">
             <ul class="verba-navbar-list">
               <li class="verba-nav-item">
-                <router-link :to="{ name: 'search' }" class="verba-nav-link">{{ $t('header.search') }}</router-link>
+                <router-link
+                  :to="{ name: 'search' }"
+                  class="verba-nav-link"
+                >{{ $t('header.search') }}</router-link>
               </li>
               <li class="verba-nav-item">
-                <router-link :to="{ name: 'programmes' }" class="verba-nav-link">{{ $t('header.programmes') }}</router-link>
+                <router-link
+                  :to="{ name: 'programmes' }"
+                  class="verba-nav-link"
+                >{{ $t('header.programmes') }}</router-link>
               </li>
               <li class="verba-nav-item">
                 <router-link :to="{ name: 'about' }" class="verba-nav-link">{{ $t('header.about') }}</router-link>
@@ -69,6 +75,24 @@ u {
   background: $color-highlight-1;
 }
 
+// Input text when focus
+// input[type='text']:focus {
+//   outline: 2px solid $color-highlight-1 !important;
+// }
+
+// ::-webkit-input-placeholder {
+//   color: #555;
+// } /* Webkit */
+// :-moz-placeholder {
+//   color: #555;
+// } /* Firefox <= 18 */
+// ::-moz-placeholder {
+//   color: #555;
+// } /* Firefox >= 19 */
+// :-ms-input-placeholder {
+//   color: #555;
+// } /* Internet Explorer */
+
 // font face TEST
 @font-face {
   font-family: 'lithoslight';
@@ -90,13 +114,44 @@ u {
   position: relative;
   min-height: 100vh;
   padding-bottom: 5rem;
-
-  // Background texture with callback color
   min-height: 100vh;
-  background: url('./images/background.jpg') #f3f3f3;
-  // background-position: center;
-
   color: $color-neutral-800;
+
+  // Background texture (responsive) with callback color
+  // Mobile (default)
+  background-color: #f3f3f3; // Callback
+  background-image: linear-gradient(
+      rgba(255, 255, 255, $ligthtness-factor),
+      rgba(255, 255, 255, $ligthtness-factor)
+    ),
+    url('./images/bcg@0,25x.jpg');
+
+  // Tablet
+  @media all and (min-width: 481px) {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, $ligthtness-factor),
+        rgba(255, 255, 255, $ligthtness-factor)
+      ),
+      url('./images/bcg@0,5x.jpg');
+  }
+
+  // PC regular
+  @media all and (min-width: 961px) {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, $ligthtness-factor),
+        rgba(255, 255, 255, $ligthtness-factor)
+      ),
+      url('./images/bcg@0,75x.jpg');
+  }
+
+  // PC big screen
+  @media all and (min-width: 1441px) {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, $ligthtness-factor),
+        rgba(255, 255, 255, $ligthtness-factor)
+      ),
+      url('./images/bcg.jpg');
+  }
 }
 
 .verba-wrapper {
