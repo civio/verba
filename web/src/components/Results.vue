@@ -4,7 +4,7 @@
       <div class="loader-animation my-5"></div>
     </div>
     <div v-else-if="results">
-      <section class="results-dataviz">
+      <section class="results-dataviz" id="verba-subtitle-dataviz">
         <h2 class="verba-subtitle">{{ $t('results.chart.title') }}</h2>
         <AreaChart v-if="showChart" :data="aggregations" />
       </section>
@@ -68,7 +68,7 @@
               <span
                 v-for="(entity, key) in item.entities"
                 :key="key"
-                class="badge"
+                class="badge badge-entitie"
               >{{ entity.type }}/{{ entity.text }}</span>
             </div>
           </div>
@@ -258,6 +258,10 @@ export default {
     opacity: 0.85;
     margin-right: 0.5rem;
   }
+  .badge-entitie{
+    display: none;
+  }
+  
   .date-hour {
     margin-left: 0.5rem;
     font-size: 0.875rem;
