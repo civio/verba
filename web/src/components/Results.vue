@@ -60,7 +60,7 @@
               <span
                 v-for="(entity, key) in item.entities"
                 :key="key"
-                class="badge"
+                class="badge badge-entitie"
               >{{ entity.type }}/{{ entity.text }}</span>
             </div>
           </div>
@@ -250,6 +250,10 @@ export default {
     opacity: 0.85;
     margin-right: 0.5rem;
   }
+  .badge-entitie{
+    display: none;
+  }
+  
   .date-hour {
     margin-left: 0.5rem;
     font-size: 0.875rem;
