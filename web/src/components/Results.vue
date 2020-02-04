@@ -4,7 +4,7 @@
       <div class="loader-animation my-5"></div>
     </div>
     <div v-else-if="results">
-      <section class="results-dataviz">
+      <section class="results-dataviz" id="verba-subtitle-dataviz">
         <h2 class="verba-subtitle">{{ $t('results.chart.title') }}</h2>
         <AreaChart v-if="showChart" :data="aggregations" />
       </section>
