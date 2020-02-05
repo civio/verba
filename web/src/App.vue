@@ -144,7 +144,7 @@ u {
 
 .verba-navbar {
   padding-top: 6rem;
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
 
   color: $color-neutral-1000;
 

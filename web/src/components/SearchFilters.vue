@@ -59,7 +59,7 @@ export default {
   .btn {
     // Tablets
     @media all and (min-width: 768px) {
-      margin-left: 23rem;
+      // margin-left: 23rem;
     }
 
     margin-right: 0.5rem;

@@ -56,7 +56,7 @@ export default {
 // Input text when focus
 input:focus {
   // outline: 2px solid $color-highlight-1 !important;
-  border-color: $color-highlight-1 !important;
-  box-shadow: 0 0 0 0.2rem rgba($color-highlight-1, 0.25) !important;
+  border-color: $color-neutral-800 !important;
+  box-shadow: 0 0 0 0.2rem rgba($color-neutral-800, 0.25) !important;
 }
 </style>

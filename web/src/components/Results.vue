@@ -183,7 +183,7 @@ export default {
 
 .verba-results {
   .verba-subtitle {
-    margin-top: 5rem;
+    // margin-top: 5rem;
   }
 
   text-align: left;
@@ -254,10 +254,10 @@ export default {
     opacity: 0.85;
     margin-right: 0.5rem;
   }
-  .badge-entitie{
+  .badge-entitie {
     display: none;
   }
-  
+
   .date-hour {
     margin-left: 0.5rem;
     font-size: 0.875rem;
@@ -300,8 +300,8 @@ export default {
   }
 }
 
-// .verba-subtitle {
-//   font-size: 1rem;
-//   font-weight: 600;
-// }
+#verba-subtitle-dataviz {
+  margin-bottom: 5rem;
+  padding-top: 3rem;
+}
 </style>

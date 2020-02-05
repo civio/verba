@@ -1,9 +1,6 @@
 <template>
   <main>
     <section class="verba-search-form">
-      <SearchBox />
-      <SearchFilters />
-
       <div class="verba-magneto">
         <img
           class="verba-magneto-image"
@@ -15,6 +12,11 @@
           <h2 class="verba-subtitle">{{ $t('search.title') }}</h2>
           <p class="verba-copy">{{ $t('search.subtitle') }}</p>
         </div>
+      </div>
+
+      <div class="verba-search-group">
+        <SearchBox />
+        <SearchFilters />
       </div>
     </section>
 
@@ -62,15 +64,18 @@ export default {
   margin-bottom: 2rem;
 
   .input-group {
+    width: 70%;
+
     // Tablets
     @media all and (min-width: 768px) {
-      padding-left: 8rem;
-      padding-right: 8rem;
+      padding-left: 6rem;
+      // padding-right: 6rem;
     }
   }
 }
 
 .verba-magneto {
+  margin-bottom: 1rem;
   text-align: center;
   color: $color-neutral-1000;
 
@@ -103,6 +108,10 @@ export default {
       margin-top: 3rem;
     }
   }
+}
+
+.verba-search-group {
+  display: flex;
 }
 
 // .verba-subtitle {

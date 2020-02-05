@@ -102,4 +102,8 @@
   font-size: 1.8rem;
   font-weight: 600;
 }
+
+html {
+  scroll-behavior: smooth;
+}
 </style>
