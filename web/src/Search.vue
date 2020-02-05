@@ -102,13 +102,13 @@ export default {
   @media all and (min-width: 768px) {
     text-align: left;
 
-    .verba-magneto-copy {
-      position: absolute;
-      left: calc(50% + 5rem);
-      top: 22rem;
-      width: 20rem;
-      margin-top: 3rem;
-    }
+    // .verba-magneto-copy {
+    //   position: absolute;
+    //   left: calc(50% + 5rem);
+    //   top: 22rem;
+    //   width: 20rem;
+    //   margin-top: 3rem;
+    // }
   }
 }
 
