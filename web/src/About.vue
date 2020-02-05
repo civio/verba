@@ -35,6 +35,7 @@
 }
 
 .verba-about {
+  // Mobile first
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -75,6 +76,11 @@
   // Tablets
   @media all and (min-width: 768px) {
     text-align: right;
+  }
+
+  // PC
+  @media all and (min-width: 1024px) {
+    margin-left: 6rem;
   }
 }
 

@@ -127,8 +127,8 @@ u {
 }
 
 .verba-wrapper {
-  // Mobile
-  margin: 0rem;
+  // Mobile first
+  margin: 0 1rem;
   text-align: center;
 
   // Tablets
@@ -208,7 +208,7 @@ u {
   }
 
   .verba-navbar-list {
-    max-width: 700px;
+    max-width: 650px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
