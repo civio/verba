@@ -9,7 +9,7 @@
         />
 
         <div class="verba-magneto-copy">
-          <h2 class="verba-subtitle">{{ $t('search.title') }}</h2>
+          <h2 class="verba-subtitle" v-html="$t('search.title')"></h2>
           <p class="verba-copy">{{ $t('search.subtitle') }}</p>
         </div>
       </div>
@@ -88,6 +88,8 @@ export default {
     margin-top: 1rem;
 
     .verba-copy {
+      // margin-bottom: 0;
+      margin-bottom: -5px;
       font-size: 0.8rem;
     }
   }
