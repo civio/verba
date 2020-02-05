@@ -105,8 +105,8 @@ export default {
   }
 }
 
-.verba-subtitle {
-  font-size: 1rem;
-  font-weight: 600;
-}
+// .verba-subtitle {
+//   font-size: 1rem;
+//   font-weight: 600;
+// }
 </style>

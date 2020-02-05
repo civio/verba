@@ -75,6 +75,7 @@ export default {
   }
 }
 .verba-transcript-copy {
+  padding-top: 1.5rem;
   font-size: 0.8rem;
 }
 </style>
