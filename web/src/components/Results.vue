@@ -182,11 +182,7 @@ export default {
 @import '../scss/_variables.scss';
 
 .verba-results {
-  h2 {
-    color: $color-neutral-1000;
-    font-size: 1.5rem;
-    font-weight: 800;
-
+  .verba-subtitle {
     margin-top: 5rem;
   }
 
@@ -228,7 +224,7 @@ export default {
     margin-bottom: 2rem;
     background-color: transparent;
 
-    border-top: 1px solid rgba(0, 0, 0, 0.1s);
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
   }
   .card-header {
     color: $color-neutral-1000;
@@ -276,7 +272,7 @@ export default {
     margin-right: 2px;
   }
   .icon-date {
-    margin-top: 4px;
+    // margin-top: 4px;
     margin-right: 4px;
   }
   .icon-play {
@@ -304,8 +300,8 @@ export default {
   }
 }
 
-.verba-subtitle {
-  font-size: 1rem;
-  font-weight: 600;
-}
+// .verba-subtitle {
+//   font-size: 1rem;
+//   font-weight: 600;
+// }
 </style>

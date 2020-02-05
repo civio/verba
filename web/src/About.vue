@@ -9,13 +9,13 @@
 
       <div class="verba-about-copy">
         <div class="about-project">
-          <h2 v-html="$t('about.project.title')"></h2>
+          <h2 class="verba-subtitle" v-html="$t('about.project.title')"></h2>
           <p v-html="$t('about.project.body')"></p>
           <p v-html="$t('about.project.bodyExtra')"></p>
         </div>
 
         <div class="about-us">
-          <h2 v-html="$t('about.us.title')"></h2>
+          <h2 class="verba-subtitle" v-html="$t('about.us.title')"></h2>
           <p v-html="$t('about.us.body')"></p>
         </div>
       </div>
@@ -56,15 +56,16 @@
   margin-top: 4rem;
   text-align: center;
 
-  h2,
   p > span {
     color: $color-neutral-1000;
   }
 
-  h2 {
-    font-size: 1.5rem;
+  // h2 {
+  //   font-size: 1.5rem;
+  //   font-weight: 600;
+  // }
+  .verba-subtitle {
     margin-bottom: 0;
-    font-weight: 600;
   }
 
   p {
@@ -91,5 +92,14 @@
   // PC
   @media all and (min-width: 1024px) {
   }
+}
+
+//TODO: move to a better position
+// All subtitles in all pages
+.verba-subtitle {
+  // color: red;
+  color: $color-neutral-1000;
+  font-size: 1.8rem;
+  font-weight: 600;
 }
 </style>

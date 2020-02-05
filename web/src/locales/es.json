@@ -6,7 +6,7 @@
   },
   "about": {
     "project": {
-      "title": "Verba",
+      "title": "Verba Volant",
       "body": "de la expresión latina <span>“Verba volant, scripta manent”</span>, “las palabras se las lleva el viento, lo escrito permanece“, es un experimento para aplicar herramientas y técnicas de <span>Procesamiento de Lenguaje Natural (PLN)</span> a <span>videos subtitulados y transcripciones</span> con objeto periodístico.",
       "bodyExtra": "<span>VERBA</span> es una aplicación web de <span>código abierto</span> creada para ayudar a periodistas e investigadores a capturar y analizar subtítulos de vídeos."
     },
