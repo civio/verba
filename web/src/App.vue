@@ -20,6 +20,7 @@
               <li class="verba-nav-item">
                 <router-link
                   :to="{ name: 'search' }"
+                  exact
                   class="verba-nav-link"
                 >{{ $t('header.search') }}</router-link>
               </li>

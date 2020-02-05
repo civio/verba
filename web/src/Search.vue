@@ -4,7 +4,7 @@
       <div class="verba-magneto">
         <img
           class="verba-magneto-image"
-          src="../src/images/01TapeRecorder.png"
+          src="../src/images/01TapeRecorder-no-copy.png"
           alt="Magneto patent illustration"
         />
 
@@ -64,7 +64,7 @@ export default {
   margin-bottom: 2rem;
 
   .input-group {
-    width: 70%;
+    width: 80%;
 
     // Tablets
     @media all and (min-width: 768px) {
@@ -75,6 +75,9 @@ export default {
 }
 
 .verba-magneto {
+  display: flex;
+  align-items: flex-end;
+
   margin-bottom: 1rem;
   text-align: center;
   color: $color-neutral-1000;
@@ -92,8 +95,7 @@ export default {
   .verba-magneto-image {
     margin-left: 3rem;
     width: 100%;
-    max-width: calc(935px * #{$scale-factor});
-    // min-width: calc(935px * 0.5);
+    max-width: calc(510px * #{$scale-factor});
     height: auto;
   }
 
