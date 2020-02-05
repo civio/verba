@@ -3,7 +3,7 @@
     <div class="verba-programmes">
       <img
         class="verba-microfilms-image"
-        src="../src/images/02Microfilms.png"
+        src="../src/images/02Microfilms-es.png"
         alt="Human radar old illustration"
       />
 
