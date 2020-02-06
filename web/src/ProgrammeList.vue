@@ -22,12 +22,12 @@
         </li>
       </ul>
     </div>
+    <button id="seeRes">Ver más</button>
   </main>
 </template>
 
 <script>
 import Vue from 'vue'
-
 export default {
   data() {
     return {
@@ -36,7 +36,20 @@ export default {
   },
   mounted() {
     Vue.verbaAPI('fetchProgrammeList', null, response => {
-      this.programmeList = response.data
+      let init = 1;
+      this.programmeList = response.data.slice(init,init+=10)
+      document.getElementById('seeRes').onclick = function(){
+        let items = response.data.slice(init, init+=10);
+        let htm = ''
+        console.log(response.data)
+        items.forEach(function(el){
+          //'https://img2.rtve.es/v/telediario-15-horas-20-01-20_5488057.png';
+          htm += '<li data-v-521901b1><a data-v-521901b1 href="/programmes/'+el['id']+'" class="nav-link verba-film-item"><figure class="programme-img" data-v-521901b1><img data-v-521901b1 src="https://img2.rtve.es/v/'+el['title'].replace(/ - |-|\/| /g, '-').toLowerCase()+'_'+el['id']+'.png"></figure><span data-v-521901b1 class="strip-aside">'+el['title']+'</span></a></li>';
+
+        })
+        document.getElementsByClassName('verba-films-strip')[0].innerHTML += htm;
+
+      }.bind(this)
     })
   }
 }
@@ -44,7 +57,6 @@ export default {
 
 <style scoped lang="scss">
 @import '../src/scss/_variables.scss';
-
 // TODO: I shouldn't need this again here. Something to do with the "scoped" feature of the vue components styles
 //Common resets
 * {
@@ -52,129 +64,104 @@ export default {
   margin: 0;
   padding: 0;
 }
-
 ol,
 ul {
   list-style: none;
 }
-
 a,
 u {
   color: inherit;
   text-decoration: none;
 }
-
 .verba-programmes {
   // Mobile first
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   color: $color-neutral-800;
-
   // Tablets
   @media all and (min-width: 768px) {
     flex-direction: row;
   }
-
   // PC
   @media all and (min-width: 1024px) {
   }
 }
-
 .verba-films-strip {
   // Mobile first
   margin-left: 0;
-
   // Tablets
   @media all and (min-width: 768px) {
     margin-left: 18rem;
   }
-
   // PC
   @media all and (min-width: 1024px) {
     margin-left: 13rem;
   }
 }
-
 // Image settings
 .verba-microfilms-image {
   width: 100%;
   max-width: calc(438px * #{$scale-factor});
   height: auto;
-
   margin-left: 2rem;
   margin-bottom: 3rem;
-
   // Mobile first
   // position: block;
   right: calc(50% + 5rem);
-
   // Tablets
   @media all and (min-width: 768px) {
     position: fixed;
     top: 35%;
     right: calc(50% + 3rem);
   }
-
   // PC
   @media all and (min-width: 1024px) {
     right: calc(50% + 6rem);
   }
 }
-
 .verba-film-item:hover .strip-aside {
   color: $color-neutral-1000;
   font-weight: 800;
 }
-
 .verba-film-item:hover:hover img {
   -webkit-filter: sepia(100%) blur(0);
   filter: sepia(100%) blur(0);
 }
-
 // Items settings
 .verba-film-item {
   display: flex;
   align-items: flex-end;
   color: $color-neutral-800;
-
   .programme-img {
     padding: 0.5rem 1rem;
-
     border-left: 2px solid rgba(0, 0, 0, 0.2);
     border-right: 2px solid rgba(0, 0, 0, 0.2);
-
     // Tablets
     @media all and (min-width: 768px) {
       padding: 0.5rem 1.5rem;
     }
-
     & img {
       width: 10rem;
       opacity: 0.9;
-
       // Gray scale, sepia and blur effects
       -webkit-filter: grayscale(100%) sepia(0) blur(1px);
       filter: grayscale(100%) sepia(0) blur(1px);
       -webkit-transition: 1s ease-in-out;
       transition: 1s ease-in-out;
-
       // Tablets
       @media all and (min-width: 768px) {
         width: 12rem;
       }
     }
   }
-
   span {
     position: relative;
     left: 1rem;
     font-size: 0.85rem;
     padding-bottom: 0.1rem;
     text-align: left;
-
     &:hover {
       color: $color-neutral-1000;
       font-weight: 800;
