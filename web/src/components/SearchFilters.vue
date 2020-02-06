@@ -69,4 +69,15 @@ export default {
     font-weight: 600;
   }
 }
+// Overrading bootstrap styles
+.btn-outline-primary {
+  color: $color-neutral-800 !important;
+  border-color: $color-neutral-800 !important;
+}
+
+.btn-outline-primary:hover {
+  color: $color-neutral-0 !important;
+  background-color: rgba($color-neutral-800, 0.5) !important;
+  border-color: $color-neutral-800 !important;
+}
 </style>

@@ -60,27 +60,53 @@ export default {
 @import '../src/scss/_variables.scss';
 
 .verba-search-form {
-  margin: 0 6rem;
   margin-bottom: 2rem;
+
+  // Tablets
+  @media all and (min-width: 768px) {
+    margin: 0 2rem 3rem;
+  }
+
+  // PC
+  @media all and (min-width: 1024px) {
+    margin: 0 2rem 6rem;
+  }
 
   .input-group {
     width: 80%;
 
     // Tablets
     @media all and (min-width: 768px) {
+      padding-left: 3rem;
+    }
+
+    // PC
+    @media all and (min-width: 1024px) {
       padding-left: 6rem;
-      // padding-right: 6rem;
     }
   }
 }
 
 .verba-magneto {
   display: flex;
-  align-items: flex-end;
+
+  // Mobile first
+  flex-direction: column;
+  align-items: center;
 
   margin-bottom: 1rem;
   text-align: center;
   color: $color-neutral-1000;
+
+  // Tablets
+  @media all and (min-width: 768px) {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  // PC
+  @media all and (min-width: 1024px) {
+  }
 
   .verba-magneto-copy {
     display: flex;
@@ -88,38 +114,47 @@ export default {
     margin-top: 1rem;
 
     .verba-copy {
-      // margin-bottom: 0;
       margin-bottom: -5px;
       font-size: 0.8rem;
+    }
+
+    .verba-subtitle {
+      font-size: 1.4rem;
     }
   }
 
   .verba-magneto-image {
-    margin-left: 3rem;
+    // margin-left: 3rem;
     width: 100%;
     max-width: calc(510px * #{$scale-factor});
     height: auto;
   }
 
+  // Tablets
   @media all and (min-width: 768px) {
     text-align: left;
+    // margin-left: 3rem;
+  }
 
-    // .verba-magneto-copy {
-    //   position: absolute;
-    //   left: calc(50% + 5rem);
-    //   top: 22rem;
-    //   width: 20rem;
-    //   margin-top: 3rem;
-    // }
+  // PC
+  @media all and (min-width: 1024px) {
+    margin-left: 3rem;
   }
 }
 
 .verba-search-group {
+  // Mobile first
   display: flex;
-}
+  flex-direction: column;
+  align-items: center;
 
-// .verba-subtitle {
-//   font-size: 1rem;
-//   font-weight: 600;
-// }
+  // Tablets
+  @media all and (min-width: 768px) {
+    flex-direction: row;
+  }
+
+  // PC
+  @media all and (min-width: 1024px) {
+  }
+}
 </style>

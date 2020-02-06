@@ -61,10 +61,6 @@
     color: $color-neutral-1000;
   }
 
-  // h2 {
-  //   font-size: 1.5rem;
-  //   font-weight: 600;
-  // }
   .verba-subtitle {
     margin-bottom: 0;
   }
@@ -107,6 +103,7 @@
   color: $color-neutral-1000;
   font-size: 1.8rem;
   font-weight: 600;
+  text-transform: uppercase;
 }
 
 html {
