@@ -171,7 +171,7 @@ u {
   span {
     position: relative;
     left: 1rem;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     padding-bottom: 0.1rem;
     text-align: left;
 

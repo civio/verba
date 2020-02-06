@@ -68,6 +68,9 @@ u {
   text-decoration: none;
 }
 
+body {
+}
+
 // Default text selection
 ::selection {
   background: $color-highlight-1;
@@ -78,6 +81,7 @@ u {
 
 .app-container {
   font-family: 'El Messiri', sans-serif;
+  font-size: 0.9rem;
 }
 
 ///////////
@@ -236,14 +240,6 @@ u {
     }
   }
 }
-
-// // All subtitles in all pages
-// .verba-subtitle {
-//   // color: $color-neutral-1000;
-//   color: red !important;
-//   font-size: 1.8rem;
-//   font-weight: 800;
-// }
 
 .verba-footer {
   position: absolute;

@@ -277,7 +277,7 @@ export default {
     margin-right: 0;
   }
   .item-content {
-    font-size: 0.8rem;
+    // font-size: 0.8rem;
     margin-top: 0.5rem;
     margin-bottom: 0;
 

@@ -1,28 +1,20 @@
 <template>
-  <div
-    :class="{ modal: true, show: currentResult }"
-    tabindex="-1"
-    role="dialog"
-  >
+  <div :class="{ modal: true, show: currentResult }" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg" role="document">
       <div v-if="currentResult" class="modal-content">
         <div class="modal-header">
           <!--  eslint-disable-next-line vue/no-v-html -->
           <p class="modal-title" v-html="title"></p>
-          <button
-            type="button"
-            class="close"
-            aria-label="Close"
-            @click="onClose"
-          >
+          <button type="button" class="close" aria-label="Close" @click="onClose">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
           <div v-if="resultContext">
-            <p v-for="(items, key) in resultContext" :key="key">
-              {{ items.time_start | formatTime }}: {{ items.content }}
-            </p>
+            <p
+              v-for="(items, key) in resultContext"
+              :key="key"
+            >{{ items.time_start | formatTime }}: {{ items.content }}</p>
           </div>
         </div>
       </div>
@@ -104,7 +96,7 @@ export default {
   padding: 2rem;
   text-align: left;
 
-  font-size: 0.8rem;
+  // font-size: 0.8rem;
 }
 .modal-content {
   border-radius: 0;

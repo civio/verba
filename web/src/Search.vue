@@ -64,20 +64,20 @@ export default {
 
   // Tablets
   @media all and (min-width: 768px) {
-    margin: 0 2rem 3rem;
+    // margin-left: 3rem;
   }
 
   // PC
   @media all and (min-width: 1024px) {
-    margin: 0 2rem 6rem;
+    // margin: 0 2rem 6rem;
   }
 
   .input-group {
-    width: 80%;
+    width: 63%;
 
     // Tablets
     @media all and (min-width: 768px) {
-      padding-left: 3rem;
+      padding-left: 0;
     }
 
     // PC
@@ -88,11 +88,11 @@ export default {
 }
 
 .verba-magneto {
-  display: flex;
-
   // Mobile first
+  display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 
   margin-bottom: 1rem;
   text-align: center;
@@ -115,7 +115,7 @@ export default {
 
     .verba-copy {
       margin-bottom: -5px;
-      font-size: 0.8rem;
+      // font-size: 0.8rem;
     }
 
     .verba-subtitle {
@@ -147,6 +147,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 
   // Tablets
   @media all and (min-width: 768px) {

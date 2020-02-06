@@ -54,7 +54,7 @@
   margin-right: 0.8rem;
   margin-left: 2rem;
 
-  margin-top: 4rem;
+  margin-top: 5rem;
   text-align: center;
 
   p > span {
@@ -66,7 +66,7 @@
   }
 
   p {
-    font-size: 0.8rem;
+    // font-size: 0.8rem;
   }
 
   // Tablets
