@@ -21,8 +21,8 @@ export default {
     margin: {
       type: Object,
       default: () => ({
-        left: 0,
-        right: 0,
+        left: 30,
+        right: 30,
         top: 0,
         bottom: 0
       })
@@ -77,7 +77,7 @@ export default {
       this.height = this.$el.offsetHeight
     },
     update() {
-      window.location.href = '#verba-subtitle-dataviz';
+      window.location.href = '#verba-subtitle-dataviz'
       // update scales domain
       const barWidth = this.padded.width / this.data.length
       const scaleX = d3
@@ -125,7 +125,7 @@ export default {
         .attr('width', barWidth)
         .append('svg:title')
         .text(d => {
-          return d3.timeFormat("%d-%m-%Y")(d.x) + ' | ' + d.y + ' times';
+          return d3.timeFormat('%d-%m-%Y')(d.x) + ' | ' + d.y + ' times'
         })
 
       // render axis
