@@ -41,7 +41,15 @@
       <router-view />
 
       <footer class="verba-footer">
-        <small>Civio 2020 | Licencia CC BY-SA 3.0</small>
+        <small>
+          <strong>Civio 2020</strong> | Licencia
+          <a
+            href="https://creativecommons.org/licenses/by-sa/3.0/deed.es"
+            title="Licencia Creative Commons Atribución - Compartir Igual 3.0"
+            target="_blank"
+            rel="noopener noreferrer"
+          >CC BY-SA 3.0</a>
+        </small>
       </footer>
     </div>
   </div>
@@ -249,6 +257,12 @@ body {
   height: 2.5rem;
   padding: 0.5rem;
   background-color: rgba(0, 0, 0, 0.2);
+
+  font-size: 1rem;
   text-align: center;
+
+  a {
+    text-decoration-line: underline;
+  }
 }
 </style>

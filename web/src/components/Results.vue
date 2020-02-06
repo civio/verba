@@ -284,6 +284,8 @@ export default {
     mark {
       font-weight: 600;
       background-color: mix($color-highlight-1, white, 85%);
+      padding-top: 0;
+      padding-bottom: 0;
     }
   }
   .video-link {

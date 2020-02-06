@@ -146,7 +146,6 @@ export default {
   // Mobile first
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
 
   // Tablets

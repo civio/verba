@@ -54,7 +54,7 @@
   margin-right: 0.8rem;
   margin-left: 2rem;
 
-  margin-top: 5rem;
+  margin-top: 4rem;
   text-align: center;
 
   p > span {
@@ -65,10 +65,6 @@
     margin-bottom: 0;
   }
 
-  p {
-    // font-size: 0.8rem;
-  }
-
   // Tablets
   @media all and (min-width: 768px) {
     text-align: right;
@@ -76,14 +72,13 @@
 
   // PC
   @media all and (min-width: 1024px) {
-    margin-left: 6rem;
+    margin-left: 5rem;
   }
 }
 
 .verba-human-radar-image {
   width: 100%;
   max-width: calc(435px * #{$scale-factor});
-  // max-width: 300px;
   height: auto;
 
   // Tablets
