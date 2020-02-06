@@ -2,6 +2,7 @@
   <div class="chart-container">
     <svg :width="width" :height="height">
       <g ref="axisX" class="axis x" />
+      <g ref="axisXYears" class="axis x-years" />
       <g ref="axisY" class="axis y" />
       <g ref="bars" :style="{ transform: `translate(${margin.left}px, ${margin.top}px)` }" />
     </svg>
@@ -64,6 +65,12 @@ export default {
         .attr('y1', -this.height)
         .attr('y2', 0)
     },
+    formatAxisYears(g) {
+      return g
+        .selectAll('.tick line')
+        .attr('y1', -this.height)
+        .attr('y2', 0)
+    },
     formatAxisY(g) {
       return g
         .selectAll('.tick line')
@@ -98,19 +105,32 @@ export default {
         .nice()
 
       // setup axis
-      const axisX = d3
+      const axisX = d3.axisBottom(scaleX).tickSizeOuter(0)
+
+      // const breackPointMobile = 320;
+      const breakPointTablet = 768
+      const breakPointPC = 1020
+
+      // Mobile first
+      if (window.innerWidth < breakPointTablet) {
+        axisX
+          .ticks(d3.timeMonth, 6) // Twice per year
+          .tickFormat(d3.timeFormat('%b'))
+      }
+      // Tablet
+      else if (breakPointTablet < window.innerWidth < breakPointPC) {
+        axisX.ticks(d3.timeMonth, 4).tickFormat(d3.timeFormat('%b')) // 3 times per year
+      }
+
+      const axisXYears = d3
         .axisBottom(scaleX)
         .tickSizeOuter(0)
         .ticks(d3.timeYear)
+
       const axisY = d3
-        // .axisLeft(scaleY)
         .axisLeft(scaleYdouble)
         .tickFormat(d3.format(',d'))
-        // Not working
-        // .tickFormat
-        // d3.format(function() {
-        //   return d3.format(',d') + ' times'
-        // })
+        // .tickFormat(d => d3.format(',')(d) + ' veces')
         .ticks(this.height / 50)
 
       // update bars
@@ -136,6 +156,16 @@ export default {
         )
         .call(axisX)
         .call(this.formatAxisX)
+
+      // d3.select(this.$refs.axisXYears)
+      //   .attr(
+      //     'transform',
+      //     `translate(${this.margin.left}, ${this.height -
+      //       this.margin.bottom +
+      //       15})`
+      //   )
+      //   .call(axisXYears)
+      //   .call(this.formatAxisXYears)
 
       d3.select(this.$refs.axisY)
         .attr('transform', `translate(${this.margin.left}, ${this.margin.top})`)
@@ -179,6 +209,18 @@ export default {
           font-weight: 600;
         }
       }
+      .tick line {
+        display: none;
+      }
+    }
+
+    &.x-years {
+      font-weight: 600;
+
+      .domain {
+        display: none;
+      }
+
       .tick line {
         display: none;
       }

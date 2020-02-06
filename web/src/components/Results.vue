@@ -217,6 +217,7 @@ export default {
 .results-links {
   a {
     color: $color-highlight-1;
+    font-weight: 800;
   }
 }
 
