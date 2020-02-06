@@ -85,6 +85,7 @@ u {
 .app-container {
   position: relative;
   min-height: 100vh;
+  min-width: 320px;
   padding-bottom: 5rem;
   min-height: 100vh;
   color: $color-neutral-800;

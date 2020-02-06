@@ -14,7 +14,7 @@
             :to="{ name: 'programme-details', params: { id: programme.id } }"
             class="nav-link verba-film-item"
           >
-            <figure>
+            <figure class="programme-img">
               <img :src="programme | imageURL" />
             </figure>
             <span class="strip-aside">{{ programme.title }}</span>
@@ -45,6 +45,7 @@ export default {
 <style scoped lang="scss">
 @import '../src/scss/_variables.scss';
 
+// TODO: I shouldn't need this again here. Something to do with the "scoped" feature of the vue components styles
 //Common resets
 * {
   box-sizing: border-box;
@@ -64,9 +65,11 @@ u {
 }
 
 .verba-programmes {
+  // Mobile first
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 
   color: $color-neutral-800;
 
@@ -81,7 +84,18 @@ u {
 }
 
 .verba-films-strip {
-  margin-left: 20rem;
+  // Mobile first
+  margin-left: 0;
+
+  // Tablets
+  @media all and (min-width: 768px) {
+    margin-left: 18rem;
+  }
+
+  // PC
+  @media all and (min-width: 1024px) {
+    margin-left: 13rem;
+  }
 }
 
 // Image settings
@@ -90,11 +104,24 @@ u {
   max-width: calc(438px * #{$scale-factor});
   height: auto;
 
-  position: fixed;
-  top: 35%;
-  right: calc(50% + 7rem);
-  // position: sticky;
-  // top: 50px;
+  margin-left: 2rem;
+  margin-bottom: 3rem;
+
+  // Mobile first
+  // position: block;
+  right: calc(50% + 5rem);
+
+  // Tablets
+  @media all and (min-width: 768px) {
+    position: fixed;
+    top: 35%;
+    right: calc(50% + 3rem);
+  }
+
+  // PC
+  @media all and (min-width: 1024px) {
+    right: calc(50% + 6rem);
+  }
 }
 
 .verba-film-item:hover .strip-aside {
@@ -113,30 +140,40 @@ u {
   align-items: flex-end;
   color: $color-neutral-800;
 
-  figure {
-    padding: 0.5rem 1.5rem;
+  .programme-img {
+    padding: 0.5rem 1rem;
 
-    border-left: 1px solid black;
-    border-right: 1px solid black;
-    // -webkit-filter: blur(1px);
-    // filter: blur(1px);
-  }
-  figure img {
-    width: 12rem;
-    opacity: 0.9;
+    border-left: 2px solid rgba(0, 0, 0, 0.2);
+    border-right: 2px solid rgba(0, 0, 0, 0.2);
 
-    // Gray scale, sepia and blur effects
-    -webkit-filter: grayscale(100%) sepia(0) blur(1px);
-    filter: grayscale(100%) sepia(0) blur(1px);
-    -webkit-transition: 1s ease-in-out;
-    transition: 1s ease-in-out;
+    // Tablets
+    @media all and (min-width: 768px) {
+      padding: 0.5rem 1.5rem;
+    }
+
+    & img {
+      width: 10rem;
+      opacity: 0.9;
+
+      // Gray scale, sepia and blur effects
+      -webkit-filter: grayscale(100%) sepia(0) blur(1px);
+      filter: grayscale(100%) sepia(0) blur(1px);
+      -webkit-transition: 1s ease-in-out;
+      transition: 1s ease-in-out;
+
+      // Tablets
+      @media all and (min-width: 768px) {
+        width: 12rem;
+      }
+    }
   }
 
   span {
     position: relative;
     left: 1rem;
     font-size: 0.8rem;
-    padding-bottom: 0.4rem;
+    padding-bottom: 0.1rem;
+    text-align: left;
 
     &:hover {
       color: $color-neutral-1000;
