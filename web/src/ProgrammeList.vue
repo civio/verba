@@ -9,7 +9,7 @@
 
       <!-- Film strips -->
       <ul class="verba-films-strip">
-        <li v-for="(programme, key) in programmeList" :key="key">
+        <li v-for="(programme, key) in subList" :key="key">
           <router-link
             :to="{ name: 'programme-details', params: { id: programme.id } }"
             class="nav-link verba-film-item"
@@ -20,37 +20,39 @@
             <span class="strip-aside">{{ programme.title }}</span>
           </router-link>
         </li>
+        <button v-on:click="seeMore" class="seeMoreBtn">Ver más</button>
       </ul>
     </div>
-    <button id="seeRes">Ver más</button>
   </main>
 </template>
 
 <script>
 import Vue from 'vue'
+
+import Pagination from './components/Pagination.vue'
 export default {
+  components:{
+    Pagination
+  },
   data() {
     return {
-      programmeList: []
+      programmeList: [],
+      subList:[],
+      inc:10
     }
   },
   mounted() {
     Vue.verbaAPI('fetchProgrammeList', null, response => {
-      let init = 1;
-      this.programmeList = response.data.slice(init,init+=10)
-      document.getElementById('seeRes').onclick = function(){
-        let items = response.data.slice(init, init+=10);
-        let htm = ''
-        console.log(response.data)
-        items.forEach(function(el){
-          //'https://img2.rtve.es/v/telediario-15-horas-20-01-20_5488057.png';
-          htm += '<li data-v-521901b1><a data-v-521901b1 href="/programmes/'+el['id']+'" class="nav-link verba-film-item"><figure class="programme-img" data-v-521901b1><img data-v-521901b1 src="https://img2.rtve.es/v/'+el['title'].replace(/ - |-|\/| /g, '-').toLowerCase()+'_'+el['id']+'.png"></figure><span data-v-521901b1 class="strip-aside">'+el['title']+'</span></a></li>';
-
-        })
-        document.getElementsByClassName('verba-films-strip')[0].innerHTML += htm;
-
-      }.bind(this)
+      this.programmeList = response.data;
+      this.subList = this.programmeList.slice(1, this.inc);
     })
+  },
+
+  methods:{
+    seeMore(){
+      this.inc += 10;
+      this.subList = this.programmeList.slice(1, this.inc);
+    }
   }
 }
 </script>
@@ -72,6 +74,12 @@ a,
 u {
   color: inherit;
   text-decoration: none;
+}
+.seeMoreBtn{
+  display: block;
+  width: 200px;
+  height: 30px;
+  margin: 20px auto;
 }
 .verba-programmes {
   // Mobile first
