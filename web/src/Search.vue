@@ -73,11 +73,12 @@ export default {
   }
 
   .input-group {
-    width: 63%;
+    width: 80%;
     margin: 0 auto;
 
     // Tablets
     @media all and (min-width: 768px) {
+      width: 63%;
       margin: 0;
       padding-left: 0;
     }

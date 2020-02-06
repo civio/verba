@@ -42,7 +42,7 @@
 
       <footer class="verba-footer">
         <small>
-          <strong>Civio 2020</strong> | Licencia
+          <strong>CIVIO 2020</strong> | Licencia
           <a
             href="https://creativecommons.org/licenses/by-sa/3.0/deed.es"
             title="Licencia Creative Commons Atribución - Compartir Igual 3.0"
@@ -157,7 +157,7 @@ body {
 }
 
 .verba-navbar {
-  padding-top: 6rem;
+  padding-top: 3rem;
   margin-bottom: 4rem;
 
   color: $color-neutral-1000;
@@ -201,44 +201,52 @@ body {
 
   // Tablets
   @media all and (min-width: 768px) {
-    // Lines around Verba Volant
-    .verba-brand:before,
-    .verba-brand:after {
-      content: '';
-      position: absolute;
-      top: 80%;
-      overflow: hidden;
-      width: 8.7rem;
-      height: 1px;
-      border-bottom: 1px solid $color-neutral-1000;
-    }
-    .verba-brand:after {
-      left: 100%;
-    }
-    .verba-brand:before {
-      right: 100%;
-    }
+    padding-top: 6rem;
+  }
+
+  // Lines around Verba Volant
+  .verba-brand:before,
+  .verba-brand:after {
+    content: '';
+    position: absolute;
+    top: 80%;
+    overflow: hidden;
+    width: 8.7rem;
+    height: 1px;
+    border-bottom: 1px solid $color-neutral-1000;
+  }
+  .verba-brand:after {
+    left: 100%;
+  }
+  .verba-brand:before {
+    right: 100%;
   }
 
   .verba-navbar-list {
-    max-width: 650px;
+    max-width: 530px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    // text-transform: uppercase;
 
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.3rem;
     border-bottom: 1px solid $color-neutral-1000;
 
     // Tablets
     @media all and (min-width: 768px) {
+      max-width: 650px;
+      padding-bottom: 0.5rem;
       flex-direction: row;
     }
   }
 
   .verba-nav-item {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+
+    // Tablets
+    @media all and (min-width: 768px) {
+      font-size: 1.8rem;
+    }
 
     &:hover {
       color: $color-highlight-1;
