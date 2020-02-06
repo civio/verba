@@ -182,10 +182,6 @@ export default {
 @import '../scss/_variables.scss';
 
 .verba-results {
-  .verba-subtitle {
-    // margin-top: 5rem;
-  }
-
   text-align: left;
 }
 

@@ -41,7 +41,7 @@
       <router-view />
 
       <footer class="verba-footer">
-        <small>Civio 2019 | Licencia CC BY-SA 3.0</small>
+        <small>Civio 2020 | Licencia CC BY-SA 3.0</small>
       </footer>
     </div>
   </div>
@@ -256,13 +256,3 @@ u {
   text-align: center;
 }
 </style>
-
-// <script>
-// export default {
-//   $(".nav .nav-link").on("click", function(){
-//    $(".nav").find(".active").removeClass("active");
-//    $(this).addClass("active");
-// });
-// }
-//
-</script>
