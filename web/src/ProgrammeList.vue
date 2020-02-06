@@ -22,6 +22,7 @@
         </li>
       </ul>
     </div>
+    <button id="seeRes">Ver más</button>
   </main>
 </template>
 
@@ -35,7 +36,20 @@ export default {
   },
   mounted() {
     Vue.verbaAPI('fetchProgrammeList', null, response => {
-      this.programmeList = response.data
+      let init = 1;
+      this.programmeList = response.data.slice(init,init+=10)
+      document.getElementById('seeRes').onclick = function(){
+        let items = response.data.slice(init, init+=10);
+        let htm = ''
+        console.log(response.data)
+        items.forEach(function(el){
+          //'https://img2.rtve.es/v/telediario-15-horas-20-01-20_5488057.png';
+          htm += '<li data-v-521901b1><a data-v-521901b1 href="/programmes/'+el['id']+'" class="nav-link verba-film-item"><figure class="programme-img" data-v-521901b1><img data-v-521901b1 src="https://img2.rtve.es/v/'+el['title'].replace(/ - |-|\/| /g, '-').toLowerCase()+'_'+el['id']+'.png"></figure><span data-v-521901b1 class="strip-aside">'+el['title']+'</span></a></li>';
+
+        })
+        document.getElementsByClassName('verba-films-strip')[0].innerHTML += htm;
+
+      }.bind(this)
     })
   }
 }
