@@ -213,6 +213,13 @@ export default {
     animation: spin 1.2s ease-in-out infinite;
   }
 }
+
+.results-links {
+  a {
+    color: $color-highlight-1;
+  }
+}
+
 .results-list {
   .card {
     border-radius: 0;

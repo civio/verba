@@ -58,24 +58,29 @@ export default {
     color: $color-neutral-1000;
     font-weight: 600;
     font-size: 1rem;
+    text-align: center;
+
+    // Tablets
+    @media all and (min-width: 768px) {
+      text-align: right;
+    }
   }
 
   img {
+    width: 15rem;
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
   }
+
   // Tablets
   @media all and (min-width: 768px) {
     margin-right: 2rem;
     margin-left: 3rem;
-
-    img {
-      width: 18rem;
-    }
   }
 }
 .verba-transcript-copy {
   padding-top: 1.5rem;
   font-size: 0.8rem;
+  text-align: left;
 }
 </style>
