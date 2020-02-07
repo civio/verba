@@ -10,7 +10,7 @@
       </section>
 
       <section class="results-links">
-        <h2 class="verba-subtitle">{{ $t('results.list.title') }}</h2>
+        <!-- <h2 class="verba-subtitle">{{ $t('results.list.title') }}</h2> -->
         <p class="my-4">
           <span
             v-if="results.length > 50"
@@ -20,7 +20,8 @@
           <span
             v-html="$t('results.list.count', { total: results.length.toLocaleString(), query: query })"
           ></span>
-          &mdash; (<a href="#" @click="onDownloadClick()">CSV</a>)
+          &mdash; (
+          <a href="#" @click="onDownloadClick()">CSV</a>)
         </p>
         <div class="results-list mb-4">
           <div v-for="(items, id) in resultsByProgramme" :key="id" class="card">
