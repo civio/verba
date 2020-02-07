@@ -1,13 +1,10 @@
 <template>
   <div class="chart-container">
     <svg :width="width" :height="height">
-      <g ref="axisX" class="axis x" />
+      <g ref="axisXMonths" class="axis x-months" />
       <g ref="axisXYears" class="axis x-years" />
       <g ref="axisY" class="axis y" />
-      <g
-        ref="bars"
-        :style="{ transform: `translate(${margin.left}px, ${margin.top}px)` }"
-      />
+      <g ref="bars" :style="{ transform: `translate(${margin.left}px, ${margin.top}px)` }" />
     </svg>
   </div>
 </template>
@@ -62,7 +59,7 @@ export default {
     window.removeEventListener('resize', this.onResize)
   },
   methods: {
-    formatAxisX(g) {
+    formatAxisXMonths(g) {
       return g
         .selectAll('.tick line')
         .attr('y1', -this.height)
@@ -108,7 +105,7 @@ export default {
         .nice()
 
       // setup axis
-      const axisX = d3.axisBottom(scaleX).tickSizeOuter(0)
+      const axisXMonths = d3.axisBottom(scaleX).tickSizeOuter(0)
 
       // const breackPointMobile = 320;
       const breakPointTablet = 768
@@ -116,13 +113,13 @@ export default {
 
       // Mobile first
       if (window.innerWidth < breakPointTablet) {
-        axisX
+        axisXMonths
           .ticks(d3.timeMonth, 6) // Twice per year
           .tickFormat(d3.timeFormat('%b'))
       }
       // Tablet
       else if (breakPointTablet < window.innerWidth < breakPointPC) {
-        axisX.ticks(d3.timeMonth, 4).tickFormat(d3.timeFormat('%b')) // 3 times per year
+        axisXMonths.ticks(d3.timeMonth, 4).tickFormat(d3.timeFormat('%b')) // 3 times per year
       }
 
       const axisXYears = d3
@@ -152,13 +149,13 @@ export default {
         })
 
       // render axis
-      d3.select(this.$refs.axisX)
+      d3.select(this.$refs.axisXMonths)
         .attr(
           'transform',
           `translate(${this.margin.left}, ${this.height - this.margin.bottom})`
         )
-        .call(axisX)
-        .call(this.formatAxisX)
+        .call(axisXMonths)
+        .call(this.formatAxisXMonths)
 
       d3.select(this.$refs.axisXYears)
         .attr(
@@ -200,7 +197,7 @@ export default {
       shape-rendering: crispEdges;
     }
 
-    &.x {
+    &.x-months {
       .domain {
         display: none;
       }
