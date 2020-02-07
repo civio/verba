@@ -46,7 +46,9 @@ export default {
       subList:[],
       inc:10,
       years:[2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013],
-      months:[{'num':'01','name':'enero'}, {'num':'02','name':'febrero'}, {'num':'03','name':'marzo'}, {'num':'04','name':'abril'}, {'num':'05','name':'mayo'}, {'num':'06','name':'junio'}, {'num':'07','name':'julio'}, {'num':'08','name':'agosto'}, {'num':'09','name':'septiembre'}, {'num':'10','name':'octubre'}, {'num':'11','name':'noviembre'}, {'num':'12','name':'diciembre'}]
+      months:[{'num':'01','name':'enero'}, {'num':'02','name':'febrero'}, {'num':'03','name':'marzo'}, {'num':'04','name':'abril'}, {'num':'05','name':'mayo'}, {'num':'06','name':'junio'}, {'num':'07','name':'julio'}, {'num':'08','name':'agosto'}, {'num':'09','name':'septiembre'}, {'num':'10','name':'octubre'}, {'num':'11','name':'noviembre'}, {'num':'12','name':'diciembre'}],
+      currentYear:'',
+      currentMonth :''
     }
   },
   mounted() {
@@ -62,22 +64,37 @@ export default {
       if(this.inc < programmeList.length){
         this.inc += 10;
         this.subList = this.get_sublist(this.programmeList);
-        console.log(this.programmeList, this.subList)
+        //console.log(this.programmeList, this.subList)
       }
     },
 
     seeYear(e){
-      let value = e.target.getAttribute('data-value')
+      this.currentYear = e.target.getAttribute('data-value')
       this.programmeList = []
       this.inc = 10;
       programmeList.forEach(function(d){
-        if(value === d['date'].split('-')[0]){
+        if(this.currentYear === d['date'].split('-')[0]){
           this.programmeList.push(d);
         }
       }.bind(this))
+      console.log(this.programmeList)
       this.subList = this.get_sublist(this.programmeList);
-      console.log(this.programmeList, this.subList)
       
+      
+    },
+
+    seeMonth(e){
+      this.currentMonth = e.target.getAttribute('data-value')
+      this.programmeList = []
+      this.inc = 10;
+      programmeList.forEach(function(d){
+        if(this.currentMonth === d['date'].split('-')[1]){
+          if(this.currentYear === d['date'].split('-')[0]){
+            this.programmeList.push(d);
+          }
+        }
+      }.bind(this))
+      this.subList = this.get_sublist(this.programmeList);
     },
 
     get_sublist(list){
