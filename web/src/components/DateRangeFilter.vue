@@ -1,5 +1,5 @@
 <template>
-  <div v-show="visible">
+  <div class="verba-date-picker" v-show="visible">
     <date-range-picker v-model="range" :options="options" />
   </div>
 </template>
@@ -79,3 +79,11 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.verba-date-picker {
+  input {
+    padding: 0.2rem 0.5rem;
+  }
+}
+</style>
