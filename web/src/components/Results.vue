@@ -308,7 +308,7 @@ export default {
 }
 
 #verba-subtitle-dataviz {
-  margin-bottom: 5rem;
+  margin-bottom: 7rem;
   padding-top: 3rem;
 }
 </style>

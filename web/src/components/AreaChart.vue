@@ -172,8 +172,8 @@ export default {
         .call(axisY)
         .call(this.formatAxisY)
         .append('svg:text')
-        .attr('x', -25)
-        .attr('y', 0)
+        .attr('x', -20)
+        .attr('y', -15)
         // .attr('transform', `translate(${this.width - this.margin.right},0)`)
         .classed('axisY-title', true)
         .attr('text-anchor', 'start')
@@ -189,7 +189,7 @@ export default {
 .chart-container {
   width: 100%;
   height: 260px;
-  margin-top: 1.5rem;
+  margin-top: 2.5rem;
   margin-bottom: 2.5rem;
   color: $color-neutral-1000;
 
