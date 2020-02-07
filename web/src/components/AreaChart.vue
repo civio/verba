@@ -171,6 +171,13 @@ export default {
         .attr('transform', `translate(${this.margin.left}, ${this.margin.top})`)
         .call(axisY)
         .call(this.formatAxisY)
+        .append('svg:text')
+        .attr('x', -25)
+        .attr('y', 0)
+        // .attr('transform', `translate(${this.width - this.margin.right},0)`)
+        .classed('axisY-title', true)
+        .attr('text-anchor', 'start')
+        .text('Nº menciones')
     }
   }
 }
@@ -236,6 +243,13 @@ export default {
       line {
         stroke-opacity: 0.12;
       }
+    }
+
+    .axisY-title {
+      font-size: 10px;
+      font-weight: 600;
+      fill: currentColor;
+      opacity: 1 !important;
     }
   }
 
