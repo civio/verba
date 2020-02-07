@@ -65,7 +65,7 @@ export default {
         .attr('y1', -this.height)
         .attr('y2', 0)
     },
-    formatAxisYears(g) {
+    formatAxisXYears(g) {
       return g
         .selectAll('.tick line')
         .attr('y1', -this.height)
@@ -203,7 +203,7 @@ export default {
       }
       text {
         margin-top: 200px;
-        opacity: 0.9;
+        opacity: 0.75;
         &.active {
           opacity: 1;
           font-weight: 600;
