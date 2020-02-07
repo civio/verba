@@ -1,6 +1,16 @@
 <template>
   <main>
     <div class="verba-programmes">
+      <ul>
+        <li v-for="year in years" >
+          <a v-on:click="seeYear" v-bind:data-value="year">{{year}}</a>
+        </li>
+      </ul>
+      <ul>
+        <li v-for="month in months" >
+          <a v-on:click="seeMonth" v-bind:data-value="month.num">{{month.name}}</a>
+        </li>
+      </ul>
       <img
         class="verba-microfilms-image"
         src="../src/images/02Microfilms-es.png"
@@ -20,7 +30,7 @@
             <span class="strip-aside">{{ programme.title }}</span>
           </router-link>
         </li>
-        <button v-on:click="seeMore" class="seeMoreBtn">Ver más</button>
+        <button v-on:click="seeMore" class="seeMoreBtn" v-if="subList < programmeList">Ver más ({{ (programmeList.length - subList.length).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") }} resultados)</button>
       </ul>
     </div>
   </main>
@@ -28,27 +38,50 @@
 
 <script>
 import Vue from 'vue'
+let programmeList = []
 export default {
   data() {
     return {
       programmeList: [],
       subList:[],
-      inc:10
+      inc:10,
+      years:[2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013],
+      months:[{'num':'01','name':'enero'}, {'num':'02','name':'febrero'}, {'num':'03','name':'marzo'}, {'num':'04','name':'abril'}, {'num':'05','name':'mayo'}, {'num':'06','name':'junio'}, {'num':'07','name':'julio'}, {'num':'08','name':'agosto'}, {'num':'09','name':'septiembre'}, {'num':'10','name':'octubre'}, {'num':'11','name':'noviembre'}, {'num':'12','name':'diciembre'}]
     }
   },
   mounted() {
     Vue.verbaAPI('fetchProgrammeList', null, response => {
-      this.programmeList = response.data;
-      this.subList = this.programmeList.slice(1, this.inc);
+      programmeList = response.data;
+      this.programmeList = programmeList
+      this.subList = this.get_sublist(this.programmeList);
     })
   },
 
   methods:{
     seeMore(){
-      if(this.inc < this.programmeList.length){
+      if(this.inc < programmeList.length){
         this.inc += 10;
-        this.subList = this.programmeList.slice(1, this.inc);
+        this.subList = this.get_sublist(this.programmeList);
+        console.log(this.programmeList, this.subList)
       }
+    },
+
+    seeYear(e){
+      let value = e.target.getAttribute('data-value')
+      this.programmeList = []
+      this.inc = 10;
+      programmeList.forEach(function(d){
+        if(value === d['date'].split('-')[0]){
+          this.programmeList.push(d);
+        }
+      }.bind(this))
+      this.subList = this.get_sublist(this.programmeList);
+      console.log(this.programmeList, this.subList)
+      
+    },
+
+    get_sublist(list){
+      return list.slice(0, this.inc);
     }
   }
 }
@@ -173,4 +206,4 @@ u {
     }
   }
 }
-</style>
+</style></style>
