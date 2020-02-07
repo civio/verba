@@ -105,22 +105,11 @@ export default {
         .nice()
 
       // setup axis
-      const axisXMonths = d3.axisBottom(scaleX).tickSizeOuter(0)
-
-      // const breackPointMobile = 320;
-      const breakPointTablet = 768
-      const breakPointPC = 1020
-
-      // Mobile first
-      if (window.innerWidth < breakPointTablet) {
-        axisXMonths
-          .ticks(d3.timeMonth, 6) // Twice per year
-          .tickFormat(d3.timeFormat('%b'))
-      }
-      // Tablet
-      else if (breakPointTablet < window.innerWidth < breakPointPC) {
-        axisXMonths.ticks(d3.timeMonth, 4).tickFormat(d3.timeFormat('%b')) // 3 times per year
-      }
+      const axisXMonths = d3
+        .axisBottom(scaleX)
+        .tickSizeOuter(0)
+        .tickFormat(d3.timeFormat('%b'))
+        .ticks(this.width / 50)
 
       const axisXYears = d3
         .axisBottom(scaleX)
