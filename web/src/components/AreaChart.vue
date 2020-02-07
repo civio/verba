@@ -104,11 +104,59 @@ export default {
         .domain(d3.extent(this.data, d => d.y))
         .nice()
 
+      // Set the time axis in Spanish
+      const locale = d3.timeFormatLocale({
+        dateTime: '%a %b %e %X %Y',
+        date: '%d/%m/%Y',
+        time: '%H:%M:%S',
+        periods: ['AM', 'PM'],
+        days: [
+          'Domingo',
+          'Lunes',
+          'Martes',
+          'Miércoles',
+          'Jueves',
+          'Viernes',
+          'Sábado'
+        ],
+        shortDays: ['Dom', 'Lun', 'Mar', 'Mi', 'Jue', 'Vie', 'Sab'],
+        months: [
+          'Enero',
+          'Febrero',
+          'Marzo',
+          'Abril',
+          'Mayo',
+          'Junio',
+          'Julio',
+          'Agosto',
+          'Septiembre',
+          'Octubre',
+          'Noviembre',
+          'Diciembre'
+        ],
+        shortMonths: [
+          'Ene',
+          'Feb',
+          'Mar',
+          'Abr',
+          'May',
+          'Jun',
+          'Jul',
+          'Ago',
+          'Sep',
+          'Oct',
+          'Nov',
+          'Dic'
+        ]
+      })
+
+      var formatMonth = locale.format('%b')
+
       // setup axis
       const axisXMonths = d3
         .axisBottom(scaleX)
         .tickSizeOuter(0)
-        .tickFormat(d3.timeFormat('%b'))
+        .tickFormat(formatMonth)
         .ticks(this.width / 50)
 
       const axisXYears = d3
@@ -163,7 +211,6 @@ export default {
         .append('svg:text')
         .attr('x', -20)
         .attr('y', -15)
-        // .attr('transform', `translate(${this.width - this.margin.right},0)`)
         .classed('axisY-title', true)
         .attr('text-anchor', 'start')
         .text('Nº menciones')
