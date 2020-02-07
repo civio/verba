@@ -3,7 +3,10 @@
     <svg :width="width" :height="height">
       <g ref="axisX" class="axis x" />
       <g ref="axisY" class="axis y" />
-      <g ref="bars" :style="{ transform: `translate(${margin.left}px, ${margin.top}px)` }" />
+      <g
+        ref="bars"
+        :style="{ transform: `translate(${margin.left}px, ${margin.top}px)` }"
+      />
     </svg>
   </div>
 </template>
