@@ -157,15 +157,15 @@ export default {
         .call(axisX)
         .call(this.formatAxisX)
 
-      // d3.select(this.$refs.axisXYears)
-      //   .attr(
-      //     'transform',
-      //     `translate(${this.margin.left}, ${this.height -
-      //       this.margin.bottom +
-      //       15})`
-      //   )
-      //   .call(axisXYears)
-      //   .call(this.formatAxisXYears)
+      d3.select(this.$refs.axisXYears)
+        .attr(
+          'transform',
+          `translate(${this.margin.left}, ${this.height -
+            this.margin.bottom +
+            15})`
+        )
+        .call(axisXYears)
+        .call(this.formatAxisXYears)
 
       d3.select(this.$refs.axisY)
         .attr('transform', `translate(${this.margin.left}, ${this.margin.top})`)
