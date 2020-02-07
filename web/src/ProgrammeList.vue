@@ -28,12 +28,7 @@
 
 <script>
 import Vue from 'vue'
-
-import Pagination from './components/Pagination.vue'
 export default {
-  components:{
-    Pagination
-  },
   data() {
     return {
       programmeList: [],
@@ -50,8 +45,10 @@ export default {
 
   methods:{
     seeMore(){
-      this.inc += 10;
-      this.subList = this.programmeList.slice(1, this.inc);
+      if(this.inc < this.programmeList.length){
+        this.inc += 10;
+        this.subList = this.programmeList.slice(1, this.inc);
+      }
     }
   }
 }
