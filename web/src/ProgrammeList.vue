@@ -40,14 +40,15 @@
 
 <script>
 import Vue from 'vue'
-let programmeList = []
+
 export default {
   data() {
     return {
       programmeList: [],
       filterProgramme: [],
       subList:[],
-      inc:10,
+      limit:70,
+      inc:undefined,
       years:[{'num':"2013"}, {'num':"2014"}, {'num':"2015"}, {'num':"2016"}, {'num':"2017"}, {'num':"2018"}, {'num':"2019"}, {'num':"2020"}], 
       months:[{'num':'01','name':'enero'}, {'num':'02','name':'febrero'}, {'num':'03','name':'marzo'}, {'num':'04','name':'abril'}, {'num':'05','name':'mayo'}, {'num':'06','name':'junio'}, {'num':'07','name':'julio'}, {'num':'08','name':'agosto'}, {'num':'09','name':'septiembre'}, {'num':'10','name':'octubre'}, {'num':'11','name':'noviembre'}, {'num':'12','name':'diciembre'}],
       currentYear:'',
@@ -56,18 +57,18 @@ export default {
   },
   mounted() {
     Vue.verbaAPI('fetchProgrammeList', null, response => {
+      this.inc = this.limit
       this.programmeList = response.data
       this.filterProgramme = response.data
-      this.subList = this.get_sublist(this.programmeList);
+      this.subList = this.get_sublist(this.programmeList)
     })
   },
 
   methods:{
     seeMore(){
       if(this.inc < this.filterProgramme.length){
-        this.inc += 10;
-        this.subList = this.get_sublist(this.filterProgramme);
-        console.log(this.subList)
+        this.inc += this.limit
+        this.subList = this.get_sublist(this.filterProgramme)
       }
     },
 
@@ -86,7 +87,7 @@ export default {
     },
 
     seeYear(year){
-      this.inc = 10;
+      this.inc = this.limit
       if(this.currentYear !== year.num){
         this.currentYear = year.num
         if(this.currentMonth !== ''){
@@ -103,18 +104,16 @@ export default {
     },
 
     seeMonth(month){
-      this.inc = 10;
+      this.inc = this.limit
       if(this.currentMonth !== month.num){
         this.currentMonth = month.num
         this.filterProgramme =  this.get_year_month()
       }else{
-
         this.currentMonth = ''
         this.filterProgramme = this.get_year()
       }
-      this.subList = this.get_sublist(this.filterProgramme);
+      this.subList = this.get_sublist(this.filterProgramme)
     }
-
   }
 }
 </script>
