@@ -32,22 +32,22 @@ export default {
   data() {
     return {
       programmeList: [],
-      subList:[],
-      inc:10
+      subList: [],
+      inc: 10
     }
   },
   mounted() {
     Vue.verbaAPI('fetchProgrammeList', null, response => {
-      this.programmeList = response.data;
-      this.subList = this.programmeList.slice(1, this.inc);
+      this.programmeList = response.data
+      this.subList = this.programmeList.slice(1, this.inc)
     })
   },
 
-  methods:{
-    seeMore(){
-      if(this.inc < this.programmeList.length){
-        this.inc += 10;
-        this.subList = this.programmeList.slice(1, this.inc);
+  methods: {
+    seeMore() {
+      if (this.inc < this.programmeList.length) {
+        this.inc += 10
+        this.subList = this.programmeList.slice(1, this.inc)
       }
     }
   }
@@ -72,7 +72,7 @@ u {
   color: inherit;
   text-decoration: none;
 }
-.seeMoreBtn{
+.seeMoreBtn {
   display: block;
   width: 200px;
   height: 30px;
@@ -126,9 +126,12 @@ u {
     right: calc(50% + 6rem);
   }
 }
-.verba-film-item:hover .strip-aside {
+.verba-film-item:hover {
   color: $color-neutral-1000;
-  font-weight: 800;
+  // font-weight: 800;
+
+  transition: text-shadow 0.3s;
+  text-shadow: 0 0 0.65px #333, 0 0 0.65px #333;
 }
 .verba-film-item:hover:hover img {
   -webkit-filter: sepia(100%) blur(0);
@@ -167,10 +170,10 @@ u {
     font-size: 0.85rem;
     padding-bottom: 0.1rem;
     text-align: left;
-    &:hover {
-      color: $color-neutral-1000;
-      font-weight: 800;
-    }
+    // &:hover {
+    //   color: $color-neutral-1000;
+    //   font-weight: 800;
+    // }
   }
 }
 </style>

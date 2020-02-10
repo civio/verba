@@ -3,7 +3,7 @@
     "search": "Buscador",
     "programmes": "Programas",
     "about": "Sobre Verba",
-    "vignettes": "Vignettes"
+    "vignettes": "Casos de uso"
   },
   "about": {
     "project": {
@@ -39,5 +39,55 @@
   "pagination": {
     "previous": "Anterior",
     "next": "Siguiente"
+  },
+  "vignettes": {
+    "title": "Verba Vignettes",
+    "methodology": "El buscador de Verba en práctica:",
+    "query-subtitle": "Búsqueda:",
+
+    "item1": {
+      "title": "La ultraderecha son los otros",
+      "query-marked": "<mark>ultraderecha</mark>|<mark>ultra derecha</mark>",
+      "query": "'ultraderecha' | 'ultra derecha'",
+      "note": ""
+    },
+    "item2": {
+      "title": "Gürtel y los ERE, casi empatados",
+      "query-marked": "<mark class='item1'>gürtel</mark>|<mark class='item1'>gurtel</mark> VS <mark class='item2'>los eres</mark>|<mark class='item2'>caso ERE</mark>",
+      "query": "'gürtel' | 'gurtel' VS 'los ere' | 'caso ERE'",
+      "note": "Nota: A la búsqueda de <mark class='item2'>los ERES</mark> hemos eliminado cuatro casos en los que trataban Expedientes de Regulación de Empleo distintos a los del caso de corrupción."
+    },
+    "item3": {
+      "title": "La violencia contra las mujeres",
+      "query": "'violencia de género' | 'violencia de genero' | 'violencia machista' | 'violencia doméstica ' | 'violencia domestica' | 'violencia intrafamiliar'"
+    },
+    "item4": {
+      "title": "Rajoy sigue vivo",
+      "query": "'rajoy' VS 'pedro sanchez' | 'pedro sánchez'; 'aznar'; 'felipe gonzalez' | 'felipe gonzález'; 'puigdemont'; 'trump'; 0messi'|'mesi'; 'dios'; 'zapatero'"
+    },
+    "item5": {
+      "title": "A dieta",
+      "query": "'dieta' | 'copa de vino' | 'pasta engorda' |'leche cruda' | 'aditivos'"
+    },
+    "item6": {
+      "title": "",
+      "query": ""
+    },
+    "item7": {
+      "title": "",
+      "query": ""
+    },
+    "item8": {
+      "title": "",
+      "query": ""
+    },
+    "item9": {
+      "title": "",
+      "query": ""
+    },
+    "item10": {
+      "title": "",
+      "query": ""
+    }
   }
 }
