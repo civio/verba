@@ -9,6 +9,7 @@ import Search from './Search.vue'
 import ProgrammeList from './ProgrammeList.vue'
 import Programme from './Programme.vue'
 import About from './About.vue'
+import Vignettes from './Vignettes.vue'
 import VerbaAPI from './verba-api.js'
 
 import DateRangePicker from '@gravitano/vue-date-range-picker'
@@ -62,6 +63,11 @@ global.router = new VueRouter({
       path: '/about',
       name: 'about',
       component: About
+    },
+    {
+      path: '/vignettes',
+      name: 'vignettes',
+      component: Vignettes
     }
   ]
 })

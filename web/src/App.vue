@@ -33,6 +33,12 @@
               <li class="verba-nav-item">
                 <router-link :to="{ name: 'about' }" class="verba-nav-link">{{ $t('header.about') }}</router-link>
               </li>
+              <li class="verba-nav-item">
+                <router-link
+                  :to="{ name: 'vignettes' }"
+                  class="verba-nav-link"
+                >{{ $t('header.vignettes') }}</router-link>
+              </li>
             </ul>
           </div>
         </nav>
