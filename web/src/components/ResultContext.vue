@@ -12,9 +12,11 @@
         <div class="modal-body">
           <div v-if="resultContext">
             <p
-              v-for="(items, key) in resultContext"
+              v-for="(item, key) in resultContext"
               :key="key"
-            >{{ items.time_start | formatTime }}: {{ items.content }}</p>
+            >{{ item.time_start | formatTime }}:
+              <span v-html="highlight(item.content)"></span>
+            </p>
           </div>
         </div>
       </div>
@@ -36,7 +38,10 @@ export default {
     }
   },
   computed: {
-    ...mapState(['currentResult']),
+    ...mapState([
+      'currentResult',
+      'queryTerms'
+    ]),
     title: function() {
       const date = this.currentResult.programme.date
       return `<strong>${moment(date).format(
@@ -86,6 +91,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../scss/_variables.scss';
+
 .modal.show {
   display: block;
 }
@@ -111,5 +118,11 @@ export default {
   opacity: 0.5;
   z-index: 1;
   cursor: pointer;
+}
+mark {
+  font-weight: 600;
+  background-color: mix($color-highlight-1, white, 85%);
+  padding-top: 0;
+  padding-bottom: 0;
 }
 </style>
