@@ -29,6 +29,7 @@ app.get('/search', cors(), async (request, response) => {
       request.query.size,
       request.query.page
     )
+    console.log(request.query)
     response.json(results)
   } else {
     response.json({ error: 'No query defined' })
@@ -53,8 +54,8 @@ app.get('/search.csv', cors(), async (request, response) => {
         start_time: result.time_start,
         end_time: result.time_end,
         programme_id: result.programme.id,
-        programme_date: result.programme.date,
-        entities: JSON.stringify(result.entities)
+        programme_date: result.programme.date/*,
+        entities: JSON.stringify(result.entities)*/
       }
     }), true)
   } else {
