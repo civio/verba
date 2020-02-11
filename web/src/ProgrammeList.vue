@@ -1,6 +1,26 @@
 <template>
   <main>
     <div class="verba-programmes">
+      <div id="menu-filter">
+        <ul>
+          <li v-for="year in years">
+            <a
+              v-on:click="seeYear(year)"
+              v-bind:data-value="year.num"
+              v-bind:class="{'is-clicked':year.num === currentYear}"
+            >{{year.num}}</a>
+          </li>
+        </ul>
+        <ul v-if="currentYear != ''">
+          <li v-for="month in months">
+            <a
+              v-on:click="seeMonth(month)"
+              v-bind:data-value="month.num"
+              v-bind:class="{'is-clicked':month.num ===  currentMonth}"
+            >{{month.name}}</a>
+          </li>
+        </ul>
+      </div>
       <img
         class="verba-microfilms-image"
         src="../src/images/02Microfilms-es.png"
@@ -20,7 +40,11 @@
             <span class="strip-aside">{{ programme.title }}</span>
           </router-link>
         </li>
-        <button v-on:click="seeMore" class="seeMoreBtn">Ver más</button>
+        <button
+          v-on:click="seeMore"
+          class="seeMoreBtn"
+          v-if="subList < filterProgramme"
+        >Ver más ({{ (filterProgramme.length - subList.length).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") }} resultados)</button>
       </ul>
     </div>
   </main>
@@ -28,27 +52,105 @@
 
 <script>
 import Vue from 'vue'
+
 export default {
   data() {
     return {
       programmeList: [],
+      filterProgramme: [],
       subList: [],
-      inc: 10
+      limit: 70,
+      inc: undefined,
+      years: [
+        { num: '2013' },
+        { num: '2014' },
+        { num: '2015' },
+        { num: '2016' },
+        { num: '2017' },
+        { num: '2018' },
+        { num: '2019' },
+        { num: '2020' }
+      ],
+      months: [
+        { num: '01', name: 'enero' },
+        { num: '02', name: 'febrero' },
+        { num: '03', name: 'marzo' },
+        { num: '04', name: 'abril' },
+        { num: '05', name: 'mayo' },
+        { num: '06', name: 'junio' },
+        { num: '07', name: 'julio' },
+        { num: '08', name: 'agosto' },
+        { num: '09', name: 'septiembre' },
+        { num: '10', name: 'octubre' },
+        { num: '11', name: 'noviembre' },
+        { num: '12', name: 'diciembre' }
+      ],
+      currentYear: '',
+      currentMonth: ''
     }
   },
   mounted() {
     Vue.verbaAPI('fetchProgrammeList', null, response => {
+      this.inc = this.limit
       this.programmeList = response.data
-      this.subList = this.programmeList.slice(1, this.inc)
+      this.filterProgramme = response.data
+      this.subList = this.get_sublist(this.programmeList)
     })
   },
 
   methods: {
     seeMore() {
-      if (this.inc < this.programmeList.length) {
-        this.inc += 10
-        this.subList = this.programmeList.slice(1, this.inc)
+      if (this.inc < this.filterProgramme.length) {
+        this.inc += this.limit
+        this.subList = this.get_sublist(this.filterProgramme)
       }
+    },
+
+    get_year_month() {
+      return this.programmeList.filter(
+        d =>
+          this.currentYear === d.date.split('-')[0] &&
+          this.currentMonth === d['date'].split('-')[1]
+      )
+    },
+
+    get_year(index) {
+      return this.programmeList.filter(
+        d => this.currentYear === d.date.split('-')[0]
+      )
+    },
+
+    get_sublist(list) {
+      return list.slice(0, this.inc)
+    },
+
+    seeYear(year) {
+      this.inc = this.limit
+      if (this.currentYear !== year.num) {
+        this.currentYear = year.num
+        if (this.currentMonth !== '') {
+          this.filterProgramme = this.get_year_month()
+        } else {
+          this.filterProgramme = this.get_year()
+        }
+      } else {
+        this.currentYear = ''
+        this.currentMonth = ''
+        this.filterProgramme = this.programmeList
+      }
+      this.subList = this.get_sublist(this.filterProgramme)
+    },
+
+    seeMonth(month) {
+      this.inc = this.limit
+      if (this.currentMonth !== month.num) {
+        this.currentMonth = month.num
+        this.filterProgramme = this.get_year_month()
+      } else {
+        this.currentMonth = ''
+        this.filterProgramme = this.get_year()
+      }
+      this.subList = this.get_sublist(this.filterProgramme)
     }
   }
 }
@@ -58,6 +160,24 @@ export default {
 @import '../src/scss/_variables.scss';
 // TODO: I shouldn't need this again here. Something to do with the "scoped" feature of the vue components styles
 //Common resets
+a.is-clicked {
+  background-color: #f2ed8e;
+}
+#menu-filter {
+  min-width: 40%;
+  max-width: 320px;
+  position: absolute;
+  top: 220px;
+}
+#menu-filter ul {
+  float: left;
+  width: 50%;
+}
+
+#menu-filter ul li {
+  float: left;
+  margin-right: 5px;
+}
 * {
   box-sizing: border-box;
   margin: 0;

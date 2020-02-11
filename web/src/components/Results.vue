@@ -161,7 +161,7 @@ export default {
       this.setCurrentResult(result)
     },
     onDownloadClick() {
-      const params = { q: this.query, size: 10000 }
+      const params = { q: this.query, size: 20000 }
       if (this.queryDate) {
         params.date_from = moment(this.queryDate.from).format('YYYY-MM-DD')
         params.date_to = moment(this.queryDate.to).format('YYYY-MM-DD')

@@ -8,17 +8,17 @@
   "about": {
     "project": {
       "title": "Verba Volant",
-      "body": "de la expresión latina <span>“Verba volant, scripta manent”</span>, <span>“las palabras se las lleva el viento, lo escrito permanece“</span>, es un experimento para aplicar herramientas y técnicas de <span>Procesamiento de Lenguaje Natural (PLN)</span> a <span>videos subtitulados y transcripciones</span> con objeto periodístico.",
-      "bodyExtra": "<span>VERBA</span> es una aplicación web de <span>código abierto</span> creada para ayudar a periodistas e investigadores a capturar y analizar subtítulos de vídeos."
+      "body": "de la expresión latina “Verba volant, scripta manent” <span>(“las palabras vuelan, lo escrito permanece“)</span> es un proyecto para analizar la cobertura de los telediarios de Televisión Española <span>desde 2014 hasta la actualidad</span> (con un pequeño agujero en junio de 2018 porque los subtítulos de ese periodo no están publicados).",
+      "bodyExtra": "VERBA es además una aplicación web de <span>código abierto</span> creada para ayudar a periodistas e investigadores a capturar y analizar contenidos como los informativos a través de sus subtítulos. Es el resultado de una beca de la Google Digital News Initiative."
     },
     "us": {
-      "title": "Civio",
-      "body": "es una <span>organización independiente y sin ánimo de lucro </span> que vigila a los <span>organismos públicos, informa a los ciudadanos</span> y hace activismo para conseguir <span>transparencia real y efectiva</span> en nuestras instituciones."
+      "title": "<a style='color:black; text-decoration:underline;' href='https://civio.es/' target='_blank'>Civio</a>",
+      "body": "es una <span>organización independiente</span> y sin ánimo de lucro que, a través del periodismo y la tecnología, vigila a los poderes públicos, <span>investiga a fondo</span> su funcionamiento e informa a todos los ciudadanos y presiona para lograr una transparencia real y eficaz en las instituciones."
     }
   },
   "search": {
-    "subtitle": "Analiza la cobertura de los Telediarios de RTVE.",
-    "title": "Análisis de los <br> Telediarios de RTVE",
+    "subtitle": "Busca conceptos para saber cuántas veces se han nombrado o su evolución en el tiempo.",
+    "title": "EXPLORA TODOS LOS <br> TELEDIARIOS DE TVE DESDE 2014",
     "placeholder": "Introduce un término",
     "filter_by_date": "Filtrar por fecha"
   },
