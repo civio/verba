@@ -5,12 +5,10 @@
     </div>
     <div v-else-if="results">
       <section class="results-dataviz" id="verba-subtitle-dataviz">
-        <h2 class="verba-subtitle">{{ $t('results.chart.title') }}</h2>
         <AreaChart v-if="showChart" :data="aggregations" />
       </section>
 
       <section class="results-links">
-        <!-- <h2 class="verba-subtitle">{{ $t('results.list.title') }}</h2> -->
         <p class="my-4">
           <span
             v-html="$t('results.list.count', { total: results.length.toLocaleString(), query: query })"
