@@ -4,13 +4,16 @@
       <g ref="axisXMonths" class="axis x-months" />
       <g ref="axisXYears" class="axis x-years" />
       <g ref="axisY" class="axis y" />
+      <g ref="tooltipArea" :style="{ transform: `translate(${margin.left}px, ${margin.top}px)` }" />
       <g ref="bars" :style="{ transform: `translate(${margin.left}px, ${margin.top}px)` }" />
     </svg>
+    <div id="tooltip"></div>
   </div>
 </template>
 
 <script>
 import * as d3 from 'd3'
+//import {Delaunay} from 'd3-delaunay'
 // Based on https://medium.com/tyrone-tudehope/composing-d3-visualizations-with-vue-js-c65084ccb686
 export default {
   name: 'AreaChart',
@@ -76,6 +79,15 @@ export default {
         .selectAll('.tick line')
         .attr('x1', 0)
         .attr('x2', this.padded.width)
+    },
+    formatTooltipArea(g) {
+      return g
+        .append('rect')
+        .attr('width', this.padded.width)
+        .attr('height', this.padded.height)
+    },
+    delaunay(){
+      return this.data.map(d => Object.values(d))
     },
     initialize() {},
     onResize() {
@@ -171,6 +183,7 @@ export default {
         .ticks(this.height / 50)
 
       // update bars
+      var myTimer;
       d3.select(this.$refs.bars)
         .selectAll('rect')
         .data(this.data)
@@ -180,10 +193,38 @@ export default {
         .attr('transform', `translate(0, ${-this.height / 2})`)
         .attr('height', d => scaleY(0) - scaleY(d.y))
         .attr('width', barWidth)
+        .on('mousemove', function(d){
+          clearInterval(myTimer);
+          d3.select(this)
+            .classed('focus', true)
+          
+          d3.select('#tooltip')
+            .classed('displayNone', false)
+            .html(d3.timeFormat('%d-%m-%Y')(d.x) + ' | ' + d.y + ' times')
+            .style('left', (d3.mouse(this)[0]-d3.select('#tooltip').node().offsetWidth/1.5)+'px')
+            .style('top', (d3.mouse(this)[1]+5-d3.select('#tooltip').node().offsetHeight*1.5)+'px')
+        })
+
+        .on('mouseout', function(){
+          function myFn() {
+            d3.select('#tooltip')
+              .classed('displayNone', true)
+
+            console.log('idle');
+            clearInterval(myTimer);
+          }
+          console.log(myTimer)
+          clearInterval(myTimer);
+          
+          myTimer = setInterval(myFn, 1000);
+          console.log(myTimer)
+          d3.select(this)
+            .classed('focus', false)          
+        })
         .append('svg:title')
         .text(d => {
           return d3.timeFormat('%d-%m-%Y')(d.x) + ' | ' + d.y + ' times'
-        })
+        })        
 
       // render axis
       d3.select(this.$refs.axisXMonths)
@@ -193,6 +234,8 @@ export default {
         )
         .call(axisXMonths)
         .call(this.formatAxisXMonths)
+
+      
 
       d3.select(this.$refs.axisXYears)
         .attr(
@@ -214,6 +257,7 @@ export default {
         .classed('axisY-title', true)
         .attr('text-anchor', 'start')
         .text('Nº menciones')
+
     }
   }
 }
@@ -228,9 +272,29 @@ export default {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
   color: $color-neutral-1000;
-
   svg {
+    position: relative;
     overflow: visible;
+  }
+
+  .displayNone{
+    display: none;
+  }
+
+  #tooltip{
+    position: absolute;
+    background-color: #f1f1f1;
+    border: 1px solid;
+    pointer-events: none;
+    padding: 5px;
+  }
+
+  .tooltip-area rect{
+    fill: transparent;
+  }
+
+  rect.focus{
+    fill: #ef9b31;
   }
 
   .axis {
