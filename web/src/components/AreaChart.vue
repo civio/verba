@@ -209,11 +209,11 @@ export default {
         .call(axisY)
         .call(this.formatAxisY)
         .append('svg:text')
-        .attr('x', -20)
+        .attr('x', -25)
         .attr('y', -15)
         .classed('axisY-title', true)
         .attr('text-anchor', 'start')
-        .text('Nº menciones')
+        .text('Menciones')
     }
   }
 }
@@ -225,8 +225,8 @@ export default {
 .chart-container {
   width: 100%;
   height: 260px;
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   color: $color-neutral-1000;
 
   svg {
@@ -282,7 +282,7 @@ export default {
     }
 
     .axisY-title {
-      font-size: 10px;
+      font-size: 12px;
       font-weight: 600;
       fill: currentColor;
       opacity: 1 !important;

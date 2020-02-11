@@ -191,7 +191,11 @@ mark {
   margin-bottom: 2rem;
   max-width: 850px;
 
+<<<<<<< HEAD
   border: 1px solid $color-neutral-1000;
+=======
+  border: 1px double $color-neutral-1000;
+>>>>>>> master
 
   .vignette-title {
     color: $color-neutral-1000;

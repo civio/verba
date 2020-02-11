@@ -48,6 +48,7 @@ export default class Captions {
       from: page * size,
       query,
       size,
+      track_total_hits: true,
       sort: [{ programme_date: 'desc' }, { start: 'asc' }] // order by date desc & start time asc
     }
     // add aggregations to search body if aggregations defined
