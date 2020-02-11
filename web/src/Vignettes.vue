@@ -6,10 +6,13 @@
         <li class="verba-vignettes-item">
           <h3 class="vignette-title" v-html="$t('vignettes.item1.title')"></h3>
           <div class="vignette-copy">
-            <p>Hay partidos de ultraderecha en Ucrania, Finlandia, Portugal, Francia, Italia, Estonia, Bulgaria, Alemania, Brasil y la Comisión Europea, entre otros lugares del mundo. Pero, para el Telediario de RTVE, no en España. De las 9.444 veces que aparece la palabra en los informativos desde 2014 hasta enero de 2020 la mayoría corresponden a dos tipos: otras fuerzas políticas mencionando a Vox (sobre todo el PSOE) y noticias de política internacional sobre partidos de ultraderecha de otros países.</p>
             <p>
-              La palabra “
-              <mark>ultraderecha</mark>” empezó a coger fuerza en el Telediario en 2017, cuando se hablaba de su auge en Francia y en Holanda. Y empezó a ganar más peso desde mediados de 2018, con la irrupción de Bolsonaro en Brasil o de partidos fascistas en Alemania. De hecho, uno de los dos mayores picos, en septiembre de ese año, se explican por las noticias internacionales sobre esos dos países.
+              Hay partidos de
+              <mark>ultraderecha</mark> en Ucrania, Finlandia, Portugal, Francia, Italia, Estonia, Bulgaria, Alemania, Brasil y la Comisión Europea, entre otros lugares del mundo. Pero, para el Telediario de RTVE, no en España. De las 9.444 veces que aparece la palabra en los informativos desde 2014 hasta enero de 2020 la mayoría corresponden a dos tipos: otras fuerzas políticas mencionando a Vox (sobre todo el PSOE) y noticias de política internacional sobre partidos de ultraderecha de otros países.
+            </p>
+            <p>
+              La palabra "
+              <mark>ultraderecha</mark>" empezó a coger fuerza en el Telediario en 2017, cuando se hablaba de su auge en Francia y en Holanda. Y empezó a ganar más peso desde mediados de 2018, con la irrupción de Bolsonaro en Brasil o de partidos fascistas en Alemania. De hecho, uno de los dos mayores picos, en septiembre de ese año, se explican por las noticias internacionales sobre esos dos países.
             </p>
             <p>
               La semana en la que esa palabra fue más popular fue justo la última de campaña electoral justo antes de los comicios del 11-N. En solo cuatro días, se repitió 17 veces entre los dos informativos, el de la mañana y el de la noche. Se referían a Vox. Pero no porque en el Telediario se refirieran a ellos como partido de
@@ -23,10 +26,14 @@
           </div>
           <div class="vignette-methodology">
             <h4 class="methodology-title" v-html="$t('vignettes.methodology')"></h4>
-            <p class="methodology-query" v-html="$t('vignettes.item1.query')"></p>
+            <div class="query-container">
+              <p class="methodology" v-html="$t('vignettes.query-subtitle')"></p>
+              <div class="query-container" v-html="$t('vignettes.item1.query')"></div>
+            </div>
             <p class="methodology-note" v-html="$t('vignettes.item1.note')"></p>
           </div>
         </li>
+
         <li class="verba-vignettes-item">
           <h3 class="vignette-title" v-html="$t('vignettes.item2.title')"></h3>
           <div class="vignette-copy">
@@ -52,11 +59,30 @@
           </div>
           <div class="vignette-methodology">
             <h4 class="methodology-title" v-html="$t('vignettes.methodology')"></h4>
-            <div>
+            <div class="query-container">
               <p class="methodology" v-html="$t('vignettes.query-subtitle')"></p>
-              <p class="methodology-query" v-html="$t('vignettes.item2.query')"></p>
+              <div class="query-container" v-html="$t('vignettes.item2.query')"></div>
             </div>
             <p class="methodology-note" v-html="$t('vignettes.item2.note')"></p>
+          </div>
+        </li>
+
+        <li class="verba-vignettes-item">
+          <h3 class="vignette-title" v-html="$t('vignettes.item3.title')"></h3>
+          <div class="vignette-copy">
+            <!-- <p>Desde principios de 2014 han sido asesinadas 66 mujeres por <mark>violencia de género</mark>. En ese mismo periodo y hasta finales de enero de 2020, se ha citado “<mark>violencia de género</mark>” más de 2.650 veces en el Telediario de RTVE. Sin embargo, esta no es la única forma de referirse a la violencia contra las mujeres: en 2019 se citaron las palabras "<mark>violencia machista<mark>” más de trescientas veces en los informativos.</p>
+            <p>El Día Internacional de la Violencia contra la mujer, el 25 de noviembre, es el día en el que más se habla sobre esto en los informativos. Solo ese día, el pasado año, se llegó a nombrar “<mark>violencia de género<mark>” o “<mark>violencia machista</mark>” 40 veces entre el telediario del mediodía y el de la noche.</p>
+            <p>No obstante, hay colectivos que defienden su ideología a través del uso del lenguaje. Esto ocurre, por ejemplo, con la “<mark>violencia intrafamiliar</mark>” que recoje Vox en su programa político y que apareció en el telediario por primera vez con este significado en 2019 y se citó hasta 12 veces. </p>
+            <p>"<mark>Violencia doméstica</mark>"" es otra de las descripciones y fue citada más de 70 veces desde 2014, aunque en muchos casos, se incluye bajo estas palabras la violencia entre padres e hijos.</p>
+            <p>Al fin y al cabo, el lenguaje también importa.</p>-->
+          </div>
+          <div class="vignette-methodology">
+            <h4 class="methodology-title" v-html="$t('vignettes.methodology')"></h4>
+            <div>
+              <p class="methodology" v-html="$t('vignettes.query-subtitle')"></p>
+              <div class="query-container" v-html="$t('vignettes.item3.query')"></div>
+            </div>
+            <p class="methodology-note" v-html="$t('vignettes.item3.note')"></p>
           </div>
         </li>
       </ul>
@@ -121,13 +147,18 @@ mark {
 .verba-vignettes-item {
   // Mobile first
   text-align: center;
-  padding: 1rem 3rem;
+  padding: 3rem 3rem 1rem 3rem;
+  margin: 0 auto;
   margin-bottom: 2rem;
+  max-width: 850px;
 
   border: 1px solid $color-neutral-1000;
 
   .vignette-title {
     color: $color-neutral-1000;
+    margin-bottom: 1rem;
+    text-align: center;
+    margin-bottom: 2rem;
   }
 
   // Tablets
@@ -141,12 +172,21 @@ mark {
 }
 
 .vignette-methodology {
-  margin-top: 3rem;
+  margin-top: 2rem;
+  border-top: 2px solid $color-neutral-0;
+  padding-top: 1rem;
   opacity: 0.8;
 
   .methodology-title {
     color: $color-neutral-1000;
     font-size: 1rem;
+  }
+  .query-container {
+    display: inline-block;
+  }
+  .methodology {
+    display: inline-block;
+    padding-right: 1rem;
   }
   .methodology-query {
     display: inline-block;

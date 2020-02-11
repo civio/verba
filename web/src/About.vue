@@ -3,7 +3,7 @@
     <div class="verba-about">
       <img
         class="verba-human-radar-image"
-        src="../src/images/03RadarHumano-es.png"
+        src="../src/images/03RadarHumano.png"
         alt="Human radar old illustration"
       />
 
@@ -54,7 +54,7 @@
   margin-right: 0.8rem;
   margin-left: 2rem;
 
-  margin-top: 4rem;
+  margin-top: 6rem;
   text-align: center;
 
   p > span {
