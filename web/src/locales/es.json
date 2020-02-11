@@ -1,9 +1,9 @@
 {
   "header": {
     "search": "Buscador",
+    "vignettes": "Titulares",
     "programmes": "Programas",
-    "about": "Sobre Verba",
-    "vignettes": "Casos de uso"
+    "about": "Sobre Verba"
   },
   "about": {
     "project": {
@@ -43,67 +43,6 @@
   "vignettes": {
     "title": "Verba Vignettes",
     "methodology": "Verba en práctica:",
-    "query-subtitle": "Búsqueda:",
-
-    "item1": {
-      "title": "La ultraderecha son los otros",
-      "query": "<p class='methodology-query'>'ultraderecha' | 'ultra derecha'</p>",
-      "note": "",
-      "copy": ""
-    },
-    "item2": {
-      "title": "Gürtel y los ERE, casi empatados",
-      "query": "<p class='methodology-query'> 'gürtel' | 'gurtel'</p> VS <p class='methodology-query'>'los ere' | 'caso ERE'</p>",
-      "note": "Nota: A la búsqueda de <mark class='item2'>los ERES</mark> hemos eliminado cuatro casos en los que trataban Expedientes de Regulación de Empleo distintos a los del caso de corrupción.",
-      "copy": ""
-    },
-    "item3": {
-      "title": "La violencia contra las mujeres",
-      "query": "<p class='methodology-query'>'violencia de género' | 'violencia de genero' | 'violencia machista' | 'violencia doméstica ' | 'violencia domestica' | 'violencia intrafamiliar'</p>",
-      "note": "",
-      "copy": ""
-    },
-    "item4": {
-      "title": "Rajoy sigue vivo",
-      "query": "<p class='methodology-query'>'rajoy'</p> VS 'pedro sanchez' | 'pedro sánchez'; 'aznar'; 'felipe gonzalez' | 'felipe gonzález'; 'puigdemont'; 'trump'; 0messi'|'mesi'; 'dios'; 'zapatero'",
-      "note": "",
-      "copy": ""
-    },
-    "item5": {
-      "title": "A dieta",
-      "query": "'dieta' | 'copa de vino' | 'pasta engorda' |'leche cruda' | 'aditivos'",
-      "note": "",
-      "copy": ""
-    },
-    "item6": {
-      "title": "",
-      "query": "",
-      "note": "",
-      "copy": ""
-    },
-    "item7": {
-      "title": "",
-      "query": "",
-      "note": "",
-      "copy": ""
-    },
-    "item8": {
-      "title": "",
-      "query": "",
-      "note": "",
-      "copy": ""
-    },
-    "item9": {
-      "title": "",
-      "query": "",
-      "note": "",
-      "copy": ""
-    },
-    "item10": {
-      "title": "",
-      "query": "",
-      "note": "",
-      "copy": ""
-    }
+    "query-subtitle": "Búsqueda:"
   }
 }
