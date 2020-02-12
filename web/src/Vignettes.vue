@@ -169,7 +169,7 @@
                 <div>
                   <p class="methodology-query">"rajoy"</p>&nbsp;
                   <a
-                    href="https://verba.civio.es/?q=%22dieta%22%20%7C%20%22copa%20de%20vino%22%20%7C%20%22pasta%20engorda%22%20%7C%20%22leche%20cruda%22%20%7C%20%22aditivos%22#verba-subtitle-dataviz"
+                    href="https://verba.civio.es/?q=rajoy#verba-subtitle-dataviz"
                     target="_blank"
                   >(link)</a>
                   <br />
@@ -205,13 +205,19 @@
                 <p class="methodology" v-html="$t('vignettes.query-subtitle')"></p>
                 <div>
                   <p class="methodology-query">"cambio climático" | "cambio climatico"</p>&nbsp;
-                  <a href target="_blank">(link)</a>&nbsp; VS
+                  <a
+                    href="https://verba.civio.es/?q=%22cambio%20clim%C3%A1tico%22%20%7C%20%22cambio%20climatico%22#verba-subtitle-dataviz"
+                    target="_blank"
+                  >(link)</a>&nbsp; VS
                   <br />
 
                   <p
                     class="methodology-query"
                   >"crisis climática" | "crisis climatica" | "emergencia climática" | "emergencia climatica"</p>&nbsp;
-                  <a href target="_blank">(link)</a>
+                  <a
+                    href="https://verba.civio.es/?q=%22crisis%20clim%C3%A1tica%22%20%7C%20%22crisis%20climatica%22%20%7C%20%22emergencia%20clim%C3%A1tica%22%20%7C%20%22emergencia%20climatica%22#verba-subtitle-dataviz"
+                    target="_blank"
+                  >(link)</a>
                 </div>
               </div>
             </div>
