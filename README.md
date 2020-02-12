@@ -57,7 +57,7 @@ sudo service elasticsearch start
 Para actualizar la aplicación:
 
 ```
-$ cd /var/www/verba-volant.civio.es/public
+$ cd /var/www/verba.civio.es/public
 $ git pull
 $ npm install
 $ npm run build
@@ -66,8 +66,8 @@ $ sudo service verba-api restart
 
 Una vez desplegada, la aplicación ofrece dos URLs:
 
-- [`verba-volant.civio.es`](https://verba-volant.civio.es/), la aplicación web.
-- [`verba-volant.civio.es/api`](https://verba-volant.civio.es/api/), el API usado por la aplicación.
+- [`verba.civio.es`](https://verba.civio.es/), la aplicación web.
+- [`verba.civio.es/api`](https://verba.civio.es/api/), el API usado por la aplicación.
 
 Temporalmente tenemos también, mientras pulimos el proceso de desarrollo:
 
