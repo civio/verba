@@ -12,13 +12,22 @@
               <mark>ultraderecha</mark> en Ucrania, Finlandia, Portugal, Francia, Italia, Estonia, Bulgaria, Alemania, Brasil y la Comisión Europea, entre otros lugares del mundo. Pero, para el Telediario de RTVE, no en España. De las 445 veces que aparece la palabra en los informativos desde 2014 hasta el 31 de enero de 2020 la mayoría corresponden a dos tipos: otras fuerzas políticas mencionando a Vox (sobre todo el PSOE) y noticias de política internacional sobre partidos de
               <mark>ultraderecha</mark> de otros países.
             </p>
-            <!-- <div class="chart-annotated">
-              <img
+            <div class="chart-annotated">
+              <!-- <img
                 src="./images/titulares-charts/verba-item1-ultraderecha_modif05.svg"
                 alt="Gráfico de tendencia en el tiempo del término 'ultraderecha'"
-              />
-            </div>-->
-            <!-- <iframe src="../src/charts/index.html" frameborder="0"></iframe> -->
+              />-->
+
+              <!-- <iframe
+              src="../src/charts/titular01-q01/verba-tema01-query01-ultraderecha.html"
+              frameborder="0"
+              ></iframe>-->
+
+              <!-- <link
+              rel="import"
+              href="../src/charts/titular01-q01/verba-tema01-query01-ultraderecha.html"
+              />-->
+            </div>
 
             <p>
               La palabra
@@ -78,7 +87,8 @@
               <mark
                 class="item1"
               >Gürtel,</mark>
-              con la Audiencia Nacional decidiendo si fijaba medidas cautelares para los acusados y la moción de censura contra Mariano Rajoy en marcha, este caso de <mark>corrupción</mark> fue la estrella de los Telediarios, con su apogeo el día 31, el de la moción que cambió a Rajoy por Sánchez en la presidencia del Gobierno.
+              con la Audiencia Nacional decidiendo si fijaba medidas cautelares para los acusados y la moción de censura contra Mariano Rajoy en marcha, este caso de
+              <mark>corrupción</mark> fue la estrella de los Telediarios, con su apogeo el día 31, el de la moción que cambió a Rajoy por Sánchez en la presidencia del Gobierno.
             </p>
 
             <p>
@@ -130,7 +140,8 @@
           <div class="vignette-copy">
             <p>
               Televisión Española mencionó en sus informativos 380 veces la palabra
-              <mark>"dieta"</mark> entre enero de 2014 y enero de 2020. Pero los informativos, en ocasiones, también han puesto a <mark>dieta</mark> el rigor científico, sustituyéndolo por un cóctel de desinformación calórica y desequilibrada, que puede poner en riesgo la salud.
+              <mark>"dieta"</mark> entre enero de 2014 y enero de 2020. Pero los informativos, en ocasiones, también han puesto a
+              <mark>dieta</mark> el rigor científico, sustituyéndolo por un cóctel de desinformación calórica y desequilibrada, que puede poner en riesgo la salud.
             </p>
             <p>
               Uno de los mantras citados por RTVE es que tomar una o dos
@@ -206,7 +217,10 @@
           <h3 class="vignette-title">No había crisis climática hasta 2019</h3>
           <div class="vignette-copy">
             <p>
-              Cuando a finales del 2019, Greta Thunberg dió un discurso en la Cumbre del Clima de Madrid, dejó claro su enfado y sentenció: "Mientras la <mark class="item2">crisis climática</mark> continúa siendo ignorada por quienes tienen que tomar las decisiones, hay personas muriendo a día de hoy". No sabemos qué ocurre con aquellos que tienen que decidir, pero lo que tenemos claro es que la
+              Cuando a finales del 2019, Greta Thunberg dió un discurso en la Cumbre del Clima de Madrid, dejó claro su enfado y sentenció: "Mientras la
+              <mark
+                class="item2"
+              >crisis climática</mark> continúa siendo ignorada por quienes tienen que tomar las decisiones, hay personas muriendo a día de hoy". No sabemos qué ocurre con aquellos que tienen que decidir, pero lo que tenemos claro es que la
               <mark
                 class="item2"
               >"crisis climática"</mark>en los telediarios de RTVE no empezó a aparecer hasta 2019. Solo dos veces antes se había citado como tal: en 2016, por la ONG Acción contra el Hambre, y en la boca de Greta en 2018. De la propia Greta se ha hablado desde ese mismo momento, en concreto, en 75 ocasiones.
