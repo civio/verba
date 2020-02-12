@@ -124,9 +124,19 @@
               Televisión Española mencionó en sus informativos 380 veces la palabra
               <mark>"dieta"</mark> entre enero de 2014 y enero de 2020. Pero los informativos, en ocasiones, también han puesto a dieta el rigor científico, sustituyéndolo por un cóctel de desinformación calórica y desequilibrada, que puede poner en riesgo la salud.
             </p>
-            <p>Uno de los mantras citados por RTVE es que tomar una o dos copas de vino al día es beneficioso. Pero nada más lejos de la realidad: el consumo moderado y saludable de alcohol es un gran mito, que no previene los problemas cardiovasculares y que, de hecho, puede aumentar el riesgo de enfermedades como el cáncer. Este no es el único gazapo de Televisión Española en temas relacionados con la alimentación. La cadena pública también se hizo eco de un trabajo que afirmaba que la pasta no engorda. ¿El problema? El estudio estaba patrocinado por Barilla, un detalle que los informativos olvidaron mencionar en su cobertura.</p>
-            <p>Durante los últimos años, TVE ha difundido informaciones sobre alimentos que pueden inducir a error a los consumidores. Uno de sus telediarios, hablando de la llamada dieta del delfín, llegó a afirmar que "beber agua de mar es una tendencia creciente en el campo de las supuestas dietas saludables". Pese a que la televisión pública menciona la palabra "charlatanería", habla del agua de mar como un "completo nutriente con propiedades". Verba también muestra la cobertura negativa de TVE sobre los aditivos en los alimentos, pese a tratarse de sustancias seguras que ayudan a mejorar el aspecto o textura de los mismos y a conservarlos mejor.</p>
-            <p>Al cubrir la información sobre peligrosas modas, como la de la leche cruda, los informativos de Televisión Española tampoco han destacado el riesgo que supone el consumo de esta bebida. Del total de 11 resultados obtenidos, varios apuntan hacia la producción de quesos utilizando este tipo de leche sin pasteurizar, y otros hacia la polémica normativa aprobada en Cataluña hace casi dos años. Del riesgo que produce su consumo, como la intoxicación por peligrosas bacterias como Listeria, Salmonella o Escherichia coli, ni rastro.</p>
+            <p>
+              Uno de los mantras citados por RTVE es que tomar una o dos
+              <mark>copas de vino</mark> al día es beneficioso. Pero nada más lejos de la realidad: el consumo moderado y saludable de alcohol es un gran mito, que no previene los problemas cardiovasculares y que, de hecho, puede aumentar el riesgo de enfermedades como el cáncer. Este no es el único gazapo de Televisión Española en temas relacionados con la alimentación. La cadena pública también se hizo eco de un trabajo que afirmaba que la
+              <mark>pasta no engorda.</mark> ¿El problema? El estudio estaba patrocinado por Barilla, un detalle que los informativos olvidaron mencionar en su cobertura.
+            </p>
+            <p>
+              Durante los últimos años, TVE ha difundido informaciones sobre alimentos que pueden inducir a error a los consumidores. Uno de sus telediarios, hablando de la llamada dieta del delfín, llegó a afirmar que "beber agua de mar es una tendencia creciente en el campo de las supuestas dietas saludables". Pese a que la televisión pública menciona la palabra "charlatanería", habla del agua de mar como un "completo nutriente con propiedades". Verba también muestra la cobertura negativa de TVE sobre los
+              <mark>aditivos</mark> en los alimentos, pese a tratarse de sustancias seguras que ayudan a mejorar el aspecto o textura de los mismos y a conservarlos mejor.
+            </p>
+            <p>
+              Al cubrir la información sobre peligrosas modas, como la de la
+              <mark>leche cruda,</mark> los informativos de Televisión Española tampoco han destacado el riesgo que supone el consumo de esta bebida. Del total de 11 resultados obtenidos, varios apuntan hacia la producción de quesos utilizando este tipo de leche sin pasteurizar, y otros hacia la polémica normativa aprobada en Cataluña hace casi dos años. Del riesgo que produce su consumo, como la intoxicación por peligrosas bacterias como Listeria, Salmonella o Escherichia coli, ni rastro.
+            </p>
           </div>
           <div class="vignette-methodology">
             <h4 class="methodology-title" v-html="$t('vignettes.methodology')"></h4>
@@ -136,9 +146,9 @@
                 <div>
                   <p
                     class="methodology-query"
-                  >"dieta" | "copa de vino" | "pasta engorda" | "leche cruda" | "aditivos"</p>&nbsp;
+                  >"dieta" | "copa de vino" | "pasta no engorda" | "leche cruda" | "aditivos"</p>&nbsp;
                   <a
-                    href="https://verba.civio.es/?q=%22dieta%22%20%7C%20%22copa%20de%20vino%22%20%7C%20%22pasta%20engorda%22%20%7C%20%22leche%20cruda%22%20%7C%20%22aditivos%22#verba-subtitle-dataviz"
+                    href="https://verba.civio.es/?q=%22dieta%22%20%7C%20%22copa%20de%20vino%22%20%7C%20%22pasta%20no%20engorda%22%20%7C%20%22leche%20cruda%22%20%7C%20%22aditivos%22#verba-subtitle-dataviz"
                     target="_blank"
                   >(link)</a>
                 </div>
@@ -195,7 +205,13 @@
             </p>
             <p>
               Antes de esta crisis, RTVE ya hablaba de
-              <mark class="item1">cambio climático:</mark> desde 2014 hasta principios de 2020, los informativos han citado estas palabras más de 1.350 veces. Solo en 2019 se llegaron a utilizar en casi 600 ocasiones. Y, aunque la Fundeu recomiende referirise al problema como "crisis climática", en los informativos ha aparecido otro concepto aún más popular: "emergencia climática". Apareció por primera vez en el telediario del 15 de diciembre de 2019 y, hasta el 31 de enero de 2020, se ha utilizado 60 veces. Parece que ha llegado para quedarse, al igual que el problema que refleja.
+              <mark class="item1">cambio climático:</mark> desde 2014 hasta principios de 2020, los informativos han citado estas palabras más de 1.350 veces. Solo en 2019 se llegaron a utilizar en casi 600 ocasiones. Y, aunque la Fundeu recomiende referirise al problema como
+              <mark
+                class="item2"
+              >"crisis climática"</mark> , en los informativos ha aparecido otro concepto aún más popular:
+              <mark
+                class="item2"
+              >"emergencia climática"</mark> . Apareció por primera vez en el telediario del 15 de diciembre de 2019 y, hasta el 31 de enero de 2020, se ha utilizado 60 veces. Parece que ha llegado para quedarse, al igual que el problema que refleja.
             </p>
           </div>
           <div class="vignette-methodology">
@@ -210,7 +226,6 @@
                     target="_blank"
                   >(link)</a>&nbsp; VS
                   <br />
-
                   <p
                     class="methodology-query"
                   >"crisis climática" | "crisis climatica" | "emergencia climática" | "emergencia climatica"</p>&nbsp;
