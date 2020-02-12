@@ -129,7 +129,6 @@ export default {
   position: absolute;
   top: 210px;
   z-index: 1;
-  
   border-radius: 4px;
 }
 #menu-filter ul{
@@ -137,7 +136,6 @@ export default {
   padding: 0.4em;
   width: 90%;
   display: flex;
-
   overflow-x: auto;
   overflow-y: hidden;
   margin-left: auto;
@@ -155,6 +153,7 @@ export default {
 #menu-filter ul li a{
   cursor: pointer;
 }
+
 #menu-filter ul li.is-clicked{
   background-color: #f2ed8e;
 }

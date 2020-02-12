@@ -7,7 +7,7 @@
       <g ref="tooltipArea" :style="{ transform: `translate(${margin.left}px, ${margin.top}px)` }" />
       <g ref="bars" :style="{ transform: `translate(${margin.left}px, ${margin.top}px)` }" />
     </svg>
-    <div id="tooltip"></div>
+    <div id="tooltip" class="displayNone"></div>
   </div>
 </template>
 
@@ -96,6 +96,9 @@ export default {
       this.height = this.$el.offsetHeight
     },
     update() {
+      console.log(this.data)
+      let timerHover
+      let that = this
       window.location.href = '#verba-subtitle-dataviz'
       // update scales domain
       const barWidth = this.padded.width / this.data.length
@@ -103,17 +106,21 @@ export default {
         .scaleTime()
         .range([0, this.padded.width - barWidth])
         .domain([this.data[0].x, this.data[this.data.length - 1].x])
+
+      console.log(this.padded.height)
       const scaleY = d3
         .scaleLinear()
         .range([this.padded.height, 0])
-        .domain(d3.extent(this.data, d => d.y))
+        //.domain(d3.extent(this.data, d => d.y))
+        .domain([0, d3.max(this.data, d=>d.y)])
         .nice()
 
       // Custom scale to make the y-axis consistent with new position
       const scaleYdouble = d3
         .scaleLinear()
         .range([this.padded.height / 2, 0])
-        .domain(d3.extent(this.data, d => d.y))
+        //.domain(d3.extent(this.data, d => d.y))
+        .domain([0, d3.max(this.data, d=>d.y)])
         .nice()
 
       // Set the time axis in Spanish
@@ -133,18 +140,18 @@ export default {
         ],
         shortDays: ['Dom', 'Lun', 'Mar', 'Mi', 'Jue', 'Vie', 'Sab'],
         months: [
-          'Enero',
-          'Febrero',
-          'Marzo',
-          'Abril',
-          'Mayo',
-          'Junio',
-          'Julio',
-          'Agosto',
-          'Septiembre',
-          'Octubre',
-          'Noviembre',
-          'Diciembre'
+          'enero',
+          'febrero',
+          'marzo',
+          'abril',
+          'mayo',
+          'junio',
+          'julio',
+          'agosto',
+          'septiembre',
+          'octubre',
+          'noviembre',
+          'diciembre'
         ],
         shortMonths: [
           'Ene',
@@ -163,13 +170,14 @@ export default {
       })
 
       var formatMonth = locale.format('%b')
-
+      var formatMonthFull = locale.format('%B')
       // setup axis
       const axisXMonths = d3
         .axisBottom(scaleX)
         .tickSizeOuter(0)
         .tickFormat(formatMonth)
         .ticks(this.width / 50)
+        .ticks(d3.timeMonth)
 
       const axisXYears = d3
         .axisBottom(scaleX)
@@ -183,48 +191,59 @@ export default {
         .ticks(this.height / 50)
 
       // update bars
-      var myTimer;
       d3.select(this.$refs.bars)
         .selectAll('rect')
         .data(this.data)
         .join('rect')
         .attr('x', d => scaleX(d.x))
-        .attr('y', d => scaleY(d.y / 2))
+        .attr('y', function(d){
+          //console.log(scaleY(d.y / 2))
+          return scaleY(d.y/2)
+        })
         .attr('transform', `translate(0, ${-this.height / 2})`)
-        .attr('height', d => scaleY(0) - scaleY(d.y))
+        .attr('height', function(d){
+          console.log(scaleY(0))
+          return 260 - scaleY(d.y)
+        })
         .attr('width', barWidth)
         .on('mousemove', function(d){
-          clearInterval(myTimer);
+          let left;
+          let top = d3.mouse(this)[1]-d3.select('#tooltip').node().offsetHeight*1.1
+          if(d3.mouse(this)[0] >= that.padded.width/2){
+            left = d3.mouse(this)[0]-that.margin.left-that.margin.right-d3.select('#tooltip').node().offsetWidth/4
+          }else{
+            left = d3.mouse(this)[0]+that.margin.left+that.margin.right
+            
+          }
+          clearInterval(timerHover);
           d3.select(this)
             .classed('focus', true)
-          
+
+          let monthName = formatMonthFull(d.x)
+          let year = d.x.getFullYear()
+          let tooltipText = 'Semana del '+d.x.getDate()+' de <br> '+monthName+' de '+year+'<br>'+d.y.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")+' menciones'
+
           d3.select('#tooltip')
             .classed('displayNone', false)
-            .html(d3.timeFormat('%d-%m-%Y')(d.x) + ' | ' + d.y + ' times')
-            .style('left', (d3.mouse(this)[0]-d3.select('#tooltip').node().offsetWidth/1.5)+'px')
-            .style('top', (d3.mouse(this)[1]+5-d3.select('#tooltip').node().offsetHeight*1.5)+'px')
+            .html(tooltipText)
+            .style('left', left+'px')
+            .style('top', top+'px') 
         })
 
         .on('mouseout', function(){
-          function myFn() {
+          function stop_timer_hover() {
             d3.select('#tooltip')
               .classed('displayNone', true)
-
-            console.log('idle');
-            clearInterval(myTimer);
+            //console.log('idle');
+            clearInterval(timerHover);
           }
-          console.log(myTimer)
-          clearInterval(myTimer);
-          
-          myTimer = setInterval(myFn, 1000);
-          console.log(myTimer)
+          //console.log(timerHover)
+          clearInterval(timerHover);
+          timerHover = setInterval(stop_timer_hover, 750);
+          //console.log(timerHover)
           d3.select(this)
             .classed('focus', false)          
-        })
-        .append('svg:title')
-        .text(d => {
-          return d3.timeFormat('%d-%m-%Y')(d.x) + ' | ' + d.y + ' times'
-        })        
+        })      
 
       // render axis
       d3.select(this.$refs.axisXMonths)
@@ -234,8 +253,6 @@ export default {
         )
         .call(axisXMonths)
         .call(this.formatAxisXMonths)
-
-      
 
       d3.select(this.$refs.axisXYears)
         .attr(
