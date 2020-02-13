@@ -48,7 +48,7 @@
             <div class="query-container">
               <p class="methodology" v-html="$t('vignettes.query-subtitle')"></p>
               <div>
-                <p class="methodology-query">"ultraderecha"|"ultra derecha"</p>&nbsp;
+                <p class="methodology-query">"ultraderecha" | "ultra derecha"</p>&nbsp;
                 <a
                   href="https://verba.civio.es/?q=%22ultraderecha%22%20%7C%20%22ultra%20derecha%22#verba-subtitle-dataviz"
                   target="_blank"
