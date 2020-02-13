@@ -3,21 +3,13 @@
     <div class="verba-programmes">
       <div id="menu-filter">
         <ul>
-          <li v-for="year in years">
-            <a
-              v-on:click="seeYear(year)"
-              v-bind:data-value="year.num"
-              v-bind:class="{'is-clicked':year.num === currentYear}"
-            >{{year.num}}</a>
+          <li v-for="year in years" v-bind:class="{'is-clicked':year.num === currentYear}">
+            <a v-on:click="seeYear(year)" v-bind:data-value="year.num" >{{year.num}}</a>
           </li>
         </ul>
         <ul v-if="currentYear != ''">
-          <li v-for="month in months">
-            <a
-              v-on:click="seeMonth(month)"
-              v-bind:data-value="month.num"
-              v-bind:class="{'is-clicked':month.num ===  currentMonth}"
-            >{{month.name}}</a>
+          <li v-for="month in months" v-bind:class="{'is-clicked':month.num ===  currentMonth}">
+            <a v-on:click="seeMonth(month)" v-bind:data-value="month.num">{{month.name}}</a>
           </li>
         </ul>
       </div>
@@ -160,23 +152,42 @@ export default {
 @import '../src/scss/_variables.scss';
 // TODO: I shouldn't need this again here. Something to do with the "scoped" feature of the vue components styles
 //Common resets
-a.is-clicked {
-  background-color: #f2ed8e;
-}
-#menu-filter {
+
+#menu-filter{
   min-width: 40%;
   max-width: 320px;
   position: absolute;
-  top: 220px;
-}
-#menu-filter ul {
-  float: left;
-  width: 50%;
+  top: 210px;
+  z-index: 1;
+  border-radius: 4px;
 }
 
-#menu-filter ul li {
-  float: left;
-  margin-right: 5px;
+#menu-filter ul{
+  background-color: rgba(0,0,0,0.2);
+  padding: 0.4em;
+  width: 90%;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+
+#menu-filter ul li{
+  background-color: white; 
+  padding: 0.4em;
+  border-radius: 2px;
+  margin-right: 0.7em;
+}
+
+#menu-filter ul li a{
+  cursor: pointer;
+}
+
+#menu-filter ul li.is-clicked{
+  background-color: #f2ed8e;
+
 }
 * {
   box-sizing: border-box;
