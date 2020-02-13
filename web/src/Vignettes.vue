@@ -12,18 +12,7 @@
               <mark>ultraderecha</mark> en Ucrania, Finlandia, Portugal, Francia, Italia, Estonia, Bulgaria, Alemania, Brasil y la Comisión Europea, entre otros lugares del mundo. Pero, para el Telediario de RTVE, no en España. De las 445 veces que aparece la palabra en los informativos desde 2014 hasta el 31 de enero de 2020 la mayoría corresponden a dos tipos: otras fuerzas políticas mencionando a Vox (sobre todo el PSOE) y noticias de política internacional sobre partidos de
               <mark>ultraderecha</mark> de otros países.
             </p>
-            <p>Embebido en el DOM dinámicamente</p>
             <div class="chart-annotated" v-html="chart_tema01"></div>
-            <p>Embebido vía iframe</p>
-            <div class="chart-annotated">
-              <iframe
-                src="/verba-tema01-query01-ultraderecha.html"
-                width="100%"
-                height="500"
-                frameborder="0"
-              ></iframe>
-            </div>
-
             <p>
               La palabra
               <mark>"ultraderecha"</mark> empezó a coger fuerza en el Telediario en 2017, cuando se hablaba de su auge en Francia y en Holanda. Y empezó a ganar más peso a partir de mediados de 2018, con la irrupción de Bolsonaro en Brasil o de partidos fascistas en Alemania. De hecho, uno de los dos mayores picos, en septiembre de ese año, se explican por las noticias internacionales sobre esos dos países.
@@ -270,10 +259,69 @@ export default {
       chart_tema01: ''
     }
   },
+  methods: {
+    // `resizer` and `throtthle` are taken from ai2html output
+    resizer: function() {
+      var elements = Array.prototype.slice.call(document.querySelectorAll(".g-artboard[data-min-width]")),
+          widthById = {}; 
+      elements.forEach(function(el) {
+        var parent = el.parentNode,
+            width = widthById[parent.id] || parent.getBoundingClientRect().width,
+            minwidth = el.getAttribute("data-min-width"),
+            maxwidth = el.getAttribute("data-max-width");
+        widthById[parent.id] = width;
+        if (+minwidth <= width && (+maxwidth >= width || maxwidth === null)) {
+          el.style.display = "block";
+        } else {
+          el.style.display = "none";
+        }
+      });
+      try {
+        if (window.parent && window.parent.$) {
+          window.parent.$("body").trigger("resizedcontent", [window]);
+        }
+      } catch(e) { console.log(e); }
+    },
+    throttle: function(func, wait) {
+      // from underscore.js
+      var _now = Date.now || function() { return new Date().getTime(); },
+          context, args, result, timeout = null, previous = 0;
+      var later = function() {
+        previous = _now();
+        timeout = null;
+        result = func.apply(context, args);
+        if (!timeout) context = args = null;
+      };
+      return function() {
+        var now = _now(), remaining = wait - (now - previous);
+        context = this;
+        args = arguments;
+        if (remaining <= 0 || remaining > wait) {
+          if (timeout) {
+            clearTimeout(timeout);
+            timeout = null;
+          }
+          previous = now;
+          result = func.apply(context, args);
+          if (!timeout) context = args = null;
+        } else if (!timeout) {
+          timeout = setTimeout(later, remaining);
+        }
+        return result;
+      };
+    }
+  },
+  updated: function() {
+    this.resizer()
+  },
   mounted() {
     axios
       .get('/verba-tema01-query01-ultraderecha.html')
-      .then(response => (this.chart_tema01 = response.data))
+      .then(response => {
+        this.chart_tema01 = response.data
+      })
+
+    window.addEventListener('resize', this.throttle(this.resizer, 200));
   }
 }
 </script>
