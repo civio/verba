@@ -393,8 +393,12 @@ strong {
   color: $color-neutral-1000;
 }
 
-.verba-vignettes {
+
+.chart-annotated {
   margin: 1.5rem 0;
+}
+.verba-vignettes {
+  // margin: 1.5rem 0;
   // background-color: pink;
 }
 
