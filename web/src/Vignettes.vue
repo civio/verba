@@ -18,10 +18,12 @@
                 alt="Gráfico de tendencia en el tiempo del término 'ultraderecha'"
               />-->
 
-              <!-- <iframe
-              src="../src/charts/titular01-q01/verba-tema01-query01-ultraderecha.html"
+              <iframe
+              src="/titular01-q01/verba-tema01-query01-ultraderecha.html"
+              width="100%"
+              height="500"
               frameborder="0"
-              ></iframe>-->
+              ></iframe>
 
               <!-- <link
               rel="import"
