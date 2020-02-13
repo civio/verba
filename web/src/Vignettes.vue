@@ -10,21 +10,20 @@
             <p>
               Hay partidos de
               <mark>ultraderecha</mark> en Ucrania, Finlandia, Portugal, Francia, Italia, Estonia, Bulgaria, Alemania, Brasil y la Comisión Europea, entre otros lugares del mundo. Pero, para el Telediario de RTVE, no en España. De las 445 veces que aparece la palabra en los informativos desde 2014 hasta el 31 de enero de 2020 la mayoría corresponden a dos tipos: otras fuerzas políticas mencionando a Vox (sobre todo el PSOE) y noticias de política internacional sobre partidos de
-              <mark>ultraderecha</mark> de otros países.
+              ultraderecha de otros países.
             </p>
             <div class="chart-annotated" v-html="chart_tema01"></div>
             <p>
-              La palabra
-              <mark>"ultraderecha"</mark> empezó a coger fuerza en el Telediario en 2017, cuando se hablaba de su auge en Francia y en Holanda. Y empezó a ganar más peso a partir de mediados de 2018, con la irrupción de Bolsonaro en Brasil o de partidos fascistas en Alemania. De hecho, uno de los dos mayores picos, en septiembre de ese año, se explican por las noticias internacionales sobre esos dos países.
+              La palabra "ultraderecha" empezó a coger fuerza en el Telediario en 2017, cuando se hablaba de su auge en Francia y en Holanda. Y empezó a ganar más peso a partir de mediados de 2018, con la irrupción de Bolsonaro en Brasil o de partidos fascistas en Alemania. De hecho, uno de los dos mayores picos, en septiembre de ese año, se explican por las noticias internacionales sobre esos dos países.
             </p>
             <p>
               La semana en la que esa palabra fue más popular fue justo la última de campaña electoral justo antes de los comicios del 11-N. En solo cuatro días, se repitió 17 veces entre los dos informativos, el de la mañana y el de la noche. Se referían a Vox. Pero no porque en el Telediario se refirieran a ellos como partido de
-              <mark>ultraderecha,</mark> sino por las apariciones de Pedro Sánchez en actos de campaña, entrevistas o el debate electoral criticando los pactos de PP y Ciudadanos con Vox o pidiendo el voto para frenar, claro, a la
-              <mark>ultraderecha.</mark>
+              ultraderecha, sino por las apariciones de Pedro Sánchez en actos de campaña, entrevistas o el debate electoral criticando los pactos de PP y Ciudadanos con Vox o pidiendo el voto para frenar, claro, a la
+              ultraderecha.
             </p>
             <p>
               El resto de apariciones de esta palabra suelen tener que ver con grupos de
-              <mark>ultraderecha</mark> en manifestaciones (como la que protestaba por la exhumación de Franco) o altercados (como los de las manifestaciones de Barcelona). También en ese contexto se suele usar "extrema derecha", una expresión más popular, que aparece hasta 611 veces desde 2014. Su pico: tras las elecciones andaluzas, cuando se empezó a comentar -por otros partidos y citando declaraciones, no por los propios presentadores del Telediario- el posible pacto PP-Ciudadanos-Vox.
+              ultraderecha en manifestaciones (como la que protestaba por la exhumación de Franco) o altercados (como los de las manifestaciones de Barcelona). También en ese contexto se suele usar "extrema derecha", una expresión más popular, que aparece hasta 611 veces desde 2014. Su pico: tras las elecciones andaluzas, cuando se empezó a comentar -por otros partidos y citando declaraciones, no por los propios presentadores del Telediario- el posible pacto PP-Ciudadanos-Vox.
             </p>
           </div>
           <div class="vignette-methodology">
@@ -60,32 +59,14 @@
               <mark class="item2">ERE</mark> (804) están casi empatados.
             </p>
             <div class="chart-annotated" v-html="chart_tema02b"></div>
-            <!-- <div class="chart-annotated">
-              <img
-                src="./images/verba-item2-corrupcion_modif01.svg"
-                alt="Gráfico de tendencia en el tiempo del término 'corrupción'"
-              />
-            </div>-->
-
             <p>
               Durante la última semana de mayo de 2018, justo después de la sentencia de
-              <mark
-                class="item1"
-              >Gürtel,</mark>
-              con la Audiencia Nacional decidiendo si fijaba medidas cautelares para los acusados y la moción de censura contra Mariano Rajoy en marcha, este caso de
-              <mark>corrupción</mark> fue la estrella de los Telediarios, con su apogeo el día 31, el de la moción que cambió a Rajoy por Sánchez en la presidencia del Gobierno.
+              Gürtel, con la Audiencia Nacional decidiendo si fijaba medidas cautelares para los acusados y la moción de censura contra Mariano Rajoy en marcha, este caso de
+              corrupción fue la estrella de los Telediarios, con su apogeo el día 31, el de la moción que cambió a Rajoy por Sánchez en la presidencia del Gobierno.
             </p>
-
             <p>
-              Para el caso de los
-              <mark class="item2">ERE,</mark> esa fecha mágica llegó el 19 de noviembre, con la sentencia que condenó a los expresidentes andaluces Manuel Chaves y José Antonio Griñán, entre otros.
+              Para el caso de los ERE, esa fecha mágica llegó el 19 de noviembre, con la sentencia que condenó a los expresidentes andaluces Manuel Chaves y José Antonio Griñán, entre otros.
             </p>
-            <!-- <div class="chart-annotated">
-              <img
-                src="./images/verba-item2-BOTH-MIRROR_modif01.svg"
-                alt="Gráfico de tendencia en el tiempo comparada entre los términos 'Gürtel' y 'Ere'"
-              />
-            </div>-->
           </div>
           <div class="vignette-methodology">
             <h4 class="methodology-title" v-html="$t('vignettes.methodology')"></h4>
@@ -126,7 +107,7 @@
             <p>
               Televisión Española mencionó en sus informativos 380 veces la palabra
               <mark>"dieta"</mark> entre enero de 2014 y enero de 2020. Pero los informativos, en ocasiones, también han puesto a
-              <mark>dieta</mark> el rigor científico, sustituyéndolo por un cóctel de desinformación calórica y desequilibrada, que puede poner en riesgo la salud.
+              dieta el rigor científico, sustituyéndolo por un cóctel de desinformación calórica y desequilibrada, que puede poner en riesgo la salud.
             </p>
             <p>
               Uno de los mantras citados por RTVE es que tomar una o dos
@@ -205,12 +186,8 @@
           <div class="vignette-copy">
             <p>
               Cuando a finales del 2019, Greta Thunberg dió un discurso en la Cumbre del Clima de Madrid, dejó claro su enfado y sentenció: "Mientras la
-              <mark
-                class="item2"
-              >crisis climática</mark> continúa siendo ignorada por quienes tienen que tomar las decisiones, hay personas muriendo a día de hoy". No sabemos qué ocurre con aquellos que tienen que decidir, pero lo que tenemos claro es que la
-              <mark
-                class="item2"
-              >"crisis climática"</mark>en los telediarios de RTVE no empezó a aparecer hasta 2019. Solo dos veces antes se había citado como tal: en 2016, por la ONG Acción contra el Hambre, y en la boca de Greta en 2018. De la propia Greta se ha hablado desde ese mismo momento, en concreto, en 75 ocasiones.
+              crisis climática continúa siendo ignorada por quienes tienen que tomar las decisiones, hay personas muriendo a día de hoy". No sabemos qué ocurre con aquellos que tienen que decidir, pero lo que tenemos claro es que la
+              "crisis climática"</mark>en los telediarios de RTVE no empezó a aparecer hasta 2019. Solo dos veces antes se había citado como tal: en 2016, por la ONG Acción contra el Hambre, y en la boca de Greta en 2018. De la propia Greta se ha hablado desde ese mismo momento, en concreto, en 75 ocasiones.
             </p>
             <div class="chart-annotated" v-html="chart_tema05"></div>
             <p>
