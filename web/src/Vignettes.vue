@@ -12,20 +12,15 @@
               <mark>ultraderecha</mark> en Ucrania, Finlandia, Portugal, Francia, Italia, Estonia, Bulgaria, Alemania, Brasil y la Comisión Europea, entre otros lugares del mundo. Pero, para el Telediario de RTVE, no en España. De las 445 veces que aparece la palabra en los informativos desde 2014 hasta el 31 de enero de 2020 la mayoría corresponden a dos tipos: otras fuerzas políticas mencionando a Vox (sobre todo el PSOE) y noticias de política internacional sobre partidos de
               <mark>ultraderecha</mark> de otros países.
             </p>
-            <p>
-              Embebido en el DOM dinámicamente
-            </p>
-            <div class="chart-annotated" v-html="chart_tema01">
-            </div>
-            <p>
-              Embebido vía iframe
-            </p>
+            <p>Embebido en el DOM dinámicamente</p>
+            <div class="chart-annotated" v-html="chart_tema01"></div>
+            <p>Embebido vía iframe</p>
             <div class="chart-annotated">
               <iframe
-              src="/verba-tema01-query01-ultraderecha.html"
-              width="100%"
-              height="500"
-              frameborder="0"
+                src="/verba-tema01-query01-ultraderecha.html"
+                width="100%"
+                height="500"
+                frameborder="0"
               ></iframe>
             </div>
 
@@ -279,7 +274,7 @@ export default {
     axios
       .get('/verba-tema01-query01-ultraderecha.html')
       .then(response => (this.chart_tema01 = response.data))
-  },
+  }
 }
 </script>
 
@@ -341,8 +336,8 @@ mark {
 
 .verba-vignettes-item {
   // Mobile first
+  padding: 2rem 0rem;
   text-align: center;
-  padding: 3rem 3rem 1rem 3rem;
   margin: 0 auto;
   margin-bottom: 2rem;
   max-width: 850px;
@@ -357,6 +352,7 @@ mark {
 
   // Tablets
   @media all and (min-width: 768px) {
+    padding: 3rem 3rem 1rem 3rem;
     text-align: left;
   }
 
