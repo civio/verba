@@ -14,7 +14,6 @@
 
 <script>
 import * as d3 from 'd3'
-//import {Delaunay} from 'd3-delaunay'
 // Based on https://medium.com/tyrone-tudehope/composing-d3-visualizations-with-vue-js-c65084ccb686
 export default {
   name: 'AreaChart',
@@ -23,6 +22,7 @@ export default {
       type: Array,
       default: () => []
     },
+    period:false,
     margin: {
       type: Object,
       default: () => ({
@@ -93,9 +93,6 @@ export default {
         .attr('width', this.padded.width)
         .attr('height', this.padded.height)
     },
-    delaunay(){
-      return this.data.map(d => Object.values(d))
-    },
     initialize() {},
     onResize() {
       // update width & height based on parent container
@@ -103,6 +100,7 @@ export default {
       this.height = this.$el.offsetHeight
     },
     update() {
+      console.log(this.period)
       let timerHover
       let that = this
       window.location.href = '#search-box'
@@ -116,7 +114,6 @@ export default {
       const scaleY = d3
         .scaleLinear()
         .range([this.padded.height, 0])
-        //.domain(d3.extent(this.data, d => d.y))
         .domain([0, d3.max(this.data, d=>d.y)])
         .nice()
 
@@ -124,7 +121,6 @@ export default {
       const scaleYdouble = d3
         .scaleLinear()
         .range([this.padded.height / 2, 0])
-        //.domain(d3.extent(this.data, d => d.y))
         .domain([0, d3.max(this.data, d=>d.y)])
         .nice()
 
@@ -173,23 +169,21 @@ export default {
           'Dic'
         ]
       })
-      var formatDay = locale.format('%d')
-      var formatMonth = locale.format('%b')
-      var formatMonthFull = locale.format('%B')
+      const formatDay = locale.format('%d')
+      const formatMonth = locale.format('%b')
+      const formatMonthFull = locale.format('%B')
       // setup axis
       const axisXDays = d3
         .axisBottom(scaleX)
         .tickSizeOuter(0)
         .tickFormat(formatDay)
         .ticks(this.width / 50)
-        //.ticks(d3.timeMonth)
 
       const axisXMonths = d3
         .axisBottom(scaleX)
         .tickSizeOuter(0)
         .tickFormat(formatMonth)
         .ticks(this.width / 50)
-        //.ticks(d3.timeMonth)
 
       const axisXYears = d3
         .axisBottom(scaleX)
@@ -199,7 +193,6 @@ export default {
       const axisY = d3
         .axisLeft(scaleYdouble)
         .tickFormat(d3.format(',d'))
-        // .tickFormat(d => d3.format(',')(d) + ' veces')
         .ticks(this.height / 50)
 
       // update bars
@@ -208,62 +201,70 @@ export default {
         .data(this.data)
         .join('rect')
         .attr('x', d => scaleX(d.x))
-        .attr('y', function(d){
-          //console.log(scaleY(d.y / 2))
+        .attr('y', function(d) {
           return scaleY(d.y/2)
         })
         .attr('transform', `translate(0, ${-this.height / 2})`)
-        .attr('height', function(d){
+        .attr('height', function(d) {
           return 260 - scaleY(d.y)
         })
         .attr('width', barWidth)
-        .on('mousemove', function(d){
+        .on('mousemove', function(d) {
+
+          function getTooltipText(tooltip) {
+            const monthName = formatMonthFull(d.x)
+            const year = d.x.getFullYear()
+            let html = ''
+            if(that.period) {
+              html = d.x.getDate()+' de '+monthName+' de '+
+                year+':<br>'+d.y.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")+' menciones'
+            }else{
+              html = 'Semana del '+d.x.getDate()+' de <br> '+monthName+' de '+
+                year+':<br>'+d.y.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")+' menciones'
+            }
+            tooltip.html(html)
+          }
+
           let left;
           let top = d3.mouse(this)[1]-d3.select('#tooltip').node().offsetHeight*1.1
-          if(d3.mouse(this)[0] >= that.padded.width/2){
+          if(d3.mouse(this)[0] >= that.padded.width/2) {
             left = d3.mouse(this)[0]-that.margin.left-that.margin.right-d3.select('#tooltip').node().offsetWidth/4
           }else{
             left = d3.mouse(this)[0]+that.margin.left+that.margin.right
-            
           }
           clearInterval(timerHover);
+
           d3.select(this)
             .classed('focus', true)
 
-          let monthName = formatMonthFull(d.x)
-          let year = d.x.getFullYear()
-          let tooltipText = 'Semana del '+d.x.getDate()+' de <br> '+monthName+' de '+year+':<br>'+d.y.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")+' menciones'
-
           d3.select('#tooltip')
             .classed('displayNone', false)
-            .html(tooltipText)
+            .call(getTooltipText)  
             .style('left', left+'px')
-            .style('top', top+'px') 
+            .style('top', top+'px')
+
         })
 
-        .on('mouseout', function(){
+        .on('mouseout', function() {
           function stop_timer_hover() {
             d3.select('#tooltip')
               .classed('displayNone', true)
-            //console.log('idle');
             clearInterval(timerHover);
           }
-          //console.log(timerHover)
           clearInterval(timerHover);
           timerHover = setInterval(stop_timer_hover, 750);
-          //console.log(timerHover)
           d3.select(this)
             .classed('focus', false)          
         })      
 
       // render axis
-      /*d3.select(this.$refs.axisXDays)
+      d3.select(this.$refs.axisXDays)
         .attr(
           'transform',
-          `translate(${this.margin.left}, ${this.height - this.margin.bottom})`
+          `translate(${this.margin.left+10}, ${this.height - this.margin.bottom})`
         )
         .call(axisXDays)
-        .call(this.formatAxisXDays)*/
+        .call(this.formatAxisXDays)
 
       d3.select(this.$refs.axisXMonths)
         .attr(

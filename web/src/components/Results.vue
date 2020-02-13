@@ -5,7 +5,7 @@
     </div>
     <div v-else-if="results">
       <section class="results-dataviz">
-        <AreaChart v-if="showChart" :data="aggregations" />
+        <AreaChart v-if="showChart" :data="aggregations" :period="getPeriod"/>
       </section>
 
       <section class="results-links">
@@ -93,7 +93,8 @@ export default {
   components: { AreaChart, Pagination },
   data() {
     return {
-      currentPage: 0
+      currentPage: 0,
+      period:false
     }
   },
   computed: {
@@ -113,6 +114,19 @@ export default {
             )
           : this.results.aggregations.map(this.getAggregationObject)
         : []
+    },
+    getPeriod(){
+      if(this.queryDate !== null){
+        const days = this.queryDate.to.diff(this.queryDate.from, "days")//agg by month (30 days)
+        console.log(days)
+        if(days <= 30){
+          return true
+        }else{
+          return false
+        }
+      }else{
+        return false
+      }
     },
     resultsByProgramme() {
       // Group results array by programme.id **keeping the existing order**.
