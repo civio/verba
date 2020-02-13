@@ -51,6 +51,7 @@
               La
               <mark>corrupción</mark> es, por desgracia, una constante en los informativos de TVE. La palabra ha aparecido más de 4.000 veces desde 2014 y hasta el 31 de enero de 2020 como un goteo constante, aunque algo menos intenso en los últimos años. De hecho, 2.428 veces lo hizo entre 2014 y 2016; y 1.554, ya con menos ritmo, en los tres años siguientes.
             </p>
+            <div class="chart-annotated" v-html="chart_tema02a"></div>
             <p>
               El momento álgido se vivió a finales de octubre de 2014, con las detenciones del caso Púnica, que se combinaron con debates parlamentarios y propuestas y pactos en el Congreso para acabar con el problema. Pero la Púnica (357 apariciones) no ha sido la saga corrupta más nombrada. El caso
               <mark
@@ -58,7 +59,7 @@
               >Gürtel</mark> (713) y el de los
               <mark class="item2">ERE</mark> (804) están casi empatados.
             </p>
-
+            <div class="chart-annotated" v-html="chart_tema02b"></div>
             <!-- <div class="chart-annotated">
               <img
                 src="./images/verba-item2-corrupcion_modif01.svg"
@@ -136,6 +137,7 @@
               Durante los últimos años, TVE ha difundido informaciones sobre alimentos que pueden inducir a error a los consumidores. Uno de sus telediarios, hablando de la llamada dieta del delfín, llegó a afirmar que "beber agua de mar es una tendencia creciente en el campo de las supuestas dietas saludables". Pese a que la televisión pública menciona la palabra "charlatanería", habla del agua de mar como un "completo nutriente con propiedades". Verba también muestra la cobertura negativa de TVE sobre los
               <mark>aditivos</mark> en los alimentos, pese a tratarse de sustancias seguras que ayudan a mejorar el aspecto o textura de los mismos y a conservarlos mejor.
             </p>
+            <div class="chart-annotated" v-html="chart_tema03"></div>
             <p>
               Al cubrir la información sobre peligrosas modas, como la de la
               <mark>leche cruda,</mark> los informativos de Televisión Española tampoco han destacado el riesgo que supone el consumo de esta bebida. Del total de 11 resultados obtenidos, varios apuntan hacia la producción de quesos utilizando este tipo de leche sin pasteurizar, y otros hacia la polémica normativa aprobada en Cataluña hace casi dos años. Del riesgo que produce su consumo, como la intoxicación por peligrosas bacterias como Listeria, Salmonella o Escherichia coli, ni rastro.
@@ -169,6 +171,7 @@
               ¿Quién es el personaje más nombrado del Telediario? Si dios ha aparecido unas mil veces desde 2014, Messi suma más de seis dioses (6.467) y Trump, más de siete (7.603). Pero hay alguien que dobla al astro argentino y al endiosado presidente estadounidense.
               <mark>Mariano Rajoy</mark> ha sido mencionado 13.134 veces. Tiene cierta lógica, porque fue presidente durante casi todo el periodo que abarca Verba (de enero de 2014 a junio de 2018). Pero su peso como expresidente sigue siendo considerable.
             </p>
+            <div class="chart-annotated" v-html="chart_tema04"></div>
             <p>Desde que fue sustituido en su escaño por un bolso mientras pasaba ocho horas en un bar cercano al Congreso de los Diputados, donde se celebraba la moción que acabó con su presidencia, ha sido mencionado 628 veces en los Telediarios de la televisión pública. Parece poco, pero no lo es si tenemos en cuenta que estamos hablando de solo 20 meses, hasta el 31 de enero de 2020. Así, de media, se le menta una vez al día, una cifra muy superior a las de los otros expresidentes.</p>
             <p>A José María Aznar (503) y Felipe González (469) se les hace casito cada tanto en el Telediario y ambos rondan las 500 apariciones en algo más de seis meses. Zapatero, más cercano en el tiempo (el registro empieza tres años después de su adiós), les supera, con 781.</p>
             <p>Puigdemont, por su parte, aparece 4.436 veces, con tres hitos: el referendum y la posterior fuga en octubre de 2017, el pleno de investidura en enero de 2018 y la detención en Alemania en marzo de ese mismo año.</p>
@@ -209,6 +212,7 @@
                 class="item2"
               >"crisis climática"</mark>en los telediarios de RTVE no empezó a aparecer hasta 2019. Solo dos veces antes se había citado como tal: en 2016, por la ONG Acción contra el Hambre, y en la boca de Greta en 2018. De la propia Greta se ha hablado desde ese mismo momento, en concreto, en 75 ocasiones.
             </p>
+            <div class="chart-annotated" v-html="chart_tema05"></div>
             <p>
               Antes de esta crisis, RTVE ya hablaba de
               <mark class="item1">cambio climático:</mark> desde 2014 hasta principios de 2020, los informativos han citado estas palabras más de 1.350 veces. Solo en 2019 se llegaron a utilizar en casi 600 ocasiones. Y, aunque la Fundeu recomiende referirise al problema como
@@ -256,72 +260,102 @@ import axios from 'axios'
 export default {
   data() {
     return {
-      chart_tema01: ''
+      chart_tema01: '',
+      chart_tema02a: '',
+      chart_tema02b: '',
+      chart_tema03: '',
+      chart_tema04: '',
+      chart_tema05: ''
     }
   },
   methods: {
     // `resizer` and `throtthle` are taken from ai2html output
     resizer: function() {
-      var elements = Array.prototype.slice.call(document.querySelectorAll(".g-artboard[data-min-width]")),
-          widthById = {}; 
+      var elements = Array.prototype.slice.call(
+          document.querySelectorAll('.g-artboard[data-min-width]')
+        ),
+        widthById = {}
       elements.forEach(function(el) {
         var parent = el.parentNode,
-            width = widthById[parent.id] || parent.getBoundingClientRect().width,
-            minwidth = el.getAttribute("data-min-width"),
-            maxwidth = el.getAttribute("data-max-width");
-        widthById[parent.id] = width;
+          width = widthById[parent.id] || parent.getBoundingClientRect().width,
+          minwidth = el.getAttribute('data-min-width'),
+          maxwidth = el.getAttribute('data-max-width')
+        widthById[parent.id] = width
         if (+minwidth <= width && (+maxwidth >= width || maxwidth === null)) {
-          el.style.display = "block";
+          el.style.display = 'block'
         } else {
-          el.style.display = "none";
+          el.style.display = 'none'
         }
-      });
+      })
       try {
         if (window.parent && window.parent.$) {
-          window.parent.$("body").trigger("resizedcontent", [window]);
+          window.parent.$('body').trigger('resizedcontent', [window])
         }
-      } catch(e) { console.log(e); }
+      } catch (e) {
+        console.log(e)
+      }
     },
     throttle: function(func, wait) {
       // from underscore.js
-      var _now = Date.now || function() { return new Date().getTime(); },
-          context, args, result, timeout = null, previous = 0;
+      var _now =
+          Date.now ||
+          function() {
+            return new Date().getTime()
+          },
+        context,
+        args,
+        result,
+        timeout = null,
+        previous = 0
       var later = function() {
-        previous = _now();
-        timeout = null;
-        result = func.apply(context, args);
-        if (!timeout) context = args = null;
-      };
+        previous = _now()
+        timeout = null
+        result = func.apply(context, args)
+        if (!timeout) context = args = null
+      }
       return function() {
-        var now = _now(), remaining = wait - (now - previous);
-        context = this;
-        args = arguments;
+        var now = _now(),
+          remaining = wait - (now - previous)
+        context = this
+        args = arguments
         if (remaining <= 0 || remaining > wait) {
           if (timeout) {
-            clearTimeout(timeout);
-            timeout = null;
+            clearTimeout(timeout)
+            timeout = null
           }
-          previous = now;
-          result = func.apply(context, args);
-          if (!timeout) context = args = null;
+          previous = now
+          result = func.apply(context, args)
+          if (!timeout) context = args = null
         } else if (!timeout) {
-          timeout = setTimeout(later, remaining);
+          timeout = setTimeout(later, remaining)
         }
-        return result;
-      };
+        return result
+      }
     }
   },
   updated: function() {
     this.resizer()
   },
   mounted() {
-    axios
-      .get('/verba-tema01-query01-ultraderecha.html')
-      .then(response => {
-        this.chart_tema01 = response.data
-      })
-
-    window.addEventListener('resize', this.throttle(this.resizer, 200));
+    axios.get('/verba-tema01-query01-ultraderecha.html').then(response => {
+      this.chart_tema01 = response.data
+    })
+    axios.get('/verba-tema02-query01-corrupcion.html').then(response => {
+      this.chart_tema02a = response.data
+    })
+    axios.get('/verba-tema02-query02-gurtel-vs-ere.html').then(response => {
+      this.chart_tema02b = response.data
+    })
+    axios.get('/verba-tema03-query01-dieta.html').then(response => {
+      this.chart_tema03 = response.data
+    })
+    axios.get('/verba-tema04-query01-rajoy.html').then(response => {
+      this.chart_tema04 = response.data
+    })
+    axios.get('/verba-tema05-query01-clima.html').then(response => {
+      this.chart_tema05 = response.data
+    })
+    window.addEventListener('resize', this.throttle(this.resizer, 200))
   }
 }
 </script>
