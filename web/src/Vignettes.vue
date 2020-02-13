@@ -9,19 +9,15 @@
           <div class="vignette-copy">
             <p>
               Hay partidos de
-              <mark>ultraderecha</mark> en Ucrania, Finlandia, Portugal, Francia, Italia, Estonia, Bulgaria, Alemania, Brasil y la Comisión Europea, entre otros lugares del mundo. Pero, para el Telediario de RTVE, no en España. De las 445 veces que aparece la palabra en los informativos desde 2014 hasta el 31 de enero de 2020 la mayoría corresponden a dos tipos: otras fuerzas políticas mencionando a Vox (sobre todo el PSOE) y noticias de política internacional sobre partidos de
-              ultraderecha de otros países.
+              <mark>ultraderecha</mark> en Ucrania, Finlandia, Portugal, Francia, Italia, Estonia, Bulgaria, Alemania, Brasil y la Comisión Europea, entre otros lugares del mundo. Pero, para el Telediario de RTVE, no en España. De las 445 veces que aparece la palabra en los informativos desde 2014 hasta el 31 de enero de 2020 la mayoría corresponden a dos tipos: otras fuerzas políticas mencionando a Vox (sobre todo el PSOE) y noticias de política internacional sobre partidos de <strong>ultraderecha </strong> de otros países.
             </p>
             <div class="chart-annotated" v-html="chart_tema01"></div>
-            <p>La palabra "ultraderecha" empezó a coger fuerza en el Telediario en 2017, cuando se hablaba de su auge en Francia y en Holanda. Y empezó a ganar más peso a partir de mediados de 2018, con la irrupción de Bolsonaro en Brasil o de partidos fascistas en Alemania. De hecho, uno de los dos mayores picos, en septiembre de ese año, se explican por las noticias internacionales sobre esos dos países.</p>
+            <p>La palabra <strong>ultraderecha</strong> empezó a coger fuerza en el Telediario en 2017, cuando se hablaba de su auge en Francia y en Holanda. Y empezó a ganar más peso a partir de mediados de 2018, con la irrupción de Bolsonaro en Brasil o de partidos fascistas en Alemania. De hecho, uno de los dos mayores picos, en septiembre de ese año, se explica por las noticias internacionales sobre esos dos países.</p>
             <p>
-              La semana en la que esa palabra fue más popular fue justo la última de campaña electoral justo antes de los comicios del 11-N. En solo cuatro días, se repitió 17 veces entre los dos informativos, el de la mañana y el de la noche. Se referían a Vox. Pero no porque en el Telediario se refirieran a ellos como partido de
-              ultraderecha, sino por las apariciones de Pedro Sánchez en actos de campaña, entrevistas o el debate electoral criticando los pactos de PP y Ciudadanos con Vox o pidiendo el voto para frenar, claro, a la
-              ultraderecha.
+              La semana en la que esa palabra fue más popular fue la última de campaña electoral justo antes de los comicios del 11-N. En solo cuatro días, se repitió 17 veces entre los dos informativos, el de la mañana y el de la noche. Se referían a Vox. Pero no porque en el Telediario hablaban de ellos como partido de <strong>ultraderecha</strong>, sino por las apariciones de Pedro Sánchez en actos de campaña, entrevistas o el debate electoral criticando los pactos de PP y Ciudadanos con Vox o pidiendo el voto para frenar, claro, a la <strong>ultraderecha</strong>.
             </p>
             <p>
-              El resto de apariciones de esta palabra suelen tener que ver con grupos de
-              ultraderecha en manifestaciones (como la que protestaba por la exhumación de Franco) o altercados (como los de las manifestaciones de Barcelona). También en ese contexto se suele usar "extrema derecha", una expresión más popular, que aparece hasta 611 veces desde 2014. Su pico: tras las elecciones andaluzas, cuando se empezó a comentar -por otros partidos y citando declaraciones, no por los propios presentadores del Telediario- el posible pacto PP-Ciudadanos-Vox.
+              El resto de apariciones de esta palabra suelen tener que ver con grupos de <strong>ultraderecha</strong> en manifestaciones (como la que protestaba por la exhumación de Franco) o altercados (como los de las manifestaciones de Barcelona). También en ese contexto se suele usar "extrema derecha", una expresión más popular, que aparece hasta 611 veces desde 2014. Su pico: tras las elecciones andaluzas, cuando se empezó a comentar -por otros partidos y citando declaraciones, no por los propios presentadores del Telediario- el posible pacto PP-Ciudadanos-Vox.
             </p>
           </div>
           <div class="vignette-methodology">
@@ -50,7 +46,7 @@
             </p>
             <div class="chart-annotated" v-html="chart_tema02a"></div>
             <p>
-              El momento álgido se vivió a finales de octubre de 2014, con las detenciones del caso Púnica, que se combinaron con debates parlamentarios y propuestas y pactos en el Congreso para acabar con el problema. Pero la Púnica (357 apariciones) no ha sido la saga corrupta más nombrada. El caso
+              El momento álgido se vivió a finales de octubre de 2014, con las detenciones del caso Púnica, que se combinaron con debates parlamentarios y propuestas y pactos en el Congreso para acabar con el problema. Pero la <strong>Púnica</strong> (357 apariciones) no ha sido la saga corrupta más nombrada. El caso
               <mark
                 class="item1"
               >Gürtel</mark> (713) y el de los
@@ -59,10 +55,10 @@
             <div class="chart-annotated" v-html="chart_tema02b"></div>
             <p>
               Durante la última semana de mayo de 2018, justo después de la sentencia de
-              Gürtel, con la Audiencia Nacional decidiendo si fijaba medidas cautelares para los acusados y la moción de censura contra Mariano Rajoy en marcha, este caso de
-              corrupción fue la estrella de los Telediarios, con su apogeo el día 31, el de la moción que cambió a Rajoy por Sánchez en la presidencia del Gobierno.
+              <strong>Gürtel</strong>, con la Audiencia Nacional decidiendo si fijaba medidas cautelares para los acusados y la moción de censura contra Mariano Rajoy en marcha, este caso de
+              <strong>corrupción</strong> fue la estrella de los Telediarios, con su apogeo el día 31, el de la moción que cambió a Rajoy por Sánchez en la presidencia del Gobierno.
             </p>
-            <p>Para el caso de los ERE, esa fecha mágica llegó el 19 de noviembre, con la sentencia que condenó a los expresidentes andaluces Manuel Chaves y José Antonio Griñán, entre otros.</p>
+            <p>Para el caso de los <strong>ERE</strong>, esa fecha mágica llegó el 19 de noviembre, con la sentencia que condenó a los expresidentes andaluces Manuel Chaves y José Antonio Griñán, entre otros.</p>
           </div>
           <div class="vignette-methodology">
             <h4 class="methodology-title" v-html="$t('vignettes.methodology')"></h4>
@@ -92,7 +88,7 @@
             </div>
             <p
               class="methodology-note"
-            >Nota: A la búsqueda de los ERES hemos eliminado cuatro casos en los que trataban Expedientes de Regulación de Empleo distintos a los del caso de corrupción.</p>
+            >Nota: A la búsqueda de los ERES hemos eliminado cuatro casos en los que trataban Expedientes de Regulación de Empleo distintos a los del caso de <strong>corrupción</strong>.</p>
           </div>
         </li>
 
@@ -102,22 +98,21 @@
           <div class="vignette-copy">
             <p>
               Televisión Española mencionó en sus informativos 380 veces la palabra
-              <mark>"dieta"</mark> entre enero de 2014 y enero de 2020. Pero los informativos, en ocasiones, también han puesto a
-              dieta el rigor científico, sustituyéndolo por un cóctel de desinformación calórica y desequilibrada, que puede poner en riesgo la salud.
+              <mark>dieta</mark> entre enero de 2014 y enero de 2020. Pero los informativos, en ocasiones, también han puesto a <strong>dieta</strong> el rigor científico, sustituyéndolo por un cóctel de desinformación calórica y desequilibrada, que puede poner en riesgo la salud.
             </p>
             <p>
               Uno de los mantras citados por RTVE es que tomar una o dos
-              <mark>copas de vino</mark> al día es beneficioso. Pero nada más lejos de la realidad: el consumo moderado y saludable de alcohol es un gran mito, que no previene los problemas cardiovasculares y que, de hecho, puede aumentar el riesgo de enfermedades como el cáncer. Este no es el único gazapo de Televisión Española en temas relacionados con la alimentación. La cadena pública también se hizo eco de un trabajo que afirmaba que la
-              <mark>pasta no engorda.</mark> ¿El problema? El estudio estaba patrocinado por Barilla, un detalle que los informativos olvidaron mencionar en su cobertura.
+              <strong>copas de vino</strong> al día es beneficioso. Pero nada más lejos de la realidad: el consumo moderado y saludable de alcohol es un gran mito, que no previene los problemas cardiovasculares y que, de hecho, puede aumentar el riesgo de enfermedades como el cáncer. Este no es el único gazapo de Televisión Española en temas relacionados con la alimentación. La cadena pública también se hizo eco de un trabajo que afirmaba que la
+              <strong>pasta no engorda.</strong> ¿El problema? El estudio estaba patrocinado por Barilla, un detalle que los informativos olvidaron mencionar en su cobertura.
             </p>
             <p>
-              Durante los últimos años, TVE ha difundido informaciones sobre alimentos que pueden inducir a error a los consumidores. Uno de sus telediarios, hablando de la llamada dieta del delfín, llegó a afirmar que "beber agua de mar es una tendencia creciente en el campo de las supuestas dietas saludables". Pese a que la televisión pública menciona la palabra "charlatanería", habla del agua de mar como un "completo nutriente con propiedades". Verba también muestra la cobertura negativa de TVE sobre los
-              <mark>aditivos</mark> en los alimentos, pese a tratarse de sustancias seguras que ayudan a mejorar el aspecto o textura de los mismos y a conservarlos mejor.
+              Durante los últimos años, TVE ha difundido informaciones sobre alimentos que pueden inducir a error a los consumidores. Uno de sus telediarios, hablando de la llamada <strong>dieta</strong> del delfín, llegó a afirmar que "beber agua de mar es una tendencia creciente en el campo de las supuestas <strong>dietas</strong> saludables". Pese a que la televisión pública menciona la palabra "charlatanería", habla del agua de mar como un "completo nutriente con propiedades". Verba también muestra la cobertura negativa de TVE sobre los
+              <strong>aditivos</strong> en los alimentos, pese a tratarse de sustancias seguras que ayudan a mejorar el aspecto o textura de los mismos y a conservarlos mejor.
             </p>
             <div class="chart-annotated" v-html="chart_tema03"></div>
             <p>
               Al cubrir la información sobre peligrosas modas, como la de la
-              <mark>leche cruda,</mark> los informativos de Televisión Española tampoco han destacado el riesgo que supone el consumo de esta bebida. Del total de 11 resultados obtenidos, varios apuntan hacia la producción de quesos utilizando este tipo de leche sin pasteurizar, y otros hacia la polémica normativa aprobada en Cataluña hace casi dos años. Del riesgo que produce su consumo, como la intoxicación por peligrosas bacterias como Listeria, Salmonella o Escherichia coli, ni rastro.
+              <strong>leche cruda,</strong> los informativos de Televisión Española tampoco han destacado el riesgo que supone el consumo de esta bebida. Del total de 11 resultados obtenidos, varios apuntan hacia la producción de quesos utilizando este tipo de leche sin pasteurizar, y otros hacia la polémica normativa aprobada en Cataluña hace casi dos años. Del riesgo que produce su consumo, como la intoxicación por peligrosas bacterias como Listeria, Salmonella o Escherichia coli, ni rastro.
             </p>
           </div>
           <div class="vignette-methodology">
@@ -128,7 +123,7 @@
                 <div>
                   <p
                     class="methodology-query"
-                  >"dieta" | "copa de vino" | "pasta no engorda" | "leche cruda" | "aditivos"</p>&nbsp;
+                  >"dieta"</p> 
                   <a
                     href="https://verba.civio.es/?q=%22dieta%22%20%7C%20%22copa%20de%20vino%22%20%7C%20%22pasta%20no%20engorda%22%20%7C%20%22leche%20cruda%22%20%7C%20%22aditivos%22#verba-subtitle-dataviz"
                     target="_blank"
@@ -185,17 +180,13 @@
           <h3 class="vignette-title">No había crisis climática hasta 2019</h3>
           <div class="vignette-copy">
             <p>
-              Cuando a finales del 2019, Greta Thunberg dió un discurso en la Cumbre del Clima de Madrid, dejó claro su enfado y sentenció: "Mientras la
-              crisis climática continúa siendo ignorada por quienes tienen que tomar las decisiones, hay personas muriendo a día de hoy". No sabemos qué ocurre con aquellos que tienen que decidir, pero lo que tenemos claro es que la
-              "crisis climática" en los telediarios de RTVE no empezó a aparecer hasta 2019. Solo dos veces antes se había citado como tal: en 2016, por la ONG Acción contra el Hambre, y en la boca de Greta en 2018. De la propia Greta se ha hablado desde ese mismo momento, en concreto, en 75 ocasiones.
+              Cuando, a finales del 2019, Greta Thunberg dió un discurso en la Cumbre del Clima de Madrid, dejó claro su enfado y sentenció: "Mientras la <mark class="item2">crisis climática</mark> continúa siendo ignorada por quienes tienen que tomar las decisiones, hay personas muriendo a día de hoy". No sabemos qué ocurre con aquellos que tienen que decidir, pero lo que tenemos claro es que la <strong>crisis climática</strong> en los telediarios de RTVE no empezó a aparecer hasta 2019. Solo dos veces antes se había citado como tal: en 2016, por la ONG Acción contra el Hambre, y en la boca de Greta en 2018. De la propia <strong>Greta</strong> se ha hablado desde ese mismo momento, en concreto, en 75 ocasiones.
             </p>
             <div class="chart-annotated" v-html="chart_tema05"></div>
             <p>
               Antes de esta crisis, RTVE ya hablaba de
               <mark class="item1">cambio climático:</mark> desde 2014 hasta principios de 2020, los informativos han citado estas palabras más de 1.350 veces. Solo en 2019 se llegaron a utilizar en casi 600 ocasiones. Y, aunque la Fundeu recomiende referirise al problema como
-              <mark
-                class="item2"
-              >"crisis climática",</mark> en los informativos ha aparecido otro concepto aún más popular:
+              <strong>"crisis climática",</strong> en los informativos ha aparecido otro concepto aún más popular:
               <mark
                 class="item2"
               >"emergencia climática".</mark> Apareció por primera vez en el telediario del 15 de diciembre de 2019 y, hasta el 31 de enero de 2020, se ha utilizado 60 veces. Parece que ha llegado para quedarse, al igual que el problema que refleja.
