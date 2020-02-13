@@ -48,14 +48,18 @@ export default new Vuex.Store({
         return
       }
       // set search params
-      const params = {
+      let params = {
         q: state.query,
         page: state.resultsPage,
         aggregations: 'week' // TODO: Activate aggregations only when needed (when query changes)
       }
       if (state.queryDate) {
+        const days = state.queryDate.to.diff(state.queryDate.from, "days")//agg by month (30 days)
         params.date_from = moment(state.queryDate.from).format('YYYY-MM-DD')
         params.date_to = moment(state.queryDate.to).format('YYYY-MM-DD')
+        if(days <= 30){
+          params.aggregations = 'day'
+        }
       }
       // search request
       state.loading = true
