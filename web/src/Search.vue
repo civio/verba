@@ -85,7 +85,7 @@ export default {
 
     // PC
     @media all and (min-width: 1024px) {
-      padding-left: 6rem;
+      padding-left: 4.5rem;
     }
   }
 }
@@ -115,6 +115,7 @@ export default {
     display: flex;
     flex-direction: column;
     margin-top: 1rem;
+    max-width: 22rem;
 
     .verba-copy {
       margin-bottom: -5px;
