@@ -111,8 +111,7 @@
             </p>
             <div class="chart-annotated" v-html="chart_tema03"></div>
             <p>
-              Al cubrir la información sobre peligrosas modas, como la de la
-              <strong>leche cruda,</strong> los informativos de Televisión Española tampoco han destacado el riesgo que supone el consumo de esta bebida. Del total de 11 resultados obtenidos, varios apuntan hacia la producción de quesos utilizando este tipo de leche sin pasteurizar, y otros hacia la polémica normativa aprobada en Cataluña hace casi dos años. Del riesgo que produce su consumo, como la intoxicación por peligrosas bacterias como Listeria, Salmonella o Escherichia coli, ni rastro.
+              Al cubrir la información sobre peligrosas modas, como la de la <strong>leche cruda,</strong> los informativos de Televisión Española tampoco han destacado el riesgo que supone el consumo de esta bebida. Del total de 11 resultados obtenidos, varios apuntan hacia la producción de quesos utilizando este tipo de leche sin pasteurizar, y otros hacia la polémica normativa aprobada en Cataluña hace casi dos años. Del riesgo que produce su consumo, como la intoxicación por peligrosas bacterias como Listeria, Salmonella o Escherichia coli, ni rastro.
             </p>
           </div>
           <div class="vignette-methodology">
@@ -120,15 +119,13 @@
             <div>
               <div class="query-container">
                 <p class="methodology" v-html="$t('vignettes.query-subtitle')"></p>
-                <div>
                   <p
                     class="methodology-query"
-                  >"dieta"</p> 
+                  >"dieta"</p>&nbsp;
                   <a
                     href="https://verba.civio.es/?q=%22dieta%22%20%7C%20%22copa%20de%20vino%22%20%7C%20%22pasta%20no%20engorda%22%20%7C%20%22leche%20cruda%22%20%7C%20%22aditivos%22#verba-subtitle-dataviz"
                     target="_blank"
                   >(link)</a>
-                </div>
               </div>
             </div>
             <p class="methodology-note"></p>
@@ -158,20 +155,14 @@
             <div>
               <div class="query-container">
                 <p class="methodology" v-html="$t('vignettes.query-subtitle')"></p>
-                <div>
                   <p class="methodology-query">"rajoy"</p>&nbsp;
                   <a
                     href="https://verba.civio.es/?q=rajoy#verba-subtitle-dataviz"
                     target="_blank"
                   >(link)</a>
-                  <br />
-                  <p
-                    class="methodology-query"
-                  >"pedro sanchez" | "pedro sánchez"; "aznar"; "felipe gonzalez" | "felipe gonzález"; "puigdemont"; "trump"; "messi" | "mesi"; "dios"; "zapatero" *</p>
-                </div>
               </div>
             </div>
-            <p class="methodology-note">*(puede haber zapateros)</p>
+   
           </div>
         </li>
 
