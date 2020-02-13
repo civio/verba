@@ -4,7 +4,7 @@
       <div class="loader-animation my-5"></div>
     </div>
     <div v-else-if="results">
-      <section class="results-dataviz" id="verba-subtitle-dataviz">
+      <section class="results-dataviz">
         <AreaChart v-if="showChart" :data="aggregations" />
       </section>
 
@@ -304,7 +304,7 @@ export default {
   }
 }
 
-#verba-subtitle-dataviz {
+.results-dataviz {
   margin-bottom: 7rem;
   padding-top: 3rem;
 }

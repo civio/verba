@@ -84,7 +84,7 @@ export default {
       this.height = this.$el.offsetHeight
     },
     update() {
-      window.location.href = '#verba-subtitle-dataviz'
+      window.location.href = '#search-box'
       // update scales domain
       const barWidth = this.padded.width / this.data.length
       const scaleX = d3

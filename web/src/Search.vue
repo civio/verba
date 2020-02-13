@@ -14,7 +14,7 @@
         </div>
       </div>
 
-      <div class="verba-search-group">
+      <div class="verba-search-group" id="search-box">
         <SearchBox />
         <SearchFilters />
       </div>
