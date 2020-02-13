@@ -1,6 +1,7 @@
 <template>
   <div class="chart-container">
     <svg :width="width" :height="height">
+      <g ref="axisXDays" class="axis x-days" />
       <g ref="axisXMonths" class="axis x-months" />
       <g ref="axisXYears" class="axis x-years" />
       <g ref="axisY" class="axis y" />
@@ -62,6 +63,12 @@ export default {
     window.removeEventListener('resize', this.onResize)
   },
   methods: {
+    formatAxisXDays(g) {
+      return g
+        .selectAll('.tick line')
+        .attr('y1', -this.height)
+        .attr('y2', 0)
+    },
     formatAxisXMonths(g) {
       return g
         .selectAll('.tick line')
@@ -96,7 +103,6 @@ export default {
       this.height = this.$el.offsetHeight
     },
     update() {
-      console.log(this.data)
       let timerHover
       let that = this
       window.location.href = '#verba-subtitle-dataviz'
@@ -107,7 +113,6 @@ export default {
         .range([0, this.padded.width - barWidth])
         .domain([this.data[0].x, this.data[this.data.length - 1].x])
 
-      console.log(this.padded.height)
       const scaleY = d3
         .scaleLinear()
         .range([this.padded.height, 0])
@@ -168,16 +173,23 @@ export default {
           'Dic'
         ]
       })
-
+      var formatDay = locale.format('%d')
       var formatMonth = locale.format('%b')
       var formatMonthFull = locale.format('%B')
       // setup axis
+      const axisXDays = d3
+        .axisBottom(scaleX)
+        .tickSizeOuter(0)
+        .tickFormat(formatDay)
+        .ticks(this.width / 50)
+        //.ticks(d3.timeMonth)
+
       const axisXMonths = d3
         .axisBottom(scaleX)
         .tickSizeOuter(0)
         .tickFormat(formatMonth)
         .ticks(this.width / 50)
-        .ticks(d3.timeMonth)
+        //.ticks(d3.timeMonth)
 
       const axisXYears = d3
         .axisBottom(scaleX)
@@ -202,7 +214,6 @@ export default {
         })
         .attr('transform', `translate(0, ${-this.height / 2})`)
         .attr('height', function(d){
-          console.log(scaleY(0))
           return 260 - scaleY(d.y)
         })
         .attr('width', barWidth)
@@ -221,7 +232,7 @@ export default {
 
           let monthName = formatMonthFull(d.x)
           let year = d.x.getFullYear()
-          let tooltipText = 'Semana del '+d.x.getDate()+' de <br> '+monthName+' de '+year+'<br>'+d.y.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")+' menciones'
+          let tooltipText = 'Semana del '+d.x.getDate()+' de <br> '+monthName+' de '+year+':<br>'+d.y.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")+' menciones'
 
           d3.select('#tooltip')
             .classed('displayNone', false)
@@ -246,10 +257,18 @@ export default {
         })      
 
       // render axis
-      d3.select(this.$refs.axisXMonths)
+      /*d3.select(this.$refs.axisXDays)
         .attr(
           'transform',
           `translate(${this.margin.left}, ${this.height - this.margin.bottom})`
+        )
+        .call(axisXDays)
+        .call(this.formatAxisXDays)*/
+
+      d3.select(this.$refs.axisXMonths)
+        .attr(
+          'transform',
+          `translate(${this.margin.left}, ${this.height - this.margin.bottom+15})`
         )
         .call(axisXMonths)
         .call(this.formatAxisXMonths)
@@ -259,7 +278,7 @@ export default {
           'transform',
           `translate(${this.margin.left}, ${this.height -
             this.margin.bottom +
-            15})`
+            30})`
         )
         .call(axisXYears)
         .call(this.formatAxisXYears)
@@ -321,7 +340,7 @@ export default {
       shape-rendering: crispEdges;
     }
 
-    &.x-months {
+    &.x-months, &.x-days {
       .domain {
         display: none;
       }
