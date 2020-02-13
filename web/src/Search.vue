@@ -4,7 +4,7 @@
       <div class="verba-magneto">
         <img
           class="verba-magneto-image"
-          src="../src/images/01TapeRecorder-no-copy.png"
+          src="../src/images/01TapeRecorder.png"
           alt="Magneto patent illustration"
         />
 
