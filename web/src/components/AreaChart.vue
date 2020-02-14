@@ -100,16 +100,19 @@ export default {
       this.height = this.$el.offsetHeight
     },
     update() {
-      console.log(this.period)
-      let timerHover
-      let that = this
       window.location.href = '#search-box'
+      let timerHover
       // update scales domain
       const barWidth = this.padded.width / this.data.length
       const scaleX = d3
         .scaleTime()
         .range([0, this.padded.width - barWidth])
         .domain([this.data[0].x, this.data[this.data.length - 1].x])
+
+      const scaleBand = d3
+        .scaleBand()
+        .range([0, this.padded.width - barWidth])
+        .domain(d3.range(this.data.length))
 
       const scaleY = d3
         .scaleLinear()
@@ -182,7 +185,11 @@ export default {
       const axisXMonths = d3
         .axisBottom(scaleX)
         .tickSizeOuter(0)
-        .tickFormat(formatMonth)
+        .tickFormat(d => {
+          if(formatDay(d) === '01') {
+            return formatMonth(d)  
+          }
+        })
         .ticks(this.width / 50)
 
       const axisXYears = d3
@@ -201,58 +208,64 @@ export default {
         .data(this.data)
         .join('rect')
         .attr('x', d => scaleX(d.x))
-        .attr('y', function(d) {
+        .attr('y', d => {
           return scaleY(d.y/2)
         })
         .attr('transform', `translate(0, ${-this.height / 2})`)
-        .attr('height', function(d) {
+        .attr('height', d => {
           return 260 - scaleY(d.y)
         })
         .attr('width', barWidth)
-        .on('mousemove', function(d) {
-
+        .on('mousemove', (d, i, nodes) => {
+          // restart timer
+          clearInterval(timerHover)
+          const el = nodes[i]
+          const that = this
+          // tooltip text
           function getTooltipText(tooltip) {
             const monthName = formatMonthFull(d.x)
             const year = d.x.getFullYear()
             let html = ''
             if(that.period) {
               html = d.x.getDate()+' de '+monthName+' de '+
-                year+':<br>'+d.y.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")+' menciones'
+                year+':<br>'+d.y.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")+(d.y === 1 ? ' mención' : ' menciones')
             }else{
               html = 'Semana del '+d.x.getDate()+' de <br> '+monthName+' de '+
-                year+':<br>'+d.y.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")+' menciones'
+                year+':<br>'+d.y.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")+(d.y === 1 ? ' mención' : ' menciones')
             }
             tooltip.html(html)
           }
-
-          let left;
-          let top = d3.mouse(this)[1]-d3.select('#tooltip').node().offsetHeight*1.1
-          if(d3.mouse(this)[0] >= that.padded.width/2) {
-            left = d3.mouse(this)[0]-that.margin.left-that.margin.right-d3.select('#tooltip').node().offsetWidth/4
-          }else{
-            left = d3.mouse(this)[0]+that.margin.left+that.margin.right
+          // toolip position
+          function getTooltipPos(tooltip){
+            let left
+            const top = d3.mouse(el)[1]-d3.select('#tooltip').node().offsetHeight*1.1
+            if(d3.mouse(el)[0] >= that.padded.width/2) {
+              left = d3.mouse(el)[0]-that.margin.left-that.margin.right-d3.select('#tooltip').node().offsetWidth/4
+            }else{
+              left = d3.mouse(el)[0]+that.margin.left+that.margin.right
+            }
+            tooltip.style('left', left+'px')
+              .style('top', top+'px')  
           }
-          clearInterval(timerHover);
-
-          d3.select(this)
+          // focus rect
+          d3.select(el)
             .classed('focus', true)
 
           d3.select('#tooltip')
             .classed('displayNone', false)
-            .call(getTooltipText)  
-            .style('left', left+'px')
-            .style('top', top+'px')
-
+            .call(getTooltipText)
+            .call(getTooltipPos)      
         })
 
         .on('mouseout', function() {
-          function stop_timer_hover() {
+          // displayNone on tooltip after 750 ms
+          function stopTimerHover() {
             d3.select('#tooltip')
               .classed('displayNone', true)
-            clearInterval(timerHover);
+            clearInterval(timerHover)
           }
-          clearInterval(timerHover);
-          timerHover = setInterval(stop_timer_hover, 750);
+          clearInterval(timerHover)
+          timerHover = setInterval(stopTimerHover, 750)
           d3.select(this)
             .classed('focus', false)          
         })      
@@ -261,15 +274,16 @@ export default {
       d3.select(this.$refs.axisXDays)
         .attr(
           'transform',
-          `translate(${this.margin.left+10}, ${this.height - this.margin.bottom})`
+          `translate(${this.margin.left+scaleBand.bandwidth()/2}, ${this.height - this.margin.bottom})`
         )
+        .classed('displayNone', !this.period)
         .call(axisXDays)
         .call(this.formatAxisXDays)
 
       d3.select(this.$refs.axisXMonths)
         .attr(
           'transform',
-          `translate(${this.margin.left}, ${this.height - this.margin.bottom+15})`
+          `translate(${this.margin.left+scaleBand.bandwidth()/2}, ${this.height - this.margin.bottom+15})`
         )
         .call(axisXMonths)
         .call(this.formatAxisXMonths)
@@ -277,7 +291,7 @@ export default {
       d3.select(this.$refs.axisXYears)
         .attr(
           'transform',
-          `translate(${this.margin.left}, ${this.height -
+          `translate(${this.margin.left+scaleBand.bandwidth()/2}, ${this.height -
             this.margin.bottom +
             30})`
         )

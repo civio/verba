@@ -117,8 +117,7 @@ export default {
     },
     getPeriod(){
       if(this.queryDate !== null){
-        const days = this.queryDate.to.diff(this.queryDate.from, "days")//agg by month (30 days)
-        console.log(days)
+        const days = this.queryDate.to.diff(this.queryDate.from, "days")// agg by month (30 days)
         if(days <= 30){
           return true
         }else{
