@@ -10,7 +10,7 @@
     </svg>
     <div id="tooltip" class="displayNone" >
       <div>
-        <span v-if="!period">Semana del <br></span>
+        <span v-if="!period">Semana del </span>
         <span>{{date}}:</span>
       </div>
       <div v-html="$tc('tooltip.mentions', mentions, {mentions:mentions})"></div>
@@ -37,8 +37,7 @@ export default {
         top: 0,
         bottom: 0
       })
-    }
-    
+    }  
   },
   data() {
     return {
@@ -231,17 +230,16 @@ export default {
           clearInterval(timerHover)
           const el = nodes[i]
           const that = this
-          const monthName = formatMonth(d.x)
+          const monthName = formatMonthFull(d.x)
           // tooltip text
-          that.date = d.x.getDate()+' de '+monthName+'. de '+d.x.getFullYear()
-          that.mentions = d.y
+          that.date = d.x.getDate()+' de '+monthName+' de '+d.x.getFullYear()
           that.mentions = d.y
           // toolip position
           function getTooltipPos(tooltip){
             let left
             const top = d3.mouse(el)[1]-d3.select('#tooltip').node().offsetHeight - 30
             if(d3.mouse(el)[0] >= that.padded.width/2) {
-              left = d3.mouse(el)[0]-100
+              left = d3.mouse(el)[0]-200
             }else{
               left = d3.mouse(el)[0]+60
             }

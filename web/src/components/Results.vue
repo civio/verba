@@ -14,11 +14,10 @@
             v-html="$t('results.list.count', { total: results.length.toLocaleString(), query: query })"
           ></span>
           (<a href="#" @click="onDownloadClick()">CSV</a>)
-          &nbsp;&mdash;&nbsp;
           <span
             v-if="results.length > 50"
             class="text-secondary"
-          >{{ $t('results.list.page', { p: resultsPage + 1, total: Math.ceil(results.length / 50) }) }}</span>
+          >&nbsp;&mdash;&nbsp; {{ $t('results.list.page', { p: resultsPage + 1, total: Math.ceil(results.length / 50) }) }}</span>
         </p>
         <div class="results-list mb-4">
           <div v-for="(items, id) in resultsByProgramme" :key="id" class="card">
