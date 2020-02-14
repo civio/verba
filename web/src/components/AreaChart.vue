@@ -238,9 +238,9 @@ export default {
           // toolip position
           function getTooltipPos(tooltip){
             let left
-            const top = d3.mouse(el)[1]-d3.select('#tooltip').node().offsetHeight*1.1
+            const top = d3.mouse(el)[1]-d3.select('#tooltip').node().offsetHeight - 10
             if(d3.mouse(el)[0] >= that.padded.width/2) {
-              left = d3.mouse(el)[0]-that.margin.left-that.margin.right-d3.select('#tooltip').node().offsetWidth/4
+              left = d3.mouse(el)[0]-that.margin.left-that.margin.right-10-d3.select('#tooltip').node().offsetWidth/4
             }else{
               left = d3.mouse(el)[0]+that.margin.left+that.margin.right
             }
