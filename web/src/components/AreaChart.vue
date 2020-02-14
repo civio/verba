@@ -231,11 +231,16 @@ export default {
           // toolip position
           function getTooltipPos(tooltip){
             let left
-            const top = d3.mouse(el)[1]-d3.select('#tooltip').node().offsetHeight - 30
-            if(d3.mouse(el)[0] >= that.padded.width/2) {
-              left = d3.mouse(el)[0]-120
+            const mouseMoveLeft = d3.mouse(
+              d3.select('.chart-container')
+              .select('svg').node()
+            )
+            const mouseMoveTop = d3.mouse(el)
+            const top = mouseMoveTop[1]-d3.select('#tooltip').node().offsetHeight - 30
+            if(mouseMoveLeft[0] >= that.width/2) {
+              left = mouseMoveLeft[0] - d3.select('#tooltip').node().clientWidth
             }else{
-              left = d3.mouse(el)[0]+60
+              left = mouseMoveLeft[0]+30
             }
             tooltip.style('left', left+'px')
               .style('top', top+'px')  
@@ -243,11 +248,6 @@ export default {
           // focus rect
           d3.select(el)
             .classed('focus', true)
-
-          d3.select('#tooltip')
-            .classed('displayNone', false)
-            .call(getTooltipPos)
-            .select('#tooltip-date')
 
           //toolip text
           d3.select('#tooltip')
@@ -263,6 +263,10 @@ export default {
             .html(that.$tc('tooltip.mentions', d.y, {
               mentions:d.y
             }))
+
+           d3.select('#tooltip')
+            .classed('displayNone', false)
+            .call(getTooltipPos)
 
         })
 
