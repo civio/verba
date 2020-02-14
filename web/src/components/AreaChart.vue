@@ -11,9 +11,9 @@
     <div id="tooltip" class="displayNone" >
       <div>
         <span v-if="!period">Semana del </span>
-        <span>{{date}}:</span>
+        <span id="tooltip-date"></span>
       </div>
-      <div v-html="$tc('tooltip.mentions', mentions, {mentions:mentions})"></div>
+      <div id="tooltip-mentions"></div>
     </div>
   </div>
 </template>
@@ -231,9 +231,6 @@ export default {
           const el = nodes[i]
           const that = this
           const monthName = formatMonthFull(d.x)
-          // tooltip text
-          that.date = d.x.getDate()+' de '+monthName+' de '+d.x.getFullYear()
-          that.mentions = d.y
           // toolip position
           function getTooltipPos(tooltip){
             let left
@@ -252,7 +249,24 @@ export default {
 
           d3.select('#tooltip')
             .classed('displayNone', false)
-            .call(getTooltipPos)      
+            .call(getTooltipPos)
+            .select('#tooltip-date')
+
+          //toolip text
+          d3.select('#tooltip')
+            .select('#tooltip-date')
+            .html(that.$t('tooltip.date', {
+                day:d.x.getDate(), 
+                month:formatMonthFull(d.x), 
+                year:d.x.getFullYear()
+            }))
+
+          d3.select('#tooltip')
+            .select('#tooltip-mentions')
+            .html(that.$tc('tooltip.mentions', d.y, {
+              mentions:d.y
+            }))
+
         })
 
         .on('mouseout', function() {

@@ -46,7 +46,7 @@
     "query-subtitle": "Búsqueda:"
   },
   "tooltip": {
-    "date": "{date}: <br>",
+    "date": "{day} del {month} del {year}: <br>",
     "mentions": "1 mención | {mentions} menciones"
   }
 }
