@@ -14,10 +14,6 @@
         <span>{{date}}:</span>
       </div>
       <div v-html="$tc('tooltip.mentions', mentions, {mentions:mentions})"></div>
-      
-
-       
-    
     </div>
   </div>
 </template>
