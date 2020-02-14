@@ -42,10 +42,7 @@ export default {
   data() {
     return {
       width: 0,
-      height: 0,
-      date:'',
-      mentions:0
-      
+      height: 0
     }
   },
   computed: {
@@ -236,7 +233,7 @@ export default {
             let left
             const top = d3.mouse(el)[1]-d3.select('#tooltip').node().offsetHeight - 30
             if(d3.mouse(el)[0] >= that.padded.width/2) {
-              left = d3.mouse(el)[0]-200
+              left = d3.mouse(el)[0]-120
             }else{
               left = d3.mouse(el)[0]+60
             }
