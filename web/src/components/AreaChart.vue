@@ -8,7 +8,17 @@
       <g ref="tooltipArea" :style="{ transform: `translate(${margin.left}px, ${margin.top}px)` }" />
       <g ref="bars" :style="{ transform: `translate(${margin.left}px, ${margin.top}px)` }" />
     </svg>
-    <div id="tooltip" class="displayNone"></div>
+    <div id="tooltip" class="displayNone" >
+      <div>
+        <span v-if="!period">Semana del <br></span>
+        <span>{{date}}:</span>
+      </div>
+      <div v-html="$tc('tooltip.mentions', mentions, {mentions:mentions})"></div>
+      
+
+       
+    
+    </div>
   </div>
 </template>
 
@@ -32,11 +42,15 @@ export default {
         bottom: 0
       })
     }
+    
   },
   data() {
     return {
       width: 0,
-      height: 0
+      height: 0,
+      date:'',
+      mentions:0
+      
     }
   },
   computed: {
@@ -158,18 +172,18 @@ export default {
           'diciembre'
         ],
         shortMonths: [
-          'Ene',
-          'Feb',
-          'Mar',
-          'Abr',
-          'May',
-          'Jun',
-          'Jul',
-          'Ago',
-          'Sep',
-          'Oct',
-          'Nov',
-          'Dic'
+          'ene',
+          'feb',
+          'mar',
+          'abr',
+          'may',
+          'jun',
+          'jul',
+          'ago',
+          'sep',
+          'oct',
+          'nov',
+          'dic'
         ]
       })
       const formatDay = locale.format('%d')
@@ -221,28 +235,19 @@ export default {
           clearInterval(timerHover)
           const el = nodes[i]
           const that = this
+          const monthName = formatMonth(d.x)
           // tooltip text
-          function getTooltipText(tooltip) {
-            const monthName = formatMonthFull(d.x)
-            const year = d.x.getFullYear()
-            let html = ''
-            if(that.period) {
-              html = d.x.getDate()+' de '+monthName+' de '+
-                year+':<br>'+d.y.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")+(d.y === 1 ? ' mención' : ' menciones')
-            }else{
-              html = 'Semana del '+d.x.getDate()+' de <br> '+monthName+' de '+
-                year+':<br>'+d.y.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")+(d.y === 1 ? ' mención' : ' menciones')
-            }
-            tooltip.html(html)
-          }
+          that.date = d.x.getDate()+' de '+monthName+'. de '+d.x.getFullYear()
+          that.mentions = d.y
+          that.mentions = d.y
           // toolip position
           function getTooltipPos(tooltip){
             let left
-            const top = d3.mouse(el)[1]-d3.select('#tooltip').node().offsetHeight - 10
+            const top = d3.mouse(el)[1]-d3.select('#tooltip').node().offsetHeight - 30
             if(d3.mouse(el)[0] >= that.padded.width/2) {
-              left = d3.mouse(el)[0]-that.margin.left-that.margin.right-10-d3.select('#tooltip').node().offsetWidth/4
+              left = d3.mouse(el)[0]-100
             }else{
-              left = d3.mouse(el)[0]+that.margin.left+that.margin.right
+              left = d3.mouse(el)[0]+60
             }
             tooltip.style('left', left+'px')
               .style('top', top+'px')  
@@ -253,7 +258,6 @@ export default {
 
           d3.select('#tooltip')
             .classed('displayNone', false)
-            .call(getTooltipText)
             .call(getTooltipPos)      
         })
 
@@ -265,7 +269,7 @@ export default {
             clearInterval(timerHover)
           }
           clearInterval(timerHover)
-          timerHover = setInterval(stopTimerHover, 750)
+          timerHover = setInterval(stopTimerHover, 500)
           d3.select(this)
             .classed('focus', false)          
         })      
