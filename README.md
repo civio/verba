@@ -46,7 +46,7 @@ kibana
 
 ## Deployment
 
-La aplicación está desplegada en `midas`, en `/var/www/verba-volant.civio.es/`. Hay dos partes, el frontend (hecho con Vue.js) que se sirve por el Apache y el API que es un servicio que levanta una aplicación Express. La configuración (variables de entorno...) del servicio está en `/etc/systemd/system/verba-api.service`.
+La aplicación está desplegada en `midas`, en `/var/www/verba.civio.es/`. Hay dos partes, el frontend (hecho con Vue.js) que se sirve por el Apache y el API que es un servicio que levanta una aplicación Express. La configuración (variables de entorno...) del servicio está en `/etc/systemd/system/verba-api.service`.
 
 Para reiniciar Elastic, si fuera necesario:
 
