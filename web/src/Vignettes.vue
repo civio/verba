@@ -2,7 +2,29 @@
   <main>
     <div class="verba-vignettes">
       <!-- <h2 class="verba-subtitle" v-html="$t('vignettes.title')"></h2> -->
-      <ul class="verba-vignettes">
+      <ul class="vignettes-titles">
+        <li>
+          <img class="vignette-img" src="./images/ficha01-ultraderecha.png" alt />
+          <h3>La ultraderecha son los otros</h3>
+        </li>
+        <li>
+          <img class="vignette-img" src="./images/ficha02-corrupcion.png" alt />
+          <h3>Gürtel y los ERE, casi empatados</h3>
+        </li>
+        <li>
+          <img class="vignette-img" src="./images/ficha03-dieta.png" alt />
+          <h3>El rigor científico, a dieta</h3>
+        </li>
+        <li>
+          <img class="vignette-img" src="./images/ficha04-mariano.png" alt />
+          <h3>Rajoy sigue vivo</h3>
+        </li>
+        <li>
+          <img class="vignette-img" src="./images/ficha05-cambio-climatico.png" alt />
+          <h3>No había crisis climática hasta 2019</h3>
+        </li>
+      </ul>
+      <ul class="vignettes-copies">
         <!-- Tema 1 - la ultraderecha -->
         <li class="verba-vignettes-item">
           <h3 class="vignette-title">La ultraderecha son los otros</h3>
@@ -405,7 +427,8 @@ strong {
 .chart-annotated {
   margin: 1.5rem 0;
 }
-.verba-vignettes {
+.vignettes-copies {
+  visibility: hidden;
   // margin: 1.5rem 0;
   // background-color: pink;
 }
@@ -471,6 +494,40 @@ strong {
   }
   .methodology-note {
     font-size: 0.8rem;
+  }
+}
+
+.vignettes-titles {
+  padding: 0 2rem;
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  li h3 {
+    font-size: 0.9rem;
+    color: $color-neutral-1000;
+  }
+
+  li {
+    padding: 0.5rem;
+  }
+}
+
+.vignette-img {
+  width: 15rem;
+  opacity: 0.9;
+  margin-bottom: 0.5rem;
+
+  // Gray scale, sepia and blur effects
+  -webkit-filter: grayscale(100%) sepia(0) blur(1px);
+  filter: grayscale(100%) sepia(0) blur(1px);
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+
+  &:hover {
+    -webkit-filter: sepia(100%) blur(0);
+    filter: sepia(100%) blur(0);
   }
 }
 </style>

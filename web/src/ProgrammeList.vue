@@ -245,7 +245,7 @@ u {
   // background-color: #f2ed8e;
   color: $color-highlight-1;
   background-color: inherit;
-  // font-weight: 800;
+  font-weight: 800;
 }
 
 .seeMoreBtn {
