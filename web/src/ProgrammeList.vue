@@ -2,14 +2,19 @@
   <main>
     <div class="verba-programmes">
       <div id="menu-filter">
-        <ul>
+        <ul class="years-list">
           <li v-for="year in years" v-bind:class="{'is-clicked':year.num === currentYear}">
-            <a v-on:click="seeYear(year)" v-bind:data-value="year.num">{{year.num}}</a>
+            <a v-on:click="seeYear(year.num)" v-bind:data-value="year.num">{{year.num}}</a>
           </li>
         </ul>
-        <ul v-if="currentYear != ''">
-          <li v-for="month in months" v-bind:class="{'is-clicked':month.num ===  currentMonth}">
-            <a v-on:click="seeMonth(month)" v-bind:data-value="month.num">{{month.name}}</a>
+        <ul class="months-list" v-if="currentYear != ''">
+          <li
+            v-for="month in months"
+            v-bind:class="{'is-clicked':month.num ===  currentMonth}"
+            v-bind:data-ts="month.ts"
+            v-if="today.getTime() >= month.ts"
+          >
+            <a v-on:click="seeMonth(month.num)" v-bind:data-value="month.num">{{month.name}}</a>
           </li>
         </ul>
       </div>
@@ -52,8 +57,8 @@ export default {
       subList: [],
       limit: 70,
       inc: undefined,
+      today: new Date(),
       years: [
-        { num: '2013' },
         { num: '2014' },
         { num: '2015' },
         { num: '2016' },
@@ -63,29 +68,31 @@ export default {
         { num: '2020' }
       ],
       months: [
-        { num: '01', name: 'Ene' },
-        { num: '02', name: 'Feb' },
-        { num: '03', name: 'Mar' },
-        { num: '04', name: 'Abr' },
-        { num: '05', name: 'May' },
-        { num: '06', name: 'Jun' },
-        { num: '07', name: 'Jul' },
-        { num: '08', name: 'Ago' },
-        { num: '09', name: 'Sep' },
-        { num: '10', name: 'Oct' },
-        { num: '11', name: 'Nov' },
-        { num: '12', name: 'Dic' }
+        { num: '1', name: 'ene', ts: '' },
+        { num: '2', name: 'feb', ts: '' },
+        { num: '3', name: 'mar', ts: '' },
+        { num: '4', name: 'abr', ts: '' },
+        { num: '5', name: 'may', ts: '' },
+        { num: '6', name: 'jun', ts: '' },
+        { num: '7', name: 'jul', ts: '' },
+        { num: '8', name: 'ago', ts: '' },
+        { num: '9', name: 'sep', ts: '' },
+        { num: '10', name: 'oct', ts: '' },
+        { num: '11', name: 'nov', ts: '' },
+        { num: '12', name: 'dic', ts: '' }
       ],
       currentYear: '',
-      currentMonth: ''
+      currentMonth: '',
+      limitDate: undefined
     }
   },
   mounted() {
     Vue.verbaAPI('fetchProgrammeList', null, response => {
       this.inc = this.limit
       this.programmeList = response.data
-      this.filterProgramme = response.data
-      this.subList = this.get_sublist(this.programmeList)
+      this.seeYear(this.get_today_year())
+      this.seeMonth(this.get_today_month())
+      this.limitDate = this.get_limit_date()
     })
   },
 
@@ -97,11 +104,23 @@ export default {
       }
     },
 
+    get_today_year() {
+      return String(this.today.getFullYear())
+    },
+
+    get_today_month() {
+      return String(this.today.getMonth() + 1)
+    },
+
+    get_limit_date() {
+      //return new Date(this.)
+    },
+
     get_year_month() {
       return this.programmeList.filter(
         d =>
           this.currentYear === d.date.split('-')[0] &&
-          this.currentMonth === d['date'].split('-')[1]
+          this.currentMonth === String(parseInt(d['date'].split('-')[1]))
       )
     },
 
@@ -117,25 +136,28 @@ export default {
 
     seeYear(year) {
       this.inc = this.limit
-      if (this.currentYear !== year.num) {
-        this.currentYear = year.num
-        if (this.currentMonth !== '') {
-          this.filterProgramme = this.get_year_month()
-        } else {
-          this.filterProgramme = this.get_year()
-        }
+      if (this.currentYear !== year) {
+        this.currentMonth = ''
+        this.currentYear = year
+        this.filterProgramme = this.get_year()
+        this.months.forEach(
+          function(d) {
+            d.ts = new Date(this.currentYear + '/' + d.num + '/2').getTime()
+          }.bind(this)
+        )
       } else {
         this.currentYear = ''
         this.currentMonth = ''
         this.filterProgramme = this.programmeList
       }
+
       this.subList = this.get_sublist(this.filterProgramme)
     },
 
     seeMonth(month) {
       this.inc = this.limit
-      if (this.currentMonth !== month.num) {
-        this.currentMonth = month.num
+      if (this.currentMonth !== month) {
+        this.currentMonth = month
         this.filterProgramme = this.get_year_month()
       } else {
         this.currentMonth = ''
@@ -193,7 +215,19 @@ u {
   // margin-left: auto;
   // margin-right: auto;
   // margin-top: 10px;
+  // justify-content: space-between;
+}
+
+#menu-filter .years-list {
   justify-content: space-between;
+}
+
+#menu-filter .months-list {
+  justify-content: center;
+
+  li {
+    padding: 0 0.7rem;
+  }
 }
 
 #menu-filter ul li {

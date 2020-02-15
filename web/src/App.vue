@@ -200,7 +200,7 @@ body {
 .verba-navbar {
   // Mobile first
   padding-top: 5rem;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 
   color: $color-neutral-1000;
 
