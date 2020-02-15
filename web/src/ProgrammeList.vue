@@ -4,7 +4,7 @@
       <div id="menu-filter">
         <ul>
           <li v-for="year in years" v-bind:class="{'is-clicked':year.num === currentYear}">
-            <a v-on:click="seeYear(year)" v-bind:data-value="year.num" >{{year.num}}</a>
+            <a v-on:click="seeYear(year)" v-bind:data-value="year.num">{{year.num}}</a>
           </li>
         </ul>
         <ul v-if="currentYear != ''">
@@ -18,7 +18,6 @@
         src="../src/images/02Microfilms-es.png"
         alt="Human radar old illustration"
       />
-
       <!-- Film strips -->
       <ul class="verba-films-strip">
         <li v-for="(programme, key) in subList" :key="key">
@@ -64,18 +63,18 @@ export default {
         { num: '2020' }
       ],
       months: [
-        { num: '01', name: 'enero' },
-        { num: '02', name: 'febrero' },
-        { num: '03', name: 'marzo' },
-        { num: '04', name: 'abril' },
-        { num: '05', name: 'mayo' },
-        { num: '06', name: 'junio' },
-        { num: '07', name: 'julio' },
-        { num: '08', name: 'agosto' },
-        { num: '09', name: 'septiembre' },
-        { num: '10', name: 'octubre' },
-        { num: '11', name: 'noviembre' },
-        { num: '12', name: 'diciembre' }
+        { num: '01', name: 'Ene' },
+        { num: '02', name: 'Feb' },
+        { num: '03', name: 'Mar' },
+        { num: '04', name: 'Abr' },
+        { num: '05', name: 'May' },
+        { num: '06', name: 'Jun' },
+        { num: '07', name: 'Jul' },
+        { num: '08', name: 'Ago' },
+        { num: '09', name: 'Sep' },
+        { num: '10', name: 'Oct' },
+        { num: '11', name: 'Nov' },
+        { num: '12', name: 'Dic' }
       ],
       currentYear: '',
       currentMonth: ''
@@ -153,42 +152,6 @@ export default {
 // TODO: I shouldn't need this again here. Something to do with the "scoped" feature of the vue components styles
 //Common resets
 
-#menu-filter{
-  min-width: 40%;
-  max-width: 320px;
-  position: absolute;
-  top: 210px;
-  z-index: 1;
-  border-radius: 4px;
-}
-
-#menu-filter ul{
-  background-color: rgba(0,0,0,0.2);
-  padding: 0.4em;
-  width: 90%;
-  display: flex;
-  overflow-x: auto;
-  overflow-y: hidden;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10px;
-}
-
-#menu-filter ul li{
-  background-color: white; 
-  padding: 0.4em;
-  border-radius: 2px;
-  margin-right: 0.7em;
-}
-
-#menu-filter ul li a{
-  cursor: pointer;
-}
-
-#menu-filter ul li.is-clicked{
-  background-color: #f2ed8e;
-
-}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -203,12 +166,61 @@ u {
   color: inherit;
   text-decoration: none;
 }
+
+// Menu with dates
+#menu-filter {
+  // min-width: 40%;
+  // max-width: 320px;
+  // position: absolute;
+  // top: 210px;
+  // z-index: 1;
+  // border-radius: 4px;
+  width: 90%;
+  max-width: 630px;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#menu-filter ul {
+  // background-color: rgba(0,0,0,0.2);
+  // padding: 0.4em;
+  width: 90%;
+  display: flex;
+  overflow-x: auto;
+  // overflow-y: hidden;
+  // margin-left: auto;
+  // margin-right: auto;
+  // margin-top: 10px;
+  justify-content: space-between;
+}
+
+#menu-filter ul li {
+  // background-color: white;
+  padding: 0.4em;
+  border-radius: 2px;
+  // margin-right: 0.7em;
+}
+
+#menu-filter ul li a {
+  cursor: pointer;
+}
+
+#menu-filter ul li.is-clicked {
+  // background-color: #f2ed8e;
+  color: $color-highlight-1;
+  background-color: inherit;
+  // font-weight: 800;
+}
+
 .seeMoreBtn {
   display: block;
   width: 200px;
   height: 30px;
   margin: 20px auto;
 }
+
 .verba-programmes {
   // Mobile first
   display: flex;
@@ -218,7 +230,7 @@ u {
   color: $color-neutral-800;
   // Tablets
   @media all and (min-width: 768px) {
-    flex-direction: row;
+    flex-direction: column;
   }
   // PC
   @media all and (min-width: 1024px) {
@@ -242,9 +254,10 @@ u {
   max-width: calc(438px * #{$scale-factor});
   height: auto;
   margin-left: 2rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   // Mobile first
   // position: block;
+  order: -1;
   right: calc(50% + 5rem);
   // Tablets
   @media all and (min-width: 768px) {
