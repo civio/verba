@@ -9,15 +9,22 @@
           <div class="vignette-copy">
             <p>
               Hay partidos de
-              <mark>ultraderecha</mark> en Ucrania, Finlandia, Portugal, Francia, Italia, Estonia, Bulgaria, Alemania, Brasil y la Comisión Europea, entre otros lugares del mundo. Pero, para el Telediario de RTVE, no en España. De las 445 veces que aparece la palabra en los informativos desde 2014 hasta el 31 de enero de 2020 la mayoría corresponden a dos tipos: otras fuerzas políticas mencionando a Vox (sobre todo el PSOE) y noticias de política internacional sobre partidos de <strong>ultraderecha </strong> de otros países.
+              <mark>ultraderecha</mark> en Ucrania, Finlandia, Portugal, Francia, Italia, Estonia, Bulgaria, Alemania, Brasil y la Comisión Europea, entre otros lugares del mundo. Pero, para el Telediario de RTVE, no en España. De las 445 veces que aparece la palabra en los informativos desde 2014 hasta el 31 de enero de 2020 la mayoría corresponden a dos tipos: otras fuerzas políticas mencionando a Vox (sobre todo el PSOE) y noticias de política internacional sobre partidos de
+              <strong>ultraderecha</strong> de otros países.
             </p>
             <div class="chart-annotated" v-html="chart_tema01"></div>
-            <p>La palabra <strong>ultraderecha</strong> empezó a coger fuerza en el Telediario en 2017, cuando se hablaba de su auge en Francia y en Holanda. Y empezó a ganar más peso a partir de mediados de 2018, con la irrupción de Bolsonaro en Brasil o de partidos fascistas en Alemania. De hecho, uno de los dos mayores picos, en septiembre de ese año, se explica por las noticias internacionales sobre esos dos países.</p>
             <p>
-              La semana en la que esa palabra fue más popular fue la última de campaña electoral justo antes de los comicios del 11-N. En solo cuatro días, se repitió 17 veces entre los dos informativos, el de la mañana y el de la noche. Se referían a Vox. Pero no porque en el Telediario hablaban de ellos como partido de <strong>ultraderecha</strong>, sino por las apariciones de Pedro Sánchez en actos de campaña, entrevistas o el debate electoral criticando los pactos de PP y Ciudadanos con Vox o pidiendo el voto para frenar, claro, a la <strong>ultraderecha</strong>.
+              La palabra
+              <strong>ultraderecha</strong> empezó a coger fuerza en el Telediario en 2017, cuando se hablaba de su auge en Francia y en Holanda. Y empezó a ganar más peso a partir de mediados de 2018, con la irrupción de Bolsonaro en Brasil o de partidos fascistas en Alemania. De hecho, uno de los dos mayores picos, en septiembre de ese año, se explica por las noticias internacionales sobre esos dos países.
             </p>
             <p>
-              El resto de apariciones de esta palabra suelen tener que ver con grupos de <strong>ultraderecha</strong> en manifestaciones (como la que protestaba por la exhumación de Franco) o altercados (como los de las manifestaciones de Barcelona). También en ese contexto se suele usar "extrema derecha", una expresión más popular, que aparece hasta 611 veces desde 2014. Su pico: tras las elecciones andaluzas, cuando se empezó a comentar -por otros partidos y citando declaraciones, no por los propios presentadores del Telediario- el posible pacto PP-Ciudadanos-Vox.
+              La semana en la que esa palabra fue más popular fue la última de campaña electoral justo antes de los comicios del 11-N. En solo cuatro días, se repitió 17 veces entre los dos informativos, el de la mañana y el de la noche. Se referían a Vox. Pero no porque en el Telediario hablaban de ellos como partido de
+              <strong>ultraderecha</strong>, sino por las apariciones de Pedro Sánchez en actos de campaña, entrevistas o el debate electoral criticando los pactos de PP y Ciudadanos con Vox o pidiendo el voto para frenar, claro, a la
+              <strong>ultraderecha</strong>.
+            </p>
+            <p>
+              El resto de apariciones de esta palabra suelen tener que ver con grupos de
+              <strong>ultraderecha</strong> en manifestaciones (como la que protestaba por la exhumación de Franco) o altercados (como los de las manifestaciones de Barcelona). También en ese contexto se suele usar "extrema derecha", una expresión más popular, que aparece hasta 611 veces desde 2014. Su pico: tras las elecciones andaluzas, cuando se empezó a comentar -por otros partidos y citando declaraciones, no por los propios presentadores del Telediario- el posible pacto PP-Ciudadanos-Vox.
             </p>
           </div>
           <div class="vignette-methodology">
@@ -46,7 +53,8 @@
             </p>
             <div class="chart-annotated" v-html="chart_tema02a"></div>
             <p>
-              El momento álgido se vivió a finales de octubre de 2014, con las detenciones del caso Púnica, que se combinaron con debates parlamentarios y propuestas y pactos en el Congreso para acabar con el problema. Pero la <strong>Púnica</strong> (357 apariciones) no ha sido la saga corrupta más nombrada. El caso
+              El momento álgido se vivió a finales de octubre de 2014, con las detenciones del caso Púnica, que se combinaron con debates parlamentarios y propuestas y pactos en el Congreso para acabar con el problema. Pero la
+              <strong>Púnica</strong> (357 apariciones) no ha sido la saga corrupta más nombrada. El caso
               <mark
                 class="item1"
               >Gürtel</mark> (713) y el de los
@@ -58,7 +66,10 @@
               <strong>Gürtel</strong>, con la Audiencia Nacional decidiendo si fijaba medidas cautelares para los acusados y la moción de censura contra Mariano Rajoy en marcha, este caso de
               <strong>corrupción</strong> fue la estrella de los Telediarios, con su apogeo el día 31, el de la moción que cambió a Rajoy por Sánchez en la presidencia del Gobierno.
             </p>
-            <p>Para el caso de los <strong>ERE</strong>, esa fecha mágica llegó el 19 de noviembre, con la sentencia que condenó a los expresidentes andaluces Manuel Chaves y José Antonio Griñán, entre otros.</p>
+            <p>
+              Para el caso de los
+              <strong>ERE</strong>, esa fecha mágica llegó el 19 de noviembre, con la sentencia que condenó a los expresidentes andaluces Manuel Chaves y José Antonio Griñán, entre otros.
+            </p>
           </div>
           <div class="vignette-methodology">
             <h4 class="methodology-title" v-html="$t('vignettes.methodology')"></h4>
@@ -86,9 +97,10 @@
                 >(link)</a>
               </div>
             </div>
-            <p
-              class="methodology-note"
-            >Nota: A la búsqueda de los ERES hemos eliminado cuatro casos en los que trataban Expedientes de Regulación de Empleo distintos a los del caso de <strong>corrupción</strong>.</p>
+            <p class="methodology-note">
+              Nota: A la búsqueda de los ERES hemos eliminado cuatro casos en los que trataban Expedientes de Regulación de Empleo distintos a los del caso de
+              <strong>corrupción</strong>.
+            </p>
           </div>
         </li>
 
@@ -98,7 +110,8 @@
           <div class="vignette-copy">
             <p>
               Televisión Española mencionó en sus informativos 380 veces la palabra
-              <mark>dieta</mark> entre enero de 2014 y enero de 2020. Pero los informativos, en ocasiones, también han puesto a <strong>dieta</strong> el rigor científico, sustituyéndolo por un cóctel de desinformación calórica y desequilibrada, que puede poner en riesgo la salud.
+              <mark>dieta</mark> entre enero de 2014 y enero de 2020. Pero los informativos, en ocasiones, también han puesto a
+              <strong>dieta</strong> el rigor científico, sustituyéndolo por un cóctel de desinformación calórica y desequilibrada, que puede poner en riesgo la salud.
             </p>
             <p>
               Uno de los mantras citados por RTVE es que tomar una o dos
@@ -106,12 +119,15 @@
               <strong>pasta no engorda.</strong> ¿El problema? El estudio estaba patrocinado por Barilla, un detalle que los informativos olvidaron mencionar en su cobertura.
             </p>
             <p>
-              Durante los últimos años, TVE ha difundido informaciones sobre alimentos que pueden inducir a error a los consumidores. Uno de sus telediarios, hablando de la llamada <strong>dieta</strong> del delfín, llegó a afirmar que "beber agua de mar es una tendencia creciente en el campo de las supuestas <strong>dietas</strong> saludables". Pese a que la televisión pública menciona la palabra "charlatanería", habla del agua de mar como un "completo nutriente con propiedades". Verba también muestra la cobertura negativa de TVE sobre los
+              Durante los últimos años, TVE ha difundido informaciones sobre alimentos que pueden inducir a error a los consumidores. Uno de sus telediarios, hablando de la llamada
+              <strong>dieta</strong> del delfín, llegó a afirmar que "beber agua de mar es una tendencia creciente en el campo de las supuestas
+              <strong>dietas</strong> saludables". Pese a que la televisión pública menciona la palabra "charlatanería", habla del agua de mar como un "completo nutriente con propiedades". Verba también muestra la cobertura negativa de TVE sobre los
               <strong>aditivos</strong> en los alimentos, pese a tratarse de sustancias seguras que ayudan a mejorar el aspecto o textura de los mismos y a conservarlos mejor.
             </p>
             <div class="chart-annotated" v-html="chart_tema03"></div>
             <p>
-              Al cubrir la información sobre peligrosas modas, como la de la <strong>leche cruda,</strong> los informativos de Televisión Española tampoco han destacado el riesgo que supone el consumo de esta bebida. Del total de 11 resultados obtenidos, varios apuntan hacia la producción de quesos utilizando este tipo de leche sin pasteurizar, y otros hacia la polémica normativa aprobada en Cataluña hace casi dos años. Del riesgo que produce su consumo, como la intoxicación por peligrosas bacterias como Listeria, Salmonella o Escherichia coli, ni rastro.
+              Al cubrir la información sobre peligrosas modas, como la de la
+              <strong>leche cruda,</strong> los informativos de Televisión Española tampoco han destacado el riesgo que supone el consumo de esta bebida. Del total de 11 resultados obtenidos, varios apuntan hacia la producción de quesos utilizando este tipo de leche sin pasteurizar, y otros hacia la polémica normativa aprobada en Cataluña hace casi dos años. Del riesgo que produce su consumo, como la intoxicación por peligrosas bacterias como Listeria, Salmonella o Escherichia coli, ni rastro.
             </p>
           </div>
           <div class="vignette-methodology">
@@ -119,13 +135,11 @@
             <div>
               <div class="query-container">
                 <p class="methodology" v-html="$t('vignettes.query-subtitle')"></p>
-                  <p
-                    class="methodology-query"
-                  >"dieta"</p>&nbsp;
-                  <a
-                    href="https://verba.civio.es/?q=%22dieta%22%20%7C%20%22copa%20de%20vino%22%20%7C%20%22pasta%20no%20engorda%22%20%7C%20%22leche%20cruda%22%20%7C%20%22aditivos%22#verba-subtitle-dataviz"
-                    target="_blank"
-                  >(link)</a>
+                <p class="methodology-query">"dieta"</p>&nbsp;
+                <a
+                  href="https://verba.civio.es/?q=%22dieta%22%20%7C%20%22copa%20de%20vino%22%20%7C%20%22pasta%20no%20engorda%22%20%7C%20%22leche%20cruda%22%20%7C%20%22aditivos%22#verba-subtitle-dataviz"
+                  target="_blank"
+                >(link)</a>
               </div>
             </div>
             <p class="methodology-note"></p>
@@ -137,7 +151,10 @@
           <h3 class="vignette-title">Rajoy sigue vivo</h3>
           <div class="vignette-copy">
             <p>
-              ¿Quién es el personaje más nombrado del Telediario? Si <strong>dios</strong> ha aparecido unas mil veces desde 2014, <strong>Messi</strong> suma más de seis dioses (6.467) y <strong>Trump</strong>, más de siete (7.603). Pero hay alguien que dobla al astro argentino y al endiosado presidente estadounidense.
+              ¿Quién es el personaje más nombrado del Telediario? Si
+              <strong>dios</strong> ha aparecido unas mil veces desde 2014,
+              <strong>Messi</strong> suma más de seis dioses (6.467) y
+              <strong>Trump</strong>, más de siete (7.603). Pero hay alguien que dobla al astro argentino y al endiosado presidente estadounidense.
               <mark>Mariano Rajoy</mark> ha sido mencionado 13.134 veces. Tiene cierta lógica, porque fue presidente durante casi todo el periodo que abarca Verba (de enero de 2014 a junio de 2018). Pero su peso como expresidente sigue siendo considerable.
             </p>
             <div class="chart-annotated" v-html="chart_tema04"></div>
@@ -145,24 +162,29 @@
             <p>
               A
               <strong>José María Aznar</strong> (503) y
-              <strong>Felipe González</strong> (469) se les hace casito cada tanto en el Telediario y ambos rondan las 500 apariciones en algo más de seis meses. <strong>Zapatero</strong>, más cercano en el tiempo (el registro empieza tres años después de su adiós), les supera, con 781.
+              <strong>Felipe González</strong> (469) se les hace casito cada tanto en el Telediario y ambos rondan las 500 apariciones en algo más de seis meses.
+              <strong>Zapatero</strong>, más cercano en el tiempo (el registro empieza tres años después de su adiós), les supera, con 781.
             </p>
-            <p><strong>Puigdemont</strong>, por su parte, aparece 4.436 veces, con tres hitos: el referendum y la posterior fuga en octubre de 2017, el pleno de investidura en enero de 2018 y la detención en Alemania en marzo de ese mismo año.</p>
-            <p>¿Y <strong>Pedro Sánchez</strong>? El actual Presidente del Gobierno empezó a asomarse por la televisión pública a mediados de 2015 y desde entonces lo ha hecho más de 9.000 veces, 3,794 desde que llegó a La Moncloa.</p>
+            <p>
+              <strong>Puigdemont</strong>, por su parte, aparece 4.436 veces, con tres hitos: el referendum y la posterior fuga en octubre de 2017, el pleno de investidura en enero de 2018 y la detención en Alemania en marzo de ese mismo año.
+            </p>
+            <p>
+              ¿Y
+              <strong>Pedro Sánchez</strong>? El actual Presidente del Gobierno empezó a asomarse por la televisión pública a mediados de 2015 y desde entonces lo ha hecho más de 9.000 veces, 3,794 desde que llegó a La Moncloa.
+            </p>
           </div>
           <div class="vignette-methodology">
             <h4 class="methodology-title" v-html="$t('vignettes.methodology')"></h4>
             <div>
               <div class="query-container">
                 <p class="methodology" v-html="$t('vignettes.query-subtitle')"></p>
-                  <p class="methodology-query">"rajoy"</p>&nbsp;
-                  <a
-                    href="https://verba.civio.es/?q=rajoy#verba-subtitle-dataviz"
-                    target="_blank"
-                  >(link)</a>
+                <p class="methodology-query">"rajoy"</p>&nbsp;
+                <a
+                  href="https://verba.civio.es/?q=rajoy#verba-subtitle-dataviz"
+                  target="_blank"
+                >(link)</a>
               </div>
             </div>
-   
           </div>
         </li>
 
@@ -171,7 +193,12 @@
           <h3 class="vignette-title">No había crisis climática hasta 2019</h3>
           <div class="vignette-copy">
             <p>
-              Cuando, a finales del 2019, Greta Thunberg dió un discurso en la Cumbre del Clima de Madrid, dejó claro su enfado y sentenció: "Mientras la <mark class="item2">crisis climática</mark> continúa siendo ignorada por quienes tienen que tomar las decisiones, hay personas muriendo a día de hoy". No sabemos qué ocurre con aquellos que tienen que decidir, pero lo que tenemos claro es que la <strong>crisis climática</strong> en los telediarios de RTVE no empezó a aparecer hasta 2019. Solo dos veces antes se había citado como tal: en 2016, por la ONG Acción contra el Hambre, y en la boca de Greta en 2018. De la propia <strong>Greta</strong> se ha hablado desde ese mismo momento, en concreto, en 75 ocasiones.
+              Cuando, a finales del 2019, Greta Thunberg dió un discurso en la Cumbre del Clima de Madrid, dejó claro su enfado y sentenció: "Mientras la
+              <mark
+                class="item2"
+              >crisis climática</mark> continúa siendo ignorada por quienes tienen que tomar las decisiones, hay personas muriendo a día de hoy". No sabemos qué ocurre con aquellos que tienen que decidir, pero lo que tenemos claro es que la
+              <strong>crisis climática</strong> en los telediarios de RTVE no empezó a aparecer hasta 2019. Solo dos veces antes se había citado como tal: en 2016, por la ONG Acción contra el Hambre, y en la boca de Greta en 2018. De la propia
+              <strong>Greta</strong> se ha hablado desde ese mismo momento, en concreto, en 75 ocasiones.
             </p>
             <div class="chart-annotated" v-html="chart_tema05"></div>
             <p>
@@ -375,7 +402,6 @@ strong {
   color: $color-neutral-1000;
 }
 
-
 .chart-annotated {
   margin: 1.5rem 0;
 }
@@ -391,7 +417,7 @@ strong {
   margin: 0 auto;
   margin-bottom: 2rem;
   max-width: 850px;
-  border: 1px double $color-neutral-1000;
+  // border: 1px double $color-neutral-1000;
 
   .vignette-title {
     color: $color-neutral-1000;

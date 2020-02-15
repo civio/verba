@@ -13,7 +13,8 @@
           <span
             v-html="$t('results.list.count', { total: results.length.toLocaleString(), query: query })"
           ></span>
-          (<a href="#" @click="onDownloadClick()">CSV</a>)
+          (
+          <a href="#" @click="onDownloadClick()">CSV</a>)
           &nbsp;&mdash;&nbsp;
           <span
             v-if="results.length > 50"
@@ -226,10 +227,12 @@ export default {
     margin-bottom: 2rem;
     background-color: transparent;
 
-    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    // border-top: 1px solid rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba($color-neutral-1000, 0.3);
   }
   .card-header {
     color: $color-neutral-1000;
+    background-color: rgba($color-neutral-1000, 0.1);
     font-size: 0.875rem;
     font-weight: 300;
     border-radius: 0;
@@ -253,8 +256,12 @@ export default {
     font-size: 0.75rem;
     font-weight: 300;
     line-height: 1rem;
-    opacity: 0.85;
+    opacity: 0.9;
     margin-right: 0.5rem;
+  }
+  .badge-secondary {
+    color: $color-neutral-1000;
+    background-color: rgba($color-neutral-1000, 0.15);
   }
   .badge-entitie {
     display: none;
@@ -289,7 +296,8 @@ export default {
 
     mark {
       font-weight: 600;
-      background-color: mix($color-highlight-1, white, 85%);
+      // background-color: mix($color-highlight-1, white, 85%);
+      background-color: $color-neutral-1000;
       padding-top: 0;
       padding-bottom: 0;
     }
