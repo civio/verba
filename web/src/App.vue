@@ -133,7 +133,7 @@ body {
 
 .app-container {
   font-family: 'El Messiri', sans-serif;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 ///////////
