@@ -17,6 +17,12 @@ export default new Vuex.Store({
   actions: {
     initializeSearchFromURL({ commit }) {
       commit('setQuery', this.state.route.query.q)
+      if (this.state.route.query.from && this.state.route.query.to) {
+        commit('setQueryDate', {
+          from: moment(this.state.route.query.from, 'YYYY-MM-DD'),
+          to: moment(this.state.route.query.to, 'YYYY-MM-DD')
+        })
+      }
       commit('setResultsPage', 0) // clear results page
       commit('search')
     },
@@ -24,8 +30,7 @@ export default new Vuex.Store({
       commit('setQuery', payload)
       commit('setResultsPage', 0) // clear results page
       commit('search')
-      // Store the query in the URL also
-      global.router.push({ query: { q: this.state.query } })
+      commit('setURLState') // Store the query in the URL also
     },
     setCurrentResult({ commit }, payload) {
       commit('setCurrentResult', payload)
@@ -34,6 +39,7 @@ export default new Vuex.Store({
       commit('setQueryDate', payload)
       commit('setResultsPage', 0) // clear results page
       if (state.query !== '') commit('search') // update search if query is defined
+      commit('setURLState') // Store the query in the URL also
     },
     setResultsPage({ commit }, payload) {
       commit('setResultsPage', payload)
@@ -54,10 +60,10 @@ export default new Vuex.Store({
         aggregations: 'week' // TODO: Activate aggregations only when needed (when query changes)
       }
       if (state.queryDate) {
-        const days = state.queryDate.to.diff(state.queryDate.from, "days")//agg by month (30 days)
+        const days = state.queryDate.to.diff(state.queryDate.from, 'days')
         params.date_from = moment(state.queryDate.from).format('YYYY-MM-DD')
         params.date_to = moment(state.queryDate.to).format('YYYY-MM-DD')
-        if(days <= 30){
+        if (days <= 30) {
           params.aggregations = 'day'
         }
       }
@@ -101,6 +107,16 @@ export default new Vuex.Store({
     },
     setResultsPage(state, payload) {
       state.resultsPage = payload
+    },
+    setURLState(state) {
+      let query = {
+        q: state.query
+      }
+      if (this.state.queryDate) {
+        query['from'] = moment(this.state.queryDate.from).format('YYYY-MM-DD')
+        query['to'] = moment(this.state.queryDate.to).format('YYYY-MM-DD')
+      }
+      global.router.push({ query: query })
     }
   }
 })
