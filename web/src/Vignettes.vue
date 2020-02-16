@@ -32,11 +32,11 @@
             <div class="query-container">
               <p class="methodology" v-html="$t('vignettes.query-subtitle')"></p>
               <div>
-                <p class="methodology-query">"ultraderecha" | "ultra derecha"</p>&nbsp;
                 <a
-                  href="https://verba.civio.es/?q=%22ultraderecha%22%20%7C%20%22ultra%20derecha%22#verba-subtitle-dataviz"
+                  href="/?q=ultraderecha | %22ultra derecha%22"
                   target="_blank"
-                >(link)</a>
+                  class="methodology-query"
+                >ultraderecha | "ultra derecha"</a>
               </div>
             </div>
             <p class="methodology-note"></p>
@@ -76,25 +76,25 @@
             <div class="query-container">
               <p class="methodology" v-html="$t('vignettes.query-subtitle')"></p>
               <div>
-                <p class="methodology-query">"corrupción" | "corrupcion"</p>&nbsp;
                 <a
-                  href="https://verba.civio.es/?q=corrupci%C3%B3n%20%7C%20corrupcion#verba-subtitle-dataviz"
+                  href="/?q=corrupción | corrupcion"
                   target="_blank"
-                >(link)</a>
+                  class="methodology-query"
+                >corrupción | corrupcion</a>
                 <br />
-                <p class="methodology-query">"gürtel" | "gurtel"</p>&nbsp;
                 <a
-                  href="https://verba.civio.es/?q=%22g%C3%BCrtel%22%20%7C%20%22gurtel%22#verba-subtitle-dataviz"
+                  href="/?q=gürtel | gurtel"
                   target="_blank"
-                >(link)</a>
+                  class="methodology-query"
+                >gürtel | gurtel</a>
                 &nbsp;
                 VS
                 &nbsp;
-                <p class="methodology-query">"los ere" | "caso ERE"</p>&nbsp;
                 <a
-                  href="https://verba.civio.es/?q=%22los%20ere%22%20%7C%20%22caso%20ERE%22#verba-subtitle-dataviz"
+                  href="/?q=%22los ere%22 | %22caso ERE%22"
                   target="_blank"
-                >(link)</a>
+                  class="methodology-query"
+                >"los ere" | "caso ERE"</a>
               </div>
             </div>
             <p class="methodology-note">
@@ -127,11 +127,11 @@
             <div>
               <div class="query-container">
                 <p class="methodology" v-html="$t('vignettes.query-subtitle')"></p>
-                <p class="methodology-query">"dieta"</p>&nbsp;
                 <a
-                  href="https://verba.civio.es/?q=%22dieta%22%20%7C%20%22copa%20de%20vino%22%20%7C%20%22pasta%20no%20engorda%22%20%7C%20%22leche%20cruda%22%20%7C%20%22aditivos%22#verba-subtitle-dataviz"
+                  href="/?q=dieta | %22copa de vino%22 | %22pasta no engorda%22 | %22leche cruda%22 | aditivos"
                   target="_blank"
-                >(link)</a>
+                  class="methodology-query"
+                >dieta | "copa de vino" | "pasta no engorda" | "leche cruda" | aditivos</a>
               </div>
             </div>
             <p class="methodology-note"></p>
@@ -170,11 +170,11 @@
             <div>
               <div class="query-container">
                 <p class="methodology" v-html="$t('vignettes.query-subtitle')"></p>
-                <p class="methodology-query">"rajoy"</p>&nbsp;
                 <a
-                  href="https://verba.civio.es/?q=rajoy#verba-subtitle-dataviz"
+                  href="/?q=Rajoy"
                   target="_blank"
-                >(link)</a>
+                  class="methodology-query"
+                >Rajoy</a>
               </div>
             </div>
           </div>
@@ -204,24 +204,21 @@
           </div>
           <div class="vignette-methodology">
             <h4 class="methodology-title" v-html="$t('vignettes.methodology')"></h4>
-            <div>
-              <div class="query-container">
-                <p class="methodology" v-html="$t('vignettes.query-subtitle')"></p>
-                <div>
-                  <p class="methodology-query">"cambio climático" | "cambio climatico"</p>&nbsp;
-                  <a
-                    href="https://verba.civio.es/?q=%22cambio%20clim%C3%A1tico%22%20%7C%20%22cambio%20climatico%22#verba-subtitle-dataviz"
-                    target="_blank"
-                  >(link)</a>&nbsp; VS
-                  <br />
-                  <p
-                    class="methodology-query"
-                  >"crisis climática" | "crisis climatica" | "emergencia climática" | "emergencia climatica"</p>&nbsp;
-                  <a
-                    href="https://verba.civio.es/?q=%22crisis%20clim%C3%A1tica%22%20%7C%20%22crisis%20climatica%22%20%7C%20%22emergencia%20clim%C3%A1tica%22%20%7C%20%22emergencia%20climatica%22#verba-subtitle-dataviz"
-                    target="_blank"
-                  >(link)</a>
-                </div>
+            <div class="query-container">
+              <p class="methodology" v-html="$t('vignettes.query-subtitle')"></p>
+              <div>
+                <a
+                  href="/?q=%22cambio climático%22 | %22cambio climatico%22"
+                  target="_blank"
+                  class="methodology-query"
+                >"cambio climático" | "cambio climatico"</a>
+                &nbsp; VS
+                <br />
+                <a
+                  href="/?q=%22crisis climática%22 | %22crisis climatica%22 | %22emergencia climática%22 | %22emergencia climatica%22"
+                  target="_blank"
+                  class="methodology-query"
+                >"crisis climática" | "crisis climatica" | "emergencia climática" | "emergencia climatica"</a>
               </div>
             </div>
             <p class="methodology-note"></p>
@@ -459,11 +456,12 @@ strong {
   }
   .methodology-query {
     display: inline-block;
-    font-size: 0.8rem;
-    background-color: $color-neutral-0;
-    padding: 0.2rem 0.7rem;
-    border: 1px solid $color-neutral-800;
+    font-size: 1rem;
+    padding: 0.1rem 0.5rem;
     margin-bottom: 0.5rem;
+    color: $color-neutral-0;
+    font-weight: 600;
+    background-color: mix($color-neutral-1000, white, 85%);
   }
   .methodology-note {
     font-size: 0.8rem;
