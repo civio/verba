@@ -314,7 +314,7 @@ body {
   font-size: 1rem;
   text-align: center;
 
-  a {
+  a:hover {
     text-decoration-line: underline;
   }
 }
