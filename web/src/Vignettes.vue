@@ -306,6 +306,30 @@ export default {
       chart_tema05: ''
     }
   },
+  updated: function() {
+    this.resizer()
+  },
+  mounted() {
+    axios.get('/verba-tema01-query01-ultraderecha.html').then(response => {
+      this.chart_tema01 = response.data
+    })
+    axios.get('/verba-tema02-query01-corrupcion.html').then(response => {
+      this.chart_tema02a = response.data
+    })
+    axios.get('/verba-tema02-query02-gurtel-vs-ere.html').then(response => {
+      this.chart_tema02b = response.data
+    })
+    axios.get('/verba-tema03-query01-dieta.html').then(response => {
+      this.chart_tema03 = response.data
+    })
+    axios.get('/verba-tema04-query01-rajoy.html').then(response => {
+      this.chart_tema04 = response.data
+    })
+    axios.get('/verba-tema05-query01-clima.html').then(response => {
+      this.chart_tema05 = response.data
+    })
+    window.addEventListener('resize', this.throttle(this.resizer, 200))
+  },
   methods: {
     // `resizer` and `throtthle` are taken from ai2html output
     resizer: function() {
@@ -370,30 +394,6 @@ export default {
         return result
       }
     }
-  },
-  updated: function() {
-    this.resizer()
-  },
-  mounted() {
-    axios.get('/verba-tema01-query01-ultraderecha.html').then(response => {
-      this.chart_tema01 = response.data
-    })
-    axios.get('/verba-tema02-query01-corrupcion.html').then(response => {
-      this.chart_tema02a = response.data
-    })
-    axios.get('/verba-tema02-query02-gurtel-vs-ere.html').then(response => {
-      this.chart_tema02b = response.data
-    })
-    axios.get('/verba-tema03-query01-dieta.html').then(response => {
-      this.chart_tema03 = response.data
-    })
-    axios.get('/verba-tema04-query01-rajoy.html').then(response => {
-      this.chart_tema04 = response.data
-    })
-    axios.get('/verba-tema05-query01-clima.html').then(response => {
-      this.chart_tema05 = response.data
-    })
-    window.addEventListener('resize', this.throttle(this.resizer, 200))
   }
 }
 </script>
