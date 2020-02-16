@@ -12,7 +12,7 @@ WORKDIR /api
 
 COPY . .
 
-RUN npm run build
+RUN npm run lint && npm run build
 
 RUN npm prune --production
 
