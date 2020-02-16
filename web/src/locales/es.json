@@ -13,7 +13,8 @@
     },
     "us": {
       "title": "<a style='color:black; text-decoration:underline;' href='https://civio.es/' target='_blank'>Civio</a>",
-      "body": "es una <span>organización independiente</span> y sin ánimo de lucro que, a través del periodismo y la tecnología, vigila a los poderes públicos, <span>investiga a fondo</span> su funcionamiento e informa a todos los ciudadanos y presiona para lograr una transparencia real y eficaz en las instituciones."
+      "body": "es una <span>organización independiente</span> y sin ánimo de lucro que, a través del periodismo y la tecnología, vigila a los poderes públicos, <span>investiga a fondo</span> su funcionamiento e informa a todos los ciudadanos y presiona para lograr una transparencia real y eficaz en las instituciones.",
+      "newsletter": "<a href='https://civio.es/suscribete-a-nuestro-boletin/'>Subscríbete a nuestro boletín</a> y te informaremos de nuestras investigaciones."
     }
   },
   "search": {
