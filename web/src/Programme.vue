@@ -1,17 +1,15 @@
 <template>
   <div>
     <div>
-      <div class="verba-program-transcription" v-if="content">
+      <div v-if="content" class="verba-program-transcription">
         <div class="verba-transcript-item">
           <h4>{{ content[0].programme.title }}</h4>
           <img :src="content[0].programme | imageURL" />
         </div>
         <div class="verba-transcript-copy">
-          <p
-            v-for="(item, key) in content"
-            :id="item.time_start"
-            :key="key"
-          >{{ item.time_start | formatTime }}: {{ item.content }}</p>
+          <p v-for="(item, key) in content" :id="item.time_start" :key="key">
+            {{ item.time_start | formatTime }}: {{ item.content }}
+          </p>
         </div>
       </div>
     </div>

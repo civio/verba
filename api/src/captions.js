@@ -131,21 +131,24 @@ export default class Captions {
     return this.parseResults(results, page)
   }
 
-  async fetchContext(
-    programme_id,
-    start_time,
-    range
-  ) {
+  async fetchContext(programme_id, start_time, range) {
     const query = {
       query: {
         bool: {
           filter: [
             { term: { programme_id: programme_id } },
-            { range: { start: { gte: parseInt(start_time)-range/2, lte: parseInt(start_time)+range/2 }} }
+            {
+              range: {
+                start: {
+                  gte: parseInt(start_time) - range / 2,
+                  lte: parseInt(start_time) + range / 2
+                }
+              }
+            }
           ]
         }
       },
-      sort: { start: { order: 'asc' }}
+      sort: { start: { order: 'asc' } }
     }
     const results = await this.client.search({
       index: 'captions',
@@ -161,11 +164,20 @@ export default class Captions {
         programmes: {
           composite: {
             sources: [
-              { date: { date_histogram: { field: 'programme_date', calendar_interval: '1d', format: 'yyyy-MM-dd', order: 'desc' } } },
-              { id: { terms: {field: 'programme_id.keyword' } } },
-              { title: { terms: {field: 'programme_title.keyword' } } }
+              {
+                date: {
+                  date_histogram: {
+                    field: 'programme_date',
+                    calendar_interval: '1d',
+                    format: 'yyyy-MM-dd',
+                    order: 'desc'
+                  }
+                }
+              },
+              { id: { terms: { field: 'programme_id.keyword' } } },
+              { title: { terms: { field: 'programme_title.keyword' } } }
             ],
-            size : 10000
+            size: 10000
           }
         }
       }
@@ -174,22 +186,20 @@ export default class Captions {
       index: 'captions',
       body: query
     })
-    return results.aggregations.programmes.buckets.map(d => { return d.key })
+    return results.aggregations.programmes.buckets.map(d => {
+      return d.key
+    })
   }
 
-  async fetchProgrammeTranscription(
-    programme_id
-  ) {
+  async fetchProgrammeTranscription(programme_id) {
     const query = {
       query: {
         bool: {
-          filter: [
-            { term: { programme_id: programme_id } }
-          ]
+          filter: [{ term: { programme_id: programme_id } }]
         }
       },
       size: 10000,
-      sort: { start: { order: 'asc' }}
+      sort: { start: { order: 'asc' } }
     }
     const results = await this.client.search({
       index: 'captions',

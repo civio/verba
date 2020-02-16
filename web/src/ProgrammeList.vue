@@ -3,18 +3,26 @@
     <div class="verba-programmes">
       <div id="menu-filter">
         <ul class="years-list">
-          <li v-for="year in years" v-bind:class="{'is-clicked':year.num === currentYear}">
-            <a v-on:click="seeYear(year.num)" v-bind:data-value="year.num">{{year.num}}</a>
+          <li
+            v-for="year in years"
+            :key="year"
+            :class="{ 'is-clicked': year.num === currentYear }"
+          >
+            <a :data-value="year.num" @click="seeYear(year.num)">{{
+              year.num
+            }}</a>
           </li>
         </ul>
-        <ul class="months-list" v-if="currentYear != ''">
+        <ul v-if="currentYear != ''" class="months-list">
           <li
-            v-for="month in months"
-            v-bind:class="{'is-clicked':month.num ===  currentMonth}"
-            v-bind:data-ts="month.ts"
-            v-if="today.getTime() >= month.ts"
+            v-for="month in elapsedMonths"
+            :key="month"
+            :class="{ 'is-clicked': month.num === currentMonth }"
+            :data-ts="month.ts"
           >
-            <a v-on:click="seeMonth(month.num)" v-bind:data-value="month.num">{{month.name}}</a>
+            <a :data-value="month.num" @click="seeMonth(month.num)">{{
+              month.name
+            }}</a>
           </li>
         </ul>
       </div>
@@ -37,10 +45,17 @@
           </router-link>
         </li>
         <button
-          v-on:click="seeMore"
-          class="seeMoreBtn"
           v-if="subList < filterProgramme"
-        >Ver más ({{ (filterProgramme.length - subList.length).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") }} resultados)</button>
+          class="seeMoreBtn"
+          @click="seeMore"
+        >
+          Ver más ({{
+            (filterProgramme.length - subList.length)
+              .toString()
+              .replace(/\B(?=(\d{3})+(?!\d))/g, '.')
+          }}
+          resultados)
+        </button>
       </ul>
     </div>
   </main>
@@ -48,6 +63,7 @@
 
 <script>
 import Vue from 'vue'
+import { months } from 'moment'
 
 export default {
   data() {
@@ -86,6 +102,13 @@ export default {
       limitDate: undefined
     }
   },
+
+  computed: {
+    elapsedMonths() {
+      return months.filter(month => this.today.getTime() >= month.ts)
+    }
+  },
+
   mounted() {
     Vue.verbaAPI('fetchProgrammeList', null, response => {
       this.inc = this.limit
@@ -124,7 +147,7 @@ export default {
       )
     },
 
-    get_year(index) {
+    get_year() {
       return this.programmeList.filter(
         d => this.currentYear === d.date.split('-')[0]
       )

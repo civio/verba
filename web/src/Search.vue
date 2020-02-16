@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-v-html -->
 <template>
   <main>
     <section class="verba-search-form">
@@ -14,7 +15,7 @@
         </div>
       </div>
 
-      <div class="verba-search-group" id="search-box">
+      <div id="search-box" class="verba-search-group">
         <SearchBox />
         <SearchFilters />
       </div>

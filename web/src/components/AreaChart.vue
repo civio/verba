@@ -5,12 +5,18 @@
       <g ref="axisXMonths" class="axis x-months" />
       <g ref="axisXYears" class="axis x-years" />
       <g ref="axisY" class="axis y" />
-      <g ref="tooltipArea" :style="{ transform: `translate(${margin.left}px, ${margin.top}px)` }" />
-      <g ref="bars" :style="{ transform: `translate(${margin.left}px, ${margin.top}px)` }" />
+      <g
+        ref="tooltipArea"
+        :style="{ transform: `translate(${margin.left}px, ${margin.top}px)` }"
+      />
+      <g
+        ref="bars"
+        :style="{ transform: `translate(${margin.left}px, ${margin.top}px)` }"
+      />
     </svg>
     <div id="tooltip" class="displayNone">
       <div>
-        <span v-if="period=='weeks'">Semana del </span>
+        <span v-if="period == 'weeks'">Semana del </span>
         <span id="tooltip-date"></span>
       </div>
       <div id="tooltip-mentions"></div>
@@ -218,7 +224,7 @@ export default {
         .join('rect')
         .attr('x', d => scaleX(d.x))
         .attr('y', d => {
-          return scaleY(d.y/2)
+          return scaleY(d.y / 2)
         })
         .attr('transform', `translate(0, ${-this.height / 2})`)
         .attr('height', d => {
@@ -234,24 +240,24 @@ export default {
           function getTooltipPos(tooltip) {
             let left
             const mouseMoveLeft = d3.mouse(
-              d3.select('.chart-container')
-                .select('svg').node()
+              d3
+                .select('.chart-container')
+                .select('svg')
+                .node()
             )
             const mouseMoveTop = d3.mouse(el)
-            const top = mouseMoveTop[1] - d3.select('#tooltip').node().offsetHeight - 30
-            if (mouseMoveLeft[0] >= that.width/2) {
+            const top =
+              mouseMoveTop[1] - d3.select('#tooltip').node().offsetHeight - 30
+            if (mouseMoveLeft[0] >= that.width / 2) {
               left = mouseMoveLeft[0] - d3.select('#tooltip').node().clientWidth
             } else {
               left = mouseMoveLeft[0] + 30
             }
-            tooltip
-              .style('left', left+'px')
-              .style('top', top+'px')  
+            tooltip.style('left', left + 'px').style('top', top + 'px')
           }
 
           // focus rect
-          d3.select(el)
-            .classed('focus', true)
+          d3.select(el).classed('focus', true)
 
           //toolip text
           d3.select('#tooltip')
@@ -261,16 +267,18 @@ export default {
                 day: d.x.getDate(),
                 month: formatMonthFull(d.x),
                 year: d.x.getFullYear()
-              }
-            ))
+              })
+            )
 
           d3.select('#tooltip')
             .select('#tooltip-mentions')
-            .html(that.$tc('tooltip.mentions', d.y, {
-              mentions: d.y
-            }))
+            .html(
+              that.$tc('tooltip.mentions', d.y, {
+                mentions: d.y
+              })
+            )
 
-           d3.select('#tooltip')
+          d3.select('#tooltip')
             .classed('displayNone', false)
             .call(getTooltipPos)
         })
@@ -278,30 +286,32 @@ export default {
         .on('mouseout', function() {
           // displayNone on tooltip after 750 ms
           function stopTimerHover() {
-            d3.select('#tooltip')
-              .classed('displayNone', true)
+            d3.select('#tooltip').classed('displayNone', true)
             clearInterval(timerHover)
           }
           clearInterval(timerHover)
           timerHover = setInterval(stopTimerHover, 500)
-          d3.select(this)
-            .classed('focus', false)
+          d3.select(this).classed('focus', false)
         })
 
       // render axis
       d3.select(this.$refs.axisXDays)
         .attr(
           'transform',
-          `translate(${this.margin.left+scaleBand.bandwidth()/2}, ${this.height - this.margin.bottom})`
+          `translate(${this.margin.left + scaleBand.bandwidth() / 2}, ${this
+            .height - this.margin.bottom})`
         )
-        .classed('displayNone', this.period=='weeks')
+        .classed('displayNone', this.period == 'weeks')
         .call(axisXDays)
         .call(this.formatAxisXDays)
 
       d3.select(this.$refs.axisXMonths)
         .attr(
           'transform',
-          `translate(${this.margin.left+scaleBand.bandwidth()/2}, ${this.height - this.margin.bottom+15})`
+          `translate(${this.margin.left + scaleBand.bandwidth() / 2}, ${this
+            .height -
+            this.margin.bottom +
+            15})`
         )
         .call(axisXMonths)
         .call(this.formatAxisXMonths)
@@ -309,7 +319,8 @@ export default {
       d3.select(this.$refs.axisXYears)
         .attr(
           'transform',
-          `translate(${this.margin.left+scaleBand.bandwidth()/2}, ${this.height -
+          `translate(${this.margin.left + scaleBand.bandwidth() / 2}, ${this
+            .height -
             this.margin.bottom +
             30})`
         )
@@ -372,7 +383,8 @@ export default {
       shape-rendering: crispEdges;
     }
 
-    &.x-months, &.x-days {
+    &.x-months,
+    &.x-days {
       .domain {
         display: none;
       }

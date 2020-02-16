@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-v-html -->
 <template>
   <main>
     <div class="verba-about">
@@ -77,7 +78,7 @@
   }
 
   a {
-    text-decoration: underline
+    text-decoration: underline;
   }
 }
 

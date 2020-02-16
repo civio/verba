@@ -1,19 +1,27 @@
 <template>
   <nav v-show="size > 1">
     <ul class="pagination justify-content-center">
-      <li :class="{ disabled: current === 0, 'page-item': true }" @click="onClickPrev">
+      <li
+        :class="{ disabled: current === 0, 'page-item': true }"
+        @click="onClickPrev"
+      >
         <a class="page-link" href="#" :aria-label="$t('pagination.previous')">
           <span aria-hidden="true">&laquo;</span>
         </a>
       </li>
-      <li v-for="i in pages" :key="i" :class="{ active: i === current + 1, 'page-item': true }">
+      <li
+        v-for="i in pages"
+        :key="i"
+        :class="{ active: i === current + 1, 'page-item': true }"
+      >
         <a class="page-link" :data-index="i - 1" @click="onClickPage">
-          {{
-          i
-          }}
+          {{ i }}
         </a>
       </li>
-      <li :class="{ disabled: current === size - 1, 'page-item': true }" @click="onClickNext">
+      <li
+        :class="{ disabled: current === size - 1, 'page-item': true }"
+        @click="onClickNext"
+      >
         <a class="page-link" href="#" :aria-label="$t('pagination.previous')">
           <span aria-hidden="true">&raquo;</span>
         </a>
