@@ -109,25 +109,17 @@
           <h3 class="vignette-title">El rigor científico, a dieta</h3>
           <div class="vignette-copy">
             <p>
-              Televisión Española mencionó en sus informativos 380 veces la palabra
-              <mark>dieta</mark> entre enero de 2014 y enero de 2020. Pero los informativos, en ocasiones, también han puesto a
-              <strong>dieta</strong> el rigor científico, sustituyéndolo por un cóctel de desinformación calórica y desequilibrada, que puede poner en riesgo la salud.
+              Televisión Española mencionó en sus informativos 380 veces la palabra <mark>dieta</mark> entre enero de 2014 y enero de 2020. Pero los informativos, en ocasiones, también han puesto a <strong>dieta</strong> el rigor científico, sustituyéndolo por un cóctel de desinformación calórica y desequilibrada, que puede poner en riesgo la salud.
             </p>
             <p>
-              Uno de los mantras citados por RTVE es que tomar una o dos
-              <strong>copas de vino</strong> al día es beneficioso. Pero nada más lejos de la realidad: el consumo moderado y saludable de alcohol es un gran mito, que no previene los problemas cardiovasculares y que, de hecho, puede aumentar el riesgo de enfermedades como el cáncer. Este no es el único gazapo de Televisión Española en temas relacionados con la alimentación. La cadena pública también se hizo eco de un trabajo que afirmaba que la
-              <strong>pasta no engorda.</strong> ¿El problema? El estudio estaba patrocinado por Barilla, un detalle que los informativos olvidaron mencionar en su cobertura.
+              Uno de los mantras <a href="http://www.rtve.es/alacarta/videos/telediario/telediario-15-horas-15-10-15/3324958/?t=00h35m38s" target="_blank">citados por RTVE</a> es que tomar una o dos <strong>copas de vino</strong> al día es beneficioso. Pero nada más lejos de la realidad: el <a href="https://ascopubs.org/doi/full/10.1200/JCO.2017.76.1155" target="_blank">consumo moderado y saludable</a> de alcohol es un gran mito, que no previene los problemas cardiovasculares y que, de hecho, puede aumentar el riesgo de enfermedades como el cáncer. Este no es el único gazapo de Televisión Española en temas relacionados con la alimentación. La cadena pública también se hizo eco de un trabajo que afirmaba que la <strong><a href="http://www.rtve.es/alacarta/videos/telediario/telediario-21-horas-06-07-16/3655050/?t=00h39m17s" target="_blank">pasta no engorda</a></strong>. ¿El problema? El estudio estaba patrocinado por Barilla, un detalle que los informativos olvidaron mencionar en su cobertura.
             </p>
             <p>
-              Durante los últimos años, TVE ha difundido informaciones sobre alimentos que pueden inducir a error a los consumidores. Uno de sus telediarios, hablando de la llamada
-              <strong>dieta</strong> del delfín, llegó a afirmar que "beber agua de mar es una tendencia creciente en el campo de las supuestas
-              <strong>dietas</strong> saludables". Pese a que la televisión pública menciona la palabra "charlatanería", habla del agua de mar como un "completo nutriente con propiedades". Verba también muestra la cobertura negativa de TVE sobre los
-              <strong>aditivos</strong> en los alimentos, pese a tratarse de sustancias seguras que ayudan a mejorar el aspecto o textura de los mismos y a conservarlos mejor.
+              Durante los últimos años, TVE ha difundido informaciones sobre alimentos que pueden inducir a error a los consumidores. <a href="http://www.rtve.es/alacarta/videos/telediario/telediario-15-horas-03-03-15/3024390/?t=00h41m37s" target="_blank">Uno de sus telediarios</a>, hablando de la llamada <strong>dieta del delfín</strong>, llegó a afirmar que "beber agua de mar es una tendencia creciente en el campo de las supuestas <strong>dietas</strong> saludables". Pese a que la televisión pública menciona la palabra "charlatanería", habla del agua de mar como un "completo nutriente con propiedades". Verba también muestra la cobertura negativa de TVE sobre los <strong>aditivos</strong> en los alimentos, pese a tratarse de <a href="http://www.aecosan.msssi.gob.es/AECOSAN/web/seguridad_alimentaria/subdetalle/aditivos_alimentarios.htm" target="_blank">sustancias seguras</a> que ayudan a mejorar el aspecto o textura de los mismos y a conservarlos mejor.
             </p>
             <div class="chart-annotated" v-html="chart_tema03"></div>
             <p>
-              Al cubrir la información sobre peligrosas modas, como la de la
-              <strong>leche cruda,</strong> los informativos de Televisión Española tampoco han destacado el riesgo que supone el consumo de esta bebida. Del total de 11 resultados obtenidos, varios apuntan hacia la producción de quesos utilizando este tipo de leche sin pasteurizar, y otros hacia la polémica normativa aprobada en Cataluña hace casi dos años. Del riesgo que produce su consumo, como la intoxicación por peligrosas bacterias como Listeria, Salmonella o Escherichia coli, ni rastro.
+              Al cubrir la información sobre peligrosas modas, como la de la <strong>leche cruda,</strong> los informativos de Televisión Española tampoco han destacado el riesgo que supone el consumo de esta bebida. Del total de 11 resultados obtenidos, varios apuntan hacia la producción de quesos utilizando este tipo de leche sin pasteurizar, y otros hacia la polémica normativa aprobada en Cataluña hace casi dos años. Del <a href="https://www.cdc.gov/spanish/especialescdc/lechecruda/index.html" target="_blank">riesgo</a> que produce su consumo, como la intoxicación por peligrosas bacterias como <i>Listeria</i>, <i>Salmonella</i> o <i>Escherichia coli</i>, ni rastro.
             </p>
           </div>
           <div class="vignette-methodology">
@@ -424,6 +416,10 @@ strong {
     margin-bottom: 1rem;
     text-align: center;
     margin-bottom: 2rem;
+  }
+
+  a {
+    text-decoration: underline;
   }
 
   // Tablets
