@@ -29,7 +29,6 @@ app.get('/search', cors(), async (request, response) => {
       request.query.size,
       request.query.page
     )
-    console.log(request.query)
     response.json(results)
   } else {
     response.json({ error: 'No query defined' })
