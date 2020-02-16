@@ -116,16 +116,13 @@ export default {
         : []
     },
     getPeriod() {
-      if (this.queryDate !== null) {
-        const days = this.queryDate.to.diff(this.queryDate.from, 'days') // agg by month (30 days)
-        if (days <= 30) {
-          return true
-        } else {
-          return false
-        }
-      } else {
-        return false
-      }
+      // Aggregate by weeks by default
+      if (this.queryDate === null)
+        return 'weeks'
+
+      // When a date range is defined, aggregate by days if range is less than a month
+      const days = this.queryDate.to.diff(this.queryDate.from, 'days')
+      return (days <= 30) ? 'days' : 'weeks'
     },
     resultsByProgramme() {
       // Group results array by programme.id **keeping the existing order**.

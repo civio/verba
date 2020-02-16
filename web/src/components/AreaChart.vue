@@ -10,7 +10,7 @@
     </svg>
     <div id="tooltip" class="displayNone">
       <div>
-        <span v-if="!period">Semana del </span>
+        <span v-if="period=='weeks'">Semana del </span>
         <span id="tooltip-date"></span>
       </div>
       <div id="tooltip-mentions"></div>
@@ -28,7 +28,10 @@ export default {
       type: Array,
       default: () => []
     },
-    period: false,
+    period: {
+      type: String,
+      default: ''
+    },
     margin: {
       type: Object,
       default: () => ({
@@ -291,7 +294,7 @@ export default {
           'transform',
           `translate(${this.margin.left+scaleBand.bandwidth()/2}, ${this.height - this.margin.bottom})`
         )
-        .classed('displayNone', !this.period)
+        .classed('displayNone', this.period=='weeks')
         .call(axisXDays)
         .call(this.formatAxisXDays)
 
