@@ -82,13 +82,16 @@
 
       <footer class="verba-footer">
         <small>
-          <strong>CIVIO 2020</strong> | Licencia
-          <a
+          <strong><a href="https://civio.es">CIVIO</a> 2020</strong> |
+          Licencia <a
             href="https://creativecommons.org/licenses/by-sa/3.0/deed.es"
             title="Licencia Creative Commons Atribución - Compartir Igual 3.0"
             target="_blank"
             rel="noopener noreferrer"
-          >CC BY-SA 3.0</a>
+          >CC BY-SA 3.0</a> |
+          <a href="https://civio.es/aviso-legal/">Aviso legal</a> |
+          <a href="https://civio.es/politica-de-privacidad/">Política de privacidad</a> |
+          <a href="https://civio.es/politica-de-cookies/">Política de cookies</a>
         </small>
       </footer>
     </div>
