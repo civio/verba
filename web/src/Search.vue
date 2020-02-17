@@ -20,7 +20,7 @@
                 <h3 class="vignette-02">Gürtel y los ERE, casi empatados</h3>
               </a>
               <a href="/vignettes#vignette03">
-                <h2 class="vignette-03 verba-subtitle">El rigor científico, a dieta</h2>
+                <h2 class="vignette-03">El rigor científico, a dieta</h2>
               </a>
             </div>
           </div>
@@ -228,6 +228,7 @@ export default {
 }
 
 // Vignettes slideshow
+// Adapting this solution https://codepen.io/nucliweb/pen/ymedj
 .verba-vignettes-intro {
   margin-bottom: 3rem;
   text-align: center;
@@ -241,7 +242,8 @@ export default {
   background-color: rgba($color-neutral-1000, 0.75);
   width: 100%;
   height: 2rem;
-  padding-top: 0.3rem;
+  // height: auto;
+  padding-top: 0.4rem;
 }
 
 .vignette-01,
@@ -253,8 +255,9 @@ export default {
   width: 100%;
 
   color: $color-neutral-0;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   text-transform: uppercase;
+  white-space: nowrap;
 
   animation-duration: 10s;
   animation-timing-function: ease-in-out;
