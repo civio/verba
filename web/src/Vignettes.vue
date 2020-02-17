@@ -338,13 +338,10 @@
               <div class="query-container">
                 <p class="methodology" v-html="$t('vignettes.query-subtitle')"></p>
                 <a
-                  href="/?q=dieta | %22copa de vino%22 | %22pasta no engorda%22 | %22leche cruda%22 | aditivos"
+                  href="/?q=dieta&from=2014-01-01&to=2020-01-31#search-box"
                   target="_blank"
                   class="methodology-query"
-                >
-                  dieta | "copa de vino" | "pasta no engorda" | "leche cruda" |
-                  aditivos
-                </a>
+                >dieta</a>
               </div>
             </div>
             <p class="methodology-note"></p>
@@ -614,6 +611,8 @@ export default {
       })
       var myVignette = document.getElementById(vignette)
       myVignette.classList.add('visible')
+
+      this.resizer()
     },
     // `resizer` and `throtthle` are taken from ai2html output
     resizer: function() {
@@ -767,7 +766,7 @@ strong {
 
   // Tablets
   @media all and (min-width: 768px) {
-    padding: 5rem 3rem 1rem 3rem;
+    // padding: 5rem 3rem 1rem 3rem;
     text-align: left;
   }
 
