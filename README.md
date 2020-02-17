@@ -1,22 +1,6 @@
 # verba
 
-## Running locally
-
-Project setup:
-
-```
-npm install
-```
-
-Configure connection to Elastic backend making a copy of `/api/.env.example` into `/api.env` and modifying it accordingly. Same with `/web/.env.example`.
-
-Start server (both API and web):
-
-```
-npm run start
-```
-
-## ElasticSearch
+## ElasticSearch/Kibana
 
 Estamos usando Elastic 7. Para instalarlo en OS X puedes usar `brew`, como [explican aquí](https://www.elastic.co/guide/en/elastic-stack-get-started/7.4/get-started-elastic-stack.html#install-elasticsearch):
 
@@ -31,6 +15,22 @@ Y lo mismo con Kibana:
 ```
 brew install elastic/tap/kibana-full
 kibana
+```
+
+## Corriendo en local
+
+Instalamos dependencias de Node:
+
+```
+npm install
+```
+
+Configuramos la conexión al back-end de Elastic haciendo una copia de `/api/.env.example` en `/api.env` y modificándolo si es necesario. Lo mismo con `/web/.env.example`.
+
+Arrancamos la aplicación (tanto la API como el front-end):
+
+```
+npm run start
 ```
 
 ## Despliegue en producción (Civio)
