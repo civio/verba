@@ -236,13 +236,13 @@
                 target="_blank"
               >citados por RTVE</a>
               es que tomar una o dos
-              <mark>
+              <strong>
                 <a
                   href="/?from=2014-01-01&to=2020-01-31&q=%22copas de vino%22 beneficioso"
                   target="_blank"
                   class="methodology-query"
                 >copas de vino</a>
-              </mark>
+              </strong>
               al día es beneficioso. Pero nada más lejos de la realidad: el
               <a
                 href="https://ascopubs.org/doi/full/10.1200/JCO.2017.76.1155"
@@ -258,13 +258,13 @@
                 target="_blank"
               >se hizo eco</a>
               de un trabajo que afirmaba que la
-              <mark>
+              <strong>
                 <a
                   href="/?from=2014-01-01&to=2020-01-31&q=%22pasta no engorda%22"
                   target="_blank"
                   class="methodology-query"
                 >pasta no engorda</a>
-              </mark>. ¿El problema? El estudio estaba patrocinado por Barilla, un
+              </strong>. ¿El problema? El estudio estaba patrocinado por Barilla, un
               detalle que los informativos olvidaron mencionar en su cobertura.
             </p>
             <p>
@@ -274,25 +274,25 @@
                 href="http://www.rtve.es/alacarta/videos/telediario/telediario-15-horas-03-03-15/3024390/?t=00h41m37s"
                 target="_blank"
               >Uno de sus telediarios</a>, hablando de la llamada
-              <mark>
+              <strong>
                 <a
                   href="/?from=2014-01-01&to=2020-01-31&q=%22dieta del delfín%22"
                   target="_blank"
                   class="methodology-query"
                 >dieta del delfín</a>
-              </mark>, llegó a afirmar que "beber agua de mar es una tendencia
+              </strong>, llegó a afirmar que "beber agua de mar es una tendencia
               creciente en el campo de las supuestas
               <strong>dietas</strong> saludables". Pese a que la televisión
               pública menciona la palabra "charlatanería", habla del agua de mar
               como un "completo nutriente con propiedades". Verba también
               muestra la cobertura negativa de TVE sobre los
-              <mark>
+              <strong>
                 <a
                   href="/?from=2014-01-01&to=2020-01-31&q=aditivos"
                   target="_blank"
                   class="methodology-query"
                 >aditivos</a>
-              </mark>
+              </strong>
               en los alimentos, pese a tratarse de
               <a
                 href="http://www.aecosan.msssi.gob.es/AECOSAN/web/seguridad_alimentaria/subdetalle/aditivos_alimentarios.htm"
@@ -304,13 +304,13 @@
             <div class="chart-annotated" v-html="chart_tema03"></div>
             <p>
               Al cubrir la información sobre peligrosas modas, como la de la
-              <mark>
+              <strong>
                 <a
                   href="/?from=2014-01-01&to=2020-01-31&q=%22leche cruda%22"
                   target="_blank"
                   class="methodology-query"
                 >leche cruda</a>
-              </mark>, los informativos de Televisión Española tampoco han destacado
+              </strong>, los informativos de Televisión Española tampoco han destacado
               el riesgo que supone el consumo de esta bebida. Del total de 11
               resultados obtenidos, varios apuntan hacia la producción de quesos
               utilizando este tipo de leche sin pasteurizar, y otros hacia la
@@ -351,29 +351,29 @@
           <div class="vignette-copy">
             <p>
               ¿Quién es el personaje más nombrado del Telediario? Si
-              <mark>
+              <strong>
                 <a
-                  href="/?from=2014-01-01&to=2020-01-31&q=Dios"
+                  href="/?from=2014-01-01&to=2020-01-31&q=dios"
                   target="_blank"
                   class="methodology-query"
-                >Dios</a>
-              </mark>
+                >dios</a>
+              </strong>
               ha aparecido unas mil veces desde 2014,
-              <mark>
+              <strong>
                 <a
                   href="/?from=2014-01-01&to=2020-01-31&q=Messi"
                   target="_blank"
                   class="methodology-query"
                 >Messi</a>
-              </mark>
+              </strong>
               suma más de seis dioses (6.442) y
-              <mark>
+              <strong>
                 <a
                   href="/?from=2014-01-01&to=2020-01-31&q=Trump"
                   target="_blank"
                   class="methodology-query"
                 >Trump</a>
-              </mark>, más de siete (7.607). Pero hay alguien que dobla al astro
+              </strong>, más de siete (7.607). Pero hay alguien que dobla al astro
               argentino y al endiosado presidente estadounidense.
               <mark>
                 <a
@@ -407,53 +407,53 @@
             </p>
             <p>
               A
-              <mark>
+              <strong>
                 <a
                   href="/?from=2014-01-01&to=2020-01-31&q=Aznar"
                   target="_blank"
                   class="methodology-query"
                 >José María Aznar</a>
-              </mark>
+              </strong>
               (506) y
-              <mark>
+              <strong>
                 <a
                   href="/?from=2014-01-01&to=2020-01-31&q=%22Felipe González%22|%22Felipe Gonzalez%22"
                   target="_blank"
                   class="methodology-query"
                 >Felipe González</a>
-              </mark>
+              </strong>
               (469) se les hace caso cada tanto en el Telediario y ambos rondan
               las 500 apariciones en algo más de seis meses.
-              <mark>
+              <strong>
                 <a
                   href="/?from=2014-01-01&to=2020-01-31&q=Zapatero"
                   target="_blank"
                   class="methodology-query"
                 >Zapatero</a>
-              </mark>, más cercano en el tiempo (nuestro registro empieza tres años
+              </strong>, más cercano en el tiempo (nuestro registro empieza tres años
               después de su adiós), les supera, con 781.
             </p>
             <p>
-              <mark>
+              <strong>
                 <a
                   href="/?from=2014-01-01&to=2020-01-31&q=Puigdemont"
                   target="_blank"
                   class="methodology-query"
                 >Puigdemont</a>
-              </mark>, por su parte, aparece 4.436 veces, con tres hitos: el
+              </strong>, por su parte, aparece 4.436 veces, con tres hitos: el
               referendum y la posterior fuga en octubre de 2017, el pleno de
               investidura en enero de 2018 y la detención en Alemania en marzo
               de ese mismo año.
             </p>
             <p>
               ¿Y
-              <mark>
+              <strong>
                 <a
                   href="/?from=2014-01-01&to=2020-01-31&q=%22Pedro Sánchez%22|%22Pedro Sanchez%22"
                   target="_blank"
                   class="methodology-query"
                 >Pedro Sánchez</a>
-              </mark>? El actual Presidente del Gobierno empezó a asomarse por la
+              </strong>? El actual Presidente del Gobierno empezó a asomarse por la
               televisión pública a mediados de 2015 y desde entonces lo ha hecho
               más de 9.000 veces, 3,794 desde que llegó a La Moncloa.
             </p>
@@ -494,7 +494,13 @@
               telediarios de RTVE no empezó a aparecer hasta 2019. Solo dos
               veces antes se había citado como tal: en 2016, por la ONG Acción
               contra el Hambre, y en la boca de Greta en 2018. De la propia
-              <strong>Greta</strong> se ha hablado desde ese mismo momento, en
+              <strong>
+                <a
+                  href="/?from=2014-01-01&to=2020-01-31&q=Greta%20Thunberg#search-box"
+                  target="_blank"
+                  class="methodology-query"
+                >Greta</a>
+              </strong> se ha hablado desde ese mismo momento, en
               concreto, en 75 ocasiones.
             </p>
             <div class="chart-annotated" v-html="chart_tema05"></div>
