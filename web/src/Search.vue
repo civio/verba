@@ -257,6 +257,9 @@ export default {
   color: $color-neutral-0;
   font-size: 1.1rem;
   text-transform: uppercase;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
   white-space: nowrap;
 
   animation-duration: 10s;
