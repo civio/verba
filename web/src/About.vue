@@ -56,7 +56,7 @@
   margin-right: 0.8rem;
   margin-left: 2rem;
 
-  margin-top: 6rem;
+  margin-top: 3rem;
   text-align: center;
 
   p > span {
@@ -74,7 +74,7 @@
 
   // PC
   @media all and (min-width: 1024px) {
-    margin-left: 5rem;
+    margin-left: 1.3rem;
   }
 
   a {
