@@ -71,7 +71,7 @@ export default {
 <style scoped lang="scss">
 @import '../src/scss/_variables.scss';
 .verba-search-form {
-  margin-bottom: 2rem;
+  // margin-bottom: 2rem;
 
   // Tablets
   @media all and (min-width: 768px) {
@@ -127,7 +127,7 @@ export default {
   align-items: center;
   justify-content: center;
 
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   text-align: center;
   color: $color-neutral-1000;
 
@@ -190,5 +190,11 @@ export default {
   // PC
   @media all and (min-width: 1024px) {
   }
+}
+
+#search-box {
+  position: relative;
+  top: -60px;
+  padding-top: 60px;
 }
 </style>
