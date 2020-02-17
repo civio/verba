@@ -19,8 +19,7 @@
               })
             "
           ></span>
-          (
-          <a href="#" @click="onDownloadClick()">CSV</a>)
+          (<a href="#" @click="onDownloadClick()">CSV</a>)
           <span v-if="results.length > 50" class="text-secondary"
             >&nbsp;&mdash;&nbsp;
             {{
