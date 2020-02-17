@@ -6,31 +6,31 @@
       <ul class="vignettes-titles">
         <li @click="onClickShowVignette('vignette01')">
           <a href="#vignette01">
-            <img class="vignette-img" src="./images/ficha01-ultraderecha.png" alt />
+            <img id="vignette01-img" class="vignette-img" src="./images/ficha01-ultraderecha.png" alt />
             <h3>La ultraderecha son los otros</h3>
           </a>
         </li>
         <li @click="onClickShowVignette('vignette02')">
           <a href="#vignette02">
-            <img class="vignette-img" src="./images/ficha02-corrupcion.png" alt />
+            <img id="vignette02-img" class="vignette-img" src="./images/ficha02-corrupcion.png" alt />
             <h3>Gürtel y los ERE, casi empatados</h3>
           </a>
         </li>
         <li @click="onClickShowVignette('vignette03')">
           <a href="#vignette03">
-            <img class="vignette-img" src="./images/ficha03-dieta.png" alt />
+            <img id="vignette03-img" class="vignette-img" src="./images/ficha03-dieta.png" alt />
             <h3>El rigor científico, a dieta</h3>
           </a>
         </li>
         <li @click="onClickShowVignette('vignette04')">
           <a href="#vignette04">
-            <img class="vignette-img" src="./images/ficha04-mariano.png" alt />
+            <img id="vignette04-img" class="vignette-img" src="./images/ficha04-mariano.png" alt />
             <h3>Rajoy sigue vivo</h3>
           </a>
         </li>
         <li @click="onClickShowVignette('vignette05')">
           <a href="#vignette05">
-            <img class="vignette-img" src="./images/ficha05-cambio-climatico.png" alt />
+            <img id="vignette05-img" class="vignette-img" src="./images/ficha05-cambio-climatico.png" alt />
             <h3>No había crisis climática hasta 2019</h3>
           </a>
         </li>
@@ -534,6 +534,7 @@ export default {
     this.resizer()
   },
   mounted() {
+    // Load all the embedded ai2html charts and put the content into the DOM
     axios.get('/verba-tema01-query01-ultraderecha.html').then(response => {
       this.chart_tema01 = response.data
     })
@@ -553,16 +554,31 @@ export default {
       this.chart_tema05 = response.data
     })
     window.addEventListener('resize', this.throttle(this.resizer, 200))
+
+    // If we're deep-linking into a particular story, show that one
+    this.onClickShowVignette(location.hash.replace('#', ''))
   },
   methods: {
     onClickShowVignette(vignette) {
+      // Hide all vignettes and deselect all images
       var allVignettes = document.querySelectorAll('.verba-vignettes-item')
       allVignettes.forEach(function(el) {
         el.classList.remove('visible')
       })
-      var myVignette = document.getElementById(vignette)
-      myVignette.classList.add('visible')
+      var allVignetteImages = document.querySelectorAll('.vignette-img')
+      allVignetteImages.forEach(function(el) {
+        el.classList.remove('selected')
+      })
 
+      // Show only the selected one
+      var myVignette = document.getElementById(vignette)
+      if (myVignette) myVignette.classList.add('visible')
+
+      // Highlight the image for the selected vignette
+      var myVignetteImg = document.getElementById(vignette + '-img')
+      if (myVignetteImg) myVignetteImg.classList.add('selected')
+
+      // Make sure the right version of the embedded chart is displayed
       this.resizer()
     },
     // `resizer` and `throtthle` are taken from ai2html output
@@ -804,7 +820,8 @@ strong {
   -webkit-transition: 1s ease-in-out;
   transition: 1s ease-in-out;
 
-  &:hover {
+  &:hover,
+  &.selected {
     -webkit-filter: sepia(100%) blur(0);
     filter: sepia(100%) blur(0);
   }

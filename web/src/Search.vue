@@ -12,7 +12,7 @@
 
         <div class="verba-magneto-copy">
           <div class="verba-vignettes-intro">
-            <p class="verba-subtitle">{{ $t('search.vignettes_intro')}}</p>
+            <p class="verba-subtitle">{{ $t('search.vignettes_intro') }}</p>
             <div class="vignettes-carrousel">
               <a href="/vignettes#vignette01">
                 <h3 class="vignette-01">La ultraderecha son los otros</h3>
@@ -37,17 +37,16 @@
       <div id="search-doc">
         <p>
           Usa las comillas dobles
-          <code>"</code> para encontrar términos exactos
-          o el guión
-          <code>-</code> para descartar palabras en tu búsqueda. Si
-          quieres obtener todos los cortes en los que aparezcan uno u otro
-          término, utiliza la barra vertical
-          <code>|</code>. Para utilizar
-          operadores de búsqueda más avanzados, visita la documentación
+          <code>"</code> para encontrar términos exactos o el guión
+          <code>-</code> para descartar palabras en tu búsqueda. Si quieres
+          obtener todos los cortes en los que aparezcan uno u otro término,
+          utiliza la barra vertical <code>|</code>. Para utilizar operadores de
+          búsqueda más avanzados, visita la documentación
           <a
             href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-simple-query-string-query.html#simple-query-string-syntax"
             target="_blank"
-          >aquí</a>.
+            >aquí</a
+          >.
         </p>
       </div>
     </section>
