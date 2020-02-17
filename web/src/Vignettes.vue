@@ -4,7 +4,7 @@
     <div class="verba-vignettes">
       <!-- <h2 class="verba-subtitle" v-html="$t('vignettes.title')"></h2> -->
       <ul class="vignettes-titles">
-        <li>
+        <li @click="onClickShowVignette("vignette01")>
           <a href="#vignette01">
             <img class="vignette-img" src="./images/ficha01-ultraderecha.png" alt />
             <h3>La ultraderecha son los otros</h3>
@@ -607,6 +607,9 @@ export default {
     window.addEventListener('resize', this.throttle(this.resizer, 200))
   },
   methods: {
+    onClickShowVignette(vignette) {
+      window.open(vignette, '_self')
+    },
     // `resizer` and `throtthle` are taken from ai2html output
     resizer: function() {
       var elements = Array.prototype.slice.call(
