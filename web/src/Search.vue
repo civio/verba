@@ -38,16 +38,18 @@
       </div>
       <div id="search-doc">
         <p>
-          Usa las comillas dobles <code>"</code> para encontrar términos exactos
-          o el guión <code>-</code> para descartar palabras en tu búsqueda. Si
+          Usa las comillas dobles
+          <code>"</code> para encontrar términos exactos
+          o el guión
+          <code>-</code> para descartar palabras en tu búsqueda. Si
           quieres obtener todos los cortes en los que aparezcan uno u otro
-          término, utiliza la barra vertical <code>|</code>. Para utilizar
+          término, utiliza la barra vertical
+          <code>|</code>. Para utilizar
           operadores de búsqueda más avanzados, visita la documentación
           <a
             href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-simple-query-string-query.html#simple-query-string-syntax"
             target="_blank"
-            >aquí</a
-          >.
+          >aquí</a>.
         </p>
       </div>
     </section>
@@ -243,15 +245,12 @@ export default {
 }
 .vignettes-carrousel {
   position: relative;
-  background-color: grey;
+  // background-color: white;
+  background-color: black;
   // color: white;
   width: 100%;
   height: 2rem;
-  // mark {
-  //   text-align: center;
-  //   padding-bottom: 0.1rem;
-  //   padding-top: 0.1rem;
-  // }
+  padding-top: 0.3rem;
 }
 
 .vignette-01,
@@ -263,68 +262,119 @@ export default {
   // bottom: 0.2rem;
   width: 100%;
 
+  color: white;
   font-size: 1.2rem;
   text-transform: uppercase;
 
-  animation-duration: 20s;
+  animation-duration: 10s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
 }
 
 .vignette-01 {
-  animation-name: move-translate;
+  // animation-name: move-translate;
+  animation-name: anim-1;
   // animation-delay: 0s;
-  // color: red;
-  // border: 1px solid red;
 }
 
 .vignette-02 {
-  animation-name: move-translate;
-  animation-delay: 3s;
-  // color: blue;
-  // border: 1px solid blue;
-  // visibility: hidden;
+  // animation-name: move-translate;
+  animation-name: anim-2;
 }
 
 .vignette-03 {
-  animation-name: move-translate;
-  animation-delay: 6s;
-  // color: green;
-  // border: 1px solid green;
-  // visibility: hidden;
+  // animation-name: move-translate;
+  animation-name: anim-3;
 }
 
-@keyframes move-translate {
-  // 0%,
-  // 10% {
-  //   transform: translate(0, -100px);
-  //   opacity: 0;
-  // }
-  // 10%,
-  // 25% {
-  //   opacity: 1;
-  //   transform: translate(0, 0);
-  // }
-  // 33%,
-  // 100% {
-  //   opacity: 0;
-  //   transform: translate(0, 100px);
-  // }
-  0% {
-    opacity: 0;
+// @keyframes move-translate {
+//   // 0%,
+//   // 10% {
+//   //   transform: translate(0, -100px);
+//   //   opacity: 0;
+//   // }
+//   // 10%,
+//   // 25% {
+//   //   opacity: 1;
+//   //   transform: translate(0, 0);
+//   // }
+//   // 33%,
+//   // 100% {
+//   //   opacity: 0;
+//   //   transform: translate(0, 100px);
+//   // }
+//   0%,
+//   10% {
+//     opacity: 0;
+//     transform: translate(0, -100px);
+//   }
+//   10%,
+//   25% {
+//     opacity: 1;
+//     transform: translate(0, 0);
+//   }
+//   40%,
+//   100% {
+//     opacity: 0;
+//     transform: translate(0, 100px);
+//   }
+//   // 100% {
+//   //   opacity: 0;
+//   //   transform: translate(0, 100px);
+//   // }
+// }
+
+@keyframes anim-1 {
+  0%,
+  8.3% {
     transform: translate(0, -100px);
+    opacity: 0;
   }
-  3% {
-    opacity: 1;
+  8.3%,
+  25% {
     transform: translate(0, 0);
+    opacity: 1;
   }
-  97% {
-    opacity: 1;
+  33.33%,
+  100% {
+    transform: translate(0, 100px);
+    opacity: 0;
+  }
+}
+
+@keyframes anim-2 {
+  0%,
+  33.33% {
+    transform: translate(0, -100px);
+    opacity: 0;
+  }
+  41.63%,
+  58.29% {
     transform: translate(0, 0);
+    opacity: 1;
+  }
+  66.66%,
+  100% {
+    transform: translate(0, 100px);
+    opacity: 0;
+  }
+}
+
+@keyframes anim-3 {
+  0%,
+  66.66% {
+    transform: translate(0, -100px);
+
+    opacity: 0;
+  }
+  74.96%,
+  91.62% {
+    transform: translate(0, 0);
+    opacity: 1;
   }
   100% {
-    opacity: 0;
     transform: translate(0, 100px);
+    opacity: 0;
   }
 }
 </style>
