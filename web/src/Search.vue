@@ -3,11 +3,12 @@
   <main>
     <section class="verba-search-form">
       <div class="verba-magneto">
-        <img
+        <!-- <img
           class="verba-magneto-image"
           src="../src/images/01TapeRecorder.png"
           alt="Magneto patent illustration"
-        />
+        />-->
+        <div class="animation-magneto"></div>
 
         <div class="verba-magneto-copy">
           <div class="verba-vignettes-intro">
@@ -187,10 +188,30 @@ export default {
     }
   }
 
-  .verba-magneto-image {
-    width: 100%;
-    max-width: calc(510px * #{$scale-factor});
-    height: auto;
+  .animation-magneto {
+    // width: 100%;
+    // max-width: calc(510px * #{$scale-factor});
+    // height: auto;
+
+    background: url('../src/images/Animation-stripe-test01.png') left top;
+
+    display: block;
+    width: 543px;
+    height: 449px;
+    opacity: 0.7;
+
+    animation: run 0.5s steps(3) infinite;
+    transform: scale(0.8);
+  }
+  @keyframes run {
+    0% {
+      background-position: 0;
+      // transform: scale(0.85);
+    }
+    100% {
+      background-position: -1628px;
+      // transform: scale(0.8);
+    }
   }
 
   // Tablets

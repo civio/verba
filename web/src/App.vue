@@ -314,7 +314,6 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  // height: 2.5rem;
   padding: 0.5rem;
   background-color: rgba(0, 0, 0, 0.2);
 
