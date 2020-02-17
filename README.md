@@ -1,10 +1,5 @@
 # verba
 
-Corpus disponibles:
-
-- [Telediarios con escaleta](https://s3.eu-west-3.amazonaws.com/verba-test.civio.es/Corpus-Telediarios-con-escaleta.zip) (10/3/2015 - 20/9/2017).
-- [Telediarios 2018](https://s3.eu-west-3.amazonaws.com/verba-test.civio.es/Corpus-Telediarios-2018.zip)
-
 ## Running locally
 
 Project setup:
@@ -19,12 +14,6 @@ Start server (both API and web):
 
 ```
 npm run start
-```
-
-Compile and minifies for production:
-
-```
-npm run build
 ```
 
 ## ElasticSearch
@@ -44,7 +33,7 @@ brew install elastic/tap/kibana-full
 kibana
 ```
 
-## Deployment
+## Despliegue en producción (Civio)
 
 La aplicación está desplegada en `midas`, en `/var/www/verba.civio.es/`. Hay dos partes, el frontend (hecho con Vue.js) que se sirve por el Apache y el API que es un servicio que levanta una aplicación Express. La configuración (variables de entorno...) del servicio está en `/etc/systemd/system/verba-api.service`.
 
@@ -68,8 +57,3 @@ Una vez desplegada, la aplicación ofrece dos URLs:
 
 - [`verba.civio.es`](https://verba.civio.es/), la aplicación web.
 - [`verba.civio.es/api`](https://verba.civio.es/api/), el API usado por la aplicación.
-
-Temporalmente tenemos también, mientras pulimos el proceso de desarrollo:
-
-- El Elastic abierto en [`api-verba-volant.civio.es`](https://api-verba-volant.civio.es/).
-- El Kibana en producción, en [`kibana-verba-volant.civio.es`](https://kibana-verba-volant.civio.es).
