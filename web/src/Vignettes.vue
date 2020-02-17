@@ -1,4 +1,5 @@
 <!-- eslint-disable vue/no-v-html -->
+<!-- eslint-disable prettier/prettier -->
 <template>
   <main>
     <div class="verba-vignettes">
@@ -37,7 +38,7 @@
       </ul>
       <ul class="vignettes-copies">
         <!-- Tema 1 - la ultraderecha -->
-        <li class="verba-vignettes-item" id="vignette01">
+        <li id="vignette01" class="verba-vignettes-item">
           <h3 class="vignette-title">La ultraderecha son los otros</h3>
           <div class="vignette-copy">
             <p>
@@ -118,7 +119,7 @@
         </li>
 
         <!-- Tema 2 - corrupción -->
-        <li class="verba-vignettes-item" id="vignette02">
+        <li id="vignette02" class="verba-vignettes-item">
           <h3 class="vignette-title">Gürtel y los ERE, casi empatados</h3>
           <div class="vignette-copy">
             <p>
@@ -223,7 +224,7 @@
         </li>
 
         <!-- Tema 3 - dieta -->
-        <li class="verba-vignettes-item" id="vignette03">
+        <li id="vignette03" class="verba-vignettes-item">
           <h3 class="vignette-title">El rigor científico, a dieta</h3>
           <div class="vignette-copy">
             <p>
@@ -356,7 +357,7 @@
         </li>
 
         <!-- Tema 4 - rajoy -->
-        <li class="verba-vignettes-item" id="vignette04">
+        <li id="vignette04" class="verba-vignettes-item">
           <h3 class="vignette-title">Rajoy sigue vivo</h3>
           <div class="vignette-copy">
             <p>
@@ -480,7 +481,7 @@
         </li>
 
         <!-- Tema 5 - clima -->
-        <li class="verba-vignettes-item" id="vignette05">
+        <li id="vignette05" class="verba-vignettes-item">
           <h3 class="vignette-title">No había crisis climática hasta 2019</h3>
           <div class="vignette-copy">
             <p>
