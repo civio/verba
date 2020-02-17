@@ -495,14 +495,14 @@
                 <a
                   href="/?q=%22cambio climático%22 | %22cambio climatico%22"
                   target="_blank"
-                  class="methodology-query"
+                  class="methodology-query item1"
                 >"cambio climático" | "cambio climatico"</a>
                 &nbsp; VS
                 <br />
                 <a
                   href="/?q=%22crisis climática%22 | %22crisis climatica%22 | %22emergencia climática%22 | %22emergencia climatica%22"
                   target="_blank"
-                  class="methodology-query"
+                  class="methodology-query item2"
                 >
                   "crisis climática" | "crisis climatica" | "emergencia
                   climática" | "emergencia climatica"
