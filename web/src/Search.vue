@@ -3,11 +3,6 @@
   <main>
     <section class="verba-search-form">
       <div class="verba-magneto">
-        <!-- <img
-          class="verba-magneto-image"
-          src="../src/images/01TapeRecorder.png"
-          alt="Magneto patent illustration"
-        />-->
         <div class="animation-magneto"></div>
 
         <div class="verba-magneto-copy">
@@ -40,13 +35,13 @@
           <code>"</code> para encontrar términos exactos o el guión
           <code>-</code> para descartar palabras en tu búsqueda. Si quieres
           obtener todos los cortes en los que aparezcan uno u otro término,
-          utiliza la barra vertical <code>|</code>. Para utilizar operadores de
+          utiliza la barra vertical
+          <code>|</code>. Para utilizar operadores de
           búsqueda más avanzados, visita la documentación
           <a
             href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-simple-query-string-query.html#simple-query-string-syntax"
             target="_blank"
-            >aquí</a
-          >.
+          >aquí</a>.
         </p>
       </div>
     </section>
@@ -188,28 +183,24 @@ export default {
   }
 
   .animation-magneto {
-    // width: 100%;
-    // max-width: calc(510px * #{$scale-factor});
-    // height: auto;
-
-    background: url('../src/images/Animation-stripe-test01.png') left top;
-
+    background: url('../src/images/01TapeRecorder-animated.png') left top;
     display: block;
-    width: 543px;
-    height: 449px;
     opacity: 0.7;
 
-    animation: run 0.5s steps(3) infinite;
-    transform: scale(0.8);
+    // Each frame width
+    width: 408px;
+    min-width: 408px;
+    height: 337px;
+    // Number of frames
+    animation: run 0.7s steps(4) infinite;
   }
   @keyframes run {
     0% {
       background-position: 0;
-      // transform: scale(0.85);
     }
     100% {
-      background-position: -1628px;
-      // transform: scale(0.8);
+      // Full with of stripe
+      background-position: -1632px;
     }
   }
 
