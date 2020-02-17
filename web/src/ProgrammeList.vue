@@ -3,14 +3,12 @@
     <div class="verba-programmes">
       <div id="menu-filter">
         <ul class="years-list">
-          <li
-            v-for="year in years"
-            :key="year"
-            :class="{ 'is-clicked': year.num === currentYear }"
-          >
-            <a :data-value="year.num" @click="seeYear(year.num)">{{
+          <li v-for="year in years" :key="year" :class="{ 'is-clicked': year.num === currentYear }">
+            <a :data-value="year.num" @click="seeYear(year.num)">
+              {{
               year.num
-            }}</a>
+              }}
+            </a>
           </li>
         </ul>
         <ul v-if="currentYear != ''" class="months-list">
@@ -20,9 +18,11 @@
             :class="{ 'is-clicked': month.num === currentMonth }"
             :data-ts="month.ts"
           >
-            <a :data-value="month.num" @click="seeMonth(month.num)">{{
+            <a :data-value="month.num" @click="seeMonth(month.num)">
+              {{
               month.name
-            }}</a>
+              }}
+            </a>
           </li>
         </ul>
       </div>
@@ -44,15 +44,11 @@
             <span class="strip-aside">{{ programme.title }}</span>
           </router-link>
         </li>
-        <button
-          v-if="subList < filterProgramme"
-          class="seeMoreBtn"
-          @click="seeMore"
-        >
+        <button v-if="subList < filterProgramme" class="seeMoreBtn" @click="seeMore">
           Ver más ({{
-            (filterProgramme.length - subList.length)
-              .toString()
-              .replace(/\B(?=(\d{3})+(?!\d))/g, '.')
+          (filterProgramme.length - subList.length)
+          .toString()
+          .replace(/\B(?=(\d{3})+(?!\d))/g, '.')
           }}
           resultados)
         </button>
@@ -316,8 +312,14 @@ u {
   // position: block;
   order: -1;
   right: calc(50% + 5rem);
+
+  // Mobile first
+  // Image hidden on small displays
+  display: none;
+
   // Tablets
   @media all and (min-width: 768px) {
+    display: block;
     position: fixed;
     top: 35%;
     right: calc(50% + 3rem);
