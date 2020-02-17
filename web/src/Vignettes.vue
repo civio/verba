@@ -127,7 +127,6 @@
                 <a
                   href="/?from=2014-01-01&to=2020-01-31&q=corrupción|corrupcion"
                   target="_blank"
-                  class="methodology-query"
                 >corrupción</a>
               </mark>
               es, por desgracia, una constante en los informativos de TVE. La
@@ -154,18 +153,13 @@
               <mark
                 class="item1"
               >
-                <a
-                  href="/?from=2014-01-01&to=2020-01-31&q=Gürtel|Gurtel"
-                  target="_blank"
-                  class="methodology-query"
-                >Gürtel</a>
+                <a href="/?from=2014-01-01&to=2020-01-31&q=Gürtel|Gurtel" target="_blank">Gürtel</a>
               </mark>
               (712) y el de
               <mark class="item2">
                 <a
                   href="/?from=2014-01-01&to=2020-01-31&q=%22los ERE%22|%22caso ERE%22"
                   target="_blank"
-                  class="methodology-query"
                 >los ERE</a>
               </mark>
               (807) están casi empatados.
@@ -203,13 +197,13 @@
                 <a
                   href="/?q=gürtel | gurtel"
                   target="_blank"
-                  class="methodology-query"
+                  class="methodology-query item1"
                 >gürtel | gurtel</a>
                 &nbsp; VS &nbsp;
                 <a
                   href="/?q=%22los ere%22 | %22caso ERE%22"
                   target="_blank"
-                  class="methodology-query"
+                  class="methodology-query item2"
                 >"los ere" | "caso ERE"</a>
               </div>
             </div>
@@ -230,11 +224,7 @@
               Televisión Española mencionó en sus informativos 378 veces la
               palabra
               <mark>
-                <a
-                  href="/?from=2014-01-01&to=2020-01-31&q=dieta"
-                  target="_blank"
-                  class="methodology-query"
-                >dieta</a>
+                <a href="/?from=2014-01-01&to=2020-01-31&q=dieta" target="_blank">dieta</a>
               </mark>
               entre enero de 2014 y enero de 2020. Pero los informativos, en
               ocasiones, también han puesto a
@@ -253,7 +243,6 @@
                 <a
                   href="/?from=2014-01-01&to=2020-01-31&q=%22copas de vino%22 beneficioso"
                   target="_blank"
-                  class="methodology-query"
                 >copas de vino</a>
               </strong>
               al día es beneficioso. Pero nada más lejos de la realidad: el
@@ -275,7 +264,6 @@
                 <a
                   href="/?from=2014-01-01&to=2020-01-31&q=%22pasta no engorda%22"
                   target="_blank"
-                  class="methodology-query"
                 >pasta no engorda</a>
               </strong>. ¿El problema? El estudio estaba patrocinado por Barilla, un
               detalle que los informativos olvidaron mencionar en su cobertura.
@@ -291,7 +279,6 @@
                 <a
                   href="/?from=2014-01-01&to=2020-01-31&q=%22dieta del delfín%22"
                   target="_blank"
-                  class="methodology-query"
                 >dieta del delfín</a>
               </strong>, llegó a afirmar que "beber agua de mar es una tendencia
               creciente en el campo de las supuestas
@@ -300,11 +287,7 @@
               como un "completo nutriente con propiedades". Verba también
               muestra la cobertura negativa de TVE sobre los
               <strong>
-                <a
-                  href="/?from=2014-01-01&to=2020-01-31&q=aditivos"
-                  target="_blank"
-                  class="methodology-query"
-                >aditivos</a>
+                <a href="/?from=2014-01-01&to=2020-01-31&q=aditivos" target="_blank">aditivos</a>
               </strong>
               en los alimentos, pese a tratarse de
               <a
@@ -321,7 +304,6 @@
                 <a
                   href="/?from=2014-01-01&to=2020-01-31&q=%22leche cruda%22"
                   target="_blank"
-                  class="methodology-query"
                 >leche cruda</a>
               </strong>, los informativos de Televisión Española tampoco han destacado
               el riesgo que supone el consumo de esta bebida. Del total de 11
@@ -362,35 +344,19 @@
             <p>
               ¿Quién es el personaje más nombrado del Telediario? Si
               <strong>
-                <a
-                  href="/?from=2014-01-01&to=2020-01-31&q=dios"
-                  target="_blank"
-                  class="methodology-query"
-                >dios</a>
+                <a href="/?from=2014-01-01&to=2020-01-31&q=dios" target="_blank">dios</a>
               </strong>
               ha aparecido unas mil veces desde 2014,
               <strong>
-                <a
-                  href="/?from=2014-01-01&to=2020-01-31&q=Messi"
-                  target="_blank"
-                  class="methodology-query"
-                >Messi</a>
+                <a href="/?from=2014-01-01&to=2020-01-31&q=Messi" target="_blank">Messi</a>
               </strong>
               suma más de seis dioses (6.442) y
               <strong>
-                <a
-                  href="/?from=2014-01-01&to=2020-01-31&q=Trump"
-                  target="_blank"
-                  class="methodology-query"
-                >Trump</a>
+                <a href="/?from=2014-01-01&to=2020-01-31&q=Trump" target="_blank">Trump</a>
               </strong>, más de siete (7.607). Pero hay alguien que dobla al astro
               argentino y al endiosado presidente estadounidense.
               <mark>
-                <a
-                  href="/?from=2014-01-01&to=2020-01-31&q=Rajoy"
-                  target="_blank"
-                  class="methodology-query"
-                >Mariano Rajoy</a>
+                <a href="/?from=2014-01-01&to=2020-01-31&q=Rajoy" target="_blank">Mariano Rajoy</a>
               </mark>
               ha sido mencionado 13.118 veces. Tiene cierta lógica, porque fue
               presidente durante casi todo el periodo que abarca Verba (de enero
@@ -403,13 +369,9 @@
               ocho horas en un bar cercano al Congreso de los Diputados, donde
               se celebraba la moción que acabó con su presidencia, ha sido
               mencionado
-              <mark>
-                <a
-                  href="/?from=2018-06-02&to=2020-01-31&q=Rajoy"
-                  target="_blank"
-                  class="methodology-query"
-                >595 veces</a>
-              </mark>
+              <strong>
+                <a href="/?from=2018-06-02&to=2020-01-31&q=Rajoy" target="_blank">595 veces</a>
+              </strong>
               en los Telediarios de la televisión pública. Parece poco, pero no
               lo es si tenemos en cuenta que estamos hablando de solo 20 meses,
               hasta el 31 de enero de 2020. Así, de media, se le menta una vez
@@ -418,38 +380,25 @@
             <p>
               A
               <strong>
-                <a
-                  href="/?from=2014-01-01&to=2020-01-31&q=Aznar"
-                  target="_blank"
-                  class="methodology-query"
-                >José María Aznar</a>
+                <a href="/?from=2014-01-01&to=2020-01-31&q=Aznar" target="_blank">José María Aznar</a>
               </strong>
               (506) y
               <strong>
                 <a
                   href="/?from=2014-01-01&to=2020-01-31&q=%22Felipe González%22|%22Felipe Gonzalez%22"
                   target="_blank"
-                  class="methodology-query"
                 >Felipe González</a>
               </strong>
               (469) se les hace caso cada tanto en el Telediario y ambos rondan
               las 500 apariciones en algo más de seis meses.
               <strong>
-                <a
-                  href="/?from=2014-01-01&to=2020-01-31&q=Zapatero"
-                  target="_blank"
-                  class="methodology-query"
-                >Zapatero</a>
+                <a href="/?from=2014-01-01&to=2020-01-31&q=Zapatero" target="_blank">Zapatero</a>
               </strong>, más cercano en el tiempo (nuestro registro empieza tres años
               después de su adiós), les supera, con 781.
             </p>
             <p>
               <strong>
-                <a
-                  href="/?from=2014-01-01&to=2020-01-31&q=Puigdemont"
-                  target="_blank"
-                  class="methodology-query"
-                >Puigdemont</a>
+                <a href="/?from=2014-01-01&to=2020-01-31&q=Puigdemont" target="_blank">Puigdemont</a>
               </strong>, por su parte, aparece 4.436 veces, con tres hitos: el
               referendum y la posterior fuga en octubre de 2017, el pleno de
               investidura en enero de 2018 y la detención en Alemania en marzo
@@ -461,7 +410,6 @@
                 <a
                   href="/?from=2014-01-01&to=2020-01-31&q=%22Pedro Sánchez%22|%22Pedro Sanchez%22"
                   target="_blank"
-                  class="methodology-query"
                 >Pedro Sánchez</a>
               </strong>? El actual Presidente del Gobierno empezó a asomarse por la
               televisión pública a mediados de 2015 y desde entonces lo ha hecho
@@ -493,7 +441,6 @@
                 <a
                   href="/?from=2014-01-01&to=2020-01-31&q=%22crisis climática%22|%22crisis climatica%22"
                   target="_blank"
-                  class="methodology-query"
                 >crisis climática</a>
               </mark>
               continúa siendo ignorada por quienes tienen que tomar las
@@ -508,7 +455,6 @@
                 <a
                   href="/?from=2014-01-01&to=2020-01-31&q=Greta%20Thunberg#search-box"
                   target="_blank"
-                  class="methodology-query"
                 >Greta</a>
               </strong> se ha hablado desde ese mismo momento, en
               concreto, en 75 ocasiones.
@@ -520,7 +466,6 @@
                 <a
                   href="/?from=2014-01-01&to=2020-01-31&q=%22cambio climático%22|%22cambio climatico%22"
                   target="_blank"
-                  class="methodology-query"
                 >cambio climático</a>
               </mark>: desde 2014 hasta principios de 2020, los informativos han
               citado estas palabras más de 1.350 veces. Solo en 2019 se llegaron
@@ -534,7 +479,6 @@
                 <a
                   href="/?from=2014-01-01&to=2020-01-31&q=%22emergencia climática%22|%22emergencia climatica%22"
                   target="_blank"
-                  class="methodology-query"
                 >"emergencia climática"</a>
               </mark>. Apareció por primera vez en el telediario del 15 de diciembre
               de 2019 y, hasta el 31 de enero de 2020, se ha utilizado 60 veces.
@@ -738,9 +682,6 @@ mark {
     color: $color-neutral-1000;
     background-color: rgba($color: $color-highlight-1, $alpha: 0.8);
   }
-  a:hover {
-    // color: $color-neutral-500 !important;
-  }
 }
 
 strong {
@@ -756,7 +697,7 @@ strong {
   display: none;
 
   // Mobile first
-  padding: 2rem 0rem;
+  padding: 5rem 0rem;
   text-align: center;
   margin: 0 auto;
   margin-bottom: 2rem;
@@ -820,12 +761,20 @@ strong {
   }
   .methodology-query {
     display: inline-block;
-    font-size: 1rem;
     padding: 0.1rem 0.5rem;
     margin-bottom: 0.5rem;
     color: $color-neutral-0;
     font-weight: 600;
-    background-color: mix($color-neutral-1000, white, 85%);
+    background-color: $color-neutral-1000;
+
+    &.item1 {
+      color: $color-neutral-1000;
+      background-color: rgba($color: $color-highlight-2, $alpha: 0.5);
+    }
+    &.item2 {
+      color: $color-neutral-1000;
+      background-color: rgba($color: $color-highlight-1, $alpha: 0.8);
+    }
   }
   .methodology-note {
     font-size: 0.8rem;
