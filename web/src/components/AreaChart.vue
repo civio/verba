@@ -5,12 +5,18 @@
       <g ref="axisXMonths" class="axis x-months" />
       <g ref="axisXYears" class="axis x-years" />
       <g ref="axisY" class="axis y" />
-      <g ref="tooltipArea" :style="{ transform: `translate(${margin.left}px, ${margin.top}px)` }" />
-      <g ref="bars" :style="{ transform: `translate(${margin.left}px, ${margin.top}px)` }" />
+      <g
+        ref="tooltipArea"
+        :style="{ transform: `translate(${margin.left}px, ${margin.top}px)` }"
+      />
+      <g
+        ref="bars"
+        :style="{ transform: `translate(${margin.left}px, ${margin.top}px)` }"
+      />
     </svg>
-    <div id="tooltip" class="displayNone" >
+    <div id="tooltip" class="displayNone">
       <div>
-        <span v-if="!period">Semana del </span>
+        <span v-if="period == 'weeks'">Semana del </span>
         <span id="tooltip-date"></span>
       </div>
       <div id="tooltip-mentions"></div>
@@ -28,7 +34,10 @@ export default {
       type: Array,
       default: () => []
     },
-    period:false,
+    period: {
+      type: String,
+      default: ''
+    },
     margin: {
       type: Object,
       default: () => ({
@@ -37,7 +46,7 @@ export default {
         top: 0,
         bottom: 0
       })
-    }  
+    }
   },
   data() {
     return {
@@ -123,14 +132,14 @@ export default {
       const scaleY = d3
         .scaleLinear()
         .range([this.padded.height, 0])
-        .domain([0, d3.max(this.data, d=>d.y)])
+        .domain([0, d3.max(this.data, d => d.y)])
         .nice()
 
       // Custom scale to make the y-axis consistent with new position
       const scaleYdouble = d3
         .scaleLinear()
         .range([this.padded.height / 2, 0])
-        .domain([0, d3.max(this.data, d=>d.y)])
+        .domain([0, d3.max(this.data, d => d.y)])
         .nice()
 
       // Set the time axis in Spanish
@@ -192,8 +201,8 @@ export default {
         .axisBottom(scaleX)
         .tickSizeOuter(0)
         .tickFormat(d => {
-          if(formatDay(d) === '01') {
-            return formatMonth(d)  
+          if (formatDay(d) === '01') {
+            return formatMonth(d)
           }
         })
         .ticks(this.width / 50)
@@ -215,7 +224,7 @@ export default {
         .join('rect')
         .attr('x', d => scaleX(d.x))
         .attr('y', d => {
-          return scaleY(d.y/2)
+          return scaleY(d.y / 2)
         })
         .attr('transform', `translate(0, ${-this.height / 2})`)
         .attr('height', d => {
@@ -227,76 +236,82 @@ export default {
           clearInterval(timerHover)
           const el = nodes[i]
           const that = this
-          const monthName = formatMonthFull(d.x)
-          // toolip position
-          function getTooltipPos(tooltip){
+          // tooltip position
+          function getTooltipPos(tooltip) {
             let left
             const mouseMoveLeft = d3.mouse(
-              d3.select('.chart-container')
-              .select('svg').node()
+              d3
+                .select('.chart-container')
+                .select('svg')
+                .node()
             )
             const mouseMoveTop = d3.mouse(el)
-            const top = mouseMoveTop[1]-d3.select('#tooltip').node().offsetHeight - 30
-            if(mouseMoveLeft[0] >= that.width/2) {
+            const top =
+              mouseMoveTop[1] - d3.select('#tooltip').node().offsetHeight - 30
+            if (mouseMoveLeft[0] >= that.width / 2) {
               left = mouseMoveLeft[0] - d3.select('#tooltip').node().clientWidth
-            }else{
-              left = mouseMoveLeft[0]+30
+            } else {
+              left = mouseMoveLeft[0] + 30
             }
-            tooltip.style('left', left+'px')
-              .style('top', top+'px')  
+            tooltip.style('left', left + 'px').style('top', top + 'px')
           }
+
           // focus rect
-          d3.select(el)
-            .classed('focus', true)
+          d3.select(el).classed('focus', true)
 
           //toolip text
           d3.select('#tooltip')
             .select('#tooltip-date')
-            .html(that.$t('tooltip.date', {
-                day:d.x.getDate(), 
-                month:formatMonthFull(d.x), 
-                year:d.x.getFullYear()
-            }))
+            .html(
+              that.$t('tooltip.date', {
+                day: d.x.getDate(),
+                month: formatMonthFull(d.x),
+                year: d.x.getFullYear()
+              })
+            )
 
           d3.select('#tooltip')
             .select('#tooltip-mentions')
-            .html(that.$tc('tooltip.mentions', d.y, {
-              mentions:d.y
-            }))
+            .html(
+              that.$tc('tooltip.mentions', d.y, {
+                mentions: d.y
+              })
+            )
 
-           d3.select('#tooltip')
+          d3.select('#tooltip')
             .classed('displayNone', false)
             .call(getTooltipPos)
-
         })
 
         .on('mouseout', function() {
           // displayNone on tooltip after 750 ms
           function stopTimerHover() {
-            d3.select('#tooltip')
-              .classed('displayNone', true)
+            d3.select('#tooltip').classed('displayNone', true)
             clearInterval(timerHover)
           }
           clearInterval(timerHover)
           timerHover = setInterval(stopTimerHover, 500)
-          d3.select(this)
-            .classed('focus', false)          
-        })      
+          d3.select(this).classed('focus', false)
+        })
 
       // render axis
       d3.select(this.$refs.axisXDays)
         .attr(
           'transform',
-          `translate(${this.margin.left+scaleBand.bandwidth()/2}, ${this.height - this.margin.bottom})`
+          `translate(${this.margin.left + scaleBand.bandwidth() / 2}, ${this
+            .height - this.margin.bottom})`
         )
-        .classed('displayNone', !this.period)
+        .classed('displayNone', this.period == 'weeks')
         .call(axisXDays)
         .call(this.formatAxisXDays)
 
       d3.select(this.$refs.axisXMonths)
         .attr(
           'transform',
-          `translate(${this.margin.left+scaleBand.bandwidth()/2}, ${this.height - this.margin.bottom+15})`
+          `translate(${this.margin.left + scaleBand.bandwidth() / 2}, ${this
+            .height -
+            this.margin.bottom +
+            15})`
         )
         .call(axisXMonths)
         .call(this.formatAxisXMonths)
@@ -304,7 +319,8 @@ export default {
       d3.select(this.$refs.axisXYears)
         .attr(
           'transform',
-          `translate(${this.margin.left+scaleBand.bandwidth()/2}, ${this.height -
+          `translate(${this.margin.left + scaleBand.bandwidth() / 2}, ${this
+            .height -
             this.margin.bottom +
             30})`
         )
@@ -321,7 +337,6 @@ export default {
         .classed('axisY-title', true)
         .attr('text-anchor', 'start')
         .text('Menciones')
-
     }
   }
 }
@@ -341,11 +356,11 @@ export default {
     overflow: visible;
   }
 
-  .displayNone{
+  .displayNone {
     display: none;
   }
 
-  #tooltip{
+  #tooltip {
     position: absolute;
     background-color: #f1f1f1;
     border: 1px solid;
@@ -353,11 +368,11 @@ export default {
     padding: 5px;
   }
 
-  .tooltip-area rect{
+  .tooltip-area rect {
     fill: transparent;
   }
 
-  rect.focus{
+  rect.focus {
     fill: #ef9b31;
   }
 
@@ -368,7 +383,8 @@ export default {
       shape-rendering: crispEdges;
     }
 
-    &.x-months, &.x-days {
+    &.x-months,
+    &.x-days {
       .domain {
         display: none;
       }

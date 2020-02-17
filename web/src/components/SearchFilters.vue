@@ -1,7 +1,10 @@
 <template>
   <div class="search-filters">
     <button :class="dateBtnClass" @click="onDateClick">{{ dateStr }}</button>
-    <DateRangeFilter :visible="datepickerVisible" @change="onDatepickerChange" />
+    <DateRangeFilter
+      :visible="datepickerVisible"
+      @change="onDatepickerChange"
+    />
   </div>
 </template>
 

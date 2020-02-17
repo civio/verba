@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-v-html -->
 <template>
   <main>
     <div class="verba-about">
@@ -17,6 +18,7 @@
         <div class="about-us">
           <h2 class="verba-subtitle" v-html="$t('about.us.title')"></h2>
           <p v-html="$t('about.us.body')"></p>
+          <p v-html="$t('about.us.newsletter')"></p>
         </div>
       </div>
     </div>
@@ -73,6 +75,10 @@
   // PC
   @media all and (min-width: 1024px) {
     margin-left: 5rem;
+  }
+
+  a {
+    text-decoration: underline;
   }
 }
 

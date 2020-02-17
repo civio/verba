@@ -1,5 +1,5 @@
 <template>
-  <div class="verba-date-picker" v-show="visible">
+  <div v-show="visible" class="verba-date-picker">
     <date-range-picker v-model="range" :options="options" />
   </div>
 </template>
