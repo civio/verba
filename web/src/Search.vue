@@ -20,7 +20,18 @@
         <SearchFilters />
       </div>
     </section>
-
+    <p id="search-doc">
+      Usa las comillas dobles <code>"</code> para encontrar términos exactos o
+      el guión <code>-</code> para descartar palabras en tu búsqueda. Si quieres
+      obtener todos los cortes en los que aparezcan uno u otro término, utiliza
+      la barra vertical <code>|</code>. Para utilizar operadores de búsqueda más
+      avanzados, visita la documentación
+      <a
+        href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-simple-query-string-query.html#simple-query-string-syntax"
+        target="_blank"
+        >aquí</a
+      >.
+    </p>
     <section class="verba-results">
       <div class="row">
         <div class="col-lg-8 offset-lg-2">
@@ -59,7 +70,6 @@ export default {
 
 <style scoped lang="scss">
 @import '../src/scss/_variables.scss';
-
 .verba-search-form {
   margin-bottom: 2rem;
 
@@ -89,6 +99,25 @@ export default {
       padding-left: 4.5rem;
     }
   }
+}
+
+#search-doc {
+  text-align: left;
+}
+
+#search-doc {
+  a {
+    color: $color-highlight-1;
+    font-weight: 800;
+  }
+}
+
+#search-doc code {
+  color: black;
+  font-weight: bold;
+  background-color: #d6d6d6;
+  padding: 4px;
+  border-radius: 2px;
 }
 
 .verba-magneto {
