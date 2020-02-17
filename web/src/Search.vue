@@ -123,11 +123,12 @@ export default {
 }
 
 #search-doc p {
-  text-align: left;
-  margin-top: -50px;
-  font-size: 0.8rem;
-  margin-left: 10rem;
-  margin-right: 7rem;
+  text-align: center;
+  margin-top: -55px;
+  font-size: 0.7rem;
+  margin-left: 11rem;
+  margin-right: 8rem;
+  color: rgba($color-neutral-800, 0.6);
 
   @media all and (max-width: 1024px) {
     margin-left: 2rem;
@@ -148,7 +149,7 @@ export default {
 }
 
 #search-doc code {
-  color: black;
+  color: $color-neutral-1000;
   font-weight: bold;
   background-color: #d6d6d6;
   padding: 4px;
@@ -246,7 +247,7 @@ export default {
 .vignettes-carrousel {
   position: relative;
   // background-color: white;
-  background-color: black;
+  background-color: rgba($color-neutral-1000, 0.75);
   // color: white;
   width: 100%;
   height: 2rem;
