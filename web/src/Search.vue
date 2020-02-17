@@ -10,6 +10,23 @@
         />
 
         <div class="verba-magneto-copy">
+          <div class="verba-vignettes-intro">
+            <p class="verba-subtitle">{{ $t('search.vignettes_intro')}}</p>
+            <div class="vignettes-carrousel">
+              <a href="/vignettes#vignette01">
+                <h3 class="vignette-01">La ultraderecha son los otros</h3>
+                <!-- <mark class="vignette-01">La ultraderecha son los otros</!-->
+              </a>
+              <a href="/vignettes#vignette02">
+                <h3 class="vignette-02">Gürtel y los ERE, casi empatados</h3>
+                <!-- <mark class="vignette-02">Gürtel y los ERE, casi empatados</mark> -->
+              </a>
+              <a href="/vignettes#vignette03">
+                <h2 class="vignette-03 verba-subtitle">El rigor científico, a dieta</h2>
+                <!-- <mark class="vignette-03">El rigor científico, a dieta</mark> -->
+              </a>
+            </div>
+          </div>
           <h2 class="verba-subtitle" v-html="$t('search.title')"></h2>
           <p class="verba-copy">{{ $t('search.subtitle') }}</p>
         </div>
@@ -163,9 +180,106 @@ export default {
   }
 }
 
+// Make this trick to have the anchor on place below the header
 #search-box {
   position: relative;
   top: -60px;
   padding-top: 60px;
+}
+
+// Vignettes slideshow
+.verba-vignettes-intro {
+  margin-bottom: 3rem;
+  text-align: center;
+
+  .verba-subtitle {
+    margin-bottom: 0;
+  }
+}
+.vignettes-carrousel {
+  position: relative;
+  background-color: grey;
+  // color: white;
+  width: 100%;
+  height: 2rem;
+  // mark {
+  //   text-align: center;
+  //   padding-bottom: 0.1rem;
+  //   padding-top: 0.1rem;
+  // }
+}
+
+.vignette-01,
+.vignette-02,
+.vignette-03 {
+  opacity: 0;
+  position: absolute;
+  display: block;
+  // bottom: 0.2rem;
+  width: 100%;
+
+  font-size: 1.2rem;
+  text-transform: uppercase;
+
+  animation-duration: 20s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.vignette-01 {
+  animation-name: move-translate;
+  // animation-delay: 0s;
+  // color: red;
+  // border: 1px solid red;
+}
+
+.vignette-02 {
+  animation-name: move-translate;
+  animation-delay: 3s;
+  // color: blue;
+  // border: 1px solid blue;
+  // visibility: hidden;
+}
+
+.vignette-03 {
+  animation-name: move-translate;
+  animation-delay: 6s;
+  // color: green;
+  // border: 1px solid green;
+  // visibility: hidden;
+}
+
+@keyframes move-translate {
+  // 0%,
+  // 10% {
+  //   transform: translate(0, -100px);
+  //   opacity: 0;
+  // }
+  // 10%,
+  // 25% {
+  //   opacity: 1;
+  //   transform: translate(0, 0);
+  // }
+  // 33%,
+  // 100% {
+  //   opacity: 0;
+  //   transform: translate(0, 100px);
+  // }
+  0% {
+    opacity: 0;
+    transform: translate(0, -100px);
+  }
+  3% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  97% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(0, 100px);
+  }
 }
 </style>

@@ -34,8 +34,7 @@
             id="civio-navbar-donate-btn"
             href="https://civio.es/socios/?source=banner-top"
             title="Hazte socio"
-            >Hazte socio</a
-          >
+          >Hazte socio</a>
         </nav>
         <nav class="verba-navbar">
           <a href="/">
@@ -57,27 +56,22 @@
                   :to="{ name: 'search' }"
                   exact
                   class="verba-nav-link"
-                  >{{ $t('header.search') }}</router-link
-                >
+                >{{ $t('header.search') }}</router-link>
               </li>
               <li class="verba-nav-item">
                 <router-link
                   :to="{ name: 'vignettes' }"
                   class="verba-nav-link"
-                  >{{ $t('header.vignettes') }}</router-link
-                >
+                >{{ $t('header.vignettes') }}</router-link>
               </li>
               <li class="verba-nav-item">
                 <router-link
                   :to="{ name: 'programmes' }"
                   class="verba-nav-link"
-                  >{{ $t('header.programmes') }}</router-link
-                >
+                >{{ $t('header.programmes') }}</router-link>
               </li>
               <li class="verba-nav-item">
-                <router-link :to="{ name: 'about' }" class="verba-nav-link">
-                  {{ $t('header.about') }}
-                </router-link>
+                <router-link :to="{ name: 'about' }" class="verba-nav-link">{{ $t('header.about') }}</router-link>
               </li>
             </ul>
           </div>
@@ -88,25 +82,22 @@
 
       <footer class="verba-footer">
         <small>
-          <strong> <a href="https://civio.es">CIVIO</a> 2020 </strong>
+          <strong>
+            <a href="https://civio.es">CIVIO</a> 2020
+          </strong>
           | Licencia
           <a
             href="https://creativecommons.org/licenses/by-sa/3.0/deed.es"
             title="Licencia Creative Commons Atribución - Compartir Igual 3.0"
             target="_blank"
             rel="noopener noreferrer"
-            >CC BY-SA 3.0</a
-          >
+          >CC BY-SA 3.0</a>
           |
           <a href="https://civio.es/aviso-legal/">Aviso legal</a>
           |
-          <a href="https://civio.es/politica-de-privacidad/"
-            >Política de privacidad</a
-          >
+          <a href="https://civio.es/politica-de-privacidad/">Política de privacidad</a>
           |
-          <a href="https://civio.es/politica-de-cookies/"
-            >Política de cookies</a
-          >
+          <a href="https://civio.es/politica-de-cookies/">Política de cookies</a>
         </small>
       </footer>
     </div>
@@ -213,6 +204,8 @@ body {
     max-width: 1024px;
     margin: 0 auto;
   }
+
+  // overflow-x: hidden;
 }
 
 .verba-navbar {

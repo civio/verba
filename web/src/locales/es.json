@@ -14,12 +14,13 @@
     "us": {
       "title": "<a style='color:black; text-decoration:underline;' href='https://civio.es/' target='_blank'>Civio</a>",
       "body": "es una <span>organización independiente</span> y sin ánimo de lucro que, a través del periodismo y la tecnología, vigila a los poderes públicos, <span>investiga a fondo</span> su funcionamiento e informa a todos los ciudadanos y presiona para lograr una transparencia real y eficaz en las instituciones.",
-      "newsletter":"En Civio no solo hacemos herramientas. Investigamos a diario lo público para contarte las decisiones que nos afectan a todos. Para no perder detalle, <a href='https://civio.es/suscribete-a-nuestro-boletin/'>suscríbete a nuestro boletín</a>."
+      "newsletter": "En Civio no solo hacemos herramientas. Investigamos a diario lo público para contarte las decisiones que nos afectan a todos. Para no perder detalle, <a href='https://civio.es/suscribete-a-nuestro-boletin/'>suscríbete a nuestro boletín</a>."
     }
   },
   "search": {
-    "subtitle": "Busca conceptos para saber cuántas veces se han nombrado o su evolución en el tiempo.",
     "title": "EXPLORA TODOS LOS <br> TELEDIARIOS DE TVE DESDE 2014",
+    "subtitle": "Busca conceptos para saber cuántas veces se han nombrado o su evolución en el tiempo.",
+    "vignettes_intro": "Últimos titulares:",
     "placeholder": "Introduce un término",
     "filter_by_date": "Filtrar por fecha"
   },
