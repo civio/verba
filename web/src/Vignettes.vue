@@ -46,13 +46,13 @@
                 <a
                   href="/?from=2014-01-01&to=2020-01-31&q=ultraderecha|%22ultra derecha%22"
                   target="_blank"
-                  class="methodology-query"
                 >ultraderecha</a>
               </mark>
               en Ucrania, Finlandia, Portugal, Francia, Italia, Estonia,
               Bulgaria, Alemania, Brasil y la Comisión Europea, entre otros
               lugares del mundo. Pero, para el Telediario de RTVE, no en España.
-              De las 445 veces que aparece la palabra en los informativos desde
+              De las
+              <strong>445 veces</strong> que aparece la palabra en los informativos desde
               2014 hasta el 31 de enero de 2020 la mayoría corresponden a dos
               tipos: otras fuerzas políticas mencionando a Vox (sobre todo el
               PSOE) y noticias de política internacional sobre partidos de
@@ -87,8 +87,15 @@
               <strong>ultraderecha</strong> en manifestaciones (como
               la que protestaba por la exhumación de Franco) o altercados (como
               los de las manifestaciones de Barcelona). También en ese contexto
-              se suele usar "extrema derecha", una expresión más popular, que
-              aparece hasta 611 veces desde 2014. Su pico: tras las elecciones
+              se suele usar
+              <strong>
+                <a
+                  href="/?from=2014-01-01&to=2020-01-31&q=%22extrema derecha%22"
+                  target="_blank"
+                >"extrema derecha"</a>
+              </strong>
+              , una expresión más popular, que
+              aparece hasta 610 veces desde 2014. Su pico: tras las elecciones
               andaluzas, cuando se empezó a comentar -por otros partidos y
               citando declaraciones, no por los propios presentadores del
               Telediario- el posible pacto PP-Ciudadanos-Vox.
@@ -731,6 +738,9 @@ mark {
     color: $color-neutral-1000;
     background-color: rgba($color: $color-highlight-1, $alpha: 0.8);
   }
+  a:hover {
+    // color: $color-neutral-500 !important;
+  }
 }
 
 strong {
@@ -762,11 +772,14 @@ strong {
 
   a {
     text-decoration: underline;
+
+    &:hover {
+      color: $color-highlight-1;
+    }
   }
 
   // Tablets
   @media all and (min-width: 768px) {
-    // padding: 5rem 3rem 1rem 3rem;
     text-align: left;
   }
 
