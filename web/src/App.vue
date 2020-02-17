@@ -264,7 +264,9 @@ body {
     position: absolute;
     top: 80%;
     overflow: hidden;
-    width: 8.7rem;
+    // width: 100%;
+    width: calc(100% - 1rem);
+    max-width: 8.7rem;
     height: 1px;
     border-bottom: 1px solid $color-neutral-1000;
   }
