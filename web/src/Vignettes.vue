@@ -3,7 +3,6 @@
 <template>
   <main>
     <div class="verba-vignettes">
-      <!-- <h2 class="verba-subtitle" v-html="$t('vignettes.title')"></h2> -->
       <ul class="vignettes-titles">
         <li @click="onClickShowVignette('vignette01')">
           <a href="#vignette01">
@@ -694,7 +693,6 @@ strong {
 }
 
 .verba-vignettes-item {
-  // visibility: hidden;
   display: none;
 
   // Mobile first
@@ -731,8 +729,6 @@ strong {
 }
 
 .visible {
-  // display: block;
-  // visibility: visible;
   display: block;
 }
 
@@ -752,8 +748,6 @@ strong {
 
     a {
       text-decoration: underline;
-      // font-weight: 800;
-      // color: $color-highlight-1;
     }
   }
   .methodology {

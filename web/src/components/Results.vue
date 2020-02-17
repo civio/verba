@@ -19,16 +19,17 @@
               })
             "
           ></span>
-          (<a href="#" @click="onDownloadClick()">CSV</a>)
-          <span v-if="results.length > 50" class="text-secondary"
-            >&nbsp;&mdash;&nbsp;
+          (
+          <a href="#" @click="onDownloadClick()">CSV</a>)
+          <span v-if="results.length > 50" class="text-secondary">
+            &nbsp;&mdash;&nbsp;
             {{
-              $t('results.list.page', {
-                p: resultsPage + 1,
-                total: Math.ceil(results.length / 50)
-              })
-            }}</span
-          >
+            $t('results.list.page', {
+            p: resultsPage + 1,
+            total: Math.ceil(results.length / 50)
+            })
+            }}
+          </span>
         </p>
         <div class="results-list mb-4">
           <div v-for="(items, id) in resultsByProgramme" :key="id" class="card">
@@ -44,12 +45,7 @@
             </div>
             <div v-for="item in items" :key="item.id" class="card-body">
               <span class="badge badge-secondary">
-                <svg
-                  class="icon-time"
-                  width="12"
-                  height="12"
-                  viewBox="0 0 24 24"
-                >
+                <svg class="icon-time" width="12" height="12" viewBox="0 0 24 24">
                   <path d="M0 0h24v24H0z" fill="none" />
                   <path
                     d="M15 1H9v2h6V1zm-4 13h2V8h-2v6zm8.03-6.61l1.42-1.42c-.43-.51-.9-.99-1.41-1.41l-1.42 1.42C16.07 4.74 14.12 4 12 4c-4.97 0-9 4.03-9 9s4.02 9 9 9 9-4.03 9-9c0-2.12-.74-4.07-1.97-5.61zM12 20c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"
@@ -58,10 +54,7 @@
                 {{ item.time_start | formatTime }} -
                 {{ item.time_end | formatTime }}
               </span>
-              <span
-                class="badge badge-secondary video-link"
-                @click="onGoToVideoBtnClick(item)"
-              >
+              <span class="badge badge-secondary video-link" @click="onGoToVideoBtnClick(item)">
                 {{ $t('results.item.goToVideo') }}
                 <svg
                   class="icon-play"
@@ -78,16 +71,14 @@
               <span
                 class="badge badge-secondary video-link"
                 @click="onShowContextBtnClick(item)"
-                >{{ $t('results.item.showContext') }}</span
-              >
+              >{{ $t('results.item.showContext') }}</span>
               <!-- eslint-disable-next-line vue/no-v-html -->
               <p class="item-content" v-html="highlight(item.content)"></p>
               <span
                 v-for="(entity, key) in item.entities"
                 :key="key"
                 class="badge badge-entitie"
-                >{{ entity.type }}/{{ entity.text }}</span
-              >
+              >{{ entity.type }}/{{ entity.text }}</span>
             </div>
           </div>
         </div>
@@ -254,8 +245,6 @@ export default {
     border-top: none;
     margin-bottom: 2rem;
     background-color: transparent;
-
-    // border-top: 1px solid rgba(0, 0, 0, 0.5);
     border: 1px solid rgba($color-neutral-1000, 0.3);
   }
   .card-header {
@@ -324,7 +313,6 @@ export default {
 
     mark {
       font-weight: 600;
-      // background-color: mix($color-highlight-1, white, 85%);
       background-color: $color-neutral-1000;
       padding-top: 0;
       padding-bottom: 0;

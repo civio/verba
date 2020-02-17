@@ -8,9 +8,7 @@
             :key="year.num"
             :class="{ 'is-clicked': year.num === currentYear }"
           >
-            <a :data-value="year.num" @click="seeYear(year.num)">
-              {{ year.num }}
-            </a>
+            <a :data-value="year.num" @click="seeYear(year.num)">{{ year.num }}</a>
           </li>
         </ul>
         <ul v-if="currentYear != ''" class="months-list">
@@ -20,9 +18,7 @@
             :class="{ 'is-clicked': month.num === currentMonth }"
             :data-ts="month.ts"
           >
-            <a :data-value="month.num" @click="seeMonth(month.num)">
-              {{ month.name }}
-            </a>
+            <a :data-value="month.num" @click="seeMonth(month.num)">{{ month.name }}</a>
           </li>
         </ul>
       </div>
@@ -44,15 +40,11 @@
             <span class="strip-aside">{{ programme.title }}</span>
           </router-link>
         </li>
-        <button
-          v-if="subList < filterProgramme"
-          class="seeMoreBtn"
-          @click="seeMore"
-        >
+        <button v-if="subList < filterProgramme" class="seeMoreBtn" @click="seeMore">
           Ver más ({{
-            (filterProgramme.length - subList.length)
-              .toString()
-              .replace(/\B(?=(\d{3})+(?!\d))/g, '.')
+          (filterProgramme.length - subList.length)
+          .toString()
+          .replace(/\B(?=(\d{3})+(?!\d))/g, '.')
           }}
           resultados)
         </button>
@@ -211,12 +203,6 @@ u {
 
 // Menu with dates
 #menu-filter {
-  // min-width: 40%;
-  // max-width: 320px;
-  // position: absolute;
-  // top: 210px;
-  // z-index: 1;
-  // border-radius: 4px;
   width: 90%;
   max-width: 630px;
   margin-bottom: 2rem;
@@ -226,16 +212,9 @@ u {
 }
 
 #menu-filter ul {
-  // background-color: rgba(0,0,0,0.2);
-  // padding: 0.4em;
   width: 90%;
   display: flex;
   overflow-x: auto;
-  // overflow-y: hidden;
-  // margin-left: auto;
-  // margin-right: auto;
-  // margin-top: 10px;
-  // justify-content: space-between;
 }
 
 #menu-filter .years-list {
@@ -251,10 +230,8 @@ u {
 }
 
 #menu-filter ul li {
-  // background-color: white;
   padding: 0.4em;
   border-radius: 2px;
-  // margin-right: 0.7em;
 }
 
 #menu-filter ul li a {
@@ -262,7 +239,6 @@ u {
 }
 
 #menu-filter ul li.is-clicked {
-  // background-color: #f2ed8e;
   color: $color-highlight-1;
   background-color: inherit;
   font-weight: 800;
@@ -310,7 +286,6 @@ u {
   margin-left: 2rem;
   margin-bottom: 2rem;
   // Mobile first
-  // position: block;
   order: -1;
   right: calc(50% + 5rem);
 
@@ -332,7 +307,6 @@ u {
 }
 .verba-film-item:hover {
   color: $color-neutral-1000;
-  // font-weight: 800;
 
   transition: text-shadow 0.3s;
   text-shadow: 0 0 0.65px #333, 0 0 0.65px #333;
@@ -374,10 +348,6 @@ u {
     font-size: 0.85rem;
     padding-bottom: 0.1rem;
     text-align: left;
-    // &:hover {
-    //   color: $color-neutral-1000;
-    //   font-weight: 800;
-    // }
   }
 }
 </style>

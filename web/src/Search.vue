@@ -15,15 +15,12 @@
             <div class="vignettes-carrousel">
               <a href="/vignettes#vignette01">
                 <h3 class="vignette-01">La ultraderecha son los otros</h3>
-                <!-- <mark class="vignette-01">La ultraderecha son los otros</!-->
               </a>
               <a href="/vignettes#vignette02">
                 <h3 class="vignette-02">Gürtel y los ERE, casi empatados</h3>
-                <!-- <mark class="vignette-02">Gürtel y los ERE, casi empatados</mark> -->
               </a>
               <a href="/vignettes#vignette03">
                 <h2 class="vignette-03 verba-subtitle">El rigor científico, a dieta</h2>
-                <!-- <mark class="vignette-03">El rigor científico, a dieta</mark> -->
               </a>
             </div>
           </div>
@@ -92,8 +89,6 @@ export default {
 <style scoped lang="scss">
 @import '../src/scss/_variables.scss';
 .verba-search-form {
-  // margin-bottom: 2rem;
-
   // Tablets
   @media all and (min-width: 768px) {
     // margin-left: 3rem;
@@ -185,7 +180,6 @@ export default {
 
     .verba-copy {
       margin-bottom: -5px;
-      // font-size: 0.8rem;
     }
 
     .verba-subtitle {
@@ -194,7 +188,6 @@ export default {
   }
 
   .verba-magneto-image {
-    // margin-left: 3rem;
     width: 100%;
     max-width: calc(510px * #{$scale-factor});
     height: auto;
@@ -203,7 +196,6 @@ export default {
   // Tablets
   @media all and (min-width: 768px) {
     text-align: left;
-    // margin-left: 3rem;
   }
 
   // PC
@@ -246,9 +238,7 @@ export default {
 }
 .vignettes-carrousel {
   position: relative;
-  // background-color: white;
   background-color: rgba($color-neutral-1000, 0.75);
-  // color: white;
   width: 100%;
   height: 2rem;
   padding-top: 0.3rem;
@@ -260,10 +250,9 @@ export default {
   opacity: 0;
   position: absolute;
   display: block;
-  // bottom: 0.2rem;
   width: 100%;
 
-  color: white;
+  color: $color-neutral-0;
   font-size: 1.2rem;
   text-transform: uppercase;
 
@@ -273,57 +262,16 @@ export default {
 }
 
 .vignette-01 {
-  // animation-name: move-translate;
   animation-name: anim-1;
-  // animation-delay: 0s;
 }
 
 .vignette-02 {
-  // animation-name: move-translate;
   animation-name: anim-2;
 }
 
 .vignette-03 {
-  // animation-name: move-translate;
   animation-name: anim-3;
 }
-
-// @keyframes move-translate {
-//   // 0%,
-//   // 10% {
-//   //   transform: translate(0, -100px);
-//   //   opacity: 0;
-//   // }
-//   // 10%,
-//   // 25% {
-//   //   opacity: 1;
-//   //   transform: translate(0, 0);
-//   // }
-//   // 33%,
-//   // 100% {
-//   //   opacity: 0;
-//   //   transform: translate(0, 100px);
-//   // }
-//   0%,
-//   10% {
-//     opacity: 0;
-//     transform: translate(0, -100px);
-//   }
-//   10%,
-//   25% {
-//     opacity: 1;
-//     transform: translate(0, 0);
-//   }
-//   40%,
-//   100% {
-//     opacity: 0;
-//     transform: translate(0, 100px);
-//   }
-//   // 100% {
-//   //   opacity: 0;
-//   //   transform: translate(0, 100px);
-//   // }
-// }
 
 @keyframes anim-1 {
   0%,

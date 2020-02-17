@@ -204,8 +204,6 @@ body {
     max-width: 1024px;
     margin: 0 auto;
   }
-
-  // overflow-x: hidden;
 }
 
 .verba-navbar {
