@@ -149,7 +149,7 @@
                   target="_blank"
                   class="methodology-query"
                 >Púnica</a>
-              </strong> (353 apariciones)
+              </strong> (357 apariciones)
               no ha sido la saga corrupta más nombrada. El caso
               <mark
                 class="item1"
@@ -163,7 +163,7 @@
                   target="_blank"
                 >los ERE</a>
               </mark>
-              (807) están casi empatados.
+              (804) están casi empatados.
             </p>
             <div class="chart-annotated" v-html="chart_tema02b"></div>
             <p>
