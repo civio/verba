@@ -5,7 +5,7 @@
         <ul class="years-list">
           <li
             v-for="year in years"
-            :key="year"
+            :key="year.num"
             :class="{ 'is-clicked': year.num === currentYear }"
           >
             <a :data-value="year.num" @click="seeYear(year.num)">
@@ -16,7 +16,7 @@
         <ul v-if="currentYear != ''" class="months-list">
           <li
             v-for="month in elapsedMonths(months)"
-            :key="month"
+            :key="month.name"
             :class="{ 'is-clicked': month.num === currentMonth }"
             :data-ts="month.ts"
           >
