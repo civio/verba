@@ -136,7 +136,13 @@
               detenciones del caso Púnica, que se combinaron con debates
               parlamentarios y propuestas y pactos en el Congreso para acabar
               con el problema. Pero la
-              <strong>Púnica</strong> (353 apariciones)
+              <strong>
+                <a
+                  href="/?from=2014-01-01&to=2020-01-31&q=Punica%7CPúnica#search-box"
+                  target="_blank"
+                  class="methodology-query"
+                >Púnica</a>
+              </strong> (353 apariciones)
               no ha sido la saga corrupta más nombrada. El caso
               <mark
                 class="item1"
