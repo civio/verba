@@ -1,12 +1,21 @@
 <!-- eslint-disable vue/no-v-html -->
 <template>
-  <div :class="{ modal: true, show: currentResult }" tabindex="-1" role="dialog">
+  <div
+    :class="{ modal: true, show: currentResult }"
+    tabindex="-1"
+    role="dialog"
+  >
     <div class="modal-dialog modal-lg" role="document">
       <div v-if="currentResult" class="modal-content">
         <div class="modal-header">
           <!--  eslint-disable-next-line vue/no-v-html -->
           <p class="modal-title" v-html="title"></p>
-          <button type="button" class="close" aria-label="Close" @click="onClose">
+          <button
+            type="button"
+            class="close"
+            aria-label="Close"
+            @click="onClose"
+          >
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
