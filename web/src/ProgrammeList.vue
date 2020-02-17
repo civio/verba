@@ -13,7 +13,7 @@
         </ul>
         <ul v-if="currentYear != ''" class="months-list">
           <li
-            v-for="month in elapsedMonths"
+            v-for="month in elapsedMonths(months)"
             :key="month"
             :class="{ 'is-clicked': month.num === currentMonth }"
             :data-ts="month.ts"
@@ -59,7 +59,6 @@
 
 <script>
 import Vue from 'vue'
-import { months } from 'moment'
 
 export default {
   data() {
@@ -99,12 +98,6 @@ export default {
     }
   },
 
-  computed: {
-    elapsedMonths() {
-      return months.filter(month => this.today.getTime() >= month.ts)
-    }
-  },
-
   mounted() {
     Vue.verbaAPI('fetchProgrammeList', null, response => {
       this.inc = this.limit
@@ -116,6 +109,10 @@ export default {
   },
 
   methods: {
+    elapsedMonths(months) {
+      return months.filter(month => this.today.getTime() >= month.ts)
+    },
+
     seeMore() {
       if (this.inc < this.filterProgramme.length) {
         this.inc += this.limit
