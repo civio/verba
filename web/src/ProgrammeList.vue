@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <main>
     <div class="verba-programmes">
       <div id="menu-filter">
@@ -293,6 +293,7 @@ u {
   height: auto;
   margin-left: 2rem;
   margin-bottom: 2rem;
+  pointer-events:none;
   // Mobile first
   order: -1;
   right: calc(50% + 5rem);
