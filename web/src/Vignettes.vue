@@ -89,6 +89,12 @@
             <h3>Venezuela siempre presente</h3>
           </a>
         </li>
+        <li @click="onClickShowVignette('vignette11')">
+          <a href="#vignette11">
+            <img id="vignette11-img" class="vignette-img" src="./images/ficha11-sin-un-dia.png" alt />
+            <h3>Dos días (de 365) sin noticias de Sánchez, Casado y compañía</h3>
+          </a>
+        </li>
       </ul>
       <ul class="vignettes-copies">
         <!-- Tema 1 - la ultraderecha -->
@@ -656,6 +662,24 @@
             <p class="methodology-note"></p>
           </div>
         </li>
+
+        <!-- Tema 11 - ... -->
+        <li id="vignette11" class="verba-vignettes-item">
+          <h3 class="vignette-title">Vignette11 title</h3>
+          <div class="vignette-copy">
+            <p>Vignette11 copy</p>
+          </div>
+          <div class="vignette-methodology">
+            <h4 class="methodology-title" v-html="$t('vignettes.methodology')"></h4>
+            <div class="query-container">
+              <p class="methodology" v-html="$t('vignettes.query-subtitle')"></p>
+              <div>
+                <a href="#" target="_blank" class="methodology-query"></a>
+              </div>
+            </div>
+            <p class="methodology-note"></p>
+          </div>
+        </li>
       </ul>
     </div>
   </main>
@@ -677,7 +701,8 @@ export default {
       chart_tema07: '',
       chart_tema08: '',
       chart_tema09: '',
-      chart_tema10: ''
+      chart_tema10: '',
+      chart_tema11: ''
     }
   },
   updated: function() {
