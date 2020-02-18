@@ -6,7 +6,12 @@
       <ul class="vignettes-titles">
         <li @click="onClickShowVignette('vignette01')">
           <a href="#vignette01">
-            <img id="vignette01-img" class="vignette-img" src="./images/ficha01-ultraderecha.png" alt />
+            <img
+              id="vignette01-img"
+              class="vignette-img"
+              src="./images/ficha01-ultraderecha.png"
+              alt
+            />
             <h3>La ultraderecha son los otros</h3>
           </a>
         </li>
@@ -30,7 +35,12 @@
         </li>
         <li @click="onClickShowVignette('vignette05')">
           <a href="#vignette05">
-            <img id="vignette05-img" class="vignette-img" src="./images/ficha05-cambio-climatico.png" alt />
+            <img
+              id="vignette05-img"
+              class="vignette-img"
+              src="./images/ficha05-cambio-climatico.png"
+              alt
+            />
             <h3>No había crisis climática hasta 2019</h3>
           </a>
         </li>
@@ -50,7 +60,7 @@
               </mark>
               en Ucrania, Finlandia, Portugal, Francia, Italia, Estonia,
               Bulgaria, Alemania, Brasil y la Comisión Europea, entre otros
-              lugares del mundo. Pero, para el Telediario de RTVE, no en España.
+              lugares del mundo. Pero, para el Telediario de TVE, no en España.
               De las
               <strong>445 veces</strong> que aparece la palabra en los informativos desde
               2014 hasta el 31 de enero de 2020 la mayoría corresponden a dos
@@ -237,7 +247,7 @@
               <a
                 href="http://www.rtve.es/alacarta/videos/telediario/telediario-15-horas-15-10-15/3324958/?t=00h35m38s"
                 target="_blank"
-              >citados por RTVE</a>
+              >citados por TVE</a>
               es que tomar una o dos
               <strong>
                 <a
@@ -448,7 +458,7 @@
               ocurre con aquellos que tienen que decidir, pero lo que tenemos
               claro es que la
               <strong>crisis climática</strong> en los
-              telediarios de RTVE no empezó a aparecer hasta 2019. Solo dos
+              telediarios de TVE no empezó a aparecer hasta 2019. Solo dos
               veces antes se había citado como tal: en 2016, por la ONG Acción
               contra el Hambre, y en la boca de Greta en 2018. De la propia
               <strong>
@@ -461,7 +471,7 @@
             </p>
             <div class="chart-annotated" v-html="chart_tema05"></div>
             <p>
-              Antes de esta crisis, RTVE ya hablaba de
+              Antes de esta crisis, TVE ya hablaba de
               <mark class="item1">
                 <a
                   href="/?from=2014-01-01&to=2020-01-31&q=%22cambio climático%22|%22cambio climatico%22"
