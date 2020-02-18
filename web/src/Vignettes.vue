@@ -44,6 +44,51 @@
             <h3>No había crisis climática hasta 2019</h3>
           </a>
         </li>
+        <li @click="onClickShowVignette('vignette06')">
+          <a href="#vignette06">
+            <img
+              id="vignette06-img"
+              class="vignette-img"
+              src="./images/ficha06-principal-pdr.png"
+              alt
+            />
+            <h3>Pedro Sánchez, el protagonista principal; Abascal, el figurante.</h3>
+          </a>
+        </li>
+        <li @click="onClickShowVignette('vignette07')">
+          <a href="#vignette07">
+            <img
+              id="vignette07-img"
+              class="vignette-img"
+              src="./images/ficha07-coronavirus.png"
+              alt
+            />
+            <h3>La fiebre (informativa) del coronavirus</h3>
+          </a>
+        </li>
+        <li @click="onClickShowVignette('vignette08')">
+          <a href="#vignette08">
+            <img id="vignette08-img" class="vignette-img" src="./images/ficha08-vox.png" alt />
+            <h3>El auge de Vox en TVE</h3>
+          </a>
+        </li>
+        <li @click="onClickShowVignette('vignette09')">
+          <a href="#vignette09">
+            <img
+              id="vignette09-img"
+              class="vignette-img"
+              src="./images/ficha09-violencia-genero.png"
+              alt
+            />
+            <h3>¿Pueden las palabras combatir la violencia de género?</h3>
+          </a>
+        </li>
+        <li @click="onClickShowVignette('vignette10')">
+          <a href="#vignette101">
+            <img id="vignette10-img" class="vignette-img" src="./images/ficha10-venezuela.png" alt />
+            <h3>Venezuela siempre presente</h3>
+          </a>
+        </li>
       </ul>
       <ul class="vignettes-copies">
         <!-- Tema 1 - la ultraderecha -->
@@ -521,6 +566,96 @@
             <p class="methodology-note"></p>
           </div>
         </li>
+
+        <!-- Tema 06 - ... -->
+        <li id="vignette06" class="verba-vignettes-item">
+          <h3 class="vignette-title">Vignette06 title</h3>
+          <div class="vignette-copy">
+            <p>Vignette06 copy</p>
+          </div>
+          <div class="vignette-methodology">
+            <h4 class="methodology-title" v-html="$t('vignettes.methodology')"></h4>
+            <div class="query-container">
+              <p class="methodology" v-html="$t('vignettes.query-subtitle')"></p>
+              <div>
+                <a href="#" target="_blank" class="methodology-query"></a>
+              </div>
+            </div>
+            <p class="methodology-note"></p>
+          </div>
+        </li>
+
+        <!-- Tema 07 - ... -->
+        <li id="vignette07" class="verba-vignettes-item">
+          <h3 class="vignette-title">Vignette07 title</h3>
+          <div class="vignette-copy">
+            <p>Vignette07 copy</p>
+          </div>
+          <div class="vignette-methodology">
+            <h4 class="methodology-title" v-html="$t('vignettes.methodology')"></h4>
+            <div class="query-container">
+              <p class="methodology" v-html="$t('vignettes.query-subtitle')"></p>
+              <div>
+                <a href="#" target="_blank" class="methodology-query"></a>
+              </div>
+            </div>
+            <p class="methodology-note"></p>
+          </div>
+        </li>
+
+        <!-- Tema 08 - ... -->
+        <li id="vignette08" class="verba-vignettes-item">
+          <h3 class="vignette-title">Vignette08 title</h3>
+          <div class="vignette-copy">
+            <p>Vignette08 copy</p>
+          </div>
+          <div class="vignette-methodology">
+            <h4 class="methodology-title" v-html="$t('vignettes.methodology')"></h4>
+            <div class="query-container">
+              <p class="methodology" v-html="$t('vignettes.query-subtitle')"></p>
+              <div>
+                <a href="#" target="_blank" class="methodology-query"></a>
+              </div>
+            </div>
+            <p class="methodology-note"></p>
+          </div>
+        </li>
+
+        <!-- Tema 09 - ... -->
+        <li id="vignette09" class="verba-vignettes-item">
+          <h3 class="vignette-title">Vignette09 title</h3>
+          <div class="vignette-copy">
+            <p>Vignette09 copy</p>
+          </div>
+          <div class="vignette-methodology">
+            <h4 class="methodology-title" v-html="$t('vignettes.methodology')"></h4>
+            <div class="query-container">
+              <p class="methodology" v-html="$t('vignettes.query-subtitle')"></p>
+              <div>
+                <a href="#" target="_blank" class="methodology-query"></a>
+              </div>
+            </div>
+            <p class="methodology-note"></p>
+          </div>
+        </li>
+
+        <!-- Tema 10 - ... -->
+        <li id="vignette10" class="verba-vignettes-item">
+          <h3 class="vignette-title">Vignette10 title</h3>
+          <div class="vignette-copy">
+            <p>Vignette10 copy</p>
+          </div>
+          <div class="vignette-methodology">
+            <h4 class="methodology-title" v-html="$t('vignettes.methodology')"></h4>
+            <div class="query-container">
+              <p class="methodology" v-html="$t('vignettes.query-subtitle')"></p>
+              <div>
+                <a href="#" target="_blank" class="methodology-query"></a>
+              </div>
+            </div>
+            <p class="methodology-note"></p>
+          </div>
+        </li>
       </ul>
     </div>
   </main>
@@ -537,7 +672,12 @@ export default {
       chart_tema02b: '',
       chart_tema03: '',
       chart_tema04: '',
-      chart_tema05: ''
+      chart_tema05: '',
+      chart_tema06: '',
+      chart_tema07: '',
+      chart_tema08: '',
+      chart_tema09: '',
+      chart_tema10: ''
     }
   },
   updated: function() {
@@ -562,6 +702,21 @@ export default {
     })
     axios.get('/verba-tema05-query01-clima.html').then(response => {
       this.chart_tema05 = response.data
+    })
+    axios.get('').then(response => {
+      this.chart_tema06 = response.data
+    })
+    axios.get('').then(response => {
+      this.chart_tema07 = response.data
+    })
+    axios.get('').then(response => {
+      this.chart_tema08 = response.data
+    })
+    axios.get('').then(response => {
+      this.chart_tema09 = response.data
+    })
+    axios.get('').then(response => {
+      this.chart_tema10 = response.data
     })
     window.addEventListener('resize', this.throttle(this.resizer, 200))
 
@@ -806,7 +961,7 @@ strong {
   padding: 0 2rem;
   flex-wrap: wrap;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 
   li h3 {
@@ -815,12 +970,15 @@ strong {
   }
 
   li {
+    width: 15rem;
     padding: 0.5rem;
   }
 }
 
 .vignette-img {
-  width: 15rem;
+  width: 100%;
+  height: 8rem;
+  object-fit: cover;
   opacity: 0.9;
   margin-bottom: 0.5rem;
 
