@@ -35,13 +35,13 @@
           <code>"</code> para encontrar términos exactos o el guión
           <code>-</code> para descartar palabras en tu búsqueda. Si quieres
           obtener todos los cortes en los que aparezcan uno u otro término,
-          utiliza la barra vertical <code>|</code>. Para utilizar operadores de
+          utiliza la barra vertical
+          <code>|</code>. Para utilizar operadores de
           búsqueda más avanzados, visita la documentación
           <a
             href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-simple-query-string-query.html#simple-query-string-syntax"
             target="_blank"
-            >aquí</a
-          >.
+          >aquí</a>.
         </p>
       </div>
     </section>
@@ -193,7 +193,13 @@ export default {
     height: 337px;
     // Number of frames
     animation: run 0.7s steps(4) infinite;
+
+    // Tablets
+    @media all and (min-width: 768px) {
+      // min-width: 408px;
+    }
   }
+
   @keyframes run {
     0% {
       background-position: 0;

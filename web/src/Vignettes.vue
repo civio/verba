@@ -540,7 +540,7 @@
                 <a
                   href="/?from=2014-01-01&to=2020-01-31&q=%22emergencia climática%22|%22emergencia climatica%22"
                   target="_blank"
-                >"emergencia climática"</a>
+                >emergencia climática</a>
               </mark>. Apareció por primera vez en el telediario del 15 de diciembre
               de 2019 y, hasta el 31 de enero de 2020, se ha utilizado 60 veces.
               Parece que ha llegado para quedarse, al igual que el problema que
@@ -575,9 +575,17 @@
 
         <!-- Tema 06 - ... -->
         <li id="vignette06" class="verba-vignettes-item">
-          <h3 class="vignette-title">Vignette06 title</h3>
+          <h3 class="vignette-title">Pedro Sánchez, el protagonista principal; Abascal, el figurante</h3>
           <div class="vignette-copy">
-            <p>Vignette06 copy</p>
+            <p>
+              El secretario general del Partido Socialista,
+              <mark>Pedro Sánchez,</mark> ha sido el político más nombrado en 2019 en los informativos de La 1, tanto por periodistas como por rivales políticos. Se trata del único líder de un partido de ámbito estatal que ha sido aludido en más ocasiones que su propia formación. Por cada nueve menciones al
+              <mark>PSOE,</mark>
+              <strong>Sánchez</strong> recibió 10. Su doble papel como presidente del Gobierno y como máximo dirigente de los socialistas en un año con cuatro procesos electorales lo explican.
+            </p>
+            <p>Solo las referencias al Partido Popular (4.634) superaron a las de Sánchez (4.191). Sin embargo, su presidente no tuvo tanto protagonismo: Pablo Casado fue citado una vez por cada cuatro alusiones a los populares.</p>
+            <p>En el extremo contrario al de Pedro Sánchez está Santiago Abascal, presidente de Vox: su protagonismo es casi testimonial si lo comparamos con las referencias al partido de ultraderecha. Por cada 'Abascal’, Vox fue mencionado más de 5,5 veces (367 citas frente a 2.021).</p>
+            <p>De la cobertura de los cinco primeros partidos políticos de ámbito estatal –y sus líderes– en los informativos de TVE en 2019, Pedro Sánchez y el PP fueron nombrados una mediana de cinco veces al día; PSOE y Ciudadanos, 4; Unidas Podemos, 2, y Vox, Iglesias, Casado y Rivera, 1; Abascal, menos de una vez al día. Si analizamos con más detalle las apariciones diarias de cada partido en TVE, solo en cuatro días de todo 2019 no se mencionó a los socialistas, según los telediarios analizados por Verba. Es decir, aparecieron en la televisión pública 361 días en todo el año pasado. Por su parte, los populares y su presidente, con 359 días; 354, los de C’s; 337, los de Podemos; y, los que menos, 277 días, el partido de ultraderecha o su líder.</p>
           </div>
           <div class="vignette-methodology">
             <h4 class="methodology-title" v-html="$t('vignettes.methodology')"></h4>
