@@ -55,7 +55,7 @@
             <h3>Pedro Sánchez, el protagonista principal; Abascal, el figurante.</h3>
           </a>
         </li>
-        <li @click="onClickShowVignette('vignette07')">
+         <li @click="onClickShowVignette('vignette07')">
           <a href="#vignette07">
             <img
               id="vignette07-img"
@@ -66,13 +66,13 @@
             <h3>La fiebre (informativa) del coronavirus</h3>
           </a>
         </li>
-        <li @click="onClickShowVignette('vignette08')">
+         <li @click="onClickShowVignette('vignette08')">
           <a href="#vignette08">
             <img id="vignette08-img" class="vignette-img" src="./images/ficha08-vox.png" alt />
             <h3>El auge de Vox en TVE</h3>
           </a>
         </li>
-        <li @click="onClickShowVignette('vignette09')">
+        <!--<li @click="onClickShowVignette('vignette09')">
           <a href="#vignette09">
             <img
               id="vignette09-img"
@@ -94,7 +94,7 @@
             <img id="vignette11-img" class="vignette-img" src="./images/ficha11-sin-un-dia.png" alt />
             <h3>Dos días (de 365) sin noticias de Sánchez, Casado y compañía</h3>
           </a>
-        </li>
+        </li>-->
       </ul>
       <ul class="vignettes-copies">
         <!-- Tema 1 - la ultraderecha -->
@@ -578,32 +578,113 @@
           <h3 class="vignette-title">Pedro Sánchez, el protagonista principal; Abascal, el figurante</h3>
           <div class="vignette-copy">
             <p>
-              El secretario general del Partido Socialista,
-              <mark>Pedro Sánchez,</mark> ha sido el político más nombrado en 2019 en los informativos de La 1, tanto por periodistas como por rivales políticos. Se trata del único líder de un partido de ámbito estatal que ha sido aludido en más ocasiones que su propia formación. Por cada nueve menciones al
-              <mark>PSOE,</mark>
+              El secretario general del <strong>Partido Socialista</strong>,
+              <mark class="item1">
+                <a
+                  href="/?q=%22Sánchez%22%7C%22Sanchez%22&from=2019-01-01&to=2020-01-31#search-box"
+                  target="_blank"
+                >Pedro Sánchez,</a>
+              </mark>
+              ha sido el político más nombrado en 2019 en los informativos de La 1, tanto por periodistas como por rivales políticos. Se trata del único líder de un partido de ámbito estatal que ha sido aludido en más ocasiones que su propia formación. Por cada nueve menciones al
+              <mark class="item2">
+                <a
+                  href="/?q=%22partido%20socialista%22%7C%22psoe%22%7C%22ferraz%22%7C%22los%20socialistas%22%7C%22grupo%20socialista%22%7C%22formación%20socialista%22%7C%22formacion%20socialista%22%7C%22dirección%20socialista%22%7C%22direccion%20socialista%22%7C%22bancada%20socialista%22%7C%22filas%20socialistas%22%7C%22directiva%20socialista%22%7C%22grupo%20parlamentario%20socialista%22&from=2019-01-01&to=2020-01-31#search-box"
+                  target="_blank"
+                >PSOE,</a>
+              </mark>
               <strong>Sánchez</strong> recibió 10. Su doble papel como presidente del Gobierno y como máximo dirigente de los socialistas en un año con cuatro procesos electorales lo explican.
             </p>
-            <p>Solo las referencias al Partido Popular (4.634) superaron a las de Sánchez (4.191). Sin embargo, su presidente no tuvo tanto protagonismo: Pablo Casado fue citado una vez por cada cuatro alusiones a los populares.</p>
+
+            <div class="chart-annotated" v-html="chart_tema06"></div>
+
+            <p>Solo las referencias al 
+              <strong>
+                <a
+                  href="/?q=%22Partido%20Popular%22%7C%22PP%22%7C%22G%C3%A9nova%22%7C%22Genova%22%7C%22los%20populares%22%7C%22grupo%20popular%22%7C%22direcci%C3%B3n%20popular%22%7C%22direccion%20popular%22%7C%22partido%20de%20Casado%22%7C%22bancada%20popular%22%7C%22filas%20populares%22%7C%22directiva%20popular%22%7C%22grupo%20parlamentario%20popular%22&from=2019-01-01&to=2020-01-31#search-box"
+                  target="_blank"
+                >Partido Popular</a>
+              </strong> (4.634) superaron a las de 
+              
+              <strong>
+                <a
+                  href="/?q=%22Sánchez%22%7C%22Sanchez%22&from=2019-01-01&to=2020-01-31#search-box"
+                  target="_blank"
+                >Sánchez</a>
+              </strong>(4.191). Sin embargo, su presidente no tuvo tanto protagonismo: Pablo Casado fue citado una vez por cada cuatro alusiones a los populares.</p>
             <p>En el extremo contrario al de Pedro Sánchez está Santiago Abascal, presidente de Vox: su protagonismo es casi testimonial si lo comparamos con las referencias al partido de ultraderecha. Por cada 'Abascal’, Vox fue mencionado más de 5,5 veces (367 citas frente a 2.021).</p>
             <p>De la cobertura de los cinco primeros partidos políticos de ámbito estatal –y sus líderes– en los informativos de TVE en 2019, Pedro Sánchez y el PP fueron nombrados una mediana de cinco veces al día; PSOE y Ciudadanos, 4; Unidas Podemos, 2, y Vox, Iglesias, Casado y Rivera, 1; Abascal, menos de una vez al día. Si analizamos con más detalle las apariciones diarias de cada partido en TVE, solo en cuatro días de todo 2019 no se mencionó a los socialistas, según los telediarios analizados por Verba. Es decir, aparecieron en la televisión pública 361 días en todo el año pasado. Por su parte, los populares y su presidente, con 359 días; 354, los de C’s; 337, los de Podemos; y, los que menos, 277 días, el partido de ultraderecha o su líder.</p>
           </div>
           <div class="vignette-methodology">
             <h4 class="methodology-title" v-html="$t('vignettes.methodology')"></h4>
-            <div class="query-container">
               <p class="methodology" v-html="$t('vignettes.query-subtitle')"></p>
+            <div class="query-container">
               <div>
-                <a href="#" target="_blank" class="methodology-query"></a>
+                <div>
+                <a
+                  href="/?q=%22Sánchez%22%7C%22Sanchez%22&from=2019-01-01&to=2020-01-31#search-box"
+                  target="_blank"
+                  class="methodology-query item1"
+                >"Sánchez"|"Sanchez"</a>
+                &nbsp; VS
+                <br />
+                <a
+                  href="/?q=%22partido%20socialista%22%7C%22psoe%22%7C%22ferraz%22%7C%22los%20socialistas%22%7C%22grupo%20socialista%22%7C%22formación%20socialista%22%7C%22formacion%20socialista%22%7C%22dirección%20socialista%22%7C%22direccion%20socialista%22%7C%22bancada%20socialista%22%7C%22filas%20socialistas%22%7C%22directiva%20socialista%22%7C%22grupo%20parlamentario%20socialista%22&from=2019-01-01&to=2020-01-31#search-box"
+                  target="_blank"
+                  class="methodology-query item2"
+                >
+                  "partido socialista"|"psoe"|"ferraz"|"los socialistas"|"grupo socialista"|"formación socialista"|"formacion socialista"|"dirección socialista"|"direccion socialista"|"bancada socialista"|"filas socialistas"|"directiva socialista"|"grupo parlamentario socialista"
+                </a>
+              </div>
               </div>
             </div>
-            <p class="methodology-note"></p>
+            <p class="methodology-note">
+              Nota: El periodo analizado es todo 2019, aunque para los distintos cálculos, en el caso de Albert Rivera, solo hemos tenido en cuenta sus menciones hasta el día 11 de noviembre, fecha en la que anunció su dimisión como presidente del partido.
+              <br>
+              Los resultados de las búsquedas de verba han sido descargados en csv y limpiados para eliminar falsos positivos (uso de <i>podemos</i> como verbo, de <i>ciudadanos</i> como sustantivo plural o de personas que comparten los apellidos de los líderes políticos, como <i>Jordi Sànchez</i>, <i>Julio Iglesias</i> o <i>María Casado</i>, entre otros tantos. Puedes descargar y consultar los datos limpios en <a href="https://datos.civio.es/" target="_blank">datos.civio.es</a>
+            </p>
           </div>
         </li>
 
         <!-- Tema 07 - ... -->
         <li id="vignette07" class="verba-vignettes-item">
-          <h3 class="vignette-title">Vignette07 title</h3>
+          <h3 class="vignette-title">La fiebre (informativa) del coronavirus</h3>
           <div class="vignette-copy">
-            <p>Vignette07 copy</p>
+            <p>Los informativos de Televisión Española han mencionado la palabra <mark>
+              <a
+                  href="/?q=coronavirus&from=2014-01-01&to=2020-01-31#search-box"
+                  target="_blank"
+                  class="methodology-query item2"
+                >
+                  coronavirus
+                </a>
+                </mark> 
+               en 168 ocasiones desde 2014 hasta enero de 2020, la gran mayoría en relación con el brote actual originado en China. Pese a que la epidemia actual apareció por primera vez en Wuhan el 31 de diciembre de 2019, el telediario de La 1 tardó 17 días en hablar del nuevo virus, cuando comenzaron los <a href="https://www.nytimes.com/2020/01/17/health/china-coronavirus-airport-screening.html" target="_blank">controles</a> en aeropuertos de Estados Unidos y seis días después del <a href="https://www.nytimes.com/2020/01/17/health/china-coronavirus-airport-screening.html" target="_blank">primer fallecido</a> por la infección. </p>
+            <p>El nuevo <strong>coronavirus</strong>, que recibió de forma provisional el nombre de 
+            <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019" target="_blank">2019-nCoV
+            </a>
+             y que posteriormente ha sido denominado <a href="https://www.biorxiv.org/content/10.1101/2020.02.07.937862v1" target="_blank">SARS-CoV-2</a>, provoca una enfermedad respiratoria llamada COVID-19. Según los últimos datos del <a href="https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov-China/documentos/Actualizacion_26_COVID-19_China.pdf" target="_blank">Ministerio de Sanidad</a>, publicados el 19 de febrero de 2020, el <strong>coronavirus</strong> ha afectado a cerca de 75.000 individuos y ha sido relacionado con la muerte de más de 2.000 personas. Además de China, otros 26 países, entre ellos España, han confirmado casos positivos del virus.</p>
+            <p>La cobertura de TVE del 
+              <strong>
+                <a href="/?from=2014-01-01&to=2020-01-31&q=2019-nCov#search-box" target="_blank">2019-nCoV</a>
+              </strong>
+               –nombre provisional del virus– es muchísimo mayor que la que tuvo el síndrome respiratorio de Oriente Medio (<strong>MERS</strong>, por sus siglas en inglés). El resto de alusiones a <strong>coronavirus</strong> corresponde a esta enfermedad, diferente a la actual. El virus del <strong>MERS</strong> surgió en 2012, aunque el número de casos se disparó entre 2014 y 2015. La epidemia se extendió por <a href="https://www.who.int/en/news-room/fact-sheets/detail/middle-east-respiratory-syndrome-coronavirus-(mers-cov)" target="_blank">27 países</a>, aunque los más afectados fueron Arabia Saudí, Emiratos Árabes Unidos y la República de Corea (en España no se dio ningún caso). El virus del MERS<, al contrario del <strong>coronavirus</strong> de Wuhan, no fue clasificado como &quot;emergencia sanitaria internacional&quot; por la Organización Mundial de la Salud.  </p>
+            <p>La OMS sí reconoció como emergencia internacional a la <strong><a href="https://www.who.int/mediacentre/news/statements/2009/h1n1_20090425/en/" target="_blank">gripe A</a></strong> de 2009, nombrada en 
+            <strong>
+                <a href='/?from=2014-01-01&to=2020-01-31&?q="gripe%20A"#search-box' target="_blank">43 ocasiones</a>
+              </strong>
+             por TVE. Varios casos en <a href="https://www.heraldo.es/noticias/aragon/zaragoza/2014/01/10/un-total-de-21-afectados-por-la-gripe-a-en-aragon-416136.html" target="_blank">Aragón</a> concentran el interés informativo en 2014.</p>
+
+            <p>En 2016, España notificó algo más de <a href="https://www.isciii.es/QueHacemos/Servicios/VigilanciaSaludPublicaRENAVE/EnfermedadesTransmisibles/Documents/INFORMES/INFORMES%20RENAVE/RENAVE_INFORME_ANUAL_2016.pdf" target="_blank">400 casos de <strong>zika</strong></a>, una <a href="https://www.who.int/news-room/fact-sheets/detail/zika-virus" target="_blank">enfermedad</a>, generalmente leve, que podía desencadenar complicaciones, como problemas neurológicos y microcefalias. Con 
+            <strong>
+                <a href='/?from=2014-01-01&to=2020-01-31&?q=zika#search-box' target="_blank">217 menciones</a>
+              </strong>, el interés informativo por el <strong>zika</strong> fue se acerca al generado hasta el momento por el nuevo <strong>coronavirus</strong>, aunque el número de casos notificados de zika en España fue 201 veces superior al del brote actual. </p>
+
+            <p>La enfermedad más grave considerada hasta la fecha, y la que sin duda más cobertura informativa ha recibido, es el <strong>ébola</strong>, cuya <a href="https://www.who.int/news-room/fact-sheets/detail/ebola-virus-disease" target="_blank">tasa de mortalidad</a> puede alcanzar el 90%. Del total de 
+            <strong>
+                <a href='/?from=2014-01-01&to=2020-01-31&?q=ébola%7Cebola#search-box' target="_blank">1.501 menciones</a>
+              </strong>
+            a &quot;ébola&quot; que detecta Verba, el 87% (1.311 citas) se produjeron durante 2014. En el verano de ese año, un misionero español contrajo la enfermedad y fue repatriado para ser tratado por el Hospital Carlos III. Durante su tratamiento en Madrid, una enfermera se contagió, lo que aumentó la presencia del término en el telediario de La 1. De hecho, alrededor del 10% de las menciones a esta enfermedad están relacionadas con este episodio. Pero, más allá de la proximidad de estos dos infectados, entre 2014 y <a href="https://www.who.int/news-room/detail/29-03-2016-statement-on-the-9th-meeting-of-the-ihr-emergency-committee-regarding-the-ebola-outbreak-in-west-africa" target="_blank">2016</a>, años en los que se prolongó la emergencia sanitaria internacional, más de 28.000 personas, principalmente en África, se infectaron de <a href="https://www.cdc.gov/vhf/ebola/history/2014-2016-outbreak/index.html" target="_blank">ébola</a> y cerca de 11.300 individuos murieron por culpa del virus.  </p>
+
           </div>
           <div class="vignette-methodology">
             <h4 class="methodology-title" v-html="$t('vignettes.methodology')"></h4>
@@ -613,7 +694,9 @@
                 <a href="#" target="_blank" class="methodology-query"></a>
               </div>
             </div>
-            <p class="methodology-note"></p>
+            <p class="methodology-note">
+              <p>Nota: la búsqueda de <strong>gripe A</strong> proporciona 46 resultados, de los que se han eliminado las entradas que no correspondían a la gripe <strong>A (H1N1)</strong>, obteniendo un total de 43 menciones.</p>
+            </p>
           </div>
         </li>
 
@@ -736,13 +819,13 @@ export default {
     axios.get('/verba-tema05-query01-clima.html').then(response => {
       this.chart_tema05 = response.data
     })
-    axios.get('').then(response => {
+    axios.get('/verba-vignette06-BOTH.html').then(response => {
       this.chart_tema06 = response.data
     })
-    axios.get('').then(response => {
+    axios.get('verba-vignette07-coronavirus.html').then(response => {
       this.chart_tema07 = response.data
     })
-    axios.get('').then(response => {
+    axios.get('verba-vignette08-vox.html').then(response => {
       this.chart_tema08 = response.data
     })
     axios.get('').then(response => {
@@ -1005,6 +1088,7 @@ strong {
   li {
     width: 15rem;
     padding: 0.5rem;
+    margin: 0.2rem;
   }
 }
 
