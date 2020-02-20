@@ -177,11 +177,7 @@ export default {
     opacity: 0.7;
 
     // Each frame width
-    // width: calc(408 * $magneto-scale-factor:);
-    // min-width: calc(408 * $magneto-scale-factor:);
-    // height: calc(337 * $magneto-scale-factor:);
-
-    width:408px;
+    width: 408px;
     min-width: 408px;
     height: 337px;
     // Number of frames
