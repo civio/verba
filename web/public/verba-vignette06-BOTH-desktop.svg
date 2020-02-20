@@ -3,12 +3,12 @@
 <svg version="1.2" baseProfile="tiny" id="g-verba-vignette06-BOTH-desktop-img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 	 x="0px" y="0px" viewBox="0 0 673 568.76" xml:space="preserve">
 <g>
-	<rect style="opacity:0.69;" x="27.914" y="43.95" fill="#4731EF" width="113.553" height="14"/>
-	<rect style="opacity:0.8;" x="27.914" y="468.038" fill="#EF9B31" width="113.553" height="14"/>
 	<g transform="translate(35.37547831632653, 275)">
 		<path display="none" fill="none" stroke="#212529" d="M7.976,231.043H610.03"/>
 		<g transform="translate(39.529230442176875,0)">
 			<line display="none" fill="none" stroke="#212529" x1="7.476" y1="-29.457" x2="7.476" y2="230.543"/>
+			
+				
 			
 				
 		</g>
@@ -73,7 +73,9 @@
 		<g transform="translate(561.8302508503401,0)">
 			<line display="none" fill="none" stroke="#212529" x1="9.402" y1="-29.457" x2="9.402" y2="230.543"/>
 			
-				<text transform="matrix(1 0 0 1 -1.7206 246.6423)" display="none" fill="#212529" font-family="'ElMessiri-Bold'" font-size="10px">2020</text>
+				<text transform="matrix(1 0 0 1 -4.445 246.6423)" display="none" fill="#212529" font-family="'ElMessiri-Bold'" font-size="10px">2020</text>
+			
+				<text transform="matrix(1 0 0 1 -562.9988 246.6423)" display="none" fill="#212529" font-family="'ElMessiri-Bold'" font-size="10px">2019</text>
 		</g>
 	</g>
 	<g transform="translate(30, 0)">
@@ -104,17 +106,27 @@
 				
 		</g>
 	</g>
-	<g transform="translate(0,130.5)">
-		<line fill="none" stroke="#212529" stroke-opacity="0.12" x1="37.476" y1="310.139" x2="650.476" y2="310.139"/>
-	</g>
-	<g transform="translate(0,98)">
-		<line fill="none" stroke="#212529" stroke-opacity="0.12" x1="37.476" y1="310.139" x2="650.476" y2="310.139"/>
-	</g>
-	<g transform="translate(0,65.5)">
-		<line fill="none" stroke="#212529" stroke-opacity="0.12" x1="37.476" y1="310.139" x2="650.476" y2="310.139"/>
-	</g>
-	<g transform="translate(0,33)">
-		<line fill="none" stroke="#212529" stroke-opacity="0.12" x1="37.476" y1="310.139" x2="650.476" y2="310.139"/>
+	<g>
+		<g transform="translate(0,130.5)">
+			<line fill="none" stroke="#212529" stroke-opacity="0.12" x1="37.476" y1="310.139" x2="650.476" y2="310.139"/>
+			
+				
+		</g>
+		<g transform="translate(0,98)">
+			<line fill="none" stroke="#212529" stroke-opacity="0.12" x1="37.476" y1="310.139" x2="650.476" y2="310.139"/>
+			
+				
+		</g>
+		<g transform="translate(0,65.5)">
+			<line fill="none" stroke="#212529" stroke-opacity="0.12" x1="37.476" y1="310.139" x2="650.476" y2="310.139"/>
+			
+				
+		</g>
+		<g transform="translate(0,33)">
+			<line fill="none" stroke="#212529" stroke-opacity="0.12" x1="37.476" y1="310.139" x2="650.476" y2="310.139"/>
+			
+				
+		</g>
 	</g>
 	<g transform="translate(0,0.5)">
 		<line fill="none" stroke="#212529" stroke-opacity="0.12" x1="37.476" y1="310.139" x2="650.476" y2="310.139"/>
@@ -123,7 +135,7 @@
 		<line style="opacity:0.8;" fill="none" stroke="#000000" stroke-miterlimit="10" x1="14.75" y1="20.001" x2="658.25" y2="20.001"/>
 	
 		<line style="opacity:0.8;" fill="none" stroke="#000000" stroke-miterlimit="10" x1="18" y1="548.759" x2="655" y2="548.759"/>
-	<g id="PEDRO_SANCHEZ_1_">
+	<g id="PEDRO_SANCHEZ_2_">
 		<rect x="37.476" y="274.793" fill="#4731EF" width="10.946" height="35.75"/>
 		<polygon fill="#4731EF" points="48.423,268.943 48.423,274.793 48.423,310.543 59.369,310.543 59.369,268.943 		"/>
 		<polygon fill="#4731EF" points="70.316,251.393 59.369,251.393 59.369,268.943 59.369,310.543 70.316,310.543 70.316,255.293 		
@@ -272,25 +284,25 @@
 	</g>
 	<g>
 		
-			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="212.619" y1="124.974" x2="212.619" y2="128.974"/>
+			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="212.619" y1="93.926" x2="212.619" y2="97.926"/>
 		
-			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" stroke-dasharray="8.0586,8.0586" x1="212.619" y1="137.033" x2="212.619" y2="471.466"/>
+			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" stroke-dasharray="8.0334,8.0334" x1="212.619" y1="105.96" x2="212.619" y2="471.479"/>
 		
 			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="212.619" y1="475.495" x2="212.619" y2="479.495"/>
 	</g>
 	<g>
 		
-			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="256.405" y1="124.974" x2="256.405" y2="128.974"/>
+			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="256.405" y1="93.926" x2="256.405" y2="97.926"/>
 		
-			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" stroke-dasharray="8.0586,8.0586" x1="256.405" y1="137.033" x2="256.405" y2="471.466"/>
+			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" stroke-dasharray="8.0334,8.0334" x1="256.405" y1="105.96" x2="256.405" y2="471.479"/>
 		
 			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="256.405" y1="475.495" x2="256.405" y2="479.495"/>
 	</g>
 	<g>
 		
-			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="530.065" y1="124.974" x2="530.065" y2="128.974"/>
+			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="530.065" y1="93.926" x2="530.065" y2="97.926"/>
 		
-			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" stroke-dasharray="8.0586,8.0586" x1="530.065" y1="137.033" x2="530.065" y2="471.466"/>
+			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" stroke-dasharray="8.0334,8.0334" x1="530.065" y1="105.96" x2="530.065" y2="471.479"/>
 		
 			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="530.065" y1="475.495" x2="530.065" y2="479.495"/>
 	</g>
