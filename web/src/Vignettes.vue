@@ -72,7 +72,7 @@
             <h3>El auge de Vox en TVE</h3>
           </a>
         </li>
-        <!-- <li @click="onClickShowVignette('vignette09')">
+        <li @click="onClickShowVignette('vignette09')">
           <a href="#vignette09">
             <img
               id="vignette09-img"
@@ -94,7 +94,7 @@
             <img id="vignette11-img" class="vignette-img" src="./images/ficha11-sin-un-dia.png" alt />
             <h3>Dos días (de 365) sin noticias de Sánchez, Casado y compañía</h3>
           </a>
-        </li>-->
+        </li>
       </ul>
       <ul class="vignettes-copies">
         <!-- Tema 1 - la ultraderecha -->
@@ -614,12 +614,14 @@
                   target="_blank"
                 >Pablo Casado</a>
               </strong>
-              fue citado una vez por cada cuatro alusiones a <strong>los populares</strong>.
+              fue citado una vez por cada cuatro alusiones a
+              <strong>los populares</strong>.
             </p>
             <p>
               En el extremo contrario al de
               <strong>Pedro Sánchez</strong> está
-              <strong>Santiago Abascal</strong>, presidente de <strong>
+              <strong>Santiago Abascal</strong>, presidente de
+              <strong>
                 <a href="/?q=Vox|vos&from=2019-01-01&to=2020-01-31#search-box" target="_blank">Vox</a>
               </strong>: su protagonismo es casi testimonial si lo comparamos con las referencias al partido de ultraderecha. Por cada
               <strong>
@@ -661,7 +663,11 @@
                 <a href="/?q=Rivera&from=2019-01-01&to=2020-01-31#search-box" target="_blank">Rivera</a>
               </strong>, 1;
               <strong>Abascal</strong>, menos de una vez al día. Si analizamos con más detalle las apariciones diarias de cada partido en TVE, solo en cuatro días de todo 2019 no se mencionó a los
-              <strong>socialistas</strong>, según los telediarios analizados por Verba. Es decir, aparecieron en la televisión pública 361 días en todo el año pasado. Por su parte, <strong>los populares</strong> y su presidente, con 359 días; 354, los de <strong>C’s</strong>; 337, los de <strong>Podemos</strong>; y, los que menos, 277 días, el partido de <strong>ultraderecha</strong> o su líder.
+              <strong>socialistas</strong>, según los telediarios analizados por Verba. Es decir, aparecieron en la televisión pública 361 días en todo el año pasado. Por su parte,
+              <strong>los populares</strong> y su presidente, con 359 días; 354, los de
+              <strong>C’s</strong>; 337, los de
+              <strong>Podemos</strong>; y, los que menos, 277 días, el partido de
+              <strong>ultraderecha</strong> o su líder.
             </p>
           </div>
           <div class="vignette-methodology">
@@ -686,20 +692,20 @@
               </div>
             </div>
             <div class="methodology-note">
+              <p>Nota: El periodo analizado es todo 2019, aunque para los distintos cálculos, en el caso de Albert Rivera, solo hemos tenido en cuenta sus menciones hasta el día 11 de noviembre, fecha en la que anunció su dimisión como presidente del partido.</p>
               <p>
-              Nota: El periodo analizado es todo 2019, aunque para los distintos cálculos, en el caso de Albert Rivera, solo hemos tenido en cuenta sus menciones hasta el día 11 de noviembre, fecha en la que anunció su dimisión como presidente del partido.
-              </p>
-              <p>
-              Los resultados de las búsquedas de verba han sido <strong>descargados en csv</strong> y <strong>limpiados para eliminar falsos positivos </strong> (uso de
-              <i>podemos</i> como verbo, de
-              <i>ciudadanos</i> como sustantivo plural o de personas que comparten los apellidos de los líderes políticos, como
-              <i>Jordi Sànchez</i>,
-              <i>Julio Iglesias</i> o
-              <i>María Casado</i>, entre otros tantos. Puedes descargar y consultar los datos limpios en
-              <a
-                href="https://datos.civio.es/"
-                target="_blank"
-              >datos.civio.es</a>
+                Los resultados de las búsquedas de verba han sido
+                <strong>descargados en csv</strong> y
+                <strong>limpiados para eliminar falsos positivos</strong> (uso de
+                <i>podemos</i> como verbo, de
+                <i>ciudadanos</i> como sustantivo plural o de personas que comparten los apellidos de los líderes políticos, como
+                <i>Jordi Sànchez</i>,
+                <i>Julio Iglesias</i> o
+                <i>María Casado</i>, entre otros tantos. Puedes descargar y consultar los datos limpios en
+                <a
+                  href="https://datos.civio.es/"
+                  target="_blank"
+                >datos.civio.es</a>
               </p>
             </div>
           </div>
@@ -743,7 +749,8 @@
               <a
                 href="https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov-China/documentos/Actualizacion_26_COVID-19_China.pdf"
                 target="_blank"
-              >Ministerio de Sanidad</a>, publicados el 19 de febrero de 2020, el <strong>coronavirus</strong> ha afectado a cerca de 75.000 individuos y ha sido relacionado con la muerte de más de 2.000 personas. Además de China, otros 26 países, entre ellos España, han confirmado casos positivos del virus.
+              >Ministerio de Sanidad</a>, publicados el 19 de febrero de 2020, el
+              <strong>coronavirus</strong> ha afectado a cerca de 75.000 individuos y ha sido relacionado con la muerte de más de 2.000 personas. Además de China, otros 26 países, entre ellos España, han confirmado casos positivos del virus.
             </p>
 
             <div class="chart-annotated" v-html="chart_tema07"></div>
@@ -859,27 +866,32 @@
                   target="_blank"
                 >Vox</a>
               </mark>
-              había aparecido con cuentagotas en los informativos de TVE. Desde su presentación, el 16 de enero de 2014, hasta su mitin de Vistalegre, que celebró el 7 de octubre de 2018, había sido mencionado en 36 ocasiones: por la detención de uno de sus miembros al intentar colocar una bandera española de 200 metros en el peñón de Gibraltar, por presentar querellas contra Rajoy por el 9-N, y contra diferentes políticos y entidades catalanas por el 1-O, por la cancelación de un acto en una universidad que convocó junto a Hazte Oír y su autobús transfóbico, o por la agresión en 2015 a la presidenta de <strong>Vox</strong> Cuenca.
+              había aparecido con cuentagotas en los informativos de TVE. Desde su presentación, el 16 de enero de 2014, hasta su mitin de Vistalegre, que celebró el 7 de octubre de 2018, había sido mencionado en 36 ocasiones: por la detención de uno de sus miembros al intentar colocar una bandera española de 200 metros en el peñón de Gibraltar, por presentar querellas contra Rajoy por el 9-N, y contra diferentes políticos y entidades catalanas por el 1-O, por la cancelación de un acto en una universidad que convocó junto a Hazte Oír y su autobús transfóbico, o por la agresión en 2015 a la presidenta de
+              <strong>Vox</strong> Cuenca.
             </p>
 
             <div class="chart-annotated" v-html="chart_tema08"></div>
 
-            <p>Vistalegre supuso su relanzamiento mediático ya que, hasta entonces, el partido de extrema derecha había tenido un impacto informativo más o menos similar, por número de menciones, al Pacma, otro partido sin representación parlamentaria. Desde este mitin hasta las siguientes elecciones, las andaluzas del 2 de diciembre de 2018, menos de dos meses después, <strong>Vox</strong>, que aún no contaba con ningún representante electo en toda España, fue nombrado el doble que en el periodo anterior, en 76 ocasiones. Su participación, como acusación popular, en el juicio a los miembros del Govern y los líderes de ANC y Ómnium por los hechos de septiembre y octubre de 2017, y su asistencia a actos en Alsasua y Barcelona, junto a Ciudadanos y Partido Popular, les otorgó presencia en los informativos de La 1. Pero con el inicio de la campaña electoral en Andalucía aumentó la frecuencia de sus menciones. En particular, las de los otros partidos. En los cortes emitidos por los servicios informativos, el Partido Socialista y, en menor medida, Adelante Andalucía aludieron en sus mensajes al partido presidido por Santiago Abascal, mientras PP y C's evitaban, por lo general, pronunciarse sobre esta formación.</p>
             <p>
-              Las andaluzas supusieron la entrada de <strong>Vox</strong> en las instituciones, pero no fueron sus primeras elecciones, sino las europeas del 25 de mayo de 2014. Antes de esta fecha, <strong>Vox</strong> apareció en cuatro ediciones de los informativos de TVE. Las dos primeras, por la presentación del partido ultra.
+              Vistalegre supuso su relanzamiento mediático ya que, hasta entonces, el partido de extrema derecha había tenido un impacto informativo más o menos similar, por número de menciones, al Pacma, otro partido sin representación parlamentaria. Desde este mitin hasta las siguientes elecciones, las andaluzas del 2 de diciembre de 2018, menos de dos meses después,
+              <strong>Vox</strong>, que aún no contaba con ningún representante electo en toda España, fue nombrado el doble que en el periodo anterior, en 76 ocasiones. Su participación, como acusación popular, en el juicio a los miembros del Govern y los líderes de ANC y Ómnium por los hechos de septiembre y octubre de 2017, y su asistencia a actos en Alsasua y Barcelona, junto a Ciudadanos y Partido Popular, les otorgó presencia en los informativos de La 1. Pero con el inicio de la campaña electoral en Andalucía aumentó la frecuencia de sus menciones. En particular, las de los otros partidos. En los cortes emitidos por los servicios informativos, el Partido Socialista y, en menor medida, Adelante Andalucía aludieron en sus mensajes al partido presidido por Santiago Abascal, mientras PP y C's evitaban, por lo general, pronunciarse sobre esta formación.
+            </p>
+            <p>
+              Las andaluzas supusieron la entrada de
+              <strong>Vox</strong> en las instituciones, pero no fueron sus primeras elecciones, sino las europeas del 25 de mayo de 2014. Antes de esta fecha,
+              <strong>Vox</strong> apareció en cuatro ediciones de los informativos de TVE. Las dos primeras, por la presentación del partido ultra.
               <a
                 href="https://www.youtube.com/watch?v=vNOsg6KF3Ts"
                 target="_blank"
               >Ese mismo fin de semana</a> se presentó otro partido:
-              <strong> 
-              <a
+              <strong>
+                <a
                   href="/?q=%22podemos%22|%22formación morada%22|%22formacion morada%22|%22formación morado%22|%22los morados%22|%22partido morado%22|%22dirección morada%22|%22direccion morada%22&from=2019-01-01&to=2020-01-31#search-box"
                   target="_blank"
-                >Podemos</a></strong>
-                . La formación encabezada por Pablo Iglesias, entonces un habitual de tertulias políticas en La Sexta y Cuatro, entre otros canales, no contó con ningún minuto en los informativos de la televisión pública. De hecho, durante los meses anteriores al 25M solo aparecieron en una frase, al final de una pieza sobre los resultados del último CIS, que les otorgaba un escaño: "Podría entrar además al parlamento [europeo] Pablo Iglesias, el candidato de 
-              <strong>
-                Podemos
-              </strong>." Consiguieron cinco.
+                >Podemos</a>
+              </strong>
+              . La formación encabezada por Pablo Iglesias, entonces un habitual de tertulias políticas en La Sexta y Cuatro, entre otros canales, no contó con ningún minuto en los informativos de la televisión pública. De hecho, durante los meses anteriores al 25M solo aparecieron en una frase, al final de una pieza sobre los resultados del último CIS, que les otorgaba un escaño: "Podría entrar además al parlamento [europeo] Pablo Iglesias, el candidato de
+              <strong>Podemos</strong>." Consiguieron cinco.
             </p>
           </div>
           <div class="vignette-methodology">
@@ -899,14 +911,15 @@
               <strong>podemos</strong> hemos tenido que descartar los resultados que no aludían al partido político: discriminando de forma automática las perífrasis verbales
               <i>podemos + infinitivo</i> o
               <i>podemos + verbo auxiliar</i> conjugado (por ejemplo, "podemos decir que", "no podemos quedarnos impasibles") o revisando el empleo de la inicial mayúscula, propia de los sustantivos.
-              <br />En la búsqueda de <strong>Vox</strong> hemos descartado un resultado que, debido a un error en la transcripción del subtítulo, se refería a un 'box' de motociclismo.
+              <br />En la búsqueda de
+              <strong>Vox</strong> hemos descartado un resultado que, debido a un error en la transcripción del subtítulo, se refería a un 'box' de motociclismo.
             </p>
           </div>
         </li>
 
         <!-- Tema 09 - ... -->
         <li id="vignette09" class="verba-vignettes-item">
-          <h3 class="vignette-title">Vignette09 title</h3>
+          <h3 class="vignette-title">¿Pueden las palabras combatir la violencia de género?</h3>
           <div class="vignette-copy">
             <p>Vignette09 copy</p>
           </div>
@@ -924,9 +937,41 @@
 
         <!-- Tema 10 - ... -->
         <li id="vignette10" class="verba-vignettes-item">
-          <h3 class="vignette-title">Vignette10 title</h3>
+          <h3 class="vignette-title">Venezuela siempre presente</h3>
           <div class="vignette-copy">
-            <p>Vignette10 copy</p>
+            <p>
+              3.410 veces se ha mencionado
+              <mark>
+                <a
+                  href="/?q=venezuela&from=2014-01-01&to=2020-01-31#search-box"
+                  target="_blank"
+                  class="methodology-query item2"
+                >Venezuela</a>
+              </mark> en los informativos desde 2014 hasta el 31 de enero de 2019. El tema va y viene, a rachas, pero su cobertura en la televisión pública ha crecido en los últimos tiempos. Los años en los que tuvo más peso son 2017 -con las protestas de opositores y los enfrentamientos en las calles- y 2019 -tras las elecciones y con Guaidó proclamándose presidente y Europa y España pidiéndole a Maduro que convocara nuevas elecciones.
+            </p>
+            <p>
+              En esos dos años, se nombraba
+              <strong>Venezuela</strong> una media de más de dos veces al día. En medio, 2018 fue un año mucho más tranquilo, con una mención, de media, al día.
+            </p>
+            <p>
+              Pero, ¿es realmente la cobertura de
+              <strong>Venezuela</strong> mayor que la de otros países? Si comparamos con
+              <strong>
+                <a
+                  href="/?q=francia&from=2014-01-01&to=2020-01-31#search-box"
+                  target="_blank"
+                >Francia</a>
+              </strong>
+              (8.694 menciones) o
+              <strong>
+                <a
+                  href="/?q=francia&from=2014-01-01&to=2020-01-31#search-box"
+                  target="_blank"
+                >Estados Unidos</a>
+              </strong>
+              (14.567), no. Pero si comparamos con otros países de la zona, como
+              México (3.118), Colombia (1.969) o Argentina (2.744), sí.
+            </p>
           </div>
           <div class="vignette-methodology">
             <h4 class="methodology-title" v-html="$t('vignettes.methodology')"></h4>
@@ -942,7 +987,7 @@
 
         <!-- Tema 11 - ... -->
         <li id="vignette11" class="verba-vignettes-item">
-          <h3 class="vignette-title">Vignette11 title</h3>
+          <h3 class="vignette-title">Dos días (de 365) sin noticias de Sánchez, Casado y compañía</h3>
           <div class="vignette-copy">
             <p>Vignette11 copy</p>
           </div>
