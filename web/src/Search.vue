@@ -4,7 +4,6 @@
     <section class="verba-search-form">
       <div class="verba-magneto">
         <div class="animation-magneto"></div>
-
         <div class="verba-magneto-copy">
           <div class="verba-vignettes-intro">
             <p class="verba-subtitle">{{ $t('search.vignettes_intro') }}</p>
@@ -84,16 +83,6 @@ export default {
 <style scoped lang="scss">
 @import '../src/scss/_variables.scss';
 .verba-search-form {
-  // Tablets
-  @media all and (min-width: 768px) {
-    // margin-left: 3rem;
-  }
-
-  // PC
-  @media all and (min-width: 1024px) {
-    // margin: 0 2rem 6rem;
-  }
-
   .input-group {
     width: 80%;
     margin: 0 auto;
@@ -188,15 +177,25 @@ export default {
     opacity: 0.7;
 
     // Each frame width
-    width: 408px;
+    // width: calc(408 * $magneto-scale-factor:);
+    // min-width: calc(408 * $magneto-scale-factor:);
+    // height: calc(337 * $magneto-scale-factor:);
+
+    width:408px;
     min-width: 408px;
     height: 337px;
     // Number of frames
     animation: run 0.7s steps(4) infinite;
 
+    // Mobile first
+    transform: scale(0.7);
+    margin-top: -60px;
+    margin-bottom: -20px;
+
     // Tablets
     @media all and (min-width: 768px) {
-      // min-width: 408px;
+      transform: scale(1);
+      margin: 0;
     }
   }
 

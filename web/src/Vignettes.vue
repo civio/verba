@@ -739,8 +739,7 @@
               <a
                 href="https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov-China/documentos/Actualizacion_26_COVID-19_China.pdf"
                 target="_blank"
-              >Ministerio de Sanidad</a>, publicados el 19 de febrero de 2020, el
-              <strong>coronavirus</strong> ha afectado a cerca de 75.000 individuos y ha sido relacionado con la muerte de más de 2.000 personas. Además de China, otros 26 países, entre ellos España, han confirmado casos positivos del virus.
+              >Ministerio de Sanidad</a>, publicados el 19 de febrero de 2020, el <strong>coronavirus</strong> ha afectado a cerca de 75.000 individuos y ha sido relacionado con la muerte de más de 2.000 personas. Además de China, otros 26 países, entre ellos España, han confirmado casos positivos del virus.
             </p>
 
             <div class="chart-annotated" v-html="chart_tema07"></div>
