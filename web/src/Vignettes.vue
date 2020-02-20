@@ -685,9 +685,12 @@
                 </div>
               </div>
             </div>
-            <p class="methodology-note">
+            <div class="methodology-note">
+              <p>
               Nota: El periodo analizado es todo 2019, aunque para los distintos cálculos, en el caso de Albert Rivera, solo hemos tenido en cuenta sus menciones hasta el día 11 de noviembre, fecha en la que anunció su dimisión como presidente del partido.
-              <br />Los resultados de las búsquedas de verba han sido descargados en csv y limpiados para eliminar falsos positivos (uso de
+              </p>
+              <p>
+              Los resultados de las búsquedas de verba han sido <strong>descargados en csv</strong> y <strong>limpiados para eliminar falsos positivos </strong> (uso de
               <i>podemos</i> como verbo, de
               <i>ciudadanos</i> como sustantivo plural o de personas que comparten los apellidos de los líderes políticos, como
               <i>Jordi Sànchez</i>,
@@ -697,7 +700,8 @@
                 href="https://datos.civio.es/"
                 target="_blank"
               >datos.civio.es</a>
-            </p>
+              </p>
+            </div>
           </div>
         </li>
 
@@ -1217,6 +1221,10 @@ strong {
   padding-top: 1rem;
   opacity: 0.8;
   text-align: left;
+
+  p {
+    margin-bottom: 0.4rem;
+  }
 
   .methodology-title {
     color: $color-neutral-1000;
