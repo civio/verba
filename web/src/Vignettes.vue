@@ -678,8 +678,7 @@
                   >coronavirus</a>
                 </div>
               </div>
-              <p class="methodology-note"></p>
-              <p>
+              <p class="methodology-note">
                 Nota: la búsqueda de
                 <strong>gripe A</strong> proporciona 46 resultados, de los que se han eliminado las entradas que no correspondían a la gripe
                 <strong>A (H1N1)</strong>, obteniendo un total de 43 menciones.
@@ -737,21 +736,6 @@ export default {
     })
     axios.get('/verba-vignette07-coronavirus.html').then(response => {
       this.chart_tema06 = response.data
-    })
-    axios.get('/verba-vignette06-BOTH.html').then(response => {
-      this.chart_tema07 = response.data
-    })
-    axios.get('/verba-vignette08-vox.html').then(response => {
-      this.chart_tema08 = response.data
-    })
-    axios.get('/verba-vignette09-violencia-genero.html').then(response => {
-      this.chart_tema09 = response.data
-    })
-    axios.get('/verba-vignette10-venezuela.html').then(response => {
-      this.chart_tema10 = response.data
-    })
-    axios.get('/verba-vignette11-loteria.html').then(response => {
-      this.chart_tema11 = response.data
     })
     window.addEventListener('resize', this.throttle(this.resizer, 200))
 
