@@ -708,7 +708,7 @@
                 </div>
               </div>
               <div class="methodology-note">
-                <p>Nota: El periodo analizado es todo 2019, aunque para los distintos cálculos, en el caso de Albert Rivera, solo hemos tenido en cuenta sus menciones hasta el día 11 de noviembre, fecha en la que anunció su dimisión como presidente del partido.</p>
+                <p>Notas: El periodo analizado es todo 2019, aunque para los distintos cálculos, en el caso de Albert Rivera, solo hemos tenido en cuenta sus menciones hasta el día 11 de noviembre, fecha en la que anunció su dimisión como presidente del partido.</p>
                 <p>
                   Los resultados de las búsquedas de verba han sido
                   <strong>descargados en csv</strong> y
@@ -718,10 +718,12 @@
                   <i>Jordi Sànchez</i>,
                   <i>Julio Iglesias</i> o
                   <i>María Casado</i>, entre otros tantos. Puedes descargar y consultar los datos limpios en
-                  <a
-                    href="https://datos.civio.es/"
-                    target="_blank"
-                  >datos.civio.es</a>
+                  <strong>
+                    <a
+                      href="https://datos.civio.es/dataset/menciones-a-los-cinco-grandes-partidos-de-ambito-estatal-y-sus-candidatos-en-los-informativos-de-tve/"
+                      target="_blank"
+                    >datos.civio.es</a>
+                  </strong>
                 </p>
               </div>
             </div>
@@ -944,8 +946,8 @@
             <h3 class="vignette-title">¿Pueden las palabras combatir la violencia de género?</h3>
             <div class="vignette-copy">
               <p>
-                Desde principios de 2014 hasta el 31 de enero de 2020 han sido asesinadas 320 mujeres por 
-                 <strong>
+                Desde principios de 2014 hasta el 31 de enero de 2020 han sido asesinadas 320 mujeres por
+                <strong>
                   <a
                     href="/?q=%22violencia%20machista%22&from=2019-01-01&to=2020-01-31#search-box"
                     target="_blank"
@@ -964,30 +966,36 @@
 
               <div class="chart-annotated" v-html="chart_tema09"></div>
 
-              <p>No obstante, hay otros términos que no reflejan de forma correcta este tipo de violencia y que también se utilizan en los telediarios de TVE. Montano avisaba en 2018 de que no se deberían utilizar términos como 
+              <p>
+                No obstante, hay otros términos que no reflejan de forma correcta este tipo de violencia y que también se utilizan en los telediarios de TVE. Montano avisaba en 2018 de que no se deberían utilizar términos como
                 <strong>
-                <a
-                  href="/?q=%22violencia%20domestica%22|&%22violencia%20doméstica%22&from=2019-01-01&to=2020-01-31#search-box"
-                  target="_blank"
-                >violencia doméstica</a>
-              </strong>
-                , "violencia de pareja o del entorno familiar" ni 
+                  <a
+                    href="/?q=%22violencia%20domestica%22|&%22violencia%20doméstica%22&from=2019-01-01&to=2020-01-31#search-box"
+                    target="_blank"
+                  >violencia doméstica</a>
+                </strong>
+                , "violencia de pareja o del entorno familiar" ni
                 <strong>
-                <a
-                  href="/?q=%22crimen%20pasionalr%22&from=2019-01-01&to=2020-01-31#search-box"
-                  target="_blank"
-                >crimen pasional</a>
-              </strong>
-              . Sin embargo, la primera acepción ha aparecido en los telediarios 65 veces desde 2014. Aunque muchas estaban referidas a violencia entre diferentes miembros de la familia y no sólo a violencia de género. Por su parte, <strong>crimen pasional</strong> se ha utilizado 14 veces desde 2014.</p>
-              <p>Otro término, al que no hacía alusión la Editora de Igualdad de TVE, pero que ha cobrado algo de relevancia, es la de
-                
+                  <a
+                    href="/?q=%22crimen%20pasionalr%22&from=2019-01-01&to=2020-01-31#search-box"
+                    target="_blank"
+                  >crimen pasional</a>
+                </strong>
+                . Sin embargo, la primera acepción ha aparecido en los telediarios 65 veces desde 2014. Aunque muchas estaban referidas a violencia entre diferentes miembros de la familia y no sólo a violencia de género. Por su parte,
+                <strong>crimen pasional</strong> se ha utilizado 14 veces desde 2014.
+              </p>
+              <p>
+                Otro término, al que no hacía alusión la Editora de Igualdad de TVE, pero que ha cobrado algo de relevancia, es la de
                 <strong>
-                <a
-                  href="/?q=%22violencia%20intrafamiliar%22|&%22violencia%20doméstica%22from=2019-01-01&to=2020-01-31#search-box"
-                  target="_blank"
-                >violencia intrafamiliar</a>
-              </strong>
-               , que defiende el partido ultaderechista Vox en su programa como alternativa lingüistica a la <strong>violencia de género</strong>. <strong>Violencia intrafamiliar</strong> ha aparecido 11 veces desde 2019 hasta el 30 de enero de 2020 en los telediarios de TVE.</p>
+                  <a
+                    href="/?q=%22violencia%20intrafamiliar%22|&%22violencia%20doméstica%22from=2019-01-01&to=2020-01-31#search-box"
+                    target="_blank"
+                  >violencia intrafamiliar</a>
+                </strong>
+                , que defiende el partido ultaderechista Vox en su programa como alternativa lingüistica a la
+                <strong>violencia de género</strong>.
+                <strong>Violencia intrafamiliar</strong> ha aparecido 11 veces desde 2019 hasta el 30 de enero de 2020 en los telediarios de TVE.
+              </p>
             </div>
             <div class="vignette-methodology">
               <h4 class="methodology-title" v-html="$t('vignettes.methodology')"></h4>
