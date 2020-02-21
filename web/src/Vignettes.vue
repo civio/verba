@@ -44,17 +44,6 @@
             <h3>No había crisis climática hasta 2019</h3>
           </a>
         </li>
-        <li @click="onClickShowVignette('vignette06')">
-          <a href="#vignette06">
-            <img
-              id="vignette06-img"
-              class="vignette-img"
-              src="./images/ficha06-principal-pdr.png"
-              alt
-            />
-            <h3>Pedro Sánchez, el protagonista principal; Abascal, el figurante.</h3>
-          </a>
-        </li>
         <li @click="onClickShowVignette('vignette07')">
           <a href="#vignette07">
             <img
@@ -64,6 +53,17 @@
               alt
             />
             <h3>La fiebre (informativa) del coronavirus</h3>
+          </a>
+        </li>
+        <!-- <li @click="onClickShowVignette('vignette06')">
+          <a href="#vignette06">
+            <img
+              id="vignette06-img"
+              class="vignette-img"
+              src="./images/ficha06-principal-pdr.png"
+              alt
+            />
+            <h3>Pedro Sánchez, el protagonista principal; Abascal, el figurante.</h3>
           </a>
         </li>
         <li @click="onClickShowVignette('vignette08')">
@@ -94,7 +94,7 @@
             <img id="vignette11-img" class="vignette-img" src="./images/ficha11-sin-un-dia.png" alt />
             <h3>Dos días (de 365) sin noticias de Sánchez, Casado y compañía</h3>
           </a>
-        </li>
+        </li>-->
       </ul>
       <ul class="vignettes-copies">
         <!-- Tema 1 - la ultraderecha -->
@@ -586,6 +586,150 @@
         <!-- Tema 06 - ... -->
         <li id="vignette06" class="verba-vignettes-item">
           <article>
+            <h3 class="vignette-title">La fiebre (informativa) del coronavirus</h3>
+            <div class="vignette-copy">
+              <p>
+                Los informativos de Televisión Española han mencionado la palabra
+                <mark>
+                  <a
+                    href="/?q=coronavirus&from=2014-01-01&to=2020-01-31#search-box"
+                    target="_blank"
+                    class="methodology-query item2"
+                  >coronavirus</a>
+                </mark>
+                en 168 ocasiones desde 2014 hasta enero de 2020, la gran mayoría en relación con el brote actual originado en China. Pese a que la epidemia actual apareció por primera vez en Wuhan el 31 de diciembre de 2019, el telediario de La 1 tardó 17 días en hablar del nuevo virus, cuando comenzaron los
+                <a
+                  href="https://www.nytimes.com/2020/01/17/health/china-coronavirus-airport-screening.html"
+                  target="_blank"
+                >controles</a> en aeropuertos de Estados Unidos y seis días después del
+                <a
+                  href="https://www.nytimes.com/2020/01/17/health/china-coronavirus-airport-screening.html"
+                  target="_blank"
+                >primer fallecido</a> por la infección.
+              </p>
+              <p>
+                El nuevo
+                <strong>coronavirus</strong>, que recibió de forma provisional el nombre de
+                <a
+                  href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019"
+                  target="_blank"
+                >2019-nCoV</a>
+                y que posteriormente ha sido denominado
+                <a
+                  href="https://www.biorxiv.org/content/10.1101/2020.02.07.937862v1"
+                  target="_blank"
+                >SARS-CoV-2</a>, provoca una enfermedad respiratoria llamada COVID-19. Según los últimos datos del
+                <a
+                  href="https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov-China/documentos/Actualizacion_26_COVID-19_China.pdf"
+                  target="_blank"
+                >Ministerio de Sanidad</a>, publicados el 19 de febrero de 2020, el
+                <strong>coronavirus</strong> ha afectado a cerca de 75.000 individuos y ha sido relacionado con la muerte de más de 2.000 personas. Además de China, otros 26 países, entre ellos España, han confirmado casos positivos del virus.
+              </p>
+
+              <div class="chart-annotated" v-html="chart_tema06"></div>
+
+              <p>
+                La cobertura de TVE del
+                <strong>
+                  <a
+                    href="/?from=2014-01-01&to=2020-01-31&q=2019-nCov#search-box"
+                    target="_blank"
+                  >2019-nCoV</a>
+                </strong>
+                –nombre provisional del virus– es muchísimo mayor que la que tuvo el síndrome respiratorio de Oriente Medio (
+                <strong>
+                  <a href="/?from=2014-01-01&to=2020-01-31&q=mers#search-box" target="_blank">MERS</a>
+                </strong>
+                , por sus siglas en inglés). El resto de alusiones a
+                <strong>coronavirus</strong> corresponde a esta enfermedad, diferente a la actual. El virus del MERS surgió en 2012, aunque el número de casos se disparó entre 2014 y 2015. La epidemia se extendió por
+                <a
+                  href="https://www.who.int/en/news-room/fact-sheets/detail/middle-east-respiratory-syndrome-coronavirus-(mers-cov)"
+                  target="_blank"
+                >27 países</a>, aunque los más afectados fueron Arabia Saudí, Emiratos Árabes Unidos y la República de Corea (en España no se dio ningún caso). El virus del MERS, al contrario del
+                <strong>coronavirus</strong> de Wuhan, no fue clasificado como &quot;emergencia sanitaria internacional&quot; por la Organización Mundial de la Salud.
+              </p>
+              <p>
+                La OMS sí
+                <a
+                  href="https://www.who.int/mediacentre/news/statements/2009/h1n1_20090425/en/"
+                  target="_blank"
+                >reconoció</a> como emergencia internacional a la
+                <strong>
+                  <a
+                    href="/?from=2014-01-01&to=2020-01-31&q=%22gripe%20A%22#search-box"
+                    target="_blank"
+                  >gripe A</a>
+                </strong> de 2009, nombrada en 43 ocasiones
+                por TVE. Varios casos en
+                <a
+                  href="https://www.heraldo.es/noticias/aragon/zaragoza/2014/01/10/un-total-de-21-afectados-por-la-gripe-a-en-aragon-416136.html"
+                  target="_blank"
+                >Aragón</a> concentran el interés informativo en 2014.
+              </p>
+
+              <p>
+                En 2016, España notificó algo más de
+                <a
+                  href="https://www.isciii.es/QueHacemos/Servicios/VigilanciaSaludPublicaRENAVE/EnfermedadesTransmisibles/Documents/INFORMES/INFORMES%20RENAVE/RENAVE_INFORME_ANUAL_2016.pdf"
+                  target="_blank"
+                >400 casos de zika</a>, una
+                <a
+                  href="https://www.who.int/news-room/fact-sheets/detail/zika-virus"
+                  target="_blank"
+                >enfermedad</a>, generalmente leve, que podía desencadenar complicaciones, como problemas neurológicos y microcefalias. Con 217 menciones, el interés informativo por el
+                <strong>
+                  <a href="/?from=2014-01-01&to=2020-01-31&q=zika#search-box" target="_blank">zika</a>
+                </strong> fue se acerca al generado hasta el momento por el nuevo
+                <strong>coronavirus</strong>, aunque el número de casos notificados de zika en España fue 201 veces superior al del brote actual.
+              </p>
+
+              <p>
+                La enfermedad más grave considerada hasta la fecha, y la que sin duda más cobertura informativa ha recibido, es el ébola, cuya
+                <a
+                  href="https://www.who.int/news-room/fact-sheets/detail/ebola-virus-disease"
+                  target="_blank"
+                >tasa de mortalidad</a> puede alcanzar el 90%. Del total de 1.501 menciones
+                a
+                <strong>
+                  <a
+                    href="/?from=2014-01-01&to=2020-01-31&q=ébola%7Cebola#search-box"
+                    target="_blank"
+                  >ébola</a>
+                </strong> que detecta Verba, el 87% (1.311 citas) se produjeron durante 2014. En el verano de ese año, un misionero español contrajo la enfermedad y fue repatriado para ser tratado por el Hospital Carlos III. Durante su tratamiento en Madrid, una enfermera se contagió, lo que aumentó la presencia del término en el telediario de La 1. De hecho, alrededor del 10% de las menciones a esta enfermedad están relacionadas con este episodio. Pero, más allá de la proximidad de estos dos infectados, entre 2014 y
+                <a
+                  href="https://www.who.int/news-room/detail/29-03-2016-statement-on-the-9th-meeting-of-the-ihr-emergency-committee-regarding-the-ebola-outbreak-in-west-africa"
+                  target="_blank"
+                >2016</a>, años en los que se prolongó la emergencia sanitaria internacional, más de 28.000 personas, principalmente en África, se infectaron de
+                <a
+                  href="https://www.cdc.gov/vhf/ebola/history/2014-2016-outbreak/index.html"
+                  target="_blank"
+                >ébola</a> y cerca de 11.300 individuos murieron por culpa del virus.
+              </p>
+            </div>
+            <div class="vignette-methodology">
+              <h4 class="methodology-title" v-html="$t('vignettes.methodology')"></h4>
+              <div class="query-container">
+                <p class="methodology" v-html="$t('vignettes.query-subtitle')"></p>
+                <div>
+                  <a
+                    href="/?from=2014-01-01&to=2020-01-31&q=coronavirus#search-box"
+                    target="_blank"
+                    class="methodology-query"
+                  >coronavirus</a>
+                </div>
+              </div>
+              <p class="methodology-note"></p>
+              <p>
+                Nota: la búsqueda de
+                <strong>gripe A</strong> proporciona 46 resultados, de los que se han eliminado las entradas que no correspondían a la gripe
+                <strong>A (H1N1)</strong>, obteniendo un total de 43 menciones.
+              </p>
+            </div>
+          </article>
+        </li>
+        <!-- Tema 07 - ... -->
+        <li id="vignette07" class="verba-vignettes-item">
+          <article>
             <h3
               class="vignette-title"
             >Pedro Sánchez, el protagonista principal; Abascal, el figurante</h3>
@@ -610,7 +754,7 @@
                 </mark>
                 <strong>Sánchez</strong> recibió 10. Su doble papel como presidente del Gobierno y como máximo dirigente de los socialistas en un año con cuatro procesos electorales lo explican.
               </p>
-              <div class="chart-annotated" v-html="chart_tema06"></div>
+              <div class="chart-annotated" v-html="chart_tema07"></div>
               <p>
                 Solo las referencias al
                 <strong>
@@ -726,151 +870,6 @@
                   </strong>
                 </p>
               </div>
-            </div>
-          </article>
-        </li>
-
-        <!-- Tema 07 - ... -->
-        <li id="vignette07" class="verba-vignettes-item">
-          <article>
-            <h3 class="vignette-title">La fiebre (informativa) del coronavirus</h3>
-            <div class="vignette-copy">
-              <p>
-                Los informativos de Televisión Española han mencionado la palabra
-                <mark>
-                  <a
-                    href="/?q=coronavirus&from=2014-01-01&to=2020-01-31#search-box"
-                    target="_blank"
-                    class="methodology-query item2"
-                  >coronavirus</a>
-                </mark>
-                en 168 ocasiones desde 2014 hasta enero de 2020, la gran mayoría en relación con el brote actual originado en China. Pese a que la epidemia actual apareció por primera vez en Wuhan el 31 de diciembre de 2019, el telediario de La 1 tardó 17 días en hablar del nuevo virus, cuando comenzaron los
-                <a
-                  href="https://www.nytimes.com/2020/01/17/health/china-coronavirus-airport-screening.html"
-                  target="_blank"
-                >controles</a> en aeropuertos de Estados Unidos y seis días después del
-                <a
-                  href="https://www.nytimes.com/2020/01/17/health/china-coronavirus-airport-screening.html"
-                  target="_blank"
-                >primer fallecido</a> por la infección.
-              </p>
-              <p>
-                El nuevo
-                <strong>coronavirus</strong>, que recibió de forma provisional el nombre de
-                <a
-                  href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019"
-                  target="_blank"
-                >2019-nCoV</a>
-                y que posteriormente ha sido denominado
-                <a
-                  href="https://www.biorxiv.org/content/10.1101/2020.02.07.937862v1"
-                  target="_blank"
-                >SARS-CoV-2</a>, provoca una enfermedad respiratoria llamada COVID-19. Según los últimos datos del
-                <a
-                  href="https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov-China/documentos/Actualizacion_26_COVID-19_China.pdf"
-                  target="_blank"
-                >Ministerio de Sanidad</a>, publicados el 19 de febrero de 2020, el
-                <strong>coronavirus</strong> ha afectado a cerca de 75.000 individuos y ha sido relacionado con la muerte de más de 2.000 personas. Además de China, otros 26 países, entre ellos España, han confirmado casos positivos del virus.
-              </p>
-
-              <div class="chart-annotated" v-html="chart_tema07"></div>
-
-              <p>
-                La cobertura de TVE del
-                <strong>
-                  <a
-                    href="/?from=2014-01-01&to=2020-01-31&q=2019-nCov#search-box"
-                    target="_blank"
-                  >2019-nCoV</a>
-                </strong>
-                –nombre provisional del virus– es muchísimo mayor que la que tuvo el síndrome respiratorio de Oriente Medio (
-                <strong>
-                  <a href="/?from=2014-01-01&to=2020-01-31&q=mers#search-box" target="_blank">MERS</a>
-                </strong>
-                , por sus siglas en inglés). El resto de alusiones a
-                <strong>coronavirus</strong> corresponde a esta enfermedad, diferente a la actual. El virus del MERS surgió en 2012, aunque el número de casos se disparó entre 2014 y 2015. La epidemia se extendió por
-                <a
-                  href="https://www.who.int/en/news-room/fact-sheets/detail/middle-east-respiratory-syndrome-coronavirus-(mers-cov)"
-                  target="_blank"
-                >27 países</a>, aunque los más afectados fueron Arabia Saudí, Emiratos Árabes Unidos y la República de Corea (en España no se dio ningún caso). El virus del MERS, al contrario del
-                <strong>coronavirus</strong> de Wuhan, no fue clasificado como &quot;emergencia sanitaria internacional&quot; por la Organización Mundial de la Salud.
-              </p>
-              <p>
-                La OMS sí
-                <a
-                  href="https://www.who.int/mediacentre/news/statements/2009/h1n1_20090425/en/"
-                  target="_blank"
-                >reconoció</a> como emergencia internacional a la
-                <strong>
-                  <a
-                    href="/?from=2014-01-01&to=2020-01-31&q=%22gripe%20A%22#search-box"
-                    target="_blank"
-                  >gripe A</a>
-                </strong> de 2009, nombrada en 43 ocasiones
-                por TVE. Varios casos en
-                <a
-                  href="https://www.heraldo.es/noticias/aragon/zaragoza/2014/01/10/un-total-de-21-afectados-por-la-gripe-a-en-aragon-416136.html"
-                  target="_blank"
-                >Aragón</a> concentran el interés informativo en 2014.
-              </p>
-
-              <p>
-                En 2016, España notificó algo más de
-                <a
-                  href="https://www.isciii.es/QueHacemos/Servicios/VigilanciaSaludPublicaRENAVE/EnfermedadesTransmisibles/Documents/INFORMES/INFORMES%20RENAVE/RENAVE_INFORME_ANUAL_2016.pdf"
-                  target="_blank"
-                >400 casos de zika</a>, una
-                <a
-                  href="https://www.who.int/news-room/fact-sheets/detail/zika-virus"
-                  target="_blank"
-                >enfermedad</a>, generalmente leve, que podía desencadenar complicaciones, como problemas neurológicos y microcefalias. Con 217 menciones, el interés informativo por el
-                <strong>
-                  <a href="/?from=2014-01-01&to=2020-01-31&q=zika#search-box" target="_blank">zika</a>
-                </strong> fue se acerca al generado hasta el momento por el nuevo
-                <strong>coronavirus</strong>, aunque el número de casos notificados de zika en España fue 201 veces superior al del brote actual.
-              </p>
-
-              <p>
-                La enfermedad más grave considerada hasta la fecha, y la que sin duda más cobertura informativa ha recibido, es el ébola, cuya
-                <a
-                  href="https://www.who.int/news-room/fact-sheets/detail/ebola-virus-disease"
-                  target="_blank"
-                >tasa de mortalidad</a> puede alcanzar el 90%. Del total de 1.501 menciones
-                a
-                <strong>
-                  <a
-                    href="/?from=2014-01-01&to=2020-01-31&q=ébola%7Cebola#search-box"
-                    target="_blank"
-                  >ébola</a>
-                </strong> que detecta Verba, el 87% (1.311 citas) se produjeron durante 2014. En el verano de ese año, un misionero español contrajo la enfermedad y fue repatriado para ser tratado por el Hospital Carlos III. Durante su tratamiento en Madrid, una enfermera se contagió, lo que aumentó la presencia del término en el telediario de La 1. De hecho, alrededor del 10% de las menciones a esta enfermedad están relacionadas con este episodio. Pero, más allá de la proximidad de estos dos infectados, entre 2014 y
-                <a
-                  href="https://www.who.int/news-room/detail/29-03-2016-statement-on-the-9th-meeting-of-the-ihr-emergency-committee-regarding-the-ebola-outbreak-in-west-africa"
-                  target="_blank"
-                >2016</a>, años en los que se prolongó la emergencia sanitaria internacional, más de 28.000 personas, principalmente en África, se infectaron de
-                <a
-                  href="https://www.cdc.gov/vhf/ebola/history/2014-2016-outbreak/index.html"
-                  target="_blank"
-                >ébola</a> y cerca de 11.300 individuos murieron por culpa del virus.
-              </p>
-            </div>
-            <div class="vignette-methodology">
-              <h4 class="methodology-title" v-html="$t('vignettes.methodology')"></h4>
-              <div class="query-container">
-                <p class="methodology" v-html="$t('vignettes.query-subtitle')"></p>
-                <div>
-                  <a
-                    href="/?from=2014-01-01&to=2020-01-31&q=coronavirus#search-box"
-                    target="_blank"
-                    class="methodology-query"
-                  >coronavirus</a>
-                </div>
-              </div>
-              <p class="methodology-note"></p>
-              <p>
-                Nota: la búsqueda de
-                <strong>gripe A</strong> proporciona 46 resultados, de los que se han eliminado las entradas que no correspondían a la gripe
-                <strong>A (H1N1)</strong>, obteniendo un total de 43 menciones.
-              </p>
             </div>
           </article>
         </li>
@@ -1179,22 +1178,22 @@ export default {
     axios.get('/verba-tema05-query01-clima.html').then(response => {
       this.chart_tema05 = response.data
     })
-    axios.get('/verba-vignette06-BOTH.html').then(response => {
+    axios.get('/verba-vignette07-coronavirus.html').then(response => {
       this.chart_tema06 = response.data
     })
-    axios.get('verba-vignette07-coronavirus.html').then(response => {
+    axios.get('/verba-vignette06-BOTH.html').then(response => {
       this.chart_tema07 = response.data
     })
-    axios.get('verba-vignette08-vox.html').then(response => {
+    axios.get('/verba-vignette08-vox.html').then(response => {
       this.chart_tema08 = response.data
     })
-    axios.get('verba-vignette09-violencia-genero.html').then(response => {
+    axios.get('/verba-vignette09-violencia-genero.html').then(response => {
       this.chart_tema09 = response.data
     })
-    axios.get('verba-vignette10-venezuela.html').then(response => {
+    axios.get('/verba-vignette10-venezuela.html').then(response => {
       this.chart_tema10 = response.data
     })
-    axios.get('verba-vignette11-loteria.html').then(response => {
+    axios.get('/verba-vignette11-loteria.html').then(response => {
       this.chart_tema11 = response.data
     })
     window.addEventListener('resize', this.throttle(this.resizer, 200))
