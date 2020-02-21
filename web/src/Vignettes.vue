@@ -49,7 +49,7 @@
             <img
               id="vignette06-img"
               class="vignette-img"
-              src="./images/ficha07-coronavirus.png"
+              src="./images/ficha06-coronavirus.png"
               alt
             />
             <h3>La fiebre (informativa) del coronavirus</h3>
