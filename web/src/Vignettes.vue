@@ -563,7 +563,7 @@
                   target="_blank"
                 >controles</a> en aeropuertos de Estados Unidos y seis días después del
                 <a
-                  href="https://www.nytimes.com/2020/01/17/health/china-coronavirus-airport-screening.html"
+                  href="https://www.nytimes.com/2020/01/10/world/asia/china-virus-wuhan-death.html"
                   target="_blank"
                 >primer fallecido</a> por la infección.
               </p>
@@ -590,12 +590,10 @@
 
               <p>
                 La cobertura de TVE del
-                <strong>
-                  <a
-                    href="/?from=2014-01-01&to=2020-01-31&q=2019-nCov#search-box"
-                    target="_blank"
-                  >2019-nCoV</a>
-                </strong>
+                <a
+                  href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019"
+                  target="_blank"
+                >2019-nCoV</a>
                 –nombre provisional del virus– es muchísimo mayor que la que tuvo el síndrome respiratorio de Oriente Medio (
                 <strong>
                   <a href="/?from=2014-01-01&to=2020-01-31&q=mers#search-box" target="_blank">MERS</a>
