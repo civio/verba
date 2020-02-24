@@ -960,9 +960,9 @@
                   <a
                     href="/?q=%22violencia%20domestica%22|&%22violencia%20doméstica%22&from=2019-01-01&to=2020-01-31#search-box"
                     target="_blank"
-                  >violencia doméstica</a>
+                  >violencia doméstica,</a>
                 </strong>
-                , "violencia de pareja o del entorno familiar" ni
+                "violencia de pareja o del entorno familiar" ni
                 <strong>
                   <a
                     href="/?q=%22crimen%20pasionalr%22&from=2019-01-01&to=2020-01-31#search-box"
@@ -973,16 +973,17 @@
                 <strong>crimen pasional</strong> se ha utilizado 14 veces desde 2014.
               </p>
               <p>
-                Otro término, al que no hacía alusión la Editora de Igualdad de TVE, pero que ha cobrado algo de relevancia, es la de
+                Otro término al que no hacía alusión la Editora de Igualdad de TVE, pero que ha cobrado algo de relevancia, es el de
+                <strong>violencia intrafamiliar</strong>
+                que defiende el partido ultaderechista Vox en su programa como alternativa lingüistica a la
+                <strong>violencia de género</strong>.
                 <strong>
                   <a
                     href="/?q=%22violencia%20intrafamiliar%22|&%22violencia%20doméstica%22from=2019-01-01&to=2020-01-31#search-box"
                     target="_blank"
-                  >violencia intrafamiliar,</a>
+                  >Violencia intrafamiliar,</a>
                 </strong>
-                que defiende el partido ultaderechista Vox en su programa como alternativa lingüistica a la
-                <strong>violencia de género</strong>.
-                <strong>Violencia intrafamiliar</strong> ha aparecido 11 veces desde 2019 hasta el 30 de enero de 2020 en los telediarios de TVE.
+                ha aparecido 11 veces desde 2019 hasta el 30 de enero de 2020 en los telediarios de TVE.
               </p>
             </div>
             <div class="vignette-methodology">
