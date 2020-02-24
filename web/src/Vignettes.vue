@@ -68,8 +68,19 @@
         </li>
         <li @click="onClickShowVignette('vignette08')">
           <a href="#vignette08">
-            <img id="vignette11-img" class="vignette-img" src="./images/ficha08-sin-un-dia.png" alt />
+            <img id="vignette08-img" class="vignette-img" src="./images/ficha08-sin-un-dia.png" alt />
             <h3>Dos días (de 365) sin noticias de Sánchez, Casado y compañía</h3>
+          </a>
+        </li>
+        <li @click="onClickShowVignette('vignette09')">
+          <a href="#vignette09">
+            <img
+              id="vignette09-img"
+              class="vignette-img"
+              src="./images/ficha09-violencia-genero.png"
+              alt
+            />
+            <h3>¿Pueden las palabras combatir la violencia de género?</h3>
           </a>
         </li>
       </ul>
@@ -846,7 +857,7 @@
           </article>
         </li>
 
-        <!-- Tema 08 - ... -->
+        <!-- Tema 08 - días sin política 2019 -->
         <li id="vignette08" class="verba-vignettes-item">
           <article>
             <h3 class="vignette-title">Dos días (de 365) sin noticias de Sánchez, Casado y compañía</h3>
@@ -887,7 +898,7 @@
                 <p class="methodology" v-html="$t('vignettes.query-subtitle')"></p>
                 <div>
                   <a
-                    href="#"
+                    href="/?q=%22loter%C3%ADa%20de%20navidad%22%7C%22loteria%20de%20navidad%22&from=2014-01-01&to=2020-01-31#search-box"
                     target="_blank"
                     class="methodology-query"
                   >"lotería de navidad" | "loteria de navidad"</a>
@@ -902,8 +913,85 @@
                   >"Pedro Sánchez, el protagonista principal; Abascal, el figurante"</a>
                 </strong>
                 y analizado las fechas en las que no había menciones a ninguno de ellos. Según los datos, además de los días señalados en el texto, tampoco habría menciones el 10 de mayo de 2019, pero sí las hubo. Esto se debe a que RTVE no publicó las transcripciones de los telediarios de este día. Damos cuenta de este pequeño agujero en la
-                <a href="/about" target="_blank">descripción de Verba.</a>
+                <a
+                  href="/about"
+                  target="_blank"
+                >descripción de Verba.</a>
               </p>
+            </div>
+          </article>
+        </li>
+
+        <!-- Tema 09 - Violencia de género -->
+        <li id="vignette09" class="verba-vignettes-item">
+          <article>
+            <h3 class="vignette-title">¿Pueden las palabras combatir la violencia de género?</h3>
+            <div class="vignette-copy">
+              <p>
+                Desde principios de 2014 hasta el 31 de enero de 2020 han sido asesinadas 320 mujeres por
+                <strong>
+                  <a
+                    href="/?q=%22violencia%20machista%22&from=2019-01-01&to=2020-01-31#search-box"
+                    target="_blank"
+                  >violencia machista</a>
+                </strong>
+                . Durante esa misma época, esa expresión se ha utilizado más de 1.000 veces en el Telediario de La 1. "¿Las palabras pueden combatir la
+                <mark>
+                  <a
+                    href="/?q=%22violencia%20de%20g%C3%A9nero%22%7C%22violencia%20de%20genero%22&from=2014-01-01&to=2020-01-31#search-box"
+                    target="_blank"
+                  >violencia de género</a>
+                </mark>
+                ?", preguntaba la Editora de Igualdad del canal público, Alicia G. Montano, en unos informativos de noviembre de 2018. Su afirmación venía acompañada de una serie de recomendaciones sobre cómo hablar de la violencia contra las mujeres.
+              </p>
+              <p>"Violencia de género" es el término más utilizado en los telediarios: 2.619 veces. Junto con "violencia machista" o "violencia sexista" -que aparece 11 veces en el mismo periodo-, son los términos correctos para hablar de estos sucesos, según la propia Montano. El día que más se pronuncian estas palabras en el informativo es el 25 de noviembre de cada año, el Día Internacional de la Violencia contra la mujer. Solo en 2019, en ese día se nombra "violencia de género" o "violencia machista" 38 veces entre el telediario del mediodía y el de la noche.</p>
+
+              <div class="chart-annotated" v-html="chart_tema09"></div>
+
+              <p>
+                No obstante, hay otros términos que no reflejan de forma correcta este tipo de violencia y que también se utilizan en los telediarios de TVE. Montano avisaba en 2018 de que no se deberían utilizar términos como
+                <strong>
+                  <a
+                    href="/?q=%22violencia%20domestica%22|&%22violencia%20doméstica%22&from=2019-01-01&to=2020-01-31#search-box"
+                    target="_blank"
+                  >violencia doméstica</a>
+                </strong>
+                , "violencia de pareja o del entorno familiar" ni
+                <strong>
+                  <a
+                    href="/?q=%22crimen%20pasionalr%22&from=2019-01-01&to=2020-01-31#search-box"
+                    target="_blank"
+                  >crimen pasional</a>
+                </strong>
+                . Sin embargo, la primera acepción ha aparecido en los telediarios 65 veces desde 2014. Aunque muchas estaban referidas a violencia entre diferentes miembros de la familia y no sólo a violencia de género. Por su parte,
+                <strong>crimen pasional</strong> se ha utilizado 14 veces desde 2014.
+              </p>
+              <p>
+                Otro término, al que no hacía alusión la Editora de Igualdad de TVE, pero que ha cobrado algo de relevancia, es la de
+                <strong>
+                  <a
+                    href="/?q=%22violencia%20intrafamiliar%22|&%22violencia%20doméstica%22from=2019-01-01&to=2020-01-31#search-box"
+                    target="_blank"
+                  >violencia intrafamiliar,</a>
+                </strong>
+                que defiende el partido ultaderechista Vox en su programa como alternativa lingüistica a la
+                <strong>violencia de género</strong>.
+                <strong>Violencia intrafamiliar</strong> ha aparecido 11 veces desde 2019 hasta el 30 de enero de 2020 en los telediarios de TVE.
+              </p>
+            </div>
+            <div class="vignette-methodology">
+              <h4 class="methodology-title" v-html="$t('vignettes.methodology')"></h4>
+              <div class="query-container">
+                <p class="methodology" v-html="$t('vignettes.query-subtitle')"></p>
+                <div>
+                  <a
+                    href="/?q=%22violencia%20de%20g%C3%A9nero%22%7C%22violencia%20de%20genero%22&from=2014-01-01&to=2020-01-31#search-box"
+                    target="_blank"
+                    class="methodology-query"
+                  >"violencia de género" | "violencia de genero"</a>
+                </div>
+              </div>
+              <p class="methodology-note"></p>
             </div>
           </article>
         </li>
@@ -926,7 +1014,8 @@ export default {
       chart_tema05: '',
       chart_tema06: '',
       chart_tema07: '',
-      chart_tema08: ''
+      chart_tema08: '',
+      chart_tema09: ''
     }
   },
   updated: function() {
@@ -960,6 +1049,9 @@ export default {
     })
     axios.get('/verba-vignette08-loteria.html').then(response => {
       this.chart_tema08 = response.data
+    })
+    axios.get('/verba-vignette09-violencia-genero.html').then(response => {
+      this.chart_tema09 = response.data
     })
     window.addEventListener('resize', this.throttle(this.resizer, 200))
 
