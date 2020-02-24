@@ -249,7 +249,8 @@
                 </div>
               </div>
               <p class="methodology-note">
-                <strong>Nota metodológica:</strong> A la búsqueda de los <strong>ERES</strong> hemos eliminado cuatro casos en
+                <strong>Nota metodológica:</strong> A la búsqueda de los
+                <strong>ERES</strong> hemos eliminado cuatro casos en
                 los que trataban Expedientes de Regulación de Empleo distintos a
                 los del caso de
                 <strong>corrupción</strong>.
@@ -695,7 +696,7 @@
               </div>
               <p class="methodology-note">
                 <strong>Nota metodológica:</strong> la búsqueda de
-                <strong>gripe A</strong> proporciona 46 resultados, de los que se han eliminado las entradas que no correspondían a la 
+                <strong>gripe A</strong> proporciona 46 resultados, de los que se han eliminado las entradas que no correspondían a la
                 <strong>gripe A (H1N1)</strong>, obteniendo un total de 43 menciones.
               </p>
             </div>
@@ -826,9 +827,12 @@
                 </div>
               </div>
               <div class="methodology-note">
-                <p><strong>Nota metodológica:</strong> *El periodo analizado es todo 2019 excepto en el caso de <strong>Albert Rivera</strong>, en el que solo hemos tenido en cuenta sus menciones hasta el día 11 de noviembre, fecha en la que anunció su dimisión como presidente del partido.</p>
                 <p>
-                  Los resultados de las búsquedas de verba 
+                  <strong>Nota metodológica:</strong> *El periodo analizado es todo 2019 excepto en el caso de
+                  <strong>Albert Rivera</strong>, en el que solo hemos tenido en cuenta sus menciones hasta el día 11 de noviembre, fecha en la que anunció su dimisión como presidente del partido.
+                </p>
+                <p>
+                  Los resultados de las búsquedas de verba
                   <strong>han sido descargados en csv</strong> y
                   <strong>limpiados para eliminar falsos positivos</strong> (uso de
                   <i>podemos</i> como verbo, de
@@ -865,13 +869,14 @@
               <div class="chart-annotated" v-html="chart_tema08"></div>
 
               <p>
-                Unos meses antes del <strong>Gordo de Navidad</strong>, el 24 de agosto de 2019, en pleno verano, se repitió este fenómeno. TVE informó de la operación de corazón a Juan Carlos de Borbón, la cumbre del G-7 en Biarritz, las consecuencias del brote de listeriosis originado en una fábrica sevillana de carne mechada y el desarrollo de los incendios del Amazonas, entre otros asuntos. Pero ni el telediario de la
+                Unos meses antes del
+                <strong>Gordo de Navidad</strong>, el 24 de agosto de 2019, en pleno verano, se repitió este fenómeno. TVE informó de la operación de corazón a Juan Carlos de Borbón, la cumbre del G-7 en Biarritz, las consecuencias del brote de listeriosis originado en una fábrica sevillana de carne mechada y el desarrollo de los incendios del Amazonas, entre otros asuntos. Pero ni el telediario de la
                 <a
                   href="http://www.rtve.es/alacarta/videos/telediario/telediario-15-horas-24-08-19/5370728/"
                   target="_blank"
                 >tarde</a> ni el de la
                 <a
-                  href="http://www.rtve.es/alacarta/videos/telediario/telediario-15-horas-24-08-19/5370728/"
+                  href="http://www.rtve.es/alacarta/videos/telediario/telediario-21-horas-24-08-19/5370788/"
                   target="blank"
                 >noche</a> aludieron a los cinco primeros partidos de ámbito estatal ni a sus líderes. Cosas del verano.
               </p>
@@ -881,21 +886,23 @@
               <div class="query-container">
                 <p class="methodology" v-html="$t('vignettes.query-subtitle')"></p>
                 <div>
-                  <a href="#" target="_blank" class="methodology-query">"lotería de navidad" | "loteria de navidad"</a>
+                  <a
+                    href="#"
+                    target="_blank"
+                    class="methodology-query"
+                  >"lotería de navidad" | "loteria de navidad"</a>
                 </div>
               </div>
               <p class="methodology-note">
-                <strong>Nota metodológica:</strong> El periodo analizado es todo 2019 y los cinco primeros partidos políticos de ámbito estatal tenidos en cuenta son PSOE, PP, Vox, Unidas Podemos y Ciudadanos. Hemos utilizado sus apariciones y las de sus líderes de los datos utilizados para el artículo 
+                <strong>Nota metodológica:</strong> El periodo analizado es todo 2019 y los cinco primeros partidos políticos de ámbito estatal tenidos en cuenta son PSOE, PP, Vox, Unidas Podemos y Ciudadanos. Hemos utilizado sus apariciones y las de sus líderes de los datos utilizados para el artículo
                 <strong>
-                <a
-                  href="http://www.cis.es/cis/export/sites/default/-Archivos/Indicadores/documentos_html/TresProblemas.html"
-                  target="_blank"
-                >"Pedro Sánchez, el protagonista principal; Abascal, el figurante"</a>
+                  <a
+                    href="http://www.cis.es/cis/export/sites/default/-Archivos/Indicadores/documentos_html/TresProblemas.html"
+                    target="_blank"
+                  >"Pedro Sánchez, el protagonista principal; Abascal, el figurante"</a>
                 </strong>
-                 y analizado las fechas en las que no había menciones a ninguno de ellos. Según los datos, además de los días señalados en el texto, tampoco habría menciones el 10 de mayo de 2019, pero sí las hubo. Esto se debe a que RTVE no publicó las transcripciones de los telediarios de este día. Damos cuenta de este pequeño agujero en la <a
-                  href="/about"
-                  target="_blank"
-                >descripción de Verba.</a>
+                y analizado las fechas en las que no había menciones a ninguno de ellos. Según los datos, además de los días señalados en el texto, tampoco habría menciones el 10 de mayo de 2019, pero sí las hubo. Esto se debe a que RTVE no publicó las transcripciones de los telediarios de este día. Damos cuenta de este pequeño agujero en la
+                <a href="/about" target="_blank">descripción de Verba.</a>
               </p>
             </div>
           </article>
