@@ -181,7 +181,7 @@ export default {
     min-width: 408px;
     height: 337px;
     // Number of frames
-    animation: run 0.7s steps(4) infinite;
+    animation: run 0.8s steps(4) infinite;
 
     // Mobile first
     transform: scale(0.7);
