@@ -637,7 +637,7 @@
                 >enfermedad</a>, generalmente leve, que podía desencadenar complicaciones, como problemas neurológicos y microcefalias. Con 217 menciones, el interés informativo por el
                 <strong>
                   <a href="/?from=2014-01-01&to=2020-01-31&q=zika#search-box" target="_blank">zika</a>
-                </strong> fue se acerca al generado hasta el momento por el nuevo
+                </strong> se acerca al generado hasta el momento por el nuevo
                 <strong>coronavirus</strong>, aunque el número de casos notificados de zika en España fue 201 veces superior al del brote actual.
               </p>
 
