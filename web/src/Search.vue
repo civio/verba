@@ -8,14 +8,14 @@
           <div class="verba-vignettes-intro">
             <p class="verba-subtitle">{{ $t('search.vignettes_intro') }}</p>
             <div class="vignettes-carrousel">
-              <a href="/vignettes#vignette01">
-                <h3 class="vignette-01">La ultraderecha son los otros</h3>
+              <a href="/vignettes#vignette06">
+                <h3 class="vignette-01">La fiebre (informativa) del coronavirus</h3>
               </a>
-              <a href="/vignettes#vignette02">
-                <h3 class="vignette-02">Gürtel y los ERE, casi empatados</h3>
+              <a href="/vignettes#vignette05">
+                <h3 class="vignette-02">No había crisis climática hasta 2019</h3>
               </a>
-              <a href="/vignettes#vignette03">
-                <h2 class="vignette-03">El rigor científico, a dieta</h2>
+              <a href="/vignettes#vignette04">
+                <h2 class="vignette-03">Rajoy sigue vivo</h2>
               </a>
             </div>
           </div>

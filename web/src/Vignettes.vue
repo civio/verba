@@ -734,7 +734,7 @@ export default {
     axios.get('/verba-tema05-query01-clima.html').then(response => {
       this.chart_tema05 = response.data
     })
-    axios.get('/verba-vignette07-coronavirus.html').then(response => {
+    axios.get('/verba-vignette06-coronavirus.html').then(response => {
       this.chart_tema06 = response.data
     })
     window.addEventListener('resize', this.throttle(this.resizer, 200))
