@@ -5,18 +5,12 @@
       <g ref="axisXMonths" class="axis x-months" />
       <g ref="axisXYears" class="axis x-years" />
       <g ref="axisY" class="axis y" />
-      <g
-        ref="tooltipArea"
-        :style="{ transform: `translate(${margin.left}px, ${margin.top}px)` }"
-      />
-      <g
-        ref="bars"
-        :style="{ transform: `translate(${margin.left}px, ${margin.top}px)` }"
-      />
+      <g ref="tooltipArea" :style="{ transform: `translate(${margin.left}px, ${margin.top}px)` }" />
+      <g ref="bars" :style="{ transform: `translate(${margin.left}px, ${margin.top}px)` }" />
     </svg>
     <div id="tooltip" class="displayNone">
       <div>
-        <span v-if="period == 'weeks'">Semana del </span>
+        <span v-if="period == 'weeks'">Semana del</span>
         <span id="tooltip-date"></span>
       </div>
       <div id="tooltip-mentions"></div>
@@ -377,7 +371,7 @@ export default {
   }
 
   .axis {
-    color: #212529;
+    color: $color-neutral-1000;
 
     line {
       shape-rendering: crispEdges;

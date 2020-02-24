@@ -1,10 +1,7 @@
 <template>
   <div class="search-filters">
     <button :class="dateBtnClass" @click="onDateClick">{{ dateStr }}</button>
-    <DateRangeFilter
-      :visible="datepickerVisible"
-      @change="onDatepickerChange"
-    />
+    <DateRangeFilter :visible="datepickerVisible" @change="onDatepickerChange" />
   </div>
 </template>
 
@@ -60,11 +57,6 @@ export default {
 .search-filters {
   margin-top: 0.25rem;
   .btn {
-    // Tablets
-    @media all and (min-width: 768px) {
-      // margin-left: 23rem;
-    }
-
     margin-right: 0.5rem;
     margin-bottom: 0.5rem;
   }

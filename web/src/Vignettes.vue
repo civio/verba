@@ -901,7 +901,6 @@ strong {
   margin: 0 auto;
   margin-bottom: 2rem;
   max-width: 850px;
-  // border: 1px double $color-neutral-1000;
 
   .vignette-title {
     color: $color-neutral-1000;

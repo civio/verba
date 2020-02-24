@@ -37,7 +37,7 @@ export default {
           toLabel: 'a',
           customRangeLabel: 'Rango',
           weekLabel: 'W',
-          daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+          daysOfWeek: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sa'],
           monthNames: [
             'enero',
             'febrero',
