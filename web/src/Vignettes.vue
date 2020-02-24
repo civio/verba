@@ -789,8 +789,8 @@
                   <a
                     href="/?q=Rivera&from=2019-01-01&to=2020-01-31#search-box"
                     target="_blank"
-                  >Rivera</a>
-                </strong>, 1;
+                  >Rivera*,</a>
+                </strong> 1;
                 <strong>Abascal</strong>, menos de una vez al día. Si analizamos con más detalle las apariciones diarias de cada partido en TVE, solo en cuatro días de todo 2019 no se mencionó a los
                 <strong>socialistas</strong>, según los telediarios analizados por Verba. Es decir, aparecieron en la televisión pública 361 días en todo el año pasado. Por su parte,
                 <strong>los populares</strong> y su presidente, con 359 días; 354, los de
@@ -821,7 +821,7 @@
                 </div>
               </div>
               <div class="methodology-note">
-                <p>Notas: El periodo analizado es todo 2019, aunque para los distintos cálculos, en el caso de Albert Rivera, solo hemos tenido en cuenta sus menciones hasta el día 11 de noviembre, fecha en la que anunció su dimisión como presidente del partido.</p>
+                <p>NOTAS: *El periodo analizado es todo 2019, aunque para los distintos cálculos, en el caso de Albert Rivera, solo hemos tenido en cuenta sus menciones hasta el día 11 de noviembre, fecha en la que anunció su dimisión como presidente del partido.</p>
                 <p>
                   Los resultados de las búsquedas de verba han sido
                   <strong>descargados en csv</strong> y
@@ -830,13 +830,7 @@
                   <i>ciudadanos</i> como sustantivo plural o de personas que comparten los apellidos de los líderes políticos, como
                   <i>Jordi Sànchez</i>,
                   <i>Julio Iglesias</i> o
-                  <i>María Casado</i>, entre otros tantos. Puedes descargar y consultar los datos limpios en
-                  <strong>
-                    <a
-                      href="https://datos.civio.es/dataset/menciones-a-los-cinco-grandes-partidos-de-ambito-estatal-y-sus-candidatos-en-los-informativos-de-tve/"
-                      target="_blank"
-                    >datos.civio.es</a>
-                  </strong>
+                  <i>María Casado</i>, entre otros tantos.
                 </p>
               </div>
             </div>
@@ -861,10 +855,7 @@ export default {
       chart_tema05: '',
       chart_tema06: '',
       chart_tema07: '',
-      chart_tema08: '',
-      chart_tema09: '',
-      chart_tema10: '',
-      chart_tema11: ''
+      chart_tema08: ''
     }
   },
   updated: function() {
@@ -894,6 +885,9 @@ export default {
       this.chart_tema06 = response.data
     })
     axios.get('/verba-vignette07-BOTH.html').then(response => {
+      this.chart_tema07 = response.data
+    })
+    axios.get('/verba-vignette08-loteria.html').then(response => {
       this.chart_tema07 = response.data
     })
     window.addEventListener('resize', this.throttle(this.resizer, 200))
@@ -1032,6 +1026,11 @@ mark {
   background-color: mix($color-neutral-1000, white, 85%);
   padding-top: 0;
   padding-bottom: 0;
+
+  a:hover {
+    // color: black !important;
+    // font-weight: 800;
+  }
 
   &.item1 {
     color: $color-neutral-1000;
