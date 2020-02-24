@@ -894,7 +894,7 @@ export default {
       this.chart_tema06 = response.data
     })
     axios.get('/verba-vignette07-BOTH.html').then(response => {
-      this.chart_tema06 = response.data
+      this.chart_tema07 = response.data
     })
     window.addEventListener('resize', this.throttle(this.resizer, 200))
 
