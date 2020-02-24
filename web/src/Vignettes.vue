@@ -114,9 +114,9 @@
                   <a
                     href="/?from=2014-01-01&to=2020-01-31&q=%22extrema derecha%22"
                     target="_blank"
-                  >"extrema derecha"</a>
+                  >extrema derecha,</a>
                 </strong>
-                , una expresión más popular, que
+                una expresión más popular, que
                 aparece hasta 610 veces desde 2014. Su pico: tras las elecciones
                 andaluzas, cuando se empezó a comentar -por otros partidos y
                 citando declaraciones, no por los propios presentadores del
