@@ -83,6 +83,12 @@
             <h3>¿Pueden las palabras combatir la violencia de género?</h3>
           </a>
         </li>
+        <li @click="onClickShowVignette('vignette10')">
+          <a href="#vignette10">
+            <img id="vignette10-img" class="vignette-img" src="./images/ficha10-vox.png" alt />
+            <h3>El auge de Vox en TVE</h3>
+          </a>
+        </li>
       </ul>
       <ul class="vignettes-copies">
         <!-- Tema 1 - la ultraderecha -->
@@ -995,6 +1001,71 @@
             </div>
           </article>
         </li>
+
+        <!-- Tema 09 - Vox -->
+        <li id="vignette08" class="verba-vignettes-item">
+          <article>
+            <h3 class="vignette-title">El auge de Vox en TVE</h3>
+            <div class="vignette-copy">
+              <p>
+                Años antes de los ciclos electorales de 2019 y de conseguir sus primeros escaños,
+                <mark>
+                  <a
+                    href="/?q=%22Vox%22-%22vox%20pópuli%22&from=2014-01-01&to=2020-01-31#search-box"
+                    target="_blank"
+                  >Vox</a>
+                </mark>
+                había aparecido con cuentagotas en los informativos de TVE. Desde su presentación, el 16 de enero de 2014, hasta su mitin de Vistalegre, que celebró el 7 de octubre de 2018, había sido mencionado en 36 ocasiones: por la detención de uno de sus miembros al intentar colocar una bandera española de 200 metros en el peñón de Gibraltar, por presentar querellas contra Rajoy por el 9-N, y contra diferentes políticos y entidades catalanas por el 1-O, por la cancelación de un acto en una universidad que convocó junto a Hazte Oír y su autobús transfóbico, o por la agresión en 2015 a la presidenta de
+                <strong>Vox</strong> Cuenca.
+              </p>
+
+              <div class="chart-annotated" v-html="chart_tema08"></div>
+
+              <p>
+                Vistalegre supuso su relanzamiento mediático ya que, hasta entonces, el partido de extrema derecha había tenido un impacto informativo más o menos similar, por número de menciones, al Pacma, otro partido sin representación parlamentaria. Desde este mitin hasta las siguientes elecciones, las andaluzas del 2 de diciembre de 2018, menos de dos meses después,
+                <strong>Vox</strong>, que aún no contaba con ningún representante electo en toda España, fue nombrado el doble que en el periodo anterior, en 76 ocasiones. Su participación, como acusación popular, en el juicio a los miembros del Govern y los líderes de ANC y Ómnium por los hechos de septiembre y octubre de 2017, y su asistencia a actos en Alsasua y Barcelona, junto a Ciudadanos y Partido Popular, les otorgó presencia en los informativos de La 1. Pero con el inicio de la campaña electoral en Andalucía aumentó la frecuencia de sus menciones. En particular, las de los otros partidos. En los cortes emitidos por los servicios informativos, el Partido Socialista y, en menor medida, Adelante Andalucía aludieron en sus mensajes al partido presidido por Santiago Abascal, mientras PP y C's evitaban, por lo general, pronunciarse sobre esta formación.
+              </p>
+              <p>
+                Las andaluzas supusieron la entrada de
+                <strong>Vox</strong> en las instituciones, pero no fueron sus primeras elecciones, sino las europeas del 25 de mayo de 2014. Antes de esta fecha,
+                <strong>Vox</strong> apareció en cuatro ediciones de los informativos de TVE. Las dos primeras, por la presentación del partido ultra.
+                <a
+                  href="https://www.youtube.com/watch?v=vNOsg6KF3Ts"
+                  target="_blank"
+                >Ese mismo fin de semana</a> se presentó otro partido:
+                <strong>
+                  <a
+                    href="/?q=%22podemos%22|%22formación morada%22|%22formacion morada%22|%22formación morado%22|%22los morados%22|%22partido morado%22|%22dirección morada%22|%22direccion morada%22&from=2019-01-01&to=2020-01-31#search-box"
+                    target="_blank"
+                  >Podemos</a>
+                </strong>
+                . La formación encabezada por Pablo Iglesias, entonces un habitual de tertulias políticas en La Sexta y Cuatro, entre otros canales, no contó con ningún minuto en los informativos de la televisión pública. De hecho, durante los meses anteriores al 25M solo aparecieron en una frase, al final de una pieza sobre los resultados del último CIS, que les otorgaba un escaño: "Podría entrar además al parlamento [europeo] Pablo Iglesias, el candidato de
+                <strong>Podemos</strong>." Consiguieron cinco.
+              </p>
+            </div>
+            <div class="vignette-methodology">
+              <h4 class="methodology-title" v-html="$t('vignettes.methodology')"></h4>
+              <div class="query-container">
+                <p class="methodology" v-html="$t('vignettes.query-subtitle')"></p>
+                <div>
+                  <a
+                    href="/?q=%22Vox%22-%22vox%20pópuli%22&from=2014-01-01&to=2020-01-31#search-box"
+                    target="_blank"
+                    class="methodology-query"
+                  >"Vox"-"vox pópuli"</a>
+                </div>
+              </div>
+              <p class="methodology-note">
+                Notas: Dada la polisemia del término
+                <strong>podemos</strong> hemos tenido que descartar los resultados que no aludían al partido político: discriminando de forma automática las perífrasis verbales
+                <i>podemos + infinitivo</i> o
+                <i>podemos + verbo auxiliar</i> conjugado (por ejemplo, "podemos decir que", "no podemos quedarnos impasibles") o revisando el empleo de la inicial mayúscula, propia de los sustantivos.
+                <br />En la búsqueda de
+                <strong>Vox</strong> hemos descartado un resultado que, debido a un error en la transcripción del subtítulo, se refería a un 'box' de motociclismo.
+              </p>
+            </div>
+          </article>
+        </li>
       </ul>
     </div>
   </main>
@@ -1015,7 +1086,8 @@ export default {
       chart_tema06: '',
       chart_tema07: '',
       chart_tema08: '',
-      chart_tema09: ''
+      chart_tema09: '',
+      chart_tema10: ''
     }
   },
   updated: function() {
@@ -1052,6 +1124,9 @@ export default {
     })
     axios.get('/verba-vignette09-violencia-genero.html').then(response => {
       this.chart_tema09 = response.data
+    })
+    axios.get('/verba-vignette10-vox.html').then(response => {
+      this.chart_tema10 = response.data
     })
     window.addEventListener('resize', this.throttle(this.resizer, 200))
 
