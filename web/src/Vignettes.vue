@@ -66,6 +66,12 @@
             <h3>Pedro Sánchez, el protagonista principal; Abascal, el figurante.</h3>
           </a>
         </li>
+        <li @click="onClickShowVignette('vignette08')">
+          <a href="#vignette08">
+            <img id="vignette11-img" class="vignette-img" src="./images/ficha08-sin-un-dia.png" alt />
+            <h3>Dos días (de 365) sin noticias de Sánchez, Casado y compañía</h3>
+          </a>
+        </li>
       </ul>
       <ul class="vignettes-copies">
         <!-- Tema 1 - la ultraderecha -->
@@ -243,7 +249,7 @@
                 </div>
               </div>
               <p class="methodology-note">
-                Nota: A la búsqueda de los ERES hemos eliminado cuatro casos en
+                <strong>Nota metodológica:</strong> A la búsqueda de los <strong>ERES</strong> hemos eliminado cuatro casos en
                 los que trataban Expedientes de Regulación de Empleo distintos a
                 los del caso de
                 <strong>corrupción</strong>.
@@ -688,9 +694,9 @@
                 </div>
               </div>
               <p class="methodology-note">
-                Nota: la búsqueda de
-                <strong>gripe A</strong> proporciona 46 resultados, de los que se han eliminado las entradas que no correspondían a la gripe
-                <strong>A (H1N1)</strong>, obteniendo un total de 43 menciones.
+                <strong>Nota metodológica:</strong> la búsqueda de
+                <strong>gripe A</strong> proporciona 46 resultados, de los que se han eliminado las entradas que no correspondían a la 
+                <strong>gripe A (H1N1)</strong>, obteniendo un total de 43 menciones.
               </p>
             </div>
           </article>
@@ -754,10 +760,9 @@
                   <a
                     href="/?q=Abascal&from=2019-01-01&to=2020-01-31#search-box"
                     target="_blank"
-                  >Santiago Abascal</a>
+                  >Santiago Abascal,</a>
                 </strong>
-                ,
-                <strong>Vox</strong>
+                <strong>&nbsp;Vox</strong>
                 fue mencionado más de 5,5 veces (367 citas frente a 2.021).
               </p>
               <p>
@@ -809,30 +814,89 @@
                       href="/?q=%22Sánchez%22%7C%22Sanchez%22&from=2019-01-01&to=2020-01-31#search-box"
                       target="_blank"
                       class="methodology-query item1"
-                    >"Sánchez"|"Sanchez"</a>
+                    >"Sánchez" | "Sanchez"</a>
                     &nbsp; VS
                     <br />
                     <a
                       href="/?q=%22partido%20socialista%22%7C%22psoe%22%7C%22ferraz%22%7C%22los%20socialistas%22%7C%22grupo%20socialista%22%7C%22formación%20socialista%22%7C%22formacion%20socialista%22%7C%22dirección%20socialista%22%7C%22direccion%20socialista%22%7C%22bancada%20socialista%22%7C%22filas%20socialistas%22%7C%22directiva%20socialista%22%7C%22grupo%20parlamentario%20socialista%22&from=2019-01-01&to=2020-01-31#search-box"
                       target="_blank"
                       class="methodology-query item2"
-                    >"partido socialista"|"psoe"|"ferraz"|"los socialistas"|"grupo socialista"|"formación socialista"|"formacion socialista"|"dirección socialista"|"direccion socialista"|"bancada socialista"|"filas socialistas"|"directiva socialista"|"grupo parlamentario socialista"</a>
+                    >"partido socialista" | "psoe" | "ferraz" | "los socialistas" | "grupo socialista" | "formación socialista" | "formacion socialista" | "dirección socialista" | "direccion socialista" | "bancada socialista" | "filas socialistas" | "directiva socialista" | "grupo parlamentario socialista"</a>
                   </div>
                 </div>
               </div>
               <div class="methodology-note">
-                <p>NOTAS: *El periodo analizado es todo 2019, aunque para los distintos cálculos, en el caso de Albert Rivera, solo hemos tenido en cuenta sus menciones hasta el día 11 de noviembre, fecha en la que anunció su dimisión como presidente del partido.</p>
+                <p><strong>Nota metodológica:</strong> *El periodo analizado es todo 2019 excepto en el caso de <strong>Albert Rivera</strong>, en el que solo hemos tenido en cuenta sus menciones hasta el día 11 de noviembre, fecha en la que anunció su dimisión como presidente del partido.</p>
                 <p>
-                  Los resultados de las búsquedas de verba han sido
-                  <strong>descargados en csv</strong> y
+                  Los resultados de las búsquedas de verba 
+                  <strong>han sido descargados en csv</strong> y
                   <strong>limpiados para eliminar falsos positivos</strong> (uso de
                   <i>podemos</i> como verbo, de
-                  <i>ciudadanos</i> como sustantivo plural o de personas que comparten los apellidos de los líderes políticos, como
+                  <i>ciudadanos</i> como sustantivo o de personas con los mismos apellidos de los líderes políticos, como
                   <i>Jordi Sànchez</i>,
                   <i>Julio Iglesias</i> o
                   <i>María Casado</i>, entre otros tantos.
                 </p>
               </div>
+            </div>
+          </article>
+        </li>
+
+        <!-- Tema 08 - ... -->
+        <li id="vignette08" class="verba-vignettes-item">
+          <article>
+            <h3 class="vignette-title">Dos días (de 365) sin noticias de Sánchez, Casado y compañía</h3>
+            <div class="vignette-copy">
+              <p>
+                La
+                <strong>
+                  <a
+                    href="/?q=%22loter%C3%ADa%20de%20navidad%22%7C%22loteria%20de%20navidad%22&from=2014-01-01&to=2020-01-31#search-box"
+                    target="_blank"
+                  >lotería de Navidad</a>
+                </strong>
+                de 2019 fue un oasis informativo en plenas negociaciones entre los partidos para investir a Pedro Sánchez presidente del Gobierno. El despliegue de La 1 el 22 de diciembre aparcó la política nacional y se centró en el sorteo. Los brindis con champán y las conexiones con loteros y ganadores dieron un respiro a los espectadores de TVE quienes, por un día, no recibieron información de partidos, políticos y política, el segundo dolor de cabeza de los ciudadanos a finales de 2019,
+                <a
+                  href="http://www.cis.es/cis/export/sites/default/-Archivos/Indicadores/documentos_html/TresProblemas.html"
+                  target="_blank"
+                >según el CIS.</a>
+              </p>
+
+              <div class="chart-annotated" v-html="chart_tema08"></div>
+
+              <p>
+                Unos meses antes del <strong>Gordo de Navidad</strong>, el 24 de agosto de 2019, en pleno verano, se repitió este fenómeno. TVE informó de la operación de corazón a Juan Carlos de Borbón, la cumbre del G-7 en Biarritz, las consecuencias del brote de listeriosis originado en una fábrica sevillana de carne mechada y el desarrollo de los incendios del Amazonas, entre otros asuntos. Pero ni el telediario de la
+                <a
+                  href="http://www.rtve.es/alacarta/videos/telediario/telediario-15-horas-24-08-19/5370728/"
+                  target="_blank"
+                >tarde</a> ni el de la
+                <a
+                  href="http://www.rtve.es/alacarta/videos/telediario/telediario-15-horas-24-08-19/5370728/"
+                  target="blank"
+                >noche</a> aludieron a los cinco primeros partidos de ámbito estatal ni a sus líderes. Cosas del verano.
+              </p>
+            </div>
+            <div class="vignette-methodology">
+              <h4 class="methodology-title" v-html="$t('vignettes.methodology')"></h4>
+              <div class="query-container">
+                <p class="methodology" v-html="$t('vignettes.query-subtitle')"></p>
+                <div>
+                  <a href="#" target="_blank" class="methodology-query">"lotería de navidad" | "loteria de navidad"</a>
+                </div>
+              </div>
+              <p class="methodology-note">
+                <strong>Nota metodológica:</strong> El periodo analizado es todo 2019 y los cinco primeros partidos políticos de ámbito estatal tenidos en cuenta son PSOE, PP, Vox, Unidas Podemos y Ciudadanos. Hemos utilizado sus apariciones y las de sus líderes de los datos utilizados para el artículo 
+                <strong>
+                <a
+                  href="http://www.cis.es/cis/export/sites/default/-Archivos/Indicadores/documentos_html/TresProblemas.html"
+                  target="_blank"
+                >"Pedro Sánchez, el protagonista principal; Abascal, el figurante"</a>
+                </strong>
+                 y analizado las fechas en las que no había menciones a ninguno de ellos. Según los datos, además de los días señalados en el texto, tampoco habría menciones el 10 de mayo de 2019, pero sí las hubo. Esto se debe a que RTVE no publicó las transcripciones de los telediarios de este día. Damos cuenta de este pequeño agujero en la <a
+                  href="/about"
+                  target="_blank"
+                >descripción de Verba.</a>
+              </p>
             </div>
           </article>
         </li>
@@ -888,7 +952,7 @@ export default {
       this.chart_tema07 = response.data
     })
     axios.get('/verba-vignette08-loteria.html').then(response => {
-      this.chart_tema07 = response.data
+      this.chart_tema08 = response.data
     })
     window.addEventListener('resize', this.throttle(this.resizer, 200))
 

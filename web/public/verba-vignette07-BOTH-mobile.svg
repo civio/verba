@@ -261,25 +261,25 @@
 		
 			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="107.927" y1="85.573" x2="107.927" y2="89.573"/>
 		
-			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" stroke-dasharray="8.0946,8.0946" x1="107.927" y1="97.668" x2="107.927" y2="401.216"/>
+			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" stroke-dasharray="8.0393,8.0393" x1="107.927" y1="97.612" x2="107.927" y2="431.243"/>
 		
-			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="107.927" y1="405.263" x2="107.927" y2="409.263"/>
+			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="107.927" y1="435.263" x2="107.927" y2="439.263"/>
 	</g>
 	<g>
 		
 			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="128.352" y1="153.955" x2="128.352" y2="157.955"/>
 		
-			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" stroke-dasharray="7.9777,7.9777" x1="128.352" y1="165.933" x2="128.352" y2="401.274"/>
+			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" stroke-dasharray="7.9231,7.9231" x1="128.352" y1="165.878" x2="128.352" y2="431.302"/>
 		
-			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="128.352" y1="405.263" x2="128.352" y2="409.263"/>
+			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="128.352" y1="435.263" x2="128.352" y2="439.263"/>
 	</g>
 	<g>
 		
 			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="256.003" y1="216.478" x2="256.003" y2="220.478"/>
 		
-			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" stroke-dasharray="8.0341,8.0341" x1="256.003" y1="228.513" x2="256.003" y2="401.246"/>
+			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" stroke-dasharray="7.955,7.955" x1="256.003" y1="228.433" x2="256.003" y2="431.286"/>
 		
-			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="256.003" y1="405.263" x2="256.003" y2="409.263"/>
+			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="256.003" y1="435.263" x2="256.003" y2="439.263"/>
 	</g>
 	
 		<line style="opacity:0.8;" fill="none" stroke="#000000" stroke-miterlimit="10" x1="0.25" y1="19.999" x2="320.25" y2="19.999"/>
