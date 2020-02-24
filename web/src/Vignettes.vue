@@ -684,6 +684,153 @@
             </div>
           </article>
         </li>
+
+        <!-- Tema 07 - ... -->
+        <li id="vignette07" class="verba-vignettes-item">
+          <article>
+            <h3
+              class="vignette-title"
+            >Pedro Sánchez, el protagonista principal; Abascal, el figurante</h3>
+            <div class="vignette-copy">
+              <p>
+                El secretario general del
+                <strong>Partido Socialista</strong>,
+                <mark class="item1">
+                  <a
+                    href="/?q=%22Sánchez%22%7C%22Sanchez%22&from=2019-01-01&to=2020-01-31#search-box"
+                    target="_blank"
+                  >Pedro Sánchez,</a>
+                </mark>
+                ha sido el político más nombrado en 2019 en los informativos de La 1, tanto por periodistas como por rivales políticos. Se trata del único líder de un partido de ámbito estatal que ha sido aludido en más ocasiones que su propia formación. Por cada nueve menciones al
+                <mark
+                  class="item2"
+                >
+                  <a
+                    href="/?q=%22partido%20socialista%22%7C%22psoe%22%7C%22ferraz%22%7C%22los%20socialistas%22%7C%22grupo%20socialista%22%7C%22formación%20socialista%22%7C%22formacion%20socialista%22%7C%22dirección%20socialista%22%7C%22direccion%20socialista%22%7C%22bancada%20socialista%22%7C%22filas%20socialistas%22%7C%22directiva%20socialista%22%7C%22grupo%20parlamentario%20socialista%22&from=2019-01-01&to=2020-01-31#search-box"
+                    target="_blank"
+                  >PSOE,</a>
+                </mark>
+                <strong>Sánchez</strong> recibió 10. Su doble papel como presidente del Gobierno y como máximo dirigente de los socialistas en un año con cuatro procesos electorales lo explican.
+              </p>
+              <div class="chart-annotated" v-html="chart_tema07"></div>
+              <p>
+                Solo las referencias al
+                <strong>
+                  <a
+                    href="/?q=%22Partido%20Popular%22%7C%22PP%22%7C%22G%C3%A9nova%22%7C%22Genova%22%7C%22los%20populares%22%7C%22grupo%20popular%22%7C%22direcci%C3%B3n%20popular%22%7C%22direccion%20popular%22%7C%22partido%20de%20Casado%22%7C%22bancada%20popular%22%7C%22filas%20populares%22%7C%22directiva%20popular%22%7C%22grupo%20parlamentario%20popular%22&from=2019-01-01&to=2020-01-31#search-box"
+                    target="_blank"
+                  >Partido Popular</a>
+                </strong>
+                (4.634) superaron a las de
+                <strong>Sánchez</strong>(4.191). Sin embargo, su presidente no tuvo tanto protagonismo:
+                <strong>
+                  <a
+                    href="/?q=Casado&from=2019-01-01&to=2020-01-31#search-box"
+                    target="_blank"
+                  >Pablo Casado</a>
+                </strong>
+                fue citado una vez por cada cuatro alusiones a
+                <strong>los populares</strong>.
+              </p>
+              <p>
+                En el extremo contrario al de
+                <strong>Pedro Sánchez</strong> está
+                <strong>Santiago Abascal</strong>, presidente de
+                <strong>
+                  <a href="/?q=Vox|vos&from=2019-01-01&to=2020-01-31#search-box" target="_blank">Vox</a>
+                </strong>: su protagonismo es casi testimonial si lo comparamos con las referencias al partido de ultraderecha. Por cada
+                <strong>
+                  <a
+                    href="/?q=Abascal&from=2019-01-01&to=2020-01-31#search-box"
+                    target="_blank"
+                  >Santiago Abascal</a>
+                </strong>
+                ,
+                <strong>Vox</strong>
+                fue mencionado más de 5,5 veces (367 citas frente a 2.021).
+              </p>
+              <p>
+                De la cobertura de los cinco primeros partidos políticos de ámbito estatal –y sus líderes– en los informativos de TVE en 2019,
+                <strong>Pedro Sánchez</strong> y el
+                <strong>PP</strong> fueron nombrados una mediana de cinco veces al día;
+                <strong>PSOE</strong> y
+                <strong>
+                  <a
+                    href="/?q=%22formación naranja%22|%22formacion naranja%22|%22c`s%22|%22CS%22|%22C'S%22|%22C-S%22|%22C´S%22|%22los naranjas%22|%22partido naranja%22|%22dirección naranja%22|%22direccion naranja%22&from=2019-01-01&to=2020-01-31#search-box"
+                    target="_blank"
+                  >Ciudadanos</a>
+                </strong>, 4;
+                <strong>
+                  <a
+                    href="/?q=%22podemos%22|%22formación morada%22|%22formacion morada%22|%22formación morado%22|%22los morados%22|%22partido morado%22|%22dirección morada%22|%22direccion morada%22&from=2019-01-01&to=2020-01-31#search-box"
+                    target="_blank"
+                  >Unidas Podemos</a>
+                </strong>, 2, y
+                <strong>Vox</strong>,
+                <strong>
+                  <a
+                    href="/?q=Iglesias&from=2019-01-01&to=2020-01-31#search-box"
+                    target="_blank"
+                  >Iglesias</a>
+                </strong>,
+                <strong>Casado</strong> y
+                <strong>
+                  <a
+                    href="/?q=Rivera&from=2019-01-01&to=2020-01-31#search-box"
+                    target="_blank"
+                  >Rivera</a>
+                </strong>, 1;
+                <strong>Abascal</strong>, menos de una vez al día. Si analizamos con más detalle las apariciones diarias de cada partido en TVE, solo en cuatro días de todo 2019 no se mencionó a los
+                <strong>socialistas</strong>, según los telediarios analizados por Verba. Es decir, aparecieron en la televisión pública 361 días en todo el año pasado. Por su parte,
+                <strong>los populares</strong> y su presidente, con 359 días; 354, los de
+                <strong>C’s</strong>; 337, los de
+                <strong>Podemos</strong>; y, los que menos, 277 días, el partido de
+                <strong>ultraderecha</strong> o su líder.
+              </p>
+            </div>
+            <div class="vignette-methodology">
+              <h4 class="methodology-title" v-html="$t('vignettes.methodology')"></h4>
+              <p class="methodology" v-html="$t('vignettes.query-subtitle')"></p>
+              <div class="query-container">
+                <div>
+                  <div>
+                    <a
+                      href="/?q=%22Sánchez%22%7C%22Sanchez%22&from=2019-01-01&to=2020-01-31#search-box"
+                      target="_blank"
+                      class="methodology-query item1"
+                    >"Sánchez"|"Sanchez"</a>
+                    &nbsp; VS
+                    <br />
+                    <a
+                      href="/?q=%22partido%20socialista%22%7C%22psoe%22%7C%22ferraz%22%7C%22los%20socialistas%22%7C%22grupo%20socialista%22%7C%22formación%20socialista%22%7C%22formacion%20socialista%22%7C%22dirección%20socialista%22%7C%22direccion%20socialista%22%7C%22bancada%20socialista%22%7C%22filas%20socialistas%22%7C%22directiva%20socialista%22%7C%22grupo%20parlamentario%20socialista%22&from=2019-01-01&to=2020-01-31#search-box"
+                      target="_blank"
+                      class="methodology-query item2"
+                    >"partido socialista"|"psoe"|"ferraz"|"los socialistas"|"grupo socialista"|"formación socialista"|"formacion socialista"|"dirección socialista"|"direccion socialista"|"bancada socialista"|"filas socialistas"|"directiva socialista"|"grupo parlamentario socialista"</a>
+                  </div>
+                </div>
+              </div>
+              <div class="methodology-note">
+                <p>Notas: El periodo analizado es todo 2019, aunque para los distintos cálculos, en el caso de Albert Rivera, solo hemos tenido en cuenta sus menciones hasta el día 11 de noviembre, fecha en la que anunció su dimisión como presidente del partido.</p>
+                <p>
+                  Los resultados de las búsquedas de verba han sido
+                  <strong>descargados en csv</strong> y
+                  <strong>limpiados para eliminar falsos positivos</strong> (uso de
+                  <i>podemos</i> como verbo, de
+                  <i>ciudadanos</i> como sustantivo plural o de personas que comparten los apellidos de los líderes políticos, como
+                  <i>Jordi Sànchez</i>,
+                  <i>Julio Iglesias</i> o
+                  <i>María Casado</i>, entre otros tantos. Puedes descargar y consultar los datos limpios en
+                  <strong>
+                    <a
+                      href="https://datos.civio.es/dataset/menciones-a-los-cinco-grandes-partidos-de-ambito-estatal-y-sus-candidatos-en-los-informativos-de-tve/"
+                      target="_blank"
+                    >datos.civio.es</a>
+                  </strong>
+                </p>
+              </div>
+            </div>
+          </article>
+        </li>
       </ul>
     </div>
   </main>
@@ -733,6 +880,9 @@ export default {
       this.chart_tema05 = response.data
     })
     axios.get('/verba-vignette06-coronavirus.html').then(response => {
+      this.chart_tema06 = response.data
+    })
+    axios.get('/verba-vignette07-BOTH.html').then(response => {
       this.chart_tema06 = response.data
     })
     window.addEventListener('resize', this.throttle(this.resizer, 200))
