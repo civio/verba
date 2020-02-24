@@ -887,7 +887,7 @@
                 <p class="methodology" v-html="$t('vignettes.query-subtitle')"></p>
                 <div>
                   <a
-                    href="#"
+                    href="/?q=%22loter%C3%ADa%20de%20navidad%22%7C%22loteria%20de%20navidad%22&from=2014-01-01&to=2020-01-31#search-box"
                     target="_blank"
                     class="methodology-query"
                   >"lotería de navidad" | "loteria de navidad"</a>
@@ -902,7 +902,10 @@
                   >"Pedro Sánchez, el protagonista principal; Abascal, el figurante"</a>
                 </strong>
                 y analizado las fechas en las que no había menciones a ninguno de ellos. Según los datos, además de los días señalados en el texto, tampoco habría menciones el 10 de mayo de 2019, pero sí las hubo. Esto se debe a que RTVE no publicó las transcripciones de los telediarios de este día. Damos cuenta de este pequeño agujero en la
-                <a href="/about" target="_blank">descripción de Verba.</a>
+                <a
+                  href="/about"
+                  target="_blank"
+                >descripción de Verba.</a>
               </p>
             </div>
           </article>
