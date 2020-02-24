@@ -55,6 +55,17 @@
             <h3>La fiebre (informativa) del coronavirus</h3>
           </a>
         </li>
+        <li @click="onClickShowVignette('vignette07')">
+          <a href="#vignette07">
+            <img
+              id="vignette07-img"
+              class="vignette-img"
+              src="./images/ficha06-principal-pdr.png"
+              alt
+            />
+            <h3>Pedro Sánchez, el protagonista principal; Abascal, el figurante.</h3>
+          </a>
+        </li>
       </ul>
       <ul class="vignettes-copies">
         <!-- Tema 1 - la ultraderecha -->
