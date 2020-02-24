@@ -267,7 +267,7 @@ export default {
   width: 100%;
 
   color: $color-neutral-0;
-  font-size: 1.1rem;
+  font-size: 1rem;
   text-transform: uppercase;
 
   overflow: hidden;
