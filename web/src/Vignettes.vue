@@ -750,8 +750,12 @@
                     target="_blank"
                   >Partido Popular</a>
                 </strong>
-                (4.634) superaron a las de
-                <strong>Sánchez</strong>(4.191). Sin embargo, su presidente no tuvo tanto protagonismo:
+                superaron a las de
+                <strong>Sánchez</strong>, 4.634 menciones a los populares frente a las 4.191 del líder socialista (hemos limpiado los resultados de Verba, como explicamos en
+                <i>
+                  nota metodológica<sup>1</sup>)
+                </i>. Sin embargo, el presidente del
+                <strong>PP</strong> no tuvo tanto protagonismo:
                 <strong>
                   <a
                     href="/?q=Casado&from=2019-01-01&to=2020-01-31#search-box"
@@ -806,8 +810,11 @@
                   <a
                     href="/?q=Rivera&from=2019-01-01&to=2020-01-31#search-box"
                     target="_blank"
-                  >Rivera*,</a>
-                </strong> 1;
+                  >Rivera,</a>
+                </strong> 1 (ver
+                <i>
+                  nota metodológica<sup>2</sup>)
+                </i>.);
                 <strong>Abascal</strong>, menos de una vez al día. Si analizamos con más detalle las apariciones diarias de cada partido en TVE, solo en cuatro días de todo 2019 no se mencionó a los
                 <strong>socialistas</strong>, según los telediarios analizados por Verba. Es decir, aparecieron en la televisión pública 361 días en todo el año pasado. Por su parte,
                 <strong>los populares</strong> y su presidente, con 359 días; 354, los de
@@ -839,18 +846,12 @@
               </div>
               <div class="methodology-note">
                 <p>
-                  <strong>Nota metodológica:</strong> *El periodo analizado es todo 2019 excepto en el caso de
-                  <strong>Albert Rivera</strong>, en el que solo hemos tenido en cuenta sus menciones hasta el día 11 de noviembre, fecha en la que anunció su dimisión como presidente del partido.
+                  <strong>Nota metodológica<sup>1</sup>:</strong>
+                  Por un lado, hemos lanzado búsquedas por el primer apellido de los candidatos y, por otro, por el nombre de los partidos, así como de expresiones utilizadas por los periodistas de TVE para evitar repetir nombres propios.  Por ejemplo, <i>Ciudadanos</i> y <i>formación naranja</i>. El detalle de estas búsquedas están en los enlaces del texto. <strong>Hemos descargado estos resultados en csv</strong> y <strong>los hemos limpiado para eliminar falsos positivos</strong>, como el uso de <i>podemos</i> como verbo, de <i>ciudadanos</i> como sustantivo o de personas con los mismos apellidos de los líderes políticos, como <i>Jordi Sànchez</i>, <i>Julio Iglesias</i> o
+                  <i>María Casado</i>, entre otros tantos.
                 </p>
                 <p>
-                  Los resultados de las búsquedas de verba
-                  <strong>han sido descargados en csv</strong> y
-                  <strong>limpiados para eliminar falsos positivos</strong> (uso de
-                  <i>podemos</i> como verbo, de
-                  <i>ciudadanos</i> como sustantivo o de personas con los mismos apellidos de los líderes políticos, como
-                  <i>Jordi Sànchez</i>,
-                  <i>Julio Iglesias</i> o
-                  <i>María Casado</i>, entre otros tantos.
+                  <strong>Nota metodológica<sup>2</sup>:</strong> El periodo analizado es todo 2019 excepto en el caso de Albert Rivera, en el que solo hemos tenido en cuenta sus menciones hasta el día 11 de noviembre, fecha en la que anunció su dimisión como presidente del partido.
                 </p>
               </div>
             </div>
@@ -908,7 +909,7 @@
                 <strong>Nota metodológica:</strong> El periodo analizado es todo 2019 y los cinco primeros partidos políticos de ámbito estatal tenidos en cuenta son PSOE, PP, Vox, Unidas Podemos y Ciudadanos. Hemos utilizado sus apariciones y las de sus líderes de los datos utilizados para el artículo
                 <strong>
                   <a
-                    href="http://www.cis.es/cis/export/sites/default/-Archivos/Indicadores/documentos_html/TresProblemas.html"
+                    href="/vignettes#vignette07"
                     target="_blank"
                   >"Pedro Sánchez, el protagonista principal; Abascal, el figurante"</a>
                 </strong>
