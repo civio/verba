@@ -11,13 +11,13 @@
             </a>
             <div class="vignettes-carrousel">
               <a href="/vignettes#vignette07">
-                <h2 class="vignette-03">P. Sánchez, el protagonista principal...</h2>
+                <h2 class="vignette-01">P. Sánchez, el protagonista principal...</h2>
+              </a>
+              <a href="/vignettes#vignette08">
+                <h3 class="vignette-02">Dos días (de 365) sin noticias de...</h3>
               </a>
               <a href="/vignettes#vignette06">
-                <h3 class="vignette-01">La fiebre (informativa) del coronavirus</h3>
-              </a>
-              <a href="/vignettes#vignette05">
-                <h3 class="vignette-02">No había crisis climática hasta 2019</h3>
+                <h3 class="vignette-03">La fiebre (informativa) del coronavirus</h3>
               </a>
             </div>
           </div>
