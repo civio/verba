@@ -193,7 +193,7 @@ u {
   // Mobile first
   margin: 0 1rem;
   text-align: center;
-  overflow-x: auto;
+  overflow-x: hidden;
 
   // Tablets
   @media all and (min-width: 768px) {
