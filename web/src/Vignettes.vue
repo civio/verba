@@ -1002,7 +1002,7 @@
                 Otro término al que no hacía alusión la Editora de Igualdad de TVE, pero que ha cobrado algo de relevancia, es el de
                 <strong>
                   <a
-                    href="/?q=%22violencia%20intrafamiliar%22|&%22violencia%20doméstica%22from=2014-01-01&to=2020-01-31#search-box"
+                    href="/?q=%22violencia%20intrafamiliar%22&from=2014-01-01&to=2020-01-31#search-box"
                     target="_blank"
                   >violencia intrafamiliar,</a>
                 </strong>
