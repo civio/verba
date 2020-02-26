@@ -753,7 +753,8 @@
                 superaron a las de
                 <strong>Sánchez</strong>, 4.634 menciones a los populares frente a las 4.191 del líder socialista (hemos limpiado los resultados de Verba, como explicamos en
                 <i>
-                  nota metodológica<sup>1</sup>)
+                  nota metodológica
+                  <sup>1</sup>)
                 </i>. Sin embargo, el presidente del
                 <strong>PP</strong> no tuvo tanto protagonismo:
                 <strong>
@@ -813,7 +814,8 @@
                   >Rivera,</a>
                 </strong> 1 (ver
                 <i>
-                  nota metodológica<sup>2</sup>)
+                  nota metodológica
+                  <sup>2</sup>)
                 </i>.);
                 <strong>Abascal</strong>, menos de una vez al día. Si analizamos con más detalle las apariciones diarias de cada partido en TVE, solo en cuatro días de todo 2019 no se mencionó a los
                 <strong>socialistas</strong>, según los telediarios analizados por Verba. Es decir, aparecieron en la televisión pública 361 días en todo el año pasado. Por su parte,
@@ -846,12 +848,26 @@
               </div>
               <div class="methodology-note">
                 <p>
-                  <strong>Nota metodológica<sup>1</sup>:</strong>
-                  Por un lado, hemos lanzado búsquedas por el primer apellido de los candidatos y, por otro, por el nombre de los partidos, así como de expresiones utilizadas por los periodistas de TVE para evitar repetir nombres propios.  Por ejemplo, <i>Ciudadanos</i> y <i>formación naranja</i>. El detalle de estas búsquedas están en los enlaces del texto. <strong>Hemos descargado estos resultados en csv</strong> y <strong>los hemos limpiado para eliminar falsos positivos</strong>, como el uso de <i>podemos</i> como verbo, de <i>ciudadanos</i> como sustantivo o de personas con los mismos apellidos de los líderes políticos, como <i>Jordi Sànchez</i>, <i>Julio Iglesias</i> o
+                  <strong>
+                    Nota metodológica
+                    <sup>1</sup>:
+                  </strong>
+                  Por un lado, hemos lanzado búsquedas por el primer apellido de los candidatos y, por otro, por el nombre de los partidos, así como de expresiones utilizadas por los periodistas de TVE para evitar repetir nombres propios. Por ejemplo,
+                  <i>Ciudadanos</i> y
+                  <i>formación naranja</i>. El detalle de estas búsquedas están en los enlaces del texto.
+                  <strong>Hemos descargado estos resultados en csv</strong> y
+                  <strong>los hemos limpiado para eliminar falsos positivos</strong>, como el uso de
+                  <i>podemos</i> como verbo, de
+                  <i>ciudadanos</i> como sustantivo o de personas con los mismos apellidos de los líderes políticos, como
+                  <i>Jordi Sànchez</i>,
+                  <i>Julio Iglesias</i> o
                   <i>María Casado</i>, entre otros tantos.
                 </p>
                 <p>
-                  <strong>Nota metodológica<sup>2</sup>:</strong> El periodo analizado es todo 2019 excepto en el caso de Albert Rivera, en el que solo hemos tenido en cuenta sus menciones hasta el día 11 de noviembre, fecha en la que anunció su dimisión como presidente del partido.
+                  <strong>
+                    Nota metodológica
+                    <sup>2</sup>:
+                  </strong> El periodo analizado es todo 2019 excepto en el caso de Albert Rivera, en el que solo hemos tenido en cuenta sus menciones hasta el día 11 de noviembre, fecha en la que anunció su dimisión como presidente del partido.
                 </p>
               </div>
             </div>
@@ -929,23 +945,33 @@
             <h3 class="vignette-title">¿Pueden las palabras combatir la violencia de género?</h3>
             <div class="vignette-copy">
               <p>
-                Desde principios de 2014 hasta el 31 de enero de 2020 han sido asesinadas 320 mujeres por
+                Desde principios de 2014 hasta el 31 de enero de 2020 han sido asesinadas 320 mujeres por 
                 <strong>
                   <a
-                    href="/?q=%22violencia%20machista%22&from=2019-01-01&to=2020-01-31#search-box"
+                    href="/?q=%22violencia%20machista%22&from=2014-01-01&to=2020-01-31#search-box"
                     target="_blank"
-                  >violencia machista</a>
+                  >violencia machista.</a>
                 </strong>
-                . Durante esa misma época, esa expresión se ha utilizado más de 1.000 veces en el Telediario de La 1. "¿Las palabras pueden combatir la
+                Durante esa misma época, esa expresión se ha utilizado más de 1.000 veces en el Telediario de La 1. "¿Las palabras pueden combatir la <strong>violencia de género</strong>?", preguntaba la Editora de Igualdad del canal público, Alicia G. Montano, en unos informativos de noviembre de 2018. Su afirmación venía acompañada de una serie de recomendaciones sobre cómo hablar de la violencia contra las mujeres.
+              </p>
+              <p>
                 <mark>
                   <a
                     href="/?q=%22violencia%20de%20g%C3%A9nero%22%7C%22violencia%20de%20genero%22&from=2014-01-01&to=2020-01-31#search-box"
                     target="_blank"
-                  >violencia de género</a>
+                  >Violencia de género</a>
                 </mark>
-                ?", preguntaba la Editora de Igualdad del canal público, Alicia G. Montano, en unos informativos de noviembre de 2018. Su afirmación venía acompañada de una serie de recomendaciones sobre cómo hablar de la violencia contra las mujeres.
-              </p>
-              <p>"Violencia de género" es el término más utilizado en los telediarios: 2.619 veces. Junto con "violencia machista" o "violencia sexista" -que aparece 11 veces en el mismo periodo-, son los términos correctos para hablar de estos sucesos, según la propia Montano. El día que más se pronuncian estas palabras en el informativo es el 25 de noviembre de cada año, el Día Internacional de la Violencia contra la mujer. Solo en 2019, en ese día se nombra "violencia de género" o "violencia machista" 38 veces entre el telediario del mediodía y el de la noche.</p>
+                 es el término más utilizado en los telediarios: 2.619 veces. Junto con 
+                 <strong>
+                  violencia machista
+                </strong> o
+                <strong>
+                  <a
+                    href="/?q=%22violencia%20sexista%22&from=2014-01-01&to=2020-01-31#search-box"
+                    target="_blank"
+                  >violencia sexista</a>
+                </strong>
+                   -que aparece 11 veces en el mismo periodo-, son los términos correctos para hablar de estos sucesos, según la propia Montano. El día que más se pronuncian estas palabras en el informativo es el 25 de noviembre de cada año, el Día Internacional de la Violencia contra la mujer. Solo en 2019, en ese día se nombra <strong>violencia de género</strong> o <strong>violencia machista</strong> 38 veces entre el telediario del mediodía y el de la noche.</p>
 
               <div class="chart-annotated" v-html="chart_tema09"></div>
 
@@ -953,31 +979,31 @@
                 No obstante, hay otros términos que no reflejan de forma correcta este tipo de violencia y que también se utilizan en los telediarios de TVE. Montano avisaba en 2018 de que no se deberían utilizar términos como
                 <strong>
                   <a
-                    href="/?q=%22violencia%20domestica%22|&%22violencia%20doméstica%22&from=2019-01-01&to=2020-01-31#search-box"
+                    href="/?q=%22violencia%20domestica%22|%22violencia%20doméstica%22&from=2014-01-01&to=2020-01-31#search-box"
                     target="_blank"
-                  >violencia doméstica</a>
+                  >"violencia doméstica",</a>
                 </strong>
-                , "violencia de pareja o del entorno familiar" ni
+                 "violencia de pareja" o del 
+                 "entorno familiar" ni
                 <strong>
                   <a
-                    href="/?q=%22crimen%20pasionalr%22&from=2019-01-01&to=2020-01-31#search-box"
+                    href="/?q=%22crimen%20pasionalr%22&from=2014-01-01&to=2020-01-31#search-box"
                     target="_blank"
-                  >crimen pasional</a>
+                  >"crimen pasional".</a>
                 </strong>
-                . Sin embargo, la primera acepción ha aparecido en los telediarios 65 veces desde 2014. Aunque muchas estaban referidas a violencia entre diferentes miembros de la familia y no sólo a violencia de género. Por su parte,
-                <strong>crimen pasional</strong> se ha utilizado 14 veces desde 2014.
+                 Sin embargo, la primera acepción ha aparecido en los telediarios 65 veces desde 2014. Aunque muchas estaban referidas a violencia entre diferentes miembros de la familia y no sólo a <strong>violencia de género.</strong> 
+                 Por su parte, <strong>crimen pasional</strong> se ha utilizado 14 veces desde 2014.
               </p>
               <p>
                 Otro término al que no hacía alusión la Editora de Igualdad de TVE, pero que ha cobrado algo de relevancia, es el de
-                <strong>violencia intrafamiliar</strong>
-                que defiende el partido ultaderechista Vox en su programa como alternativa lingüistica a la
-                <strong>violencia de género</strong>.
                 <strong>
                   <a
-                    href="/?q=%22violencia%20intrafamiliar%22|&%22violencia%20doméstica%22from=2019-01-01&to=2020-01-31#search-box"
+                    href="/?q=%22violencia%20intrafamiliar%22|&%22violencia%20doméstica%22from=2014-01-01&to=2020-01-31#search-box"
                     target="_blank"
-                  >Violencia intrafamiliar,</a>
+                  >violencia intrafamiliar,</a>
                 </strong>
+                que defiende el partido ultaderechista Vox en su programa como alternativa lingüistica a la <strong>violencia de género</strong>.
+                <strong>Violencia intrafamiliar</strong>
                 ha aparecido 11 veces desde 2019 hasta el 30 de enero de 2020 en los telediarios de TVE.
               </p>
             </div>
