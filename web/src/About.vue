@@ -74,7 +74,7 @@
 
   // PC
   @media all and (min-width: 1024px) {
-    margin-left: 1.3rem;
+    margin-left: 0;
   }
 
   a {
