@@ -10,14 +10,14 @@
               <h2 class="verba-subtitle">{{ $t('search.vignettes_intro') }}</h2>
             </a>
             <div class="vignettes-carrousel">
+              <a href="/vignettes#vignette10">
+                <h3 class="vignette-01">El auge de Vox en TVE</h3>
+              </a>
+              <a href="/vignettes#vignette09">
+                <h3 class="vignette-02">¿Pueden las palabras combatir...?</h3>
+              </a>
               <a href="/vignettes#vignette07">
-                <h2 class="vignette-01">P. Sánchez, el protagonista principal...</h2>
-              </a>
-              <a href="/vignettes#vignette08">
-                <h3 class="vignette-02">Dos días (de 365) sin noticias de...</h3>
-              </a>
-              <a href="/vignettes#vignette06">
-                <h3 class="vignette-03">La fiebre (informativa) del coronavirus</h3>
+                <h2 class="vignette-03">P. Sánchez, el protagonista principal...</h2>
               </a>
             </div>
           </div>

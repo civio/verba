@@ -759,7 +759,8 @@
                 superaron a las de
                 <strong>Sánchez</strong>, 4.634 menciones a los populares frente a las 4.191 del líder socialista (hemos limpiado los resultados de Verba, como explicamos en
                 <i>
-                  nota metodológica<sup>1</sup>)
+                  nota metodológica
+                  <sup>1</sup>)
                 </i>. Sin embargo, el presidente del
                 <strong>PP</strong> no tuvo tanto protagonismo:
                 <strong>
@@ -819,7 +820,8 @@
                   >Rivera,</a>
                 </strong> 1 (ver
                 <i>
-                  nota metodológica<sup>2</sup>)
+                  nota metodológica
+                  <sup>2</sup>)
                 </i>.);
                 <strong>Abascal</strong>, menos de una vez al día. Si analizamos con más detalle las apariciones diarias de cada partido en TVE, solo en cuatro días de todo 2019 no se mencionó a los
                 <strong>socialistas</strong>, según los telediarios analizados por Verba. Es decir, aparecieron en la televisión pública 361 días en todo el año pasado. Por su parte,
@@ -852,12 +854,26 @@
               </div>
               <div class="methodology-note">
                 <p>
-                  <strong>Nota metodológica<sup>1</sup>:</strong>
-                  Por un lado, hemos lanzado búsquedas por el primer apellido de los candidatos y, por otro, por el nombre de los partidos, así como de expresiones utilizadas por los periodistas de TVE para evitar repetir nombres propios.  Por ejemplo, <i>Ciudadanos</i> y <i>formación naranja</i>. El detalle de estas búsquedas están en los enlaces del texto. <strong>Hemos descargado estos resultados en csv</strong> y <strong>los hemos limpiado para eliminar falsos positivos</strong>, como el uso de <i>podemos</i> como verbo, de <i>ciudadanos</i> como sustantivo o de personas con los mismos apellidos de los líderes políticos, como <i>Jordi Sànchez</i>, <i>Julio Iglesias</i> o
+                  <strong>
+                    Nota metodológica
+                    <sup>1</sup>:
+                  </strong>
+                  Por un lado, hemos lanzado búsquedas por el primer apellido de los candidatos y, por otro, por el nombre de los partidos, así como de expresiones utilizadas por los periodistas de TVE para evitar repetir nombres propios. Por ejemplo,
+                  <i>Ciudadanos</i> y
+                  <i>formación naranja</i>. El detalle de estas búsquedas están en los enlaces del texto.
+                  <strong>Hemos descargado estos resultados en csv</strong> y
+                  <strong>los hemos limpiado para eliminar falsos positivos</strong>, como el uso de
+                  <i>podemos</i> como verbo, de
+                  <i>ciudadanos</i> como sustantivo o de personas con los mismos apellidos de los líderes políticos, como
+                  <i>Jordi Sànchez</i>,
+                  <i>Julio Iglesias</i> o
                   <i>María Casado</i>, entre otros tantos.
                 </p>
                 <p>
-                  <strong>Nota metodológica<sup>2</sup>:</strong> El periodo analizado es todo 2019 excepto en el caso de Albert Rivera, en el que solo hemos tenido en cuenta sus menciones hasta el día 11 de noviembre, fecha en la que anunció su dimisión como presidente del partido.
+                  <strong>
+                    Nota metodológica
+                    <sup>2</sup>:
+                  </strong> El periodo analizado es todo 2019 excepto en el caso de Albert Rivera, en el que solo hemos tenido en cuenta sus menciones hasta el día 11 de noviembre, fecha en la que anunció su dimisión como presidente del partido.
                 </p>
               </div>
             </div>
@@ -1004,8 +1020,8 @@
           </article>
         </li>
 
-        <!-- Tema 09 - Vox -->
-        <li id="vignette08" class="verba-vignettes-item">
+        <!-- Tema 10 - Vox -->
+        <li id="vignette10" class="verba-vignettes-item">
           <article>
             <h3 class="vignette-title">El auge de Vox en TVE</h3>
             <div class="vignette-copy">
@@ -1013,7 +1029,7 @@
                 Años antes de los ciclos electorales de 2019 y de conseguir sus primeros escaños,
                 <mark>
                   <a
-                    href="/?q=%22Vox%22-%22vox%20pópuli%22&from=2014-01-01&to=2020-01-31#search-box"
+                    href="/?q=%22vox%22&from=2014-01-01&to=2020-01-31#search-box"
                     target="_blank"
                   >Vox</a>
                 </mark>
@@ -1021,7 +1037,7 @@
                 <strong>Vox</strong> Cuenca.
               </p>
 
-              <div class="chart-annotated" v-html="chart_tema08"></div>
+              <div class="chart-annotated" v-html="chart_tema10"></div>
 
               <p>
                 Vistalegre supuso su relanzamiento mediático ya que, hasta entonces, el partido de extrema derecha había tenido un impacto informativo más o menos similar, por número de menciones, al Pacma, otro partido sin representación parlamentaria. Desde este mitin hasta las siguientes elecciones, las andaluzas del 2 de diciembre de 2018, menos de dos meses después,
@@ -1051,19 +1067,16 @@
                 <p class="methodology" v-html="$t('vignettes.query-subtitle')"></p>
                 <div>
                   <a
-                    href="/?q=%22Vox%22-%22vox%20pópuli%22&from=2014-01-01&to=2020-01-31#search-box"
+                    href="/?q=%22vox%22&from=2014-01-01&to=2020-01-31#search-box"
                     target="_blank"
                     class="methodology-query"
-                  >"Vox"-"vox pópuli"</a>
+                  >"vox"</a>
                 </div>
               </div>
               <p class="methodology-note">
-                Notas: Dada la polisemia del término
-                <strong>podemos</strong> hemos tenido que descartar los resultados que no aludían al partido político: discriminando de forma automática las perífrasis verbales
-                <i>podemos + infinitivo</i> o
-                <i>podemos + verbo auxiliar</i> conjugado (por ejemplo, "podemos decir que", "no podemos quedarnos impasibles") o revisando el empleo de la inicial mayúscula, propia de los sustantivos.
-                <br />En la búsqueda de
-                <strong>Vox</strong> hemos descartado un resultado que, debido a un error en la transcripción del subtítulo, se refería a un 'box' de motociclismo.
+                <strong>Nota metodológica</strong>:
+                En la búsqueda de
+                <strong>Vox</strong> hemos descartado dos resultados que no trataban del partido político: uno era parte de la expresión 'vox populi' y otro que, debido a un error en la transcripción automática que hace TVE, se refería a un 'box' de motociclismo.
               </p>
             </div>
           </article>
