@@ -1,12 +1,21 @@
 <!-- eslint-disable vue/no-v-html -->
 <template>
-  <div :class="{ modal: true, show: currentResult }" tabindex="-1" role="dialog">
+  <div
+    :class="{ modal: true, show: currentResult }"
+    tabindex="-1"
+    role="dialog"
+  >
     <div class="modal-dialog modal-lg" role="document">
       <div v-if="currentResult" class="modal-content">
         <div class="modal-header">
           <!--  eslint-disable-next-line vue/no-v-html -->
           <p class="modal-title" v-html="title"></p>
-          <button type="button" class="close" aria-label="Close" @click="onClose">
+          <button
+            type="button"
+            class="close"
+            aria-label="Close"
+            @click="onClose"
+          >
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -16,12 +25,6 @@
               {{ item.time_start | formatTime }}:
               <span v-html="highlight(item.content)"></span>
             </p>
-
-            <!-- New btn link to full context -->
-            <span
-              class="badge badge-secondary transcription-link"
-              @click="onGoToFullTranscriptionBtnClick()"
-            >{{ $t('results.context.goToFullTranscription') }}</span>
           </div>
         </div>
       </div>
@@ -87,11 +90,6 @@ export default {
       Vue.verbaAPI('fetchContext', params, response => {
         this.resultContext = response.data
       })
-    },
-    onGoToFullTranscriptionBtnClick() {
-      const programme_id = this.currentResult.programme.id
-      const URL = `/programmes/${programme_id}`
-      window.open(URL, '_blank')
     }
   }
 }
@@ -130,21 +128,5 @@ mark {
   background-color: mix($color-highlight-1, white, 85%);
   padding-top: 0;
   padding-bottom: 0;
-}
-
-.badge {
-  font-size: 0.75rem;
-  font-weight: 300;
-  line-height: 1rem;
-  opacity: 0.9;
-  margin-right: 0.5rem;
-}
-.badge-secondary {
-  color: $color-neutral-1000;
-  background-color: rgba($color-neutral-1000, 0.15);
-}
-.transcription-link {
-  cursor: pointer;
-  float: right;
 }
 </style>

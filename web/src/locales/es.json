@@ -36,9 +36,6 @@
     "item": {
       "showContext": "Mostrar en contexto",
       "goToVideo": "Ir al vídeo"
-    },
-    "context": {
-      "goToFullTranscription": "Ir a transcripción completa"
     }
   },
   "pagination": {
