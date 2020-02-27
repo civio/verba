@@ -274,6 +274,7 @@ export default {
     font-weight: 300;
     line-height: 1rem;
     opacity: 0.9;
+    // opacity: 0.3;
     margin-right: 0.5rem;
   }
   .badge-secondary {
@@ -306,8 +307,14 @@ export default {
     margin-right: 0;
   }
   .item-content {
-    margin-top: 0.5rem;
+    // Mobile first
+    margin-top: 2.5rem;
     margin-bottom: 0;
+
+    // Tablets
+    @media all and (min-width: 768px) {
+      margin-top: 0.5rem;
+    }
 
     mark {
       font-weight: 600;
@@ -317,12 +324,25 @@ export default {
     }
   }
   .video-link {
-    display: none;
+    // Mobile first
+    display: block;
     float: right;
     cursor: pointer;
+
+    // Tablets
+    @media all and (min-width: 768px) {
+      display: none;
+
+      // Posibility of showing the links on PC:
+      // display: block;
+      // opacity: 0.2;
+    }
   }
-  .card-body:hover .video-link {
+  .card:hover .video-link {
     display: block;
+
+    // Posibility of showing the links on PC:
+    // opacity: 0.9;
   }
 }
 
