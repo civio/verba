@@ -83,12 +83,12 @@
             <h3>¿Pueden las palabras combatir la violencia de género?</h3>
           </a>
         </li>
-        <!-- <li @click="onClickShowVignette('vignette10')">
+        <li @click="onClickShowVignette('vignette10')">
           <a href="#vignette10">
             <img id="vignette10-img" class="vignette-img" src="./images/ficha10-vox.png" alt />
             <h3>El auge de Vox en TVE</h3>
           </a>
-        </li>-->
+        </li>
       </ul>
       <ul class="vignettes-copies">
         <!-- Tema 1 - la ultraderecha -->
@@ -1048,7 +1048,11 @@
                     target="_blank"
                   >Vox</a>
                 </mark>
-                había aparecido con cuentagotas en los informativos de TVE. Desde su presentación, el 16 de enero de 2014, hasta su mitin de Vistalegre, que celebró el 7 de octubre de 2018, había sido mencionado en 36 ocasiones: por la detención de uno de sus miembros al intentar colocar una bandera española de 200 metros en el peñón de Gibraltar, por presentar querellas contra Rajoy por el 9-N, y contra diferentes políticos y entidades catalanas por el 1-O, por la cancelación de un acto en una universidad que convocó junto a Hazte Oír y su autobús transfóbico, o por la agresión en 2015 a la presidenta de
+                había aparecido con cuentagotas en los informativos de TVE (ver
+                <i>
+                  nota metodológica
+                  <sup>1</sup>)
+                </i>.) Desde su presentación, el 16 de enero de 2014, hasta su mitin de Vistalegre, que celebró el 7 de octubre de 2018, había sido mencionado en 36 ocasiones: por la detención de uno de sus miembros al intentar colocar una bandera española de 200 metros en el peñón de Gibraltar, por presentar querellas contra Rajoy por el 9-N, y contra diferentes políticos y entidades catalanas por el 1-O, por la cancelación de un acto en una universidad que convocó junto a Hazte Oír y su autobús transfóbico, o por la agresión en 2015 a la presidenta de
                 <strong>Vox</strong> Cuenca.
               </p>
 
@@ -1068,10 +1072,14 @@
                 >Ese mismo fin de semana</a> se presentó otro partido:
                 <strong>
                   <a
-                    href="/?q=%22podemos%22|%22formación morada%22|%22formacion morada%22|%22formación morado%22|%22los morados%22|%22partido morado%22|%22dirección morada%22|%22direccion morada%22&from=2014-01-01&to=2020-01-31#search-box"
+                    href="/?q=%22podemos%22%7C%22formaci%C3%B3n%20morada%22%7C%22formacion%20morada%22%7C%22formaci%C3%B3n%20morado%22%7C%22los%20morados%22%7C%22partido%20morado%22%7C%22direcci%C3%B3n%20morada%22%7C%22direccion%20morada%22&from=2014-01-01&to=2014-05-25#search-box"
                     target="_blank"
-                  >Podemos.</a>
-                </strong>
+                  >Podemos</a>&nbsp;
+                </strong>(hemos limpiado los resultados de Verba, como explicamos en
+                <i>
+                  nota metodológica
+                  <sup>2</sup>).
+                </i>
                 La formación encabezada por Pablo Iglesias, entonces un habitual de tertulias políticas en La Sexta y Cuatro, entre otros canales, no contó con ningún minuto en los informativos de la televisión pública. De hecho, durante los meses anteriores al 25M solo aparecieron en una frase, al final de una pieza sobre los resultados del último CIS, que les otorgaba un escaño: "Podría entrar además al parlamento [europeo] Pablo Iglesias, el candidato de
                 <strong>Podemos</strong>." Consiguieron cinco.
               </p>
@@ -1088,11 +1096,29 @@
                   >"vox"</a>
                 </div>
               </div>
-              <p class="methodology-note">
-                <strong>Nota metodológica</strong>:
-                En la búsqueda de
-                <strong>Vox</strong> hemos descartado dos resultados que no trataban del partido político: uno era parte de la expresión 'vox populi' y otro que, debido a un error en la transcripción automática que hace TVE, se refería a un 'box' de motociclismo.
-              </p>
+              <div class="methodology-note">
+                <p>
+                  <strong>
+                    Nota metodológica
+                    <sup>1</sup>
+                  </strong>:
+                  En la búsqueda de
+                  <strong>Vox</strong> hemos descartado dos resultados que no trataban del partido político: uno era parte de la expresión 'vox populi' y otro que, debido a un error en la transcripción automática que hace TVE, se refería a un 'box' de motociclismo.
+                </p>
+                <p>
+                  <strong>
+                    Nota metodológica
+                    <sup>2</sup>:
+                  </strong>
+                  Hemos
+                  <strong>
+                    descargado los resultados en
+                    csv
+                  </strong> y
+                  <strong>los hemos limpiado para eliminar falsos positivos</strong>, como el uso de
+                  <i>podemos</i> como verbo.
+                </p>
+              </div>
             </div>
           </article>
         </li>
