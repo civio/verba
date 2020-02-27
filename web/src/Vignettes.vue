@@ -83,12 +83,12 @@
             <h3>¿Pueden las palabras combatir la violencia de género?</h3>
           </a>
         </li>
-        <li @click="onClickShowVignette('vignette10')">
+        <!-- <li @click="onClickShowVignette('vignette10')">
           <a href="#vignette10">
             <img id="vignette10-img" class="vignette-img" src="./images/ficha10-vox.png" alt />
             <h3>El auge de Vox en TVE</h3>
           </a>
-        </li>
+        </li>-->
       </ul>
       <ul class="vignettes-copies">
         <!-- Tema 1 - la ultraderecha -->
@@ -1068,11 +1068,11 @@
                 >Ese mismo fin de semana</a> se presentó otro partido:
                 <strong>
                   <a
-                    href="/?q=%22podemos%22|%22formación morada%22|%22formacion morada%22|%22formación morado%22|%22los morados%22|%22partido morado%22|%22dirección morada%22|%22direccion morada%22&from=2019-01-01&to=2020-01-31#search-box"
+                    href="/?q=%22podemos%22|%22formación morada%22|%22formacion morada%22|%22formación morado%22|%22los morados%22|%22partido morado%22|%22dirección morada%22|%22direccion morada%22&from=2014-01-01&to=2020-01-31#search-box"
                     target="_blank"
-                  >Podemos</a>
+                  >Podemos.</a>
                 </strong>
-                . La formación encabezada por Pablo Iglesias, entonces un habitual de tertulias políticas en La Sexta y Cuatro, entre otros canales, no contó con ningún minuto en los informativos de la televisión pública. De hecho, durante los meses anteriores al 25M solo aparecieron en una frase, al final de una pieza sobre los resultados del último CIS, que les otorgaba un escaño: "Podría entrar además al parlamento [europeo] Pablo Iglesias, el candidato de
+                La formación encabezada por Pablo Iglesias, entonces un habitual de tertulias políticas en La Sexta y Cuatro, entre otros canales, no contó con ningún minuto en los informativos de la televisión pública. De hecho, durante los meses anteriores al 25M solo aparecieron en una frase, al final de una pieza sobre los resultados del último CIS, que les otorgaba un escaño: "Podría entrar además al parlamento [europeo] Pablo Iglesias, el candidato de
                 <strong>Podemos</strong>." Consiguieron cinco.
               </p>
             </div>
