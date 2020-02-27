@@ -868,6 +868,13 @@
                   <i>Jordi Sànchez</i>,
                   <i>Julio Iglesias</i> o
                   <i>María Casado</i>, entre otros tantos.
+                  Puedes descargar y consultar los datos limpios en
+                  <strong>
+                    <a
+                      href="https://datos.civio.es/dataset/menciones-a-los-cinco-grandes-partidos-de-ambito-estatal-y-sus-candidatos-en-los-informativos-de-tve/"
+                      target="_blank"
+                    >datos.civio.es</a>
+                  </strong>
                 </p>
                 <p>
                   <strong>
@@ -1110,6 +1117,7 @@
                     Nota metodológica
                     <sup>2</sup>:
                   </strong>
+                  Hemos buscado en el periodo anterior a las elecciones del 25M de 2014 las referencias a 'Podemos', tanto por el nombre del partido como por expresiones utilizadas por los periodista de TVE para referirse al partido (por ejemplo, "formación morada").
                   Hemos
                   <strong>
                     descargado los resultados en
