@@ -1052,7 +1052,7 @@
                 <i>
                   nota metodológica
                   <sup>1</sup>)
-                </i>.) Desde su presentación, el 16 de enero de 2014, hasta su mitin de Vistalegre, que celebró el 7 de octubre de 2018, había sido mencionado en 36 ocasiones: por la detención de uno de sus miembros al intentar colocar una bandera española de 200 metros en el peñón de Gibraltar, por presentar querellas contra Rajoy por el 9-N, y contra diferentes políticos y entidades catalanas por el 1-O, por la cancelación de un acto en una universidad que convocó junto a Hazte Oír y su autobús transfóbico, o por la agresión en 2015 a la presidenta de
+                </i>. Desde su presentación, el 16 de enero de 2014, hasta su mitin de Vistalegre, que celebró el 7 de octubre de 2018, había sido mencionado en 36 ocasiones: por la detención de uno de sus miembros al intentar colocar una bandera española de 200 metros en el peñón de Gibraltar, por presentar querellas contra Rajoy por el 9-N, y contra diferentes políticos y entidades catalanas por el 1-O, por la cancelación de un acto en una universidad que convocó junto a Hazte Oír y su autobús transfóbico, o por la agresión en 2015 a la presidenta de
                 <strong>Vox</strong> Cuenca.
               </p>
 
@@ -1117,6 +1117,13 @@
                   </strong> y
                   <strong>los hemos limpiado para eliminar falsos positivos</strong>, como el uso de
                   <i>podemos</i> como verbo.
+                  Puedes descargar y consultar los datos limpios en
+                  <strong>
+                    <a
+                      href="https://datos.civio.es/dataset/menciones-a-los-cinco-grandes-partidos-de-ambito-estatal-y-sus-candidatos-en-los-informativos-de-tve/"
+                      target="_blank"
+                    >datos.civio.es</a>
+                  </strong>
                 </p>
               </div>
             </div>
