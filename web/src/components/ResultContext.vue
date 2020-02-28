@@ -91,7 +91,8 @@ export default {
     onGoToFullTranscriptionBtnClick() {
       const programme_id = this.currentResult.programme.id
       const context_start_time = this.resultContext[0].time_start
-      const URL = `/programmes/${programme_id}#${context_start_time}`
+      const current_start_time = this.currentResult.time_start
+      const URL = `/programmes/${programme_id}#${current_start_time}`
       window.open(URL, '_blank')
     }
   }
