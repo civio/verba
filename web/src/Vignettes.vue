@@ -83,12 +83,18 @@
             <h3>¿Pueden las palabras combatir la violencia de género?</h3>
           </a>
         </li>
-        <!-- <li @click="onClickShowVignette('vignette10')">
+        <li @click="onClickShowVignette('vignette10')">
           <a href="#vignette10">
             <img id="vignette10-img" class="vignette-img" src="./images/ficha10-vox.png" alt />
             <h3>El auge de Vox en TVE</h3>
           </a>
-        </li>-->
+        </li>
+        <li @click="onClickShowVignette('vignette11')">
+          <a href="#vignette11">
+            <img id="vignette11-img" class="vignette-img" src="./images/ficha11-venezuela.png" alt />
+            <h3>Venezuela siempre presente</h3>
+          </a>
+        </li>
       </ul>
       <ul class="vignettes-copies">
         <!-- Tema 1 - la ultraderecha -->
@@ -868,6 +874,13 @@
                   <i>Jordi Sànchez</i>,
                   <i>Julio Iglesias</i> o
                   <i>María Casado</i>, entre otros tantos.
+                  Puedes descargar y consultar los datos limpios en
+                  <strong>
+                    <a
+                      href="https://datos.civio.es/dataset/menciones-a-los-cinco-grandes-partidos-de-ambito-estatal-y-sus-candidatos-en-los-informativos-de-tve/"
+                      target="_blank"
+                    >datos.civio.es</a>
+                  </strong>
                 </p>
                 <p>
                   <strong>
@@ -1048,7 +1061,11 @@
                     target="_blank"
                   >Vox</a>
                 </mark>
-                había aparecido con cuentagotas en los informativos de TVE. Desde su presentación, el 16 de enero de 2014, hasta su mitin de Vistalegre, que celebró el 7 de octubre de 2018, había sido mencionado en 36 ocasiones: por la detención de uno de sus miembros al intentar colocar una bandera española de 200 metros en el peñón de Gibraltar, por presentar querellas contra Rajoy por el 9-N, y contra diferentes políticos y entidades catalanas por el 1-O, por la cancelación de un acto en una universidad que convocó junto a Hazte Oír y su autobús transfóbico, o por la agresión en 2015 a la presidenta de
+                había aparecido con cuentagotas en los informativos de TVE (ver
+                <i>
+                  nota metodológica
+                  <sup>1</sup>)
+                </i>. Desde su presentación, el 16 de enero de 2014, hasta su mitin de Vistalegre, que celebró el 7 de octubre de 2018, había sido mencionado en 36 ocasiones: por la detención de uno de sus miembros al intentar colocar una bandera española de 200 metros en el peñón de Gibraltar, por presentar querellas contra Rajoy por el 9-N, y contra diferentes políticos y entidades catalanas por el 1-O, por la cancelación de un acto en una universidad que convocó junto a Hazte Oír y su autobús transfóbico, o por la agresión en 2015 a la presidenta de
                 <strong>Vox</strong> Cuenca.
               </p>
 
@@ -1068,10 +1085,14 @@
                 >Ese mismo fin de semana</a> se presentó otro partido:
                 <strong>
                   <a
-                    href="/?q=%22podemos%22|%22formación morada%22|%22formacion morada%22|%22formación morado%22|%22los morados%22|%22partido morado%22|%22dirección morada%22|%22direccion morada%22&from=2014-01-01&to=2020-01-31#search-box"
+                    href="/?q=%22podemos%22%7C%22formaci%C3%B3n%20morada%22%7C%22formacion%20morada%22%7C%22formaci%C3%B3n%20morado%22%7C%22los%20morados%22%7C%22partido%20morado%22%7C%22direcci%C3%B3n%20morada%22%7C%22direccion%20morada%22&from=2014-01-01&to=2014-05-25#search-box"
                     target="_blank"
-                  >Podemos.</a>
-                </strong>
+                  >Podemos</a>&nbsp;
+                </strong>(hemos limpiado los resultados de Verba, como explicamos en
+                <i>
+                  nota metodológica
+                  <sup>2</sup>).
+                </i>
                 La formación encabezada por Pablo Iglesias, entonces un habitual de tertulias políticas en La Sexta y Cuatro, entre otros canales, no contó con ningún minuto en los informativos de la televisión pública. De hecho, durante los meses anteriores al 25M solo aparecieron en una frase, al final de una pieza sobre los resultados del último CIS, que les otorgaba un escaño: "Podría entrar además al parlamento [europeo] Pablo Iglesias, el candidato de
                 <strong>Podemos</strong>." Consiguieron cinco.
               </p>
@@ -1088,11 +1109,116 @@
                   >"vox"</a>
                 </div>
               </div>
-              <p class="methodology-note">
-                <strong>Nota metodológica</strong>:
-                En la búsqueda de
-                <strong>Vox</strong> hemos descartado dos resultados que no trataban del partido político: uno era parte de la expresión 'vox populi' y otro que, debido a un error en la transcripción automática que hace TVE, se refería a un 'box' de motociclismo.
+              <div class="methodology-note">
+                <p>
+                  <strong>
+                    Nota metodológica
+                    <sup>1</sup>
+                  </strong>:
+                  En la búsqueda de
+                  <strong>Vox</strong> hemos descartado dos resultados que no trataban del partido político: uno era parte de la expresión 'vox populi' y otro que, debido a un error en la transcripción automática que hace TVE, se refería a un 'box' de motociclismo.
+                </p>
+                <p>
+                  <strong>
+                    Nota metodológica
+                    <sup>2</sup>:
+                  </strong>
+                  Hemos buscado en el periodo anterior a las elecciones del 25M de 2014 las referencias a 'Podemos', tanto por el nombre del partido como por expresiones utilizadas por los periodista de TVE para referirse al partido (por ejemplo, "formación morada").
+                  Hemos
+                  <strong>
+                    descargado los resultados en
+                    csv
+                  </strong> y
+                  <strong>los hemos limpiado para eliminar falsos positivos</strong>, como el uso de
+                  <i>podemos</i> como verbo.
+                  Puedes descargar y consultar los datos limpios en
+                  <strong>
+                    <a
+                      href="https://datos.civio.es/dataset/menciones-a-los-cinco-grandes-partidos-de-ambito-estatal-y-sus-candidatos-en-los-informativos-de-tve/"
+                      target="_blank"
+                    >datos.civio.es</a>
+                  </strong>
+                </p>
+              </div>
+            </div>
+          </article>
+        </li>
+
+        <!-- Tema 11 - ... -->
+        <li id="vignette11" class="verba-vignettes-item">
+          <article>
+            <h3 class="vignette-title">Venezuela siempre presente</h3>
+            <div class="vignette-copy">
+              <p>
+                3.410 veces se ha mencionado
+                <mark>
+                  <a
+                    href="/?q=venezuela&from=2014-01-01&to=2020-01-31#search-box"
+                    target="_blank"
+                    class="methodology-query item2"
+                  >Venezuela</a>
+                </mark> en los informativos desde 2014 hasta el 31 de enero de 2019. El tema va y viene, a rachas, pero su cobertura en la televisión pública ha crecido en los últimos tiempos. Los años en los que tuvo más peso son 2017 -con las protestas de opositores y los enfrentamientos en las calles- y 2019 -tras las elecciones y con Guaidó proclamándose presidente y Europa y España pidiéndole a Maduro que convocara nuevas elecciones.
               </p>
+              <p>
+                En esos dos años, se nombraba
+                <strong>Venezuela</strong> una media de más de dos veces al día. En medio, 2018 fue un año mucho más tranquilo, con una mención, de media, al día.
+              </p>
+
+              <div class="chart-annotated" v-html="chart_tema11"></div>
+
+              <p>
+                Pero, ¿es realmente la cobertura de
+                <strong>Venezuela</strong> mayor que la de otros países? Si comparamos con
+                <strong>
+                  <a
+                    href="/?q=francia&from=2014-01-01&to=2020-01-31#search-box"
+                    target="_blank"
+                  >Francia</a>
+                </strong>
+                (8.694 menciones) o
+                <strong>
+                  <a
+                    href="/?q=%22estados%20unidos%22%7C%22EEUU%22&from=2014-01-01&to=2020-01-31#search-box"
+                    target="_blank"
+                  >Estados Unidos</a>
+                </strong>
+                (14.567), no. Pero si comparamos con otros países de la zona, como
+                <strong>
+                  <a
+                    href="/?q=mexico|méxico|méjico|mejico&from=2014-01-01&to=2020-01-31#search-box"
+                    target="_blank"
+                  >México</a>
+                </strong>
+                (3.118),
+                <strong>
+                  <a
+                    href="/?q=colombia&from=2014-01-01&to=2020-01-31#search-box"
+                    target="_blank"
+                  >Colombia</a>
+                </strong>
+                (1.969) o
+                <strong>
+                  <a
+                    href="/?q=argentina&from=2014-01-01&to=2020-01-31#search-box"
+                    target="_blank"
+                  >Argentina</a>
+                </strong>
+                (2.744), sí.
+              </p>
+            </div>
+            <div class="vignette-methodology">
+              <h4 class="methodology-title" v-html="$t('vignettes.methodology')"></h4>
+              <div class="query-container">
+                <p class="methodology" v-html="$t('vignettes.query-subtitle')"></p>
+                <div>
+                  <a
+                    href="/?q=venezuela&from=2014-01-01&to=2020-01-31#search-box"
+                    target="_blank"
+                    class="methodology-query"
+                  >"venezuela"</a>
+                </div>
+              </div>
+              <p class="methodology-note"></p>
             </div>
           </article>
         </li>
@@ -1117,7 +1243,8 @@ export default {
       chart_tema07: '',
       chart_tema08: '',
       chart_tema09: '',
-      chart_tema10: ''
+      chart_tema10: '',
+      chart_tema11: ''
     }
   },
   updated: function() {
@@ -1157,6 +1284,9 @@ export default {
     })
     axios.get('/verba-vignette10-vox.html').then(response => {
       this.chart_tema10 = response.data
+    })
+    axios.get('/verba-vignette11-venezuela.html').then(response => {
+      this.chart_tema11 = response.data
     })
     window.addEventListener('resize', this.throttle(this.resizer, 200))
 
