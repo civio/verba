@@ -41,8 +41,10 @@
                 <path fill="none" d="M0 0h24v24H0z" />
               </svg>
               <!-- Add link to programme -->
+              <!-- <div class="programme-title"> -->
               <strong @click="onGoToProgrammeClick(items)">{{ formatDate(items[0].programme.date) }}</strong>
               | TD {{ items[0].programme.date.substring(11, 13) }}h
+              <!-- </div> -->
             </div>
             <div v-for="item in items" :key="item.id" class="card-body">
               <span class="badge badge-secondary">
@@ -196,9 +198,10 @@ export default {
     onGoToProgrammeClick(items) {
       console.log(items)
       const programme_id = items[0].programme.id
-      const context_start_time = items[0].time_start
+      const current_start_time = items[0].time_start
+      const URL = `/programmes/${programme_id}#${current_start_time}`
 
-      const URL = `/programmes/${programme_id}#${context_start_time}`
+      window.open(URL, '_blank')
     }
   }
 }
@@ -265,6 +268,8 @@ export default {
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
 
+    cursor: pointer;
+    text-decoration: underline;
     strong {
       color: $color-neutral-1000;
       font-weight: 600;
