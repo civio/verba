@@ -40,7 +40,8 @@
                 />
                 <path fill="none" d="M0 0h24v24H0z" />
               </svg>
-              <strong>{{ formatDate(items[0].programme.date) }}</strong>
+              <!-- Add link to programme -->
+              <strong @click="onGoToProgrammeClick(items)">{{ formatDate(items[0].programme.date) }}</strong>
               | TD {{ items[0].programme.date.substring(11, 13) }}h
             </div>
             <div v-for="item in items" :key="item.id" class="card-body">
@@ -191,6 +192,13 @@ export default {
     },
     formatDate(date) {
       return moment(date).format('DD/MM/YYYY')
+    },
+    onGoToProgrammeClick(items) {
+      console.log(items)
+      const programme_id = items[0].programme.id
+      const context_start_time = items[0].time_start
+
+      const URL = `/programmes/${programme_id}#${context_start_time}`
     }
   }
 }

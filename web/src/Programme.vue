@@ -7,9 +7,11 @@
           <img :src="content[0].programme | imageURL" />
         </div>
         <div class="verba-transcript-copy">
-          <p v-for="(item, key) in content" :id="item.time_start" :key="key">
-            {{ item.time_start | formatTime }}: {{ item.content }}
-          </p>
+          <p
+            v-for="(item, key) in content"
+            :id="item.time_start"
+            :key="key"
+          >{{ item.time_start | formatTime }}: {{ item.content }}</p>
         </div>
       </div>
     </div>
@@ -32,6 +34,9 @@ export default {
     Vue.verbaAPI('fetchProgrammeTranscription', params, response => {
       this.content = response.data
     })
+    // If we're deep-linking into a particular fragment, show that one
+    // console.log(location.hash)
+    setTimeout(() => window.open(location.hash, '_self'), 1000)
   }
 }
 </script>
@@ -80,5 +85,11 @@ export default {
   padding-top: 1.5rem;
   font-size: 0.8rem;
   text-align: left;
+
+  // Make this trick to have all paragraph anchors on place below the header
+  p {
+    padding-top: 60px;
+    margin-top: -60px;
+  }
 }
 </style>
