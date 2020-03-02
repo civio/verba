@@ -41,6 +41,9 @@
       "goToFullTranscription": "Ir a transcripción completa"
     }
   },
+  "programme": {
+    "goToFullVideo": "Ir al vídeo completo"
+  },
   "pagination": {
     "previous": "Anterior",
     "next": "Siguiente"

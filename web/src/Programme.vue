@@ -5,6 +5,10 @@
         <div class="verba-transcript-item">
           <h4>{{ content[0].programme.title }}</h4>
           <img :src="content[0].programme | imageURL" />
+          <span
+            class="badge badge-secondary video-link"
+            @click="onGoToFullVideoBtnClick()"
+          >{{ $t('programme.goToFullVideo') }}</span>
         </div>
         <div class="verba-transcript-copy">
           <p
@@ -37,6 +41,13 @@ export default {
     // If we're deep-linking into a particular fragment, show that one
     // console.log(location.hash)
     setTimeout(() => window.open(location.hash, '_self'), 1000)
+  },
+  methods: {
+    onGoToFullVideoBtnClick() {
+      const programme_id = this.$route.params.id
+      const URL = `https://www.rtve.es/alacarta/videos/telediario/telediario-21-horas-01-03-20/${programme_id}`
+      window.open(URL, '_blank')
+    }
   }
 }
 </script>
@@ -82,7 +93,6 @@ export default {
   }
 }
 .verba-transcript-copy {
-  padding-top: 1.5rem;
   font-size: 0.8rem;
   text-align: left;
 
@@ -91,5 +101,12 @@ export default {
     padding-top: 60px;
     margin-top: -60px;
   }
+}
+
+.video-link {
+  margin-top: 0.5rem;
+  margin-right: 0;
+  float: right;
+  cursor: pointer;
 }
 </style>
