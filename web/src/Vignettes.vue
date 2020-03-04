@@ -95,7 +95,7 @@
             <h3>Venezuela siempre presente</h3>
           </a>
         </li>
-                <li @click="onClickShowVignette('vignette12')">
+        <li @click="onClickShowVignette('vignette12')">
           <a href="#vignette12">
             <img id="vignette12-img" class="vignette-img" src="./images/ficha12-feminismo.png" alt />
             <h3>El feminismo llegó al Telediario un 8 de marzo</h3>
@@ -294,10 +294,10 @@
             <h3 class="vignette-title">El rigor científico, a dieta</h3>
             <div class="vignette-copy">
               <p>
-                Televisión Española mencionó en sus informativos 378 veces la
+                Televisión Española mencionó en sus informativos 513 veces la
                 palabra
                 <mark>
-                  <a href="/?from=2014-01-01&to=2020-01-31&q=dieta" target="_blank">dieta</a>
+                  <a href="/?from=2014-01-01&to=2020-01-31&q=dieta|dietas" target="_blank">dieta</a>
                 </mark>
                 entre enero de 2014 y enero de 2020. Pero los informativos, en
                 ocasiones, también han puesto a
@@ -400,10 +400,10 @@
                 <div class="query-container">
                   <p class="methodology" v-html="$t('vignettes.query-subtitle')"></p>
                   <a
-                    href="/?q=dieta&from=2014-01-01&to=2020-01-31#search-box"
+                    href="/?q=dieta|dietas&from=2014-01-01&to=2020-01-31#search-box"
                     target="_blank"
                     class="methodology-query"
-                  >dieta</a>
+                  >"dieta" | "dietas"</a>
                 </div>
               </div>
               <p class="methodology-note"></p>
@@ -1235,18 +1235,19 @@
             <h3 class="vignette-title">El feminismo llegó al Telediario un 8 de marzo</h3>
             <div class="vignette-copy">
               <p>
-                El 8 de marzo de 2018 no solo marcó un hito en el peso que el 
+                El 8 de marzo de 2018 no solo marcó un hito en el peso que el
                 <mark>
                   <a
-                     href="/?q=%22feminismo%22%7C%22feminista%22%7C%22feministas%22&to=2020-03-03#search-box"
+                    href="/?q=%22feminismo%22%7C%22feminista%22%7C%22feministas%22&to=2020-03-03#search-box"
                     target="_blank"
                   >feminismo</a>
                 </mark>
-                tiene en conversaciones y políticas públicas, sino que también colocó el término en los Telediarios. El éxito de esa convocatoria hizo que, de las 687 menciones desde 2014, 534 fueran a partir de entonces. O, lo que es lo mismo, durante 2018, en un solo año, se habló casi el doble de <strong>feminismo</strong> en el Informativo de La 1 que en los cuatro años anteriores juntos. En 2019 su peso creció, con su pico más alto: 81 menciones solo en la semana de la huelga <strong>feminista</strong> del año pasado. Y para 2020, con datos a 3 de marzo, el pico ya despunta, pero no parece tan destacado como el de 2019. Veremos este 8 de marzo.
+                tiene en conversaciones y políticas públicas, sino que también colocó el término en los Telediarios. El éxito de esa convocatoria hizo que, de las 687 menciones desde 2014, 534 fueran a partir de entonces. O, lo que es lo mismo, durante 2018, en un solo año, se habló casi el doble de
+                <strong>feminismo</strong> en el Informativo de La 1 que en los cuatro años anteriores juntos. En 2019 su peso creció, con su pico más alto: 81 menciones solo en la semana de la huelga
+                <strong>feminista</strong> del año pasado. Y para 2020, con datos a 3 de marzo, el pico ya despunta, pero no parece tan destacado como el de 2019. Veremos este 8 de marzo.
               </p>
 
               <div class="chart-annotated" v-html="chart_tema12"></div>
-
             </div>
             <div class="vignette-methodology">
               <h4 class="methodology-title" v-html="$t('vignettes.methodology')"></h4>
@@ -1332,7 +1333,7 @@ export default {
       this.chart_tema11 = response.data
     })
     axios.get('/verba-vignette12-feminismo.html').then(response => {
-    this.chart_tema12 = response.data
+      this.chart_tema12 = response.data
     })
     window.addEventListener('resize', this.throttle(this.resizer, 200))
 
