@@ -95,6 +95,12 @@
             <h3>Venezuela siempre presente</h3>
           </a>
         </li>
+                <li @click="onClickShowVignette('vignette12')">
+          <a href="#vignette12">
+            <img id="vignette12-img" class="vignette-img" src="./images/ficha12-feminismo.png" alt />
+            <h3>El feminismo llegó al Telediario un 8 de marzo</h3>
+          </a>
+        </li>
       </ul>
       <ul class="vignettes-copies">
         <!-- Tema 1 - la ultraderecha -->
@@ -1144,7 +1150,7 @@
           </article>
         </li>
 
-        <!-- Tema 11 - ... -->
+        <!-- Tema 11 - Venezuela -->
         <li id="vignette11" class="verba-vignettes-item">
           <article>
             <h3 class="vignette-title">Venezuela siempre presente</h3>
@@ -1222,6 +1228,42 @@
             </div>
           </article>
         </li>
+
+        <!-- Tema 12 - Venezuela -->
+        <li id="vignette12" class="verba-vignettes-item">
+          <article>
+            <h3 class="vignette-title">El feminismo llegó al Telediario un 8 de marzo</h3>
+            <div class="vignette-copy">
+              <p>
+                El 8 de marzo de 2018 no solo marcó un hito en el peso que el 
+                <mark>
+                  <a
+                     href="/?q=%22feminismo%22%7C%22feminista%22%7C%22feministas%22&to=2020-03-03#search-box"
+                    target="_blank"
+                  >feminismo</a>
+                </mark>
+                tiene en conversaciones y políticas públicas, sino que también colocó el término en los Telediarios. El éxito de esa convocatoria hizo que, de las 687 menciones desde 2014, 534 fueran a partir de entonces. O, lo que es lo mismo, durante 2018, en un solo año, se habló casi el doble de <strong>feminismo</strong> en el Informativo de La 1 que en los cuatro años anteriores juntos. En 2019 su peso creció, con su pico más alto: 81 menciones solo en la semana de la huelga <strong>feminista</strong> del año pasado. Y para 2020, con datos a 3 de marzo, el pico ya despunta, pero no parece tan destacado como el de 2019. Veremos este 8 de marzo.
+              </p>
+
+              <div class="chart-annotated" v-html="chart_tema12"></div>
+
+            </div>
+            <div class="vignette-methodology">
+              <h4 class="methodology-title" v-html="$t('vignettes.methodology')"></h4>
+              <div class="query-container">
+                <p class="methodology" v-html="$t('vignettes.query-subtitle')"></p>
+                <div>
+                  <a
+                    href="/?q=%22feminismo%22%7C%22feminista%22%7C%22feministas%22&to=2020-03-03#search-box"
+                    target="_blank"
+                    class="methodology-query"
+                  >"feminismo" | "feminista" | "feministas"</a>
+                </div>
+              </div>
+              <p class="methodology-note"></p>
+            </div>
+          </article>
+        </li>
       </ul>
     </div>
   </main>
@@ -1244,7 +1286,8 @@ export default {
       chart_tema08: '',
       chart_tema09: '',
       chart_tema10: '',
-      chart_tema11: ''
+      chart_tema11: '',
+      chart_tema12: ''
     }
   },
   updated: function() {
@@ -1287,6 +1330,9 @@ export default {
     })
     axios.get('/verba-vignette11-venezuela.html').then(response => {
       this.chart_tema11 = response.data
+    })
+    axios.get('/verba-vignette12-feminismo.html').then(response => {
+    this.chart_tema12 = response.data
     })
     window.addEventListener('resize', this.throttle(this.resizer, 200))
 
