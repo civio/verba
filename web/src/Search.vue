@@ -11,7 +11,7 @@
             </a>
             <div class="vignettes-carrousel">
               <a href="/vignettes#vignette12">
-                <h3 class="vignette-01">El feminismo llego al Telediario un...</h3>
+                <h3 class="vignette-01">El feminismo llegó al Telediario un...</h3>
               </a>
               <a href="/vignettes#vignette11">
                 <h2 class="vignette-02">Venezuela siempre presente</h2>
