@@ -39,7 +39,6 @@ export default {
       this.content = response.data
     })
     // If we're deep-linking into a particular fragment, show that one
-    // console.log(location.hash)
     setTimeout(() => window.open(location.hash, '_self'), 1000)
   },
   methods: {
