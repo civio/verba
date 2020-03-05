@@ -8,9 +8,11 @@
             :key="year.num"
             :class="{ 'is-clicked': year.num === currentYear }"
           >
-            <a :data-value="year.num" @click="seeYear(year.num)">{{
+            <a :data-value="year.num" @click="seeYear(year.num)">
+              {{
               year.num
-            }}</a>
+              }}
+            </a>
           </li>
         </ul>
         <ul v-if="currentYear != ''" class="months-list">
@@ -20,9 +22,11 @@
             :class="{ 'is-clicked': month.num === currentMonth }"
             :data-ts="month.ts"
           >
-            <a :data-value="month.num" @click="seeMonth(month.num)">{{
+            <a :data-value="month.num" @click="seeMonth(month.num)">
+              {{
               month.name
-            }}</a>
+              }}
+            </a>
           </li>
         </ul>
       </div>
@@ -44,15 +48,11 @@
             <span class="strip-aside">{{ programme.title }}</span>
           </router-link>
         </li>
-        <button
-          v-if="subList < filterProgramme"
-          class="seeMoreBtn"
-          @click="seeMore"
-        >
+        <button v-if="subList < filterProgramme" class="seeMoreBtn" @click="seeMore">
           Ver más ({{
-            (filterProgramme.length - subList.length)
-              .toString()
-              .replace(/\B(?=(\d{3})+(?!\d))/g, '.')
+          (filterProgramme.length - subList.length)
+          .toString()
+          .replace(/\B(?=(\d{3})+(?!\d))/g, '.')
           }}
           resultados)
         </button>
@@ -230,7 +230,12 @@ u {
 }
 
 #menu-filter .months-list {
-  justify-content: center;
+  // justify-content: center;
+  &::before,
+  &::after {
+    content: '';
+    flex: 1;
+  }
 
   li {
     padding: 0 0.7rem;
@@ -293,7 +298,7 @@ u {
   height: auto;
   margin-left: 2rem;
   margin-bottom: 2rem;
-  pointer-events:none;
+  pointer-events: none;
   // Mobile first
   order: -1;
   right: calc(50% + 5rem);
