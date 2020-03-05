@@ -102,7 +102,7 @@ export default {
   }
 }
 
-.video-link {
+.verba-program-transcription .video-link {
   margin-top: 0.8rem;
   margin-right: 0;
   float: right;
