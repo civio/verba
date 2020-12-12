@@ -9,9 +9,7 @@
             :class="{ 'is-clicked': year.num === currentYear }"
           >
             <a :data-value="year.num" @click="seeYear(year.num)">
-              {{
-              year.num
-              }}
+              {{ year.num }}
             </a>
           </li>
         </ul>
@@ -23,9 +21,7 @@
             :data-ts="month.ts"
           >
             <a :data-value="month.num" @click="seeMonth(month.num)">
-              {{
-              month.name
-              }}
+              {{ month.name }}
             </a>
           </li>
         </ul>
@@ -48,11 +44,15 @@
             <span class="strip-aside">{{ programme.title }}</span>
           </router-link>
         </li>
-        <button v-if="subList < filterProgramme" class="seeMoreBtn" @click="seeMore">
+        <button
+          v-if="subList < filterProgramme"
+          class="seeMoreBtn"
+          @click="seeMore"
+        >
           Ver más ({{
-          (filterProgramme.length - subList.length)
-          .toString()
-          .replace(/\B(?=(\d{3})+(?!\d))/g, '.')
+            (filterProgramme.length - subList.length)
+              .toString()
+              .replace(/\B(?=(\d{3})+(?!\d))/g, '.')
           }}
           resultados)
         </button>
@@ -80,7 +80,7 @@ export default {
         { num: '2017' },
         { num: '2018' },
         { num: '2019' },
-        { num: '2020' }
+        { num: '2020' },
       ],
       months: [
         { num: '1', name: 'ene', ts: '' },
@@ -94,11 +94,11 @@ export default {
         { num: '9', name: 'sep', ts: '' },
         { num: '10', name: 'oct', ts: '' },
         { num: '11', name: 'nov', ts: '' },
-        { num: '12', name: 'dic', ts: '' }
+        { num: '12', name: 'dic', ts: '' },
       ],
       currentYear: '',
       currentMonth: '',
-      limitDate: undefined
+      limitDate: undefined,
     }
   },
 
@@ -161,7 +161,7 @@ export default {
         this.currentYear = year
         this.filterProgramme = this.get_year()
         this.months.forEach(
-          function(d) {
+          function (d) {
             d.ts = new Date(this.currentYear + '/' + d.num + '/2').getTime()
           }.bind(this)
         )
@@ -184,8 +184,8 @@ export default {
         this.filterProgramme = this.get_year()
       }
       this.subList = this.get_sublist(this.filterProgramme)
-    }
-  }
+    },
+  },
 }
 </script>
 

@@ -47,29 +47,29 @@ global.router = new VueRouter({
     {
       path: '/',
       name: 'search',
-      component: Search
+      component: Search,
     },
     {
       path: '/programmes',
       name: 'programmes',
-      component: ProgrammeList
+      component: ProgrammeList,
     },
     {
       path: '/programmes/:id',
       name: 'programme-details',
-      component: Programme
+      component: Programme,
     },
     {
       path: '/about',
       name: 'about',
-      component: About
+      component: About,
     },
     {
       path: '/vignettes',
       name: 'vignettes',
-      component: Vignettes
-    }
-  ]
+      component: Vignettes,
+    },
+  ],
 })
 sync(store, global.router)
 Vue.use(VueRouter)
@@ -79,5 +79,5 @@ new Vue({
   router: global.router,
   store,
   i18n,
-  render: h => h(App)
+  render: h => h(App),
 }).$mount('#app')

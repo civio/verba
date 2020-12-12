@@ -12,8 +12,8 @@ export default {
   props: {
     visible: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   data() {
     return {
@@ -50,20 +50,20 @@ export default {
             'septiembre',
             'octubre',
             'noviembre',
-            'diciembre'
+            'diciembre',
           ],
-          firstDay: 1
+          firstDay: 1,
         },
         ranges: {
           'Último mes': [moment().subtract(29, 'days'), moment()],
           'Último año': [moment().subtract(364, 'days'), moment()],
-          Todo: ['23/12/2013', moment()]
-        }
-      }
+          Todo: ['23/12/2013', moment()],
+        },
+      },
     }
   },
   watch: {
-    range: function() {
+    range: function () {
       if (
         this.range[0] === this.options.startDate &&
         this.range[1] === this.options.endDate
@@ -72,11 +72,11 @@ export default {
       } else {
         this.$emit('change', {
           from: moment(this.range[0], 'DD/MM/YYYY'),
-          to: moment(this.range[1], 'DD/MM/YYYY')
+          to: moment(this.range[1], 'DD/MM/YYYY'),
         })
       }
-    }
-  }
+    },
+  },
 }
 </script>
 

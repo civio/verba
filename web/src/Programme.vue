@@ -8,14 +8,13 @@
           <span
             class="badge badge-secondary video-link"
             @click="onGoToFullVideoBtnClick()"
-          >{{ $t('programme.goToFullVideo') }}</span>
+            >{{ $t('programme.goToFullVideo') }}</span
+          >
         </div>
         <div class="verba-transcript-copy">
-          <p
-            v-for="(item, key) in content"
-            :id="item.time_start"
-            :key="key"
-          >{{ item.time_start | formatTime }}: {{ item.content }}</p>
+          <p v-for="(item, key) in content" :id="item.time_start" :key="key">
+            {{ item.time_start | formatTime }}: {{ item.content }}
+          </p>
         </div>
       </div>
     </div>
@@ -28,12 +27,12 @@ import Vue from 'vue'
 export default {
   data() {
     return {
-      content: null
+      content: null,
     }
   },
   mounted() {
     const params = {
-      programme_id: this.$route.params.id
+      programme_id: this.$route.params.id,
     }
     Vue.verbaAPI('fetchProgrammeTranscription', params, response => {
       this.content = response.data
@@ -46,8 +45,8 @@ export default {
       const programme_id = this.$route.params.id
       const URL = `https://www.rtve.es/alacarta/videos/telediario/telediario-21-horas-01-03-20/${programme_id}`
       window.open(URL, '_blank')
-    }
-  }
+    },
+  },
 }
 </script>
 

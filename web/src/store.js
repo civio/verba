@@ -12,7 +12,7 @@ export default new Vuex.Store({
     queryDate: null, // date.from - date.to
     queryTerms: [],
     results: null,
-    resultsPage: 0
+    resultsPage: 0,
   },
   actions: {
     initializeSearchFromURL({ commit }) {
@@ -20,7 +20,7 @@ export default new Vuex.Store({
       if (this.state.route.query.from && this.state.route.query.to) {
         commit('setQueryDate', {
           from: moment(this.state.route.query.from, 'YYYY-MM-DD'),
-          to: moment(this.state.route.query.to, 'YYYY-MM-DD')
+          to: moment(this.state.route.query.to, 'YYYY-MM-DD'),
         })
       }
       commit('setResultsPage', 0) // clear results page
@@ -44,7 +44,7 @@ export default new Vuex.Store({
     setResultsPage({ commit }, payload) {
       commit('setResultsPage', payload)
       commit('search') // update search
-    }
+    },
   },
   mutations: {
     search(state) {
@@ -57,7 +57,7 @@ export default new Vuex.Store({
       let params = {
         q: state.query,
         page: state.resultsPage,
-        aggregations: 'week' // TODO: Activate aggregations only when needed (when query changes)
+        aggregations: 'week', // TODO: Activate aggregations only when needed (when query changes)
       }
       if (state.queryDate) {
         const days = state.queryDate.to.diff(state.queryDate.from, 'days')
@@ -110,13 +110,13 @@ export default new Vuex.Store({
     },
     setURLState(state) {
       let query = {
-        q: state.query
+        q: state.query,
       }
       if (this.state.queryDate) {
         query['from'] = moment(this.state.queryDate.from).format('YYYY-MM-DD')
         query['to'] = moment(this.state.queryDate.to).format('YYYY-MM-DD')
       }
       global.router.push({ query: query })
-    }
-  }
+    },
+  },
 })

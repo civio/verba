@@ -58,7 +58,7 @@ app.get('/search.csv', cors(), async(request, response) => {
           programme_date:
             result.programme
               .date /*,
-        entities: JSON.stringify(result.entities)*/
+        entities: JSON.stringify(result.entities)*/,
         }
       }),
       true

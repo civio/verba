@@ -4,7 +4,7 @@ module.exports = {
       locale: 'es',
       fallbackLocale: 'en',
       localeDir: 'locales',
-      enableInSFC: false
-    }
-  }
+      enableInSFC: false,
+    },
+  },
 }

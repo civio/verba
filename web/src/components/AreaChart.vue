@@ -5,8 +5,14 @@
       <g ref="axisXMonths" class="axis x-months" />
       <g ref="axisXYears" class="axis x-years" />
       <g ref="axisY" class="axis y" />
-      <g ref="tooltipArea" :style="{ transform: `translate(${margin.left}px, ${margin.top}px)` }" />
-      <g ref="bars" :style="{ transform: `translate(${margin.left}px, ${margin.top}px)` }" />
+      <g
+        ref="tooltipArea"
+        :style="{ transform: `translate(${margin.left}px, ${margin.top}px)` }"
+      />
+      <g
+        ref="bars"
+        :style="{ transform: `translate(${margin.left}px, ${margin.top}px)` }"
+      />
     </svg>
     <div id="tooltip" class="displayNone">
       <div>
@@ -26,11 +32,11 @@ export default {
   props: {
     data: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     period: {
       type: String,
-      default: ''
+      default: '',
     },
     margin: {
       type: Object,
@@ -38,14 +44,14 @@ export default {
         left: 30,
         right: 30,
         top: 0,
-        bottom: 0
-      })
-    }
+        bottom: 0,
+      }),
+    },
   },
   data() {
     return {
       width: 0,
-      height: 0
+      height: 0,
     }
   },
   computed: {
@@ -53,16 +59,16 @@ export default {
       const width = this.width - this.margin.left - this.margin.right
       const height = this.height - this.margin.top - this.margin.bottom
       return { width, height }
-    }
+    },
   },
   watch: {
-    data: function() {
+    data: function () {
       this.update()
     },
-    width: function() {
+    width: function () {
       this.initialize()
       this.update()
-    }
+    },
   },
   mounted() {
     window.addEventListener('resize', this.onResize)
@@ -73,22 +79,13 @@ export default {
   },
   methods: {
     formatAxisXDays(g) {
-      return g
-        .selectAll('.tick line')
-        .attr('y1', -this.height)
-        .attr('y2', 0)
+      return g.selectAll('.tick line').attr('y1', -this.height).attr('y2', 0)
     },
     formatAxisXMonths(g) {
-      return g
-        .selectAll('.tick line')
-        .attr('y1', -this.height)
-        .attr('y2', 0)
+      return g.selectAll('.tick line').attr('y1', -this.height).attr('y2', 0)
     },
     formatAxisXYears(g) {
-      return g
-        .selectAll('.tick line')
-        .attr('y1', -this.height)
-        .attr('y2', 0)
+      return g.selectAll('.tick line').attr('y1', -this.height).attr('y2', 0)
     },
     formatAxisY(g) {
       return g
@@ -149,7 +146,7 @@ export default {
           'Miércoles',
           'Jueves',
           'Viernes',
-          'Sábado'
+          'Sábado',
         ],
         shortDays: ['Dom', 'Lun', 'Mar', 'Mi', 'Jue', 'Vie', 'Sab'],
         months: [
@@ -164,7 +161,7 @@ export default {
           'septiembre',
           'octubre',
           'noviembre',
-          'diciembre'
+          'diciembre',
         ],
         shortMonths: [
           'ene',
@@ -178,8 +175,8 @@ export default {
           'sep',
           'oct',
           'nov',
-          'dic'
-        ]
+          'dic',
+        ],
       })
       const formatDay = locale.format('%d')
       const formatMonth = locale.format('%b')
@@ -234,10 +231,7 @@ export default {
           function getTooltipPos(tooltip) {
             let left
             const mouseMoveLeft = d3.mouse(
-              d3
-                .select('.chart-container')
-                .select('svg')
-                .node()
+              d3.select('.chart-container').select('svg').node()
             )
             const mouseMoveTop = d3.mouse(el)
             const top =
@@ -260,7 +254,7 @@ export default {
               that.$t('tooltip.date', {
                 day: d.x.getDate(),
                 month: formatMonthFull(d.x),
-                year: d.x.getFullYear()
+                year: d.x.getFullYear(),
               })
             )
 
@@ -268,7 +262,7 @@ export default {
             .select('#tooltip-mentions')
             .html(
               that.$tc('tooltip.mentions', d.y, {
-                mentions: d.y
+                mentions: d.y,
               })
             )
 
@@ -277,7 +271,7 @@ export default {
             .call(getTooltipPos)
         })
 
-        .on('mouseout', function() {
+        .on('mouseout', function () {
           // displayNone on tooltip after 750 ms
           function stopTimerHover() {
             d3.select('#tooltip').classed('displayNone', true)
@@ -292,8 +286,9 @@ export default {
       d3.select(this.$refs.axisXDays)
         .attr(
           'transform',
-          `translate(${this.margin.left + scaleBand.bandwidth() / 2}, ${this
-            .height - this.margin.bottom})`
+          `translate(${this.margin.left + scaleBand.bandwidth() / 2}, ${
+            this.height - this.margin.bottom
+          })`
         )
         .classed('displayNone', this.period == 'weeks')
         .call(axisXDays)
@@ -302,10 +297,9 @@ export default {
       d3.select(this.$refs.axisXMonths)
         .attr(
           'transform',
-          `translate(${this.margin.left + scaleBand.bandwidth() / 2}, ${this
-            .height -
-            this.margin.bottom +
-            15})`
+          `translate(${this.margin.left + scaleBand.bandwidth() / 2}, ${
+            this.height - this.margin.bottom + 15
+          })`
         )
         .call(axisXMonths)
         .call(this.formatAxisXMonths)
@@ -313,10 +307,9 @@ export default {
       d3.select(this.$refs.axisXYears)
         .attr(
           'transform',
-          `translate(${this.margin.left + scaleBand.bandwidth() / 2}, ${this
-            .height -
-            this.margin.bottom +
-            30})`
+          `translate(${this.margin.left + scaleBand.bandwidth() / 2}, ${
+            this.height - this.margin.bottom + 30
+          })`
         )
         .call(axisXYears)
         .call(this.formatAxisXYears)
@@ -331,8 +324,8 @@ export default {
         .classed('axisY-title', true)
         .attr('text-anchor', 'start')
         .text('Menciones')
-    }
-  }
+    },
+  },
 }
 </script>
 
