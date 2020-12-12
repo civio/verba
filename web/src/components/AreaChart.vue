@@ -16,7 +16,7 @@
     </svg>
     <div id="tooltip" class="displayNone">
       <div>
-        <span v-if="period == 'weeks'">Semana del</span>
+        <span v-if="period == 'weeks'">Semana del </span>
         <span id="tooltip-date"></span>
       </div>
       <div id="tooltip-mentions"></div>
@@ -209,7 +209,8 @@ export default {
         .ticks(this.height / 50)
 
       // update bars
-      d3.select(this.$refs.bars)
+      const selection = d3
+        .select(this.$refs.bars)
         .selectAll('rect')
         .data(this.data)
         .join('rect')
@@ -222,65 +223,62 @@ export default {
           return 260 - scaleY(d.y)
         })
         .attr('width', barWidth)
-        .on('mousemove', (d, i, nodes) => {
-          // restart timer
-          clearInterval(timerHover)
-          const el = nodes[i]
-          const that = this
-          // tooltip position
-          function getTooltipPos(tooltip) {
-            let left
-            const mouseMoveLeft = d3.pointer(
-              d3.select('.chart-container').select('svg').node()
-            )
-            const mouseMoveTop = d3.pointer(el)
-            const top =
-              mouseMoveTop[1] - d3.select('#tooltip').node().offsetHeight - 30
-            if (mouseMoveLeft[0] >= that.width / 2) {
-              left = mouseMoveLeft[0] - d3.select('#tooltip').node().clientWidth
-            } else {
-              left = mouseMoveLeft[0] + 30
-            }
-            tooltip.style('left', left + 'px').style('top', top + 'px')
+
+      selection.on('mousemove', (event, d) => {
+        const el = event.srcElement
+        const that = this
+        // restart timer
+        clearInterval(timerHover)
+        // tooltip position
+        function getTooltipPos(tooltip) {
+          const svgEl = d3.select('.chart-container').select('svg').node()
+          let left
+          const mouseMove = d3.pointer(event)
+          const top =
+            mouseMove[1] - d3.select('#tooltip').node().offsetHeight - 15
+          if (mouseMove[0] >= that.width / 2) {
+            left = mouseMove[0] - d3.select('#tooltip').node().clientWidth + 30
+          } else {
+            left = mouseMove[0] + 60
           }
+          tooltip.style('left', left + 'px').style('top', top + 'px')
+        }
 
-          // focus rect
-          d3.select(el).classed('focus', true)
+        // focus rect
+        d3.select(el).classed('focus', true)
 
-          //toolip text
-          d3.select('#tooltip')
-            .select('#tooltip-date')
-            .html(
-              that.$t('tooltip.date', {
-                day: d.x.getDate(),
-                month: formatMonthFull(d.x),
-                year: d.x.getFullYear(),
-              })
-            )
+        //toolip text
+        d3.select('#tooltip')
+          .select('#tooltip-date')
+          .html(
+            that.$t('tooltip.date', {
+              day: d.x.getDate(),
+              month: formatMonthFull(d.x),
+              year: d.x.getFullYear(),
+            })
+          )
 
-          d3.select('#tooltip')
-            .select('#tooltip-mentions')
-            .html(
-              that.$tc('tooltip.mentions', d.y, {
-                mentions: d.y,
-              })
-            )
+        d3.select('#tooltip')
+          .select('#tooltip-mentions')
+          .html(
+            that.$tc('tooltip.mentions', d.y, {
+              mentions: d.y,
+            })
+          )
 
-          d3.select('#tooltip')
-            .classed('displayNone', false)
-            .call(getTooltipPos)
-        })
+        d3.select('#tooltip').classed('displayNone', false).call(getTooltipPos)
+      })
 
-        .on('mouseout', function () {
-          // displayNone on tooltip after 750 ms
-          function stopTimerHover() {
-            d3.select('#tooltip').classed('displayNone', true)
-            clearInterval(timerHover)
-          }
+      selection.on('mouseout', function () {
+        // displayNone on tooltip after 750 ms
+        function stopTimerHover() {
+          d3.select('#tooltip').classed('displayNone', true)
           clearInterval(timerHover)
-          timerHover = setInterval(stopTimerHover, 500)
-          d3.select(this).classed('focus', false)
-        })
+        }
+        clearInterval(timerHover)
+        timerHover = setInterval(stopTimerHover, 500)
+        d3.select(this).classed('focus', false)
+      })
 
       // render axis
       d3.select(this.$refs.axisXDays)
