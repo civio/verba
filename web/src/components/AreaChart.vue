@@ -230,10 +230,10 @@ export default {
           // tooltip position
           function getTooltipPos(tooltip) {
             let left
-            const mouseMoveLeft = d3.mouse(
+            const mouseMoveLeft = d3.pointer(
               d3.select('.chart-container').select('svg').node()
             )
-            const mouseMoveTop = d3.mouse(el)
+            const mouseMoveTop = d3.pointer(el)
             const top =
               mouseMoveTop[1] - d3.select('#tooltip').node().offsetHeight - 30
             if (mouseMoveLeft[0] >= that.width / 2) {
