@@ -196,7 +196,6 @@ export default {
       return moment(date).format('DD/MM/YYYY')
     },
     onGoToProgrammeClick(items) {
-      console.log(items)
       const programme_id = items[0].programme.id
       const current_start_time = items[0].time_start
       const URL = `/programmes/${programme_id}#${current_start_time}`
