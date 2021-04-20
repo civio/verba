@@ -1,7 +1,10 @@
 <template>
   <div class="search-filters">
     <button :class="dateBtnClass" @click="onDateClick">{{ dateStr }}</button>
-    <DateRangeFilter :visible="datepickerVisible" @change="onDatepickerChange" />
+    <DateRangeFilter
+      :visible="datepickerVisible"
+      @change="onDatepickerChange"
+    />
   </div>
 </template>
 
@@ -15,17 +18,17 @@ export default {
   components: { DateRangeFilter },
   data() {
     return {
-      datepickerVisible: false
+      datepickerVisible: false,
     }
   },
   computed: {
     ...mapState(['queryDate']),
-    dateBtnClass: function() {
+    dateBtnClass: function () {
       return `btn btn-sm btn-outline-${
         this.queryDate ? 'primary' : 'secondary'
       }`
     },
-    dateStr: function() {
+    dateStr: function () {
       return this.queryDate
         ? this.queryDate.from !== this.queryDate.to
           ? `Showing: ${this.formatDate(
@@ -33,7 +36,7 @@ export default {
             )} - ${this.formatDate(this.queryDate.to)}`
           : this.formatDate(this.queryDate.from)
         : this.$t('search.filter_by_date')
-    }
+    },
   },
   methods: {
     ...mapActions(['setQueryDate']),
@@ -46,8 +49,8 @@ export default {
     },
     formatDate(date) {
       return moment(date).format('DD/MM/YYYY')
-    }
-  }
+    },
+  },
 }
 </script>
 

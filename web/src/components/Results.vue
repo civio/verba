@@ -15,19 +15,18 @@
             v-html="
               $t('results.list.count', {
                 total: results.length.toLocaleString(),
-                query: query
+                query: query,
               })
             "
           ></span>
-          (
-          <a href="#" @click="onDownloadClick()">CSV</a>)
+          (<a href="#" @click="onDownloadClick()">CSV</a>)
           <span v-if="results.length > 50" class="text-secondary">
             &nbsp;&mdash;&nbsp;
             {{
-            $t('results.list.page', {
-            p: resultsPage + 1,
-            total: Math.ceil(results.length / 50)
-            })
+              $t('results.list.page', {
+                p: resultsPage + 1,
+                total: Math.ceil(results.length / 50),
+              })
             }}
           </span>
         </p>
@@ -42,13 +41,20 @@
               </svg>
               <!-- Add link to programme -->
               <!-- <div class="programme-title"> -->
-              <strong @click="onGoToProgrammeClick(items)">{{ formatDate(items[0].programme.date) }}</strong>
+              <strong @click="onGoToProgrammeClick(items)">{{
+                formatDate(items[0].programme.date)
+              }}</strong>
               | TD {{ items[0].programme.date.substring(11, 13) }}h
               <!-- </div> -->
             </div>
             <div v-for="item in items" :key="item.id" class="card-body">
               <span class="badge badge-secondary">
-                <svg class="icon-time" width="12" height="12" viewBox="0 0 24 24">
+                <svg
+                  class="icon-time"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                >
                   <path d="M0 0h24v24H0z" fill="none" />
                   <path
                     d="M15 1H9v2h6V1zm-4 13h2V8h-2v6zm8.03-6.61l1.42-1.42c-.43-.51-.9-.99-1.41-1.41l-1.42 1.42C16.07 4.74 14.12 4 12 4c-4.97 0-9 4.03-9 9s4.02 9 9 9 9-4.03 9-9c0-2.12-.74-4.07-1.97-5.61zM12 20c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"
@@ -57,7 +63,10 @@
                 {{ item.time_start | formatTime }} -
                 {{ item.time_end | formatTime }}
               </span>
-              <span class="badge badge-secondary video-link" @click="onGoToVideoBtnClick(item)">
+              <span
+                class="badge badge-secondary video-link"
+                @click="onGoToVideoBtnClick(item)"
+              >
                 {{ $t('results.item.goToVideo') }}
                 <svg
                   class="icon-play"
@@ -74,14 +83,16 @@
               <span
                 class="badge badge-secondary video-link"
                 @click="onShowContextBtnClick(item)"
-              >{{ $t('results.item.showContext') }}</span>
+                >{{ $t('results.item.showContext') }}</span
+              >
               <!-- eslint-disable-next-line vue/no-v-html -->
               <p class="item-content" v-html="highlight(item.content)"></p>
               <span
                 v-for="(entity, key) in item.entities"
                 :key="key"
                 class="badge badge-entitie"
-              >{{ entity.type }}/{{ entity.text }}</span>
+                >{{ entity.type }}/{{ entity.text }}</span
+              >
             </div>
           </div>
         </div>
@@ -108,7 +119,7 @@ export default {
   data() {
     return {
       currentPage: 0,
-      period: false
+      period: false,
     }
   },
   computed: {
@@ -118,7 +129,7 @@ export default {
       'queryTerms',
       'loading',
       'results',
-      'resultsPage'
+      'resultsPage',
     ]),
     aggregations() {
       return this.results && this.results.aggregations
@@ -159,7 +170,7 @@ export default {
         this.aggregations.length > 1 &&
         (!this.queryDate || this.queryDate.from !== this.queryDate.to)
       )
-    }
+    },
   },
   methods: {
     ...mapActions(['setResultsPage', 'setCurrentResult']),
@@ -196,14 +207,13 @@ export default {
       return moment(date).format('DD/MM/YYYY')
     },
     onGoToProgrammeClick(items) {
-      console.log(items)
       const programme_id = items[0].programme.id
       const current_start_time = items[0].time_start
       const URL = `/programmes/${programme_id}#${current_start_time}`
 
       window.open(URL, '_blank')
-    }
-  }
+    },
+  },
 }
 </script>
 

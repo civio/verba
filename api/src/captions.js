@@ -4,7 +4,7 @@ export default class Captions {
   constructor(host) {
     // Create eslasticsearch client
     this.client = new elasticsearch.Client({
-      host: host
+      host: host,
     })
   }
 
@@ -17,10 +17,10 @@ export default class Captions {
           simple_query_string: {
             query: query_str,
             fields: ['text'],
-            default_operator: 'AND'
-          }
-        }
-      }
+            default_operator: 'AND',
+          },
+        },
+      },
     }
     // add date filter if date_from & date_to defined
     if (date_from && date_to) {
@@ -29,10 +29,10 @@ export default class Captions {
           range: {
             programme_date: {
               gte: date_from, // date from YYYY-MM-DD
-              lte: date_to // date to YYYY-MM-DD
-            }
-          }
-        }
+              lte: date_to, // date to YYYY-MM-DD
+            },
+          },
+        },
       ]
     }
     const obj = {
@@ -43,13 +43,13 @@ export default class Captions {
         'end',
         'entities',
         'programme_id',
-        'programme_date'
+        'programme_date',
       ],
       from: page * size,
       query,
       size,
       track_total_hits: true,
-      sort: [{ programme_date: 'desc' }, { start: 'asc' }] // order by date desc & start time asc
+      sort: [{ programme_date: 'desc' }, { start: 'asc' }], // order by date desc & start time asc
     }
     // add aggregations to search body if aggregations defined
     if (
@@ -61,9 +61,9 @@ export default class Captions {
           date_histogram: {
             field: 'programme_date',
             interval: aggs,
-            format: 'yyyy-MM-dd'
-          }
-        }
+            format: 'yyyy-MM-dd',
+          },
+        },
       }
     }
     return obj
@@ -80,14 +80,14 @@ export default class Captions {
         return {
           text: e.text,
           confidence: e.confidence,
-          type: e.type
+          type: e.type,
         }
       }),
       programme: {
         id: d._source.programme_id,
         title: d._source.programme_title,
-        date: d._source.programme_date
-      }
+        date: d._source.programme_date,
+      },
     }
   }
 
@@ -95,7 +95,7 @@ export default class Captions {
     const data = {
       page,
       length: results.hits.total.value,
-      results: results.hits.hits.map(this.mapResult)
+      results: results.hits.hits.map(this.mapResult),
     }
     if (results.aggregations) {
       data.aggregations = results.aggregations.matches_over_time.buckets.map(
@@ -126,7 +126,7 @@ export default class Captions {
         aggregations,
         size,
         page
-      )
+      ),
     })
     return this.parseResults(results, page)
   }
@@ -141,18 +141,18 @@ export default class Captions {
               range: {
                 start: {
                   gte: parseInt(start_time) - range / 2,
-                  lte: parseInt(start_time) + range / 2
-                }
-              }
-            }
-          ]
-        }
+                  lte: parseInt(start_time) + range / 2,
+                },
+              },
+            },
+          ],
+        },
       },
-      sort: { start: { order: 'asc' } }
+      sort: { start: { order: 'asc' } },
     }
     const results = await this.client.search({
       index: 'captions',
-      body: query
+      body: query,
     })
     return results.hits.hits.map(this.mapResult)
   }
@@ -170,21 +170,21 @@ export default class Captions {
                     field: 'programme_date',
                     calendar_interval: '1d',
                     format: 'yyyy-MM-dd',
-                    order: 'desc'
-                  }
-                }
+                    order: 'desc',
+                  },
+                },
               },
               { id: { terms: { field: 'programme_id.keyword' } } },
-              { title: { terms: { field: 'programme_title.keyword' } } }
+              { title: { terms: { field: 'programme_title.keyword' } } },
             ],
-            size: 10000
-          }
-        }
-      }
+            size: 10000,
+          },
+        },
+      },
     }
     const results = await this.client.search({
       index: 'captions',
-      body: query
+      body: query,
     })
     return results.aggregations.programmes.buckets.map(d => {
       return d.key
@@ -195,15 +195,15 @@ export default class Captions {
     const query = {
       query: {
         bool: {
-          filter: [{ term: { programme_id: programme_id } }]
-        }
+          filter: [{ term: { programme_id: programme_id } }],
+        },
       },
       size: 10000,
-      sort: { start: { order: 'asc' } }
+      sort: { start: { order: 'asc' } },
     }
     const results = await this.client.search({
       index: 'captions',
-      body: query
+      body: query,
     })
     return results.hits.hits.map(this.mapResult)
   }

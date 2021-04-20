@@ -36,15 +36,15 @@ export default {
   props: {
     current: {
       type: Number,
-      default: 0
+      default: 0,
     },
     size: {
       type: Number,
-      default: 0
-    }
+      default: 0,
+    },
   },
   computed: {
-    pages: function() {
+    pages: function () {
       return this.size <= 10
         ? this.range(1, this.size)
         : this.current <= 5
@@ -52,29 +52,29 @@ export default {
         : this.current > this.size - 6
         ? this.range(this.size - 10, this.size)
         : this.range(this.current - 4, this.current + 5)
-    }
+    },
   },
   methods: {
-    onClickPage: function(e) {
+    onClickPage: function (e) {
       e.preventDefault()
       const page = +e.target.dataset.index
       if (page !== this.current) this.change(page)
     },
-    onClickPrev: function(e) {
+    onClickPrev: function (e) {
       e.preventDefault()
       if (this.current > 0) this.change(this.current - 1)
     },
-    onClickNext: function(e) {
+    onClickNext: function (e) {
       e.preventDefault()
       if (this.current < this.size - 1) this.change(this.current + 1)
     },
-    change: function(page) {
+    change: function (page) {
       this.$emit('change', page)
     },
-    range: function(start, end) {
+    range: function (start, end) {
       return Array.from(Array(end - start + 1).keys()).map(i => i + start)
-    }
-  }
+    },
+  },
 }
 </script>
 

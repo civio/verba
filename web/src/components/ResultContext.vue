@@ -1,12 +1,21 @@
 <!-- eslint-disable vue/no-v-html -->
 <template>
-  <div :class="{ modal: true, show: currentResult }" tabindex="-1" role="dialog">
+  <div
+    :class="{ modal: true, show: currentResult }"
+    tabindex="-1"
+    role="dialog"
+  >
     <div class="modal-dialog modal-lg" role="document">
       <div v-if="currentResult" class="modal-content">
         <div class="modal-header">
           <!--  eslint-disable-next-line vue/no-v-html -->
           <p class="modal-title" v-html="title"></p>
-          <button type="button" class="close" aria-label="Close" @click="onClose">
+          <button
+            type="button"
+            class="close"
+            aria-label="Close"
+            @click="onClose"
+          >
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -21,7 +30,8 @@
             <span
               class="badge badge-secondary transcription-link"
               @click="onGoToFullTranscriptionBtnClick()"
-            >{{ $t('results.context.goToFullTranscription') }}</span>
+              >{{ $t('results.context.goToFullTranscription') }}</span
+            >
           </div>
         </div>
       </div>
@@ -39,12 +49,12 @@ export default {
   name: 'ResultContext',
   data() {
     return {
-      resultContext: null
+      resultContext: null,
     }
   },
   computed: {
     ...mapState(['currentResult', 'queryTerms']),
-    title: function() {
+    title: function () {
       const date = this.currentResult.programme.date
       return `<strong>${moment(date).format(
         'DD/MM/YYYY'
@@ -54,17 +64,17 @@ export default {
       )}h <small>(${this.$options.filters.formatTime(
         this.currentResult.time_start
       )})</small>`
-    }
+    },
   },
   watch: {
-    currentResult: function() {
+    currentResult: function () {
       if (this.currentResult) {
         document.body.classList.add('modal-open')
         this.fetchResultContext()
       } else {
         document.body.classList.remove('modal-open')
       }
-    }
+    },
   },
   methods: {
     ...mapActions(['setCurrentResult']),
@@ -75,14 +85,14 @@ export default {
       })
       return content
     },
-    onClose: function() {
+    onClose: function () {
       this.setCurrentResult(null)
     },
     fetchResultContext() {
       const params = {
         programme_id: this.currentResult.programme.id,
         start_time: this.currentResult.time_start,
-        range: 60 // 1 minute context
+        range: 60, // 1 minute context
       }
       Vue.verbaAPI('fetchContext', params, response => {
         this.resultContext = response.data
@@ -93,8 +103,8 @@ export default {
       const current_start_time = this.currentResult.time_start
       const URL = `/programmes/${programme_id}#${current_start_time}`
       window.open(URL, '_blank')
-    }
-  }
+    },
+  },
 }
 </script>
 

@@ -1288,10 +1288,10 @@ export default {
       chart_tema09: '',
       chart_tema10: '',
       chart_tema11: '',
-      chart_tema12: ''
+      chart_tema12: '',
     }
   },
-  updated: function() {
+  updated: function () {
     this.resizer()
   },
   mounted() {
@@ -1344,11 +1344,11 @@ export default {
     onClickShowVignette(vignette) {
       // Hide all vignettes and deselect all images
       var allVignettes = document.querySelectorAll('.verba-vignettes-item')
-      allVignettes.forEach(function(el) {
+      allVignettes.forEach(function (el) {
         el.classList.remove('visible')
       })
       var allVignetteImages = document.querySelectorAll('.vignette-img')
-      allVignetteImages.forEach(function(el) {
+      allVignetteImages.forEach(function (el) {
         el.classList.remove('selected')
       })
 
@@ -1364,12 +1364,12 @@ export default {
       this.resizer()
     },
     // `resizer` and `throtthle` are taken from ai2html output
-    resizer: function() {
+    resizer: function () {
       var elements = Array.prototype.slice.call(
           document.querySelectorAll('.g-artboard[data-min-width]')
         ),
         widthById = {}
-      elements.forEach(function(el) {
+      elements.forEach(function (el) {
         var parent = el.parentNode,
           width = widthById[parent.id] || parent.getBoundingClientRect().width,
           minwidth = el.getAttribute('data-min-width'),
@@ -1390,11 +1390,11 @@ export default {
         console.log(e)
       }
     },
-    throttle: function(func, wait) {
+    throttle: function (func, wait) {
       // from underscore.js
       var _now =
           Date.now ||
-          function() {
+          function () {
             return new Date().getTime()
           },
         context,
@@ -1402,13 +1402,13 @@ export default {
         result,
         timeout = null,
         previous = 0
-      var later = function() {
+      var later = function () {
         previous = _now()
         timeout = null
         result = func.apply(context, args)
         if (!timeout) context = args = null
       }
-      return function() {
+      return function () {
         var now = _now(),
           remaining = wait - (now - previous)
         context = this
@@ -1426,8 +1426,8 @@ export default {
         }
         return result
       }
-    }
-  }
+    },
+  },
 }
 </script>
 

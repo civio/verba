@@ -27,7 +27,7 @@ import { mapActions, mapState } from 'vuex'
 export default {
   name: 'SearchBox',
   computed: {
-    ...mapState(['query'])
+    ...mapState(['query']),
   },
   mounted() {
     // set focus on search input
@@ -37,8 +37,8 @@ export default {
     ...mapActions(['search']),
     onChange(e) {
       this.search(e.target.value)
-    }
-  }
+    },
+  },
 }
 </script>
 
