@@ -80,7 +80,8 @@ export default {
         { num: '2017' },
         { num: '2018' },
         { num: '2019' },
-        { num: '2020' }
+        { num: '2020' },
+        { num: '2021' }
       ],
       months: [
         { num: '1', name: 'ene', ts: '' },
