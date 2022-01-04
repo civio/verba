@@ -73,16 +73,6 @@ export default {
       limit: 70,
       inc: undefined,
       today: new Date(),
-      years: [
-        { num: '2014' },
-        { num: '2015' },
-        { num: '2016' },
-        { num: '2017' },
-        { num: '2018' },
-        { num: '2019' },
-        { num: '2020' },
-        { num: '2021' }
-      ],
       months: [
         { num: '1', name: 'ene', ts: '' },
         { num: '2', name: 'feb', ts: '' },
@@ -100,6 +90,16 @@ export default {
       currentYear: '',
       currentMonth: '',
       limitDate: undefined,
+    }
+  },
+  
+  computed: {
+    years() {
+      const years = []
+      for(let i = 2014; i <= this.get_today_year(); i++) {
+        years.push({ num: String(i) })
+      }
+      return years
     }
   },
 
