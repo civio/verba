@@ -5,6 +5,8 @@ export default class Captions {
     // Create eslasticsearch client
     this.client = new elasticsearch.Client({
       host: host,
+      // Avoid SSL-related errors when connecting to Elastic Cloud, see https://stackoverflow.com/a/68631678
+      ssl: { rejectUnauthorized: false, pfx: [] }
     })
   }
 

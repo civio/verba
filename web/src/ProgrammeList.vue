@@ -73,15 +73,6 @@ export default {
       limit: 70,
       inc: undefined,
       today: new Date(),
-      years: [
-        { num: '2014' },
-        { num: '2015' },
-        { num: '2016' },
-        { num: '2017' },
-        { num: '2018' },
-        { num: '2019' },
-        { num: '2020' },
-      ],
       months: [
         { num: '1', name: 'ene', ts: '' },
         { num: '2', name: 'feb', ts: '' },
@@ -99,6 +90,16 @@ export default {
       currentYear: '',
       currentMonth: '',
       limitDate: undefined,
+    }
+  },
+  
+  computed: {
+    years() {
+      const years = []
+      for(let i = 2014; i <= this.get_today_year(); i++) {
+        years.push({ num: String(i) })
+      }
+      return years
     }
   },
 
@@ -249,6 +250,13 @@ u {
 
 #menu-filter ul li a {
   cursor: pointer;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+  supported by Chrome, Edge, Opera and Firefox */
 }
 
 #menu-filter ul li.is-clicked {
