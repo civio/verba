@@ -11,8 +11,9 @@
       <div class="verba-about-copy">
         <div class="about-project">
           <h2 class="verba-subtitle" v-html="$t('about.project.title')"></h2>
-          <p v-html="$t('about.project.body')"></p>
-          <p v-html="$t('about.project.bodyExtra')"></p>
+          <p v-html="$t('about.project.body1')"></p>
+          <p v-html="$t('about.project.body2')"></p>
+          <p v-html="$t('about.project.body3')"></p>
         </div>
 
         <div class="about-us">

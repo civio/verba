@@ -8,8 +8,9 @@
   "about": {
     "project": {
       "title": "Verba Volant",
-      "body": "from the Latin proverb <span>“Verba volant, scripta manent”</span>, <span>“spoken words fly away, written words remain”</span>, prototypes the application of <span>Natural Language Processing (NLP)</span> tools and techniques to <span>subtitled or closed captioned videos</span> for journalistic purposes.",
-      "bodyExtra": "<span>VERBA</span> is an <span>open source</span> web application designed to aid journalists and researchers capture and analyse video captions."
+      "body1": "from the Latin proverb <span>“Verba volant, scripta manent”</span>, <span>“spoken words fly away, written words remain”</span>, prototypes the application of <span>Natural Language Processing (NLP)</span> tools and techniques to <span>subtitled or closed captioned videos</span> for journalistic purposes.",
+      "body2": "<span>VERBA</span> is an <span>open source</span> web application designed to aid journalists and researchers capture and analyse video captions.",
+      "body3": "If you use Verba in your research, we'd love to know about it, <a href='mailto:contacto@civio.es'>let us know</a>. You can cite us as: <cite>Verba. (2022). [HTML]. Fundación Ciudadana Civio. https://github.com/civio/verba (Original work published 2018)</cite>"
     },
     "us": {
       "title": "Civio",

@@ -8,8 +8,9 @@
   "about": {
     "project": {
       "title": "Verba Volant",
-      "body": "de la expresión latina “Verba volant, scripta manent” <span>(“las palabras vuelan, lo escrito permanece“)</span> es un proyecto para analizar la cobertura de los telediarios de La 1 de Televisión Española <span>desde 2014 hasta la actualidad</span> (con dos pequeños agujeros: uno en junio de 2018 y otro en el 10 de mayo de 2019 porque los subtítulos de ambos períodos no están publicados).",
-      "bodyExtra": "<span>Verba</span> es además una <span>aplicación web</span> de <a style='color:black; text-decoration:underline;' href='https://github.com/civio/verba/' target='_blank'>código abierto</a> creada para ayudar a periodistas e investigadores a capturar y analizar contenidos como los informativos a través de sus subtítulos. Es el resultado de una beca de la Google Digital News Initiative."
+      "body1": "de la expresión latina “Verba volant, scripta manent” <span>(“las palabras vuelan, lo escrito permanece“)</span> es un proyecto para analizar la cobertura de los telediarios de La 1 de Televisión Española <span>desde 2014 hasta la actualidad</span> (con dos pequeños agujeros: uno en junio de 2018 y otro en el 10 de mayo de 2019 porque los subtítulos de ambos períodos no están publicados).",
+      "body2": "<span>Verba</span> es además una <span>aplicación web</span> de <a style='color:black; text-decoration:underline;' href='https://github.com/civio/verba/' target='_blank'>código abierto</a> creada para ayudar a periodistas e investigadores a capturar y analizar contenidos como los informativos a través de sus subtítulos. Es el resultado de una beca de la Google Digital News Initiative.",
+      "body3": "Si usas Verba en tus investigaciones, nos encantaría saberlo, <a href='mailto:contacto@civio.es'>avísanos</a>. Puedes citarnos como: <cite>Verba. (2022). [HTML]. Fundación Ciudadana Civio. https://github.com/civio/verba (Original work published 2018)</cite>"
     },
     "us": {
       "title": "<a style='color:black; text-decoration:underline;' href='https://civio.es/' target='_blank'>Civio</a>",
