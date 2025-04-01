@@ -92,15 +92,15 @@ export default {
       limitDate: undefined,
     }
   },
-  
+
   computed: {
     years() {
       const years = []
-      for(let i = 2014; i <= this.get_today_year(); i++) {
+      for (let i = 2014; i <= this.get_today_year(); i++) {
         years.push({ num: String(i) })
       }
       return years
-    }
+    },
   },
 
   mounted() {
