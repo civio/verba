@@ -19,9 +19,10 @@ kibana
 
 ## Corriendo en local
 
-Instalamos dependencias de Node:
+Instalamos dependencias de Node (Node 12 ahora mismo en desarrollo):
 
 ```
+nvm use
 npm install
 ```
 
