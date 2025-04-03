@@ -58,3 +58,10 @@ Una vez desplegada, la aplicación ofrece dos URLs:
 
 - [`verba.civio.es`](https://verba.civio.es/), la aplicación web.
 - [`verba.civio.es/api`](https://verba.civio.es/api/), el API usado por la aplicación.
+
+## Corpus para descarga
+
+El contenido completo de los Telediarios descargados está disponible en dos ficheros que se actualizan diariamente:
+
+- Subtítulos originales (VTT) con metadatos de RTVE (JSON): [corpus_raw.tar.gz](http://verba.civio.es/corpus_raw.tar.gz)
+- Subtítulos segmentados en frases usando `syntok` (JSON) con metadatos de RTVE (JSON): [corpus_cooked.tar.gz](http://verba.civio.es/corpus_cooked.tar.gz)
