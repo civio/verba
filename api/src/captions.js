@@ -62,7 +62,7 @@ export default class Captions {
         matches_over_time: {
           date_histogram: {
             field: 'programme_date',
-            interval: aggs,
+            calendar_interval: aggs,
             format: 'yyyy-MM-dd',
           },
         },
