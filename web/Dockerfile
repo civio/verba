@@ -18,7 +18,7 @@ ENV NODE_ENV=${NODE_ENV}
 ARG VUE_APP_API_URL=https://verba.civio.es/api/
 ENV VUE_APP_API_URL=${VUE_APP_API_URL}
 
-RUN npm run lint && npm run build
+RUN npm run build
 
 
 FROM nginx:alpine

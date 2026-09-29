@@ -28,6 +28,8 @@ Arrancamos la aplicación (tanto la API como el front-end):
 npm run start
 ```
 
+`npm run lint` pasa eslint y comprueba el formato con Prettier (también lo hace la CI), y `npm run format` lo arregla.
+
 ## Tests
 
 Los tests del API (`test/api.test.mjs`) son de extremo a extremo: hablan con el API por HTTP contra un Elastic 9.0.4 (la misma versión que en producción) cargado con seis programas exportados de producción (`test/fixtures`). Necesitan Docker.

@@ -12,7 +12,7 @@ WORKDIR /api
 
 COPY . .
 
-RUN npm run lint && npm prune --omit=dev
+RUN npm prune --omit=dev
 
 
 FROM node:22-alpine

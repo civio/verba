@@ -10,15 +10,20 @@
     "start:api": "npm run start --prefix api",
     "start:web": "npm run start --prefix web",
     "build": "npm run build --prefix web",
-    "lint": "run-p lint:api lint:web",
-    "lint:api": "cd api && npm run lint && cd ..",
-    "lint:web": "cd web && npm run lint && cd ..",
+    "lint": "eslint . && prettier --check \"**/*.{js,mjs,cjs,vue}\"",
+    "format": "prettier --write \"**/*.{js,mjs,cjs,vue}\" && eslint --fix .",
     "test:api": "node --test test/*.test.mjs",
     "test:web": "playwright test",
     "test:web:build": "cd web && NODE_ENV=production VUE_APP_API_URL=${API_URL:-http://localhost:8899/} npm run build -- --outDir ../test/.dist --emptyOutDir"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@playwright/test": "^1.63.0",
-    "npm-run-all2": "^6.2.6"
+    "eslint": "^10.11.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-vue": "^10.11.1",
+    "globals": "^17.12.0",
+    "npm-run-all2": "^6.2.6",
+    "prettier": "^3.9.9"
   }
 }

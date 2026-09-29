@@ -231,7 +231,6 @@ export default {
         clearInterval(timerHover)
         // tooltip position
         function getTooltipPos(tooltip) {
-          const svgEl = d3.select('.chart-container').select('svg').node()
           let left
           const mouseMove = d3.pointer(event)
           const top =
