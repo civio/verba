@@ -52,7 +52,6 @@ jobs:
           node-version: 22
       - run: npx playwright install --with-deps chromium
       - run: npm run test:web
-      # Last, because the todo test in there kills the API
       - run: npm run test:api
 
       - if: failure()

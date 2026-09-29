@@ -179,8 +179,7 @@ test('programme transcription returns all its captions in order', async () => {
   })
 })
 
-// Must run last: with the current code (Express 4) this request kills the API.
-test('an invalid request returns an error and the API keeps running', { todo: 'crashes the API' }, async () => {
+test('an invalid request returns an error and the API keeps running', async () => {
   const url = new URL('search?q=Ebro&size=20000', API_URL)
   const response = await fetch(url, { signal: AbortSignal.timeout(5000) })
   assert.ok(response.status >= 400)
