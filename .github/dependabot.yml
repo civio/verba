@@ -1,0 +1,30 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directories: ["/", "/api", "/web"]
+    schedule:
+      interval: monthly
+    # One PR a month for minor and patch updates; each major version gets its own
+    groups:
+      minor-and-patch:
+        update-types: [minor, patch]
+    ignore:
+      # These need Vue 3 (and the Vue 2 plugin for Vite stops at Vite 7)
+      - dependency-name: vue
+        update-types: [version-update:semver-major]
+      - dependency-name: vue-router
+        update-types: [version-update:semver-major]
+      - dependency-name: vuex
+        update-types: [version-update:semver-major]
+      - dependency-name: vue-i18n
+        update-types: [version-update:semver-major]
+      - dependency-name: vite
+        update-types: [version-update:semver-major]
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      actions:
+        patterns: ["*"]
