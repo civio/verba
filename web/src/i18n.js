@@ -6,17 +6,13 @@ import VueI18n from 'vue-i18n'
 Vue.use(VueI18n)
 
 function loadLocaleMessages() {
-  const locales = require.context(
-    './locales',
-    true,
-    /[A-Za-z0-9-_,\s]+\.json$/i
-  )
+  const locales = import.meta.glob('./locales/*.json', { eager: true })
   const messages = {}
-  locales.keys().forEach(key => {
+  Object.keys(locales).forEach(key => {
     const matched = key.match(/([A-Za-z0-9-_]+)\./i)
     if (matched && matched.length > 1) {
       const locale = matched[1]
-      messages[locale] = locales(key)
+      messages[locale] = locales[key].default
     }
   })
   return messages
@@ -25,7 +21,7 @@ function loadLocaleMessages() {
 export default new VueI18n({
   // Temporarily hardcoded to Spanish. See #50.
   locale: 'es',
-  // locale: process.env.VUE_APP_I18N_LOCALE || 'en',
-  fallbackLocale: process.env.VUE_APP_I18N_FALLBACK_LOCALE || 'en',
+  // locale: import.meta.env.VUE_APP_I18N_LOCALE || 'en',
+  fallbackLocale: import.meta.env.VUE_APP_I18N_FALLBACK_LOCALE || 'en',
   messages: loadLocaleMessages(),
 })

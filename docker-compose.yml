@@ -39,7 +39,7 @@ services:
       - "VUE_APP_API_URL=http://localhost:8888/"
     depends_on:
       - api
-    command: ["npm", "run", "start"]
+    command: ["npm", "run", "start", "--", "--host"]
 
   api:
     build:

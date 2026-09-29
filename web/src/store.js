@@ -116,7 +116,7 @@ export default new Vuex.Store({
         query['from'] = moment(this.state.queryDate.from).format('YYYY-MM-DD')
         query['to'] = moment(this.state.queryDate.to).format('YYYY-MM-DD')
       }
-      global.router.push({ query: query })
+      window.router.push({ query: query })
     },
   },
 })

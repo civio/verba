@@ -12,9 +12,10 @@ import About from './About.vue'
 import Vignettes from './Vignettes.vue'
 import VerbaAPI from './verba-api.js'
 
-import DateRangePicker from '@gravitano/vue-date-range-picker'
+// The package entry point requires a raw .vue file, so we register the component ourselves
+import DateRangePicker from '@gravitano/vue-date-range-picker/src/components/DateRangePicker.vue'
 
-Vue.use(DateRangePicker)
+Vue.component(DateRangePicker.name, DateRangePicker)
 
 Vue.config.productionTip = false
 
@@ -41,7 +42,7 @@ Vue.use(VerbaAPI)
 // Routing setup.
 // Note: We make the router global to use it from the store.
 // Is this good? :shrug: https://stackoverflow.com/a/40768840
-global.router = new VueRouter({
+window.router = new VueRouter({
   mode: 'history',
   routes: [
     {
@@ -71,12 +72,12 @@ global.router = new VueRouter({
     },
   ],
 })
-sync(store, global.router)
+sync(store, window.router)
 Vue.use(VueRouter)
 
 // Launch the app
 new Vue({
-  router: global.router,
+  router: window.router,
   store,
   i18n,
   render: h => h(App),

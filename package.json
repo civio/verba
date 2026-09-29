@@ -15,7 +15,7 @@
     "lint:web": "cd web && npm run lint && cd ..",
     "test:api": "node --test test/*.test.mjs",
     "test:web": "playwright test",
-    "test:web:build": "cd web && VUE_APP_API_URL=${API_URL:-http://localhost:8899/} npm run build -- --dest ../test/.dist"
+    "test:web:build": "cd web && NODE_ENV=production VUE_APP_API_URL=${API_URL:-http://localhost:8899/} npm run build -- --outDir ../test/.dist --emptyOutDir"
   },
   "devDependencies": {
     "@playwright/test": "^1.63.0",
