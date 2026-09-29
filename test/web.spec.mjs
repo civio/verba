@@ -271,6 +271,15 @@ test.describe('programmes', () => {
       await expect(page.locator('.verba-transcript-copy p').first()).toHaveText(
         `${formatTime(transcription[0].time_start)}: ${transcription[0].content.trim()}`
       )
+
+      // It opens RTVE in a new tab; we only check where it goes
+      const requestPromise = page
+        .context()
+        .waitForEvent('request', r => r.url().includes('rtve.es'))
+      await page.getByText('Ir al vídeo completo').click()
+      expect((await requestPromise).url()).toBe(
+        `https://www.rtve.es/v/${oldest.id}/`
+      )
     }
   )
 })

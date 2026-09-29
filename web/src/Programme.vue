@@ -43,7 +43,7 @@ export default {
   methods: {
     onGoToFullVideoBtnClick() {
       const programme_id = this.$route.params.id
-      const URL = `https://www.rtve.es/alacarta/videos/telediario/telediario-21-horas-01-03-20/${programme_id}`
+      const URL = `https://www.rtve.es/v/${programme_id}/`
       window.open(URL, '_blank')
     },
   },
