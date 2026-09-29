@@ -23,7 +23,7 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-vue": "^10.11.1",
     "globals": "^17.12.0",
-    "npm-run-all2": "^6.2.6",
+    "npm-run-all2": "^9.0.3",
     "prettier": "^3.9.9"
   }
 }
