@@ -66,6 +66,15 @@ test.describe('search', () => {
     )
     await expect(resultItems(page).first().locator('mark').first()).toHaveText(/gobierno/i)
     await expect(page.locator('.results-dataviz svg rect').first()).toBeAttached()
+
+    // Bars can be narrower than a pixel, so we send the event instead of hovering
+    const counts = expected.aggregations.map(bucket => Object.values(bucket)[0])
+    const bar = counts.findIndex(count => count > 0)
+    await page.locator('.results-dataviz svg rect').nth(bar).dispatchEvent('mousemove')
+    await expect(page.locator('#tooltip')).toBeVisible()
+    await expect(page.locator('#tooltip-mentions')).toHaveText(
+      counts[bar] === 1 ? '1 mención' : `${counts[bar]} menciones`
+    )
   })
 
   test('searches when typing a query, and keeps it in the URL', async ({ page }) => {
@@ -104,6 +113,21 @@ test.describe('search', () => {
     for (const header of await page.locator('.results-list .card-header strong').allTextContents()) {
       expect(header).toMatch(/\/2016$/)
     }
+  })
+
+  test('filters by dates chosen in the date picker', async ({ page }) => {
+    const expected = await api('search', { q: 'gobierno', date_from: '2016-01-01', date_to: '2016-12-31' })
+    await page.goto('/?q=gobierno')
+    await page.getByRole('button', { name: 'Filtrar por fecha' }).click()
+    const input = page.locator('.verba-date-picker input')
+    await input.click()
+    await input.fill('01/01/2016 - 31/12/2016')
+    await input.press('End') // the picker reads the input on keyup
+    await page.locator('.daterangepicker').getByRole('button', { name: 'Filtrar' }).click()
+
+    await expect(page.locator('.search-filters > button')).toHaveText('Showing: 01/01/2016 - 31/12/2016')
+    await expect(page).toHaveURL(/from=2016-01-01&to=2016-12-31/)
+    await expect(resultsCount(page)).toContainText(`${expected.length.toLocaleString('es-ES')} resultados`)
   })
 
   test('shows a result in context, linking to the full transcription', { tag: '@smoke' }, async ({ page }) => {
