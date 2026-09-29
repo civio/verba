@@ -3,31 +3,24 @@
   "version": "1.0.0",
   "description": "Verba Volant API",
   "private": true,
-  "main": "src/server.js",
+  "type": "module",
+  "main": "src/index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node src/index.js",
-    "build": "babel src --out-dir dist",
-    "lint": "prettier --write src/**/*.js && eslint --fix src",
-    "serve": "node dist/index.js"
+    "start": "node --watch --env-file-if-exists=.env src/index.js",
+    "lint": "prettier --write \"src/**/*.js\" && eslint --fix src",
+    "serve": "node --env-file-if-exists=.env src/index.js"
   },
   "dependencies": {
-    "core-js": "^3.8.1",
+    "@elastic/elasticsearch": "^9.5.1",
     "cors": "^2.8.5",
-    "csv-express": "^1.2.2",
-    "dotenv": "^8.2.0",
-    "elasticsearch": "^16.7.2",
-    "express": "^4.22.3",
-    "regenerator-runtime": "^0.13.7"
+    "express": "^5.2.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.10",
-    "@babel/core": "^7.12.10",
-    "@babel/node": "^7.12.10",
-    "@babel/preset-env": "^7.12.10",
-    "babel-eslint": "^10.1.0",
     "eslint": "^7.15.0",
     "eslint-plugin-prettier": "^3.2.0",
-    "nodemon": "^2.0.6",
     "prettier": "^2.2.1"
+  },
+  "engines": {
+    "node": ">=22"
   }
 }

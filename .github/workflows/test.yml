@@ -29,12 +29,10 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      # The app installs, builds and runs with the same Node as production (.nvmrc)
       - uses: actions/setup-node@v5
         with:
           node-version-file: .nvmrc
       - run: npm ci
-      - run: npm run build:api
       - run: npm run test:web:build
 
       - name: Load the fixture into Elasticsearch
@@ -42,14 +40,10 @@ jobs:
 
       - name: Start the API
         run: |
-          ELASTIC_API_URL=http://localhost:9201 PORT=8899 nohup node api/dist/index.js > api.log 2>&1 &
+          ELASTIC_API_URL=http://localhost:9201 PORT=8899 nohup node api/src/index.js > api.log 2>&1 &
           for i in $(seq 30); do curl -sf $API_URL > /dev/null && exit 0; sleep 1; done
           cat api.log && exit 1
 
-      # The tests need a recent Node; the API keeps running on the previous one
-      - uses: actions/setup-node@v5
-        with:
-          node-version: 22
       - run: npx playwright install --with-deps chromium
       - run: npm run test:web
       - run: npm run test:api

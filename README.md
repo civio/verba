@@ -1,25 +1,19 @@
 # verba
 
-## ElasticSearch/Kibana
+## Elastic
 
-Estamos usando Elastic 7. Para instalarlo en OS X puedes usar `brew`, como [explican aquí](https://www.elastic.co/guide/en/elastic-stack-get-started/7.4/get-started-elastic-stack.html#install-elasticsearch):
-
-```
-brew tap elastic/tap
-brew install elastic/tap/elasticsearch-full
-elasticsearch
-```
-
-Y lo mismo con Kibana:
+En producción usamos Elastic Cloud, versión 9. En local lo más sencillo es levantar la misma versión con Docker y cargarle unos programas de ejemplo (los mismos que usan los tests):
 
 ```
-brew install elastic/tap/kibana-full
-kibana
+docker compose -f test/docker-compose.yml up -d --wait
+test/seed.sh
 ```
+
+Queda escuchando en `http://localhost:9201`.
 
 ## Corriendo en local
 
-Instalamos dependencias de Node (Node 12 ahora mismo en desarrollo):
+Instalamos dependencias de Node (Node 22, ver `.nvmrc`):
 
 ```
 nvm use
@@ -36,7 +30,7 @@ npm run start
 
 ## Tests
 
-Los tests del API (`test/api.test.mjs`) son de extremo a extremo: hablan con el API por HTTP contra un Elastic 9.0.4 (la misma versión que en producción) cargado con seis programas exportados de producción (`test/fixtures`). Necesitan Docker y Node 22 para lanzar los tests, aunque el API puede correr con otra versión.
+Los tests del API (`test/api.test.mjs`) son de extremo a extremo: hablan con el API por HTTP contra un Elastic 9.0.4 (la misma versión que en producción) cargado con seis programas exportados de producción (`test/fixtures`). Necesitan Docker.
 
 ```
 docker compose -f test/docker-compose.yml up -d --wait
@@ -61,19 +55,14 @@ WEB_URL=https://verba.civio.es API_URL=https://verba.civio.es/api/ npm run test:
 
 ## Despliegue en producción (Civio)
 
-La aplicación está desplegada en `midas`, en `/var/www/verba.civio.es/`. Hay dos partes, el frontend (hecho con Vue.js) que se sirve por el Apache y el API que es un servicio que levanta una aplicación Express. La configuración (variables de entorno...) del servicio está en `/etc/systemd/system/verba-api.service`.
-
-Para reiniciar Elastic, si fuera necesario:
-
-```
-sudo service elasticsearch start
-```
+La aplicación está desplegada en `midas`, en `/var/www/verba.civio.es/`. Hay dos partes, el frontend (hecho con Vue.js) que se sirve por el Apache y el API que es un servicio que levanta una aplicación Express. La configuración (variables de entorno...) del servicio está en `/etc/systemd/system/verba-api.service`, incluida la URL de Elastic Cloud con sus credenciales. El servicio usa `nvm-exec`, y la versión de Node la fija `NODE_VERSION` en ese mismo fichero. En `midas` hay otras aplicaciones con Node 16, que es la versión por defecto de nvm, así que para Verba hay que hacer siempre `nvm use`.
 
 Para actualizar la aplicación:
 
 ```
 $ cd /var/www/verba.civio.es/public
 $ git pull
+$ nvm use
 $ npm install
 $ npm run build
 $ sudo service verba-api restart

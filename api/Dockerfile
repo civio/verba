@@ -1,4 +1,4 @@
-FROM node:alpine AS base
+FROM node:22-alpine AS base
 
 WORKDIR /api
 
@@ -12,16 +12,15 @@ WORKDIR /api
 
 COPY . .
 
-RUN npm run lint && npm run build
-
-RUN npm prune --production
+RUN npm run lint && npm prune --omit=dev
 
 
-FROM node:alpine
+FROM node:22-alpine
 
 WORKDIR /api
 
-COPY --from=builder /api/dist .
+COPY --from=builder /api/package.json .
+COPY --from=builder /api/src ./src
 COPY --from=builder /api/node_modules ./node_modules
 
 ARG NODE_ENV=production
@@ -35,4 +34,4 @@ ENV ELASTIC_API_URL=${ELASTIC_API_URL}
 
 EXPOSE ${PORT}
 
-CMD [ "node", "index.js" ]
+CMD [ "node", "src/index.js" ]

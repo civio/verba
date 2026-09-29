@@ -2,10 +2,10 @@ version: "3.7"
 
 services:
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.4.0
+    image: docker.elastic.co/elasticsearch/elasticsearch:9.0.4
     environment:
-      - node.name=es01
-      - cluster.initial_master_nodes=es01
+      - discovery.type=single-node
+      - xpack.security.enabled=false
       - cluster.name=verba-volant
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"

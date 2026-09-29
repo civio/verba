@@ -9,5 +9,8 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'space-before-function-paren': ['error', 'never']
   },
-  parser: 'babel-eslint'
+  parserOptions: {
+    ecmaVersion: 2020,
+    sourceType: 'module'
+  }
 }

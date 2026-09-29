@@ -1,13 +1,9 @@
-const elasticsearch = require('elasticsearch')
+import { Client } from '@elastic/elasticsearch'
 
 export default class Captions {
-  constructor(host) {
-    // Create eslasticsearch client
-    this.client = new elasticsearch.Client({
-      host: host,
-      // Avoid SSL-related errors when connecting to Elastic Cloud, see https://stackoverflow.com/a/68631678
-      ssl: { rejectUnauthorized: false, pfx: [] }
-    })
+  constructor(url) {
+    // Credentials, if any, go in the URL (https://user:password@host)
+    this.client = new Client({ node: url })
   }
 
   getSearchQuery(query_str, date_from, date_to, aggs, size, page) {
@@ -121,7 +117,7 @@ export default class Captions {
   ) {
     const results = await this.client.search({
       index: 'captions',
-      body: this.getSearchQuery(
+      ...this.getSearchQuery(
         query_str,
         date_from,
         date_to,
@@ -154,7 +150,7 @@ export default class Captions {
     }
     const results = await this.client.search({
       index: 'captions',
-      body: query,
+      ...query,
     })
     return results.hits.hits.map(this.mapResult)
   }
@@ -186,7 +182,7 @@ export default class Captions {
     }
     const results = await this.client.search({
       index: 'captions',
-      body: query,
+      ...query,
     })
     return results.aggregations.programmes.buckets.map(d => {
       return d.key
@@ -205,7 +201,7 @@ export default class Captions {
     }
     const results = await this.client.search({
       index: 'captions',
-      body: query,
+      ...query,
     })
     return results.hits.hits.map(this.mapResult)
   }
