@@ -34,6 +34,17 @@ Arrancamos la aplicación (tanto la API como el front-end):
 npm run start
 ```
 
+## Tests
+
+Los tests del API (`test/api.test.mjs`) son de extremo a extremo: hablan con el API por HTTP contra un Elastic 9.0.4 (la misma versión que en producción) cargado con seis programas exportados de producción (`test/fixtures`). Necesitan Docker y Node 22 para lanzar los tests, aunque el API puede correr con otra versión.
+
+```
+docker compose -f test/docker-compose.yml up -d --wait
+test/seed.sh
+ELASTIC_API_URL=http://localhost:9201 PORT=8899 npm run start:api   # en otra terminal
+API_URL=http://localhost:8899/ npm run test:api
+```
+
 ## Despliegue en producción (Civio)
 
 La aplicación está desplegada en `midas`, en `/var/www/verba.civio.es/`. Hay dos partes, el frontend (hecho con Vue.js) que se sirve por el Apache y el API que es un servicio que levanta una aplicación Express. La configuración (variables de entorno...) del servicio está en `/etc/systemd/system/verba-api.service`.

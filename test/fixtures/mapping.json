@@ -1,0 +1,68 @@
+{
+  "mappings": {
+    "properties": {
+      "duration": {
+        "type": "float"
+      },
+      "end": {
+        "type": "float"
+      },
+      "entities": {
+        "type": "nested",
+        "properties": {
+          "confidence": {
+            "type": "float"
+          },
+          "text": {
+            "type": "text"
+          },
+          "type": {
+            "type": "keyword"
+          }
+        }
+      },
+      "programme_date": {
+        "type": "date"
+      },
+      "programme_id": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "programme_title": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "start": {
+        "type": "float"
+      },
+      "text": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "url": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      }
+    }
+  }
+}
