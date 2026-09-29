@@ -45,6 +45,20 @@ ELASTIC_API_URL=http://localhost:9201 PORT=8899 npm run start:api   # en otra te
 API_URL=http://localhost:8899/ npm run test:api
 ```
 
+Los tests del frontend (`test/web.spec.mjs`) usan Playwright contra el build de producción (servido por `test/serve.mjs`, que hace lo mismo que el Apache) y el mismo API de pruebas. Los valores esperados los sacan del propio API, así que valen también contra producción:
+
+```
+npx playwright install chromium   # la primera vez
+npm run test:web:build
+npm run test:web
+```
+
+Después de desplegar, podemos pasar los tests marcados como `@smoke` contra producción. Son pocos y van de uno en uno a propósito: Cloudflare limita las peticiones al API y, si nos pasamos, bloquea nuestra IP durante una hora (error 1015).
+
+```
+WEB_URL=https://verba.civio.es API_URL=https://verba.civio.es/api/ npm run test:web
+```
+
 ## Despliegue en producción (Civio)
 
 La aplicación está desplegada en `midas`, en `/var/www/verba.civio.es/`. Hay dos partes, el frontend (hecho con Vue.js) que se sirve por el Apache y el API que es un servicio que levanta una aplicación Express. La configuración (variables de entorno...) del servicio está en `/etc/systemd/system/verba-api.service`.
@@ -64,6 +78,8 @@ $ npm install
 $ npm run build
 $ sudo service verba-api restart
 ```
+
+Y, desde local, los tests de humo contra producción (ver [Tests](#tests)).
 
 Una vez desplegada, la aplicación ofrece dos URLs:
 
