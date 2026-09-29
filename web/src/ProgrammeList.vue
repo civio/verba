@@ -331,7 +331,9 @@ u {
   color: $color-neutral-1000;
 
   transition: text-shadow 0.3s;
-  text-shadow: 0 0 0.65px #333, 0 0 0.65px #333;
+  text-shadow:
+    0 0 0.65px #333,
+    0 0 0.65px #333;
 }
 .verba-film-item:hover:hover img {
   -webkit-filter: sepia(100%) blur(0);

@@ -24,5 +24,9 @@ export default defineConfig({
   },
   webServer: WEB_URL
     ? undefined
-    : { command: 'node test/serve.mjs test/.dist 8080', url: 'http://localhost:8080', reuseExistingServer: true },
+    : {
+        command: 'node test/serve.mjs test/.dist 8080',
+        url: 'http://localhost:8080',
+        reuseExistingServer: true,
+      },
 })

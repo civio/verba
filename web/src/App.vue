@@ -160,7 +160,8 @@ u {
   // Background texture (responsive) with callback color
   // Mobile (default)
   background-color: #f3f3f3; // Callback
-  background-image: linear-gradient(
+  background-image:
+    linear-gradient(
       rgba(255, 255, 255, $ligthtness-factor),
       rgba(255, 255, 255, $ligthtness-factor)
     ),
@@ -168,7 +169,8 @@ u {
 
   // Tablet
   @media all and (min-width: 481px) {
-    background-image: linear-gradient(
+    background-image:
+      linear-gradient(
         rgba(255, 255, 255, $ligthtness-factor),
         rgba(255, 255, 255, $ligthtness-factor)
       ),
@@ -177,7 +179,8 @@ u {
 
   // PC regular
   @media all and (min-width: 961px) {
-    background-image: linear-gradient(
+    background-image:
+      linear-gradient(
         rgba(255, 255, 255, $ligthtness-factor),
         rgba(255, 255, 255, $ligthtness-factor)
       ),
@@ -186,7 +189,8 @@ u {
 
   // PC big screen
   @media all and (min-width: 1441px) {
-    background-image: linear-gradient(
+    background-image:
+      linear-gradient(
         rgba(255, 255, 255, $ligthtness-factor),
         rgba(255, 255, 255, $ligthtness-factor)
       ),

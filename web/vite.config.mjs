@@ -8,5 +8,9 @@ export default defineConfig({
   // daterangepicker does require('moment') and breaks with moment's ES module build
   resolve: { alias: [{ find: /^moment$/, replacement: 'moment/moment.js' }] },
   server: { port: 8080 },
-  css: { preprocessorOptions: { scss: { silenceDeprecations: ['import', 'global-builtin'] } } },
+  css: {
+    preprocessorOptions: {
+      scss: { silenceDeprecations: ['import', 'global-builtin'] },
+    },
+  },
 })

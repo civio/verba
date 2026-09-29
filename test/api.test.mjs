@@ -10,7 +10,8 @@ const API_URL = process.env.API_URL || 'http://localhost:8899/'
 
 async function get(path, params = {}) {
   const url = new URL(path, API_URL)
-  for (const [key, value] of Object.entries(params)) url.searchParams.set(key, value)
+  for (const [key, value] of Object.entries(params))
+    url.searchParams.set(key, value)
   const response = await fetch(url)
   assert.equal(response.status, 200, `${url} returned ${response.status}`)
   return response
@@ -32,7 +33,10 @@ function assertSorted(results) {
 }
 
 test('root returns the API name', async () => {
-  assert.deepEqual(await getJSON(''), { name: 'Verba Volant API', version: '1.0' })
+  assert.deepEqual(await getJSON(''), {
+    name: 'Verba Volant API',
+    version: '1.0',
+  })
 })
 
 test('search without a query returns an error', async () => {
@@ -49,7 +53,10 @@ test('search returns matching captions', async () => {
 
   const first = data.results[0]
   assert.deepEqual(
-    { ...first, programme: { id: first.programme.id, date: first.programme.date } },
+    {
+      ...first,
+      programme: { id: first.programme.id, date: first.programme.date },
+    },
     {
       id: 'T7RVppgBM2NOkfORNwvu',
       link: 'https://www.rtve.es/v/16558051/?t=00h00m54s',
@@ -92,9 +99,14 @@ test('search paginates', async () => {
 })
 
 test('search filters by date', async () => {
-  const data = await search({ q: 'gobierno', date_from: '2016-01-01', date_to: '2016-12-31' })
+  const data = await search({
+    q: 'gobierno',
+    date_from: '2016-01-01',
+    date_to: '2016-12-31',
+  })
   assert.equal(data.length, 21)
-  for (const result of data.results) assert.match(result.programme.date, /^2016-/)
+  for (const result of data.results)
+    assert.match(result.programme.date, /^2016-/)
 })
 
 test('search aggregates matches over time, including empty periods', async () => {
@@ -138,7 +150,11 @@ test('search results can be downloaded as CSV', async () => {
 })
 
 test('context returns the captions around a given time', async () => {
-  const data = await getJSON('fetchContext', { programme_id: '3022360', start_time: 60, range: 20 })
+  const data = await getJSON('fetchContext', {
+    programme_id: '3022360',
+    start_time: 60,
+    range: 20,
+  })
   assert.deepEqual(
     data.map(r => [r.programme.id, r.time_start]),
     [
@@ -150,21 +166,50 @@ test('context returns the captions around a given time', async () => {
 
 test('programme list returns every programme, newest first', async () => {
   assert.deepEqual(await getJSON('fetchProgrammeList'), [
-    { date: '2025-04-28', id: '16558051', title: 'Telediario 1 - Especial Apagón eléctrico masivo - 28/04/2025' },
-    { date: '2024-09-18', id: '16253575', title: 'Telediario - 15 horas - 18/09/24' },
+    {
+      date: '2025-04-28',
+      id: '16558051',
+      title: 'Telediario 1 - Especial Apagón eléctrico masivo - 28/04/2025',
+    },
+    {
+      date: '2024-09-18',
+      id: '16253575',
+      title: 'Telediario - 15 horas - 18/09/24',
+    },
     // RTVE reused the 2015 titles for these 2016 programmes
-    { date: '2016-03-02', id: '3507639', title: 'Telediario - 15 horas - 02/03/15' },
-    { date: '2016-03-02', id: '3507956', title: 'Telediario - 21 horas - 02/03/15' },
-    { date: '2015-03-02', id: '3022360', title: 'Telediario - 15 horas - 02/03/15' },
-    { date: '2015-03-02', id: '3022728', title: 'Telediario - 21 horas - 02/03/15' },
+    {
+      date: '2016-03-02',
+      id: '3507639',
+      title: 'Telediario - 15 horas - 02/03/15',
+    },
+    {
+      date: '2016-03-02',
+      id: '3507956',
+      title: 'Telediario - 21 horas - 02/03/15',
+    },
+    {
+      date: '2015-03-02',
+      id: '3022360',
+      title: 'Telediario - 15 horas - 02/03/15',
+    },
+    {
+      date: '2015-03-02',
+      id: '3022728',
+      title: 'Telediario - 21 horas - 02/03/15',
+    },
   ])
 })
 
 test('programme transcription returns all its captions in order', async () => {
-  const data = await getJSON('fetchProgrammeTranscription', { programme_id: '3022728' })
+  const data = await getJSON('fetchProgrammeTranscription', {
+    programme_id: '3022728',
+  })
   assert.equal(data.length, 434)
   const starts = data.map(r => r.time_start)
-  assert.deepEqual(starts, [...starts].sort((a, b) => a - b))
+  assert.deepEqual(
+    starts,
+    [...starts].sort((a, b) => a - b)
+  )
   assert.deepEqual(data[0], {
     id: '7K8yR5gBM2NOkfOR26At',
     link: 'http://rtve.es/v/3022728?t=00h00m13s',
@@ -175,7 +220,11 @@ test('programme transcription returns all its captions in order', async () => {
       { text: 'Zaragoza', confidence: 0.9999021291732788, type: 'LOC' },
       { text: 'Ebro', confidence: 0.9723526835441589, type: 'MISC' },
     ],
-    programme: { id: '3022728', title: 'Telediario - 21 horas - 02/03/15', date: '2015-03-02T22:29:00+00:00' },
+    programme: {
+      id: '3022728',
+      title: 'Telediario - 21 horas - 02/03/15',
+      date: '2015-03-02T22:29:00+00:00',
+    },
   })
 })
 
@@ -183,5 +232,8 @@ test('an invalid request returns an error and the API keeps running', async () =
   const url = new URL('search?q=Ebro&size=20000', API_URL)
   const response = await fetch(url, { signal: AbortSignal.timeout(5000) })
   assert.ok(response.status >= 400)
-  assert.deepEqual(await getJSON(''), { name: 'Verba Volant API', version: '1.0' })
+  assert.deepEqual(await getJSON(''), {
+    name: 'Verba Volant API',
+    version: '1.0',
+  })
 })

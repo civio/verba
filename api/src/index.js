@@ -17,7 +17,7 @@ app.get('/', (request, response) => {
   response.json({ name: 'Verba Volant API', version: '1.0' })
 })
 
-app.get('/search', cors(), async(request, response) => {
+app.get('/search', cors(), async (request, response) => {
   if (request.query.q) {
     const results = await captions.search(
       request.query.q,
@@ -33,7 +33,7 @@ app.get('/search', cors(), async(request, response) => {
   }
 })
 
-app.get('/search.csv', cors(), async(request, response) => {
+app.get('/search.csv', cors(), async (request, response) => {
   if (request.query.q) {
     const results = await captions.search(
       request.query.q,
@@ -64,7 +64,7 @@ app.get('/search.csv', cors(), async(request, response) => {
   }
 })
 
-app.get('/fetchContext', cors(), async(request, response) => {
+app.get('/fetchContext', cors(), async (request, response) => {
   const results = await captions.fetchContext(
     request.query.programme_id,
     request.query.start_time,
@@ -73,12 +73,12 @@ app.get('/fetchContext', cors(), async(request, response) => {
   response.json(results)
 })
 
-app.get('/fetchProgrammeList', cors(), async(request, response) => {
+app.get('/fetchProgrammeList', cors(), async (request, response) => {
   const results = await captions.fetchProgrammeList()
   response.json(results)
 })
 
-app.get('/fetchProgrammeTranscription', cors(), async(request, response) => {
+app.get('/fetchProgrammeTranscription', cors(), async (request, response) => {
   const results = await captions.fetchProgrammeTranscription(
     request.query.programme_id
   )

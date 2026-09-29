@@ -20,10 +20,14 @@ const TYPES = {
 }
 
 createServer(async (request, response) => {
-  const path = normalize(decodeURIComponent(new URL(request.url, 'http://x').pathname))
+  const path = normalize(
+    decodeURIComponent(new URL(request.url, 'http://x').pathname)
+  )
   try {
     const body = await readFile(join(DIR, path))
-    response.writeHead(200, { 'Content-Type': TYPES[extname(path)] || 'application/octet-stream' })
+    response.writeHead(200, {
+      'Content-Type': TYPES[extname(path)] || 'application/octet-stream',
+    })
     response.end(body)
   } catch {
     response.writeHead(200, { 'Content-Type': TYPES['.html'] })
