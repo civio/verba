@@ -107,8 +107,14 @@ export default {
     Vue.verbaAPI('fetchProgrammeList', null, response => {
       this.inc = this.limit
       this.programmeList = response.data
-      this.seeYear(this.get_today_year())
-      this.seeMonth(this.get_today_month())
+      // Open on the month of the latest programme, not today's: on the first
+      // days of a month there may be nothing yet, and the list would be empty
+      const [latest] = this.programmeList
+      if (latest) {
+        const [year, month] = latest.date.split('-')
+        this.seeYear(year)
+        this.seeMonth(String(parseInt(month)))
+      }
       this.limitDate = this.get_limit_date()
     })
   },
@@ -127,10 +133,6 @@ export default {
 
     get_today_year() {
       return String(this.today.getFullYear())
-    },
-
-    get_today_month() {
-      return String(this.today.getMonth() + 1)
     },
 
     get_limit_date() {
@@ -163,7 +165,7 @@ export default {
         this.filterProgramme = this.get_year()
         this.months.forEach(
           function (d) {
-            d.ts = new Date(this.currentYear + '/' + d.num + '/2').getTime()
+            d.ts = new Date(this.currentYear + '/' + d.num + '/1').getTime()
           }.bind(this)
         )
       } else {

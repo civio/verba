@@ -231,6 +231,22 @@ test.describe('search', () => {
 })
 
 test.describe('programmes', () => {
+  test(
+    'opens on the month of the latest programme',
+    { tag: '@smoke' },
+    async ({ page }) => {
+      const [latest] = await api('fetchProgrammeList')
+      await page.goto('/programmes')
+
+      await expect(page.locator('.verba-films-strip li').first()).toContainText(
+        latest.title
+      )
+      await expect(page.locator('.years-list .is-clicked')).toHaveText(
+        latest.date.slice(0, 4)
+      )
+    }
+  )
+
   test('lists programmes by year and opens one', async ({ page }) => {
     const [latest] = await api('fetchProgrammeList')
     const transcription = await api('fetchProgrammeTranscription', {
