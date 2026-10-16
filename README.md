@@ -57,7 +57,7 @@ WEB_URL=https://verba.civio.es API_URL=https://verba.civio.es/api/ npm run test:
 
 ## Despliegue en producción (Civio)
 
-La aplicación está desplegada en `midas`, en `/var/www/verba.civio.es/`. Hay dos partes, el frontend (hecho con Vue.js) que se sirve por el Apache y el API que es un servicio que levanta una aplicación Express. La configuración (variables de entorno...) del servicio está en `/etc/systemd/system/verba-api.service`, incluida la URL de Elastic Cloud con sus credenciales. El servicio usa `nvm-exec`, y la versión de Node la fija `NODE_VERSION` en ese mismo fichero. En `midas` hay otras aplicaciones con Node 16, que es la versión por defecto de nvm, así que para Verba hay que hacer siempre `nvm use`.
+La aplicación está desplegada en `midas`, en `/var/www/verba.civio.es/`. Hay dos partes, el frontend (hecho con Vue.js) que se sirve por el Apache y el API que es un servicio que levanta una aplicación Express. La configuración (variables de entorno...) del servicio está en `/etc/systemd/system/verba-api.service`, incluida la URL de Elastic Cloud con sus credenciales. El servicio usa `nvm-exec`, y la versión de Node la fija `NODE_VERSION` en ese mismo fichero. En `midas` hay otras aplicaciones con Node 16, que es la versión por defecto de nvm, así que para Verba hay que hacer siempre `nvm use`. nvm está instalado para todo el servidor en `/usr/local/nvm`, no en `~/.nvm`; en una sesión que no lo cargue (un `ssh midas '...'`, por ejemplo) hay que hacer antes `source /usr/local/nvm/nvm.sh`.
 
 El API se conecta a Elastic Cloud con el usuario `verba_api`, que tiene solo el rol `verba_read` (permiso `read` sobre el índice `captions`). La ingesta de datos (`civio/verba-rtve`) usa sus propias credenciales, con permiso de escritura. Si hubiera que recrear el usuario o cambiarle la contraseña, se puede hacer desde Kibana o con el API de seguridad de Elastic, usando un usuario administrador:
 
@@ -77,8 +77,10 @@ $ git pull
 $ nvm use
 $ npm install
 $ npm run build
-$ sudo service verba-api restart
+$ sudo systemctl restart verba-api
 ```
+
+El usuario `david` puede hacer este reinicio sin contraseña (`/etc/sudoers.d/verba-api`), para poder desplegar sin sesión interactiva.
 
 Y, desde local, los tests de humo contra producción (ver [Tests](#tests)).
 
