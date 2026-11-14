@@ -8,6 +8,11 @@ updates:
     groups:
       minor-and-patch:
         update-types: [minor, patch]
+      # Security fixes ignore the schedule and arrive when the advisory is published;
+      # this only bundles the ones pending at the same time into one PR
+      security:
+        applies-to: security-updates
+        patterns: ["*"]
     ignore:
       # These need Vue 3 (and the Vue 2 plugin for Vite stops at Vite 7)
       - dependency-name: vue
